@@ -5,6 +5,7 @@ From: ubuntu:20.04
   Author pmitev@gmail.com
 
 %environment
+  export LC_ALL=C
   export PATH=/opt/gapseq:${PATH}
 
 %post
