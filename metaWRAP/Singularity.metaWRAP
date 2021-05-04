@@ -16,4 +16,9 @@ From: continuumio/miniconda3
   conda clean --all --yes
 
 %runscript
-  /bin/bash -c "source /opt/conda/etc/profile.d/conda.sh ; conda activate metawrap-env ; metawrap $@"
+/bin/bash <<EOF
+  source /opt/conda/etc/profile.d/conda.sh
+  conda activate metawrap-env
+  metawrap $@
+EOF
+
