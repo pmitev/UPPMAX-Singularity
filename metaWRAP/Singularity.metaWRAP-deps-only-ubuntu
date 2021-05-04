@@ -50,9 +50,10 @@ EOF
   cd / && rm -r /installs
 
 %runscript
+  params=$@
 /bin/bash <<EOF
   export PATH=/opt/metaWRAP/bin:$PATH
   source /opt/miniconda3/etc/profile.d/conda.sh
   conda activate metawrap-env
-  metawrap $@
+  metawrap $params
 EOF

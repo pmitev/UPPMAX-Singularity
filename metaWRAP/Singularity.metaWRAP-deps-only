@@ -29,11 +29,11 @@ EOF
   git clone https://github.com/bxlab/metaWRAP.git
 
 %runscript
+  params=$@
 /bin/bash <<EOF
   export PATH=/opt/metaWRAP/bin:$PATH
 
   source /opt/conda/etc/profile.d/conda.sh
   conda activate metawrap-env
-  metawrap $@
+  metawrap $params
 EOF
-
