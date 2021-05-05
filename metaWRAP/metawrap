@@ -1,0 +1,6 @@
+#!/bin/bash
+params=$@
+singularity exec \
+  --bind ${PWD}/config-metawrap:/opt/conda/envs/metawrap-env/bin/config-metawrap \
+  metawrap.sif \
+  bash -c "source /opt/conda/etc/profile.d/conda.sh ; conda activate metawrap-env ; metawrap $params"
