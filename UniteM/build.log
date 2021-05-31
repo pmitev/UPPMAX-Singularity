@@ -1,0 +1,745 @@
+Build target 'UniteM.sif' already exists and will be deleted during the build process. Do you want to continue? [N/y]INFO:    Starting build...
+Getting image source signatures
+Copying blob sha256:852e50cd189dfeb54d97680d9fa6bed21a6d7d18cfb56d6abfe2de9d7f173795
+Copying blob sha256:a6236801494d5ca9acfae6569427398c2942c031375b96cac887cafe1de5a09b
+Copying blob sha256:679c171d6942954a759f2d3a1dff911321940f23b0cdbe1d186f36bef0025124
+Copying config sha256:73d41adb17f3e92ccd0a35fa206e035ddcc2a32ac9f576e3de309198e8c434cd
+Writing manifest to image destination
+Storing signatures
+2021/05/31 15:21:35  info unpack layer: sha256:852e50cd189dfeb54d97680d9fa6bed21a6d7d18cfb56d6abfe2de9d7f173795
+2021/05/31 15:21:36  info unpack layer: sha256:a6236801494d5ca9acfae6569427398c2942c031375b96cac887cafe1de5a09b
+2021/05/31 15:21:37  info unpack layer: sha256:679c171d6942954a759f2d3a1dff911321940f23b0cdbe1d186f36bef0025124
+INFO:    Running post scriptlet
++ export LC_ALL=C
++ export CONDA_PKGS_DIRS=/tmp/conda_pkgs_dir
++ mkdir -p /tmp/conda_pkgs_dir
++ conda update -n base -c defaults conda
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /opt/conda
+
+  added / updated specs:
+    - conda
+
+
+The following packages will be REMOVED:
+
+  libedit-3.1.20191231-h14c3975_1
+  pip-20.2.4-py38h06a4308_0
+  wheel-0.35.1-pyhd3eb1b0_0
+
+The following packages will be UPDATED:
+
+  ca-certificates                              2020.10.14-0 --> 2021.5.25-h06a4308_1
+  certifi            pkgs/main/noarch::certifi-2020.6.20-p~ --> pkgs/main/linux-64::certifi-2020.12.5-py38h06a4308_0
+  cffi                                1.14.3-py38h261ae71_2 --> 1.14.5-py38h261ae71_0
+  chardet                           3.0.4-py38h06a4308_1003 --> 4.0.0-py38h06a4308_1003
+  conda                                4.9.2-py38h06a4308_0 --> 4.10.1-py38h06a4308_1
+  conda-package-han~                   1.7.2-py38h03888b9_0 --> 1.7.3-py38h27cfd23_1
+  cryptography                         3.2.1-py38h3c74f83_1 --> 3.4.7-py38hd23ed53_0
+  openssl                                 1.1.1h-h7b6447c_0 --> 1.1.1k-h27cfd23_0
+  pyopenssl                             19.1.0-pyhd3eb1b0_1 --> 20.0.1-pyhd3eb1b0_1
+  readline                                   8.0-h7b6447c_0 --> 8.1-h27cfd23_0
+  requests                                      2.24.0-py_0 --> 2.25.1-pyhd3eb1b0_0
+  ruamel_yaml                        0.15.87-py38h7b6447c_1 --> 0.15.100-py38h27cfd23_0
+  setuptools                          50.3.1-py38h06a4308_1 --> 52.0.0-py38h06a4308_0
+  sqlite                                  3.33.0-h62c20be_0 --> 3.35.4-hdfb4753_0
+  tqdm                                  4.51.0-pyhd3eb1b0_0 --> 4.59.0-pyhd3eb1b0_1
+  urllib3                                      1.25.11-py_0 --> 1.26.4-pyhd3eb1b0_0
+
+The following packages will be DOWNGRADED:
+
+  idna                                            2.10-py_0 --> 2.10-pyhd3eb1b0_0
+
+
+Proceed ([y]/n)? 
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
++ conda config --add channels defaults
+Warning: 'defaults' already in 'channels' list, moving to the top
++ conda config --add channels conda-forge
++ conda config --add channels bioconda
++ conda install biopython bwa htslib samtools pplacer subread prodigal maxbin2 metabat2 pip cmake make gxx_linux-64 gcc_linux-64 gfortran_linux-64
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /opt/conda
+
+  added / updated specs:
+    - biopython
+    - bwa
+    - cmake
+    - gcc_linux-64
+    - gfortran_linux-64
+    - gxx_linux-64
+    - htslib
+    - make
+    - maxbin2
+    - metabat2
+    - pip
+    - pplacer
+    - prodigal
+    - samtools
+    - subread
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    _libgcc_mutex-0.1          |      conda_forge           3 KB  conda-forge
+    _openmp_mutex-4.5          |            1_gnu          22 KB  conda-forge
+    _r-mutex-1.0.1             |      anacondar_1           3 KB  conda-forge
+    binutils_impl_linux-64-2.35.1|       h193b22a_2         9.3 MB  conda-forge
+    binutils_linux-64-2.35     |      h67ddf6f_30          22 KB  conda-forge
+    biopython-1.78             |   py38h497a2fe_2         2.6 MB  conda-forge
+    bowtie2-2.2.5              |   py38h8c62d01_8        14.9 MB  bioconda
+    bwa-0.7.17                 |       h5bf99c6_8         608 KB  bioconda
+    bwidget-1.9.14             |       ha770c72_0         119 KB  conda-forge
+    bzip2-1.0.8                |       h7f98852_4         484 KB  conda-forge
+    c-ares-1.17.1              |       h7f98852_1         109 KB  conda-forge
+    cairo-1.16.0               |    h6cf1ce9_1008         1.5 MB  conda-forge
+    cmake-3.20.3               |       h8897547_0        14.7 MB  conda-forge
+    curl-7.77.0                |       hea6ffbf_0         149 KB  conda-forge
+    expat-2.4.1                |       h9c3ff4c_0         182 KB  conda-forge
+    font-ttf-dejavu-sans-mono-2.37|       hab24e00_0         388 KB  conda-forge
+    font-ttf-inconsolata-3.000 |       h77eed37_0          94 KB  conda-forge
+    font-ttf-source-code-pro-2.038|       h77eed37_0         684 KB  conda-forge
+    font-ttf-ubuntu-0.83       |       hab24e00_0         1.9 MB  conda-forge
+    fontconfig-2.13.1          |    hba837de_1005         357 KB  conda-forge
+    fonts-conda-ecosystem-1    |                0           4 KB  conda-forge
+    fonts-conda-forge-1        |                0           4 KB  conda-forge
+    fraggenescan-1.31          |       h779adbc_3         1.4 MB  bioconda
+    freetype-2.10.4            |       h0708190_1         890 KB  conda-forge
+    fribidi-1.0.10             |       h36c2ea0_0         112 KB  conda-forge
+    gcc_impl_linux-64-9.3.0    |      h70c0ae5_19        43.2 MB  conda-forge
+    gcc_linux-64-9.3.0         |      hf25ea35_30          23 KB  conda-forge
+    gettext-0.19.8.1           |    h0b5b191_1005         3.6 MB  conda-forge
+    gfortran_impl_linux-64-9.3.0|      hc4a2995_19        10.1 MB  conda-forge
+    gfortran_linux-64-9.3.0    |      hdc58fab_30          22 KB  conda-forge
+    graphite2-1.3.13           |    h58526e2_1001         102 KB  conda-forge
+    gsl-2.6                    |       he838d99_2         3.2 MB  conda-forge
+    gxx_impl_linux-64-9.3.0    |      hd87eabc_19        10.7 MB  conda-forge
+    gxx_linux-64-9.3.0         |      h3fbe746_30          23 KB  conda-forge
+    harfbuzz-2.8.1             |       h83ec7ef_0         1.9 MB  conda-forge
+    hmmer-3.3.2                |       h1b792b2_1         9.6 MB  bioconda
+    htslib-1.12                |       h9093b5e_1         2.1 MB  bioconda
+    icu-68.1                   |       h58526e2_0        13.0 MB  conda-forge
+    jbig-2.1                   |    h7f98852_2003          43 KB  conda-forge
+    jpeg-9d                    |       h36c2ea0_0         264 KB  conda-forge
+    kernel-headers_linux-64-2.6.32|      h77966d4_13         707 KB  conda-forge
+    krb5-1.19.1                |       hcc1bbae_0         1.4 MB  conda-forge
+    ld_impl_linux-64-2.35.1    |       hea4e1c9_2         618 KB  conda-forge
+    lerc-2.2.1                 |       h9c3ff4c_0         213 KB  conda-forge
+    libblas-3.9.0              |       9_openblas          11 KB  conda-forge
+    libcblas-3.9.0             |       9_openblas          11 KB  conda-forge
+    libcurl-7.77.0             |       h2574ce0_0         334 KB  conda-forge
+    libdeflate-1.7             |       h7f98852_5          67 KB  conda-forge
+    libev-4.33                 |       h516909a_1         104 KB  conda-forge
+    libgcc-devel_linux-64-9.3.0|      h7864c58_19         4.0 MB  conda-forge
+    libgcc-ng-9.3.0            |      h2828fa1_19         7.8 MB  conda-forge
+    libgfortran-ng-9.3.0       |      hff62375_19          22 KB  conda-forge
+    libgfortran5-9.3.0         |      hff62375_19         2.0 MB  conda-forge
+    libglib-2.68.2             |       h3e27bee_1         3.1 MB  conda-forge
+    libgomp-9.3.0              |      h2828fa1_19         376 KB  conda-forge
+    libiconv-1.16              |       h516909a_0         1.4 MB  conda-forge
+    liblapack-3.9.0            |       9_openblas          11 KB  conda-forge
+    libnghttp2-1.43.0          |       h812cca2_0         808 KB  conda-forge
+    libopenblas-0.3.15         |pthreads_h8fe5266_1         9.2 MB  conda-forge
+    libpng-1.6.37              |       h21135ba_2         306 KB  conda-forge
+    libssh2-1.9.0              |       ha56f1ee_6         226 KB  conda-forge
+    libstdcxx-devel_linux-64-9.3.0|      hb016644_19        14.0 MB  conda-forge
+    libstdcxx-ng-9.3.0         |      h6de172a_19         4.0 MB  conda-forge
+    libtiff-4.3.0              |       hf544144_1         668 KB  conda-forge
+    libuuid-2.32.1             |    h7f98852_1000          28 KB  conda-forge
+    libuv-1.41.0               |       h7f98852_0         1.0 MB  conda-forge
+    libwebp-base-1.2.0         |       h7f98852_2         815 KB  conda-forge
+    libxcb-1.13                |    h7f98852_1003         395 KB  conda-forge
+    libxml2-2.9.12             |       h72842e0_0         772 KB  conda-forge
+    lz4-c-1.9.3                |       h9c3ff4c_0         179 KB  conda-forge
+    maxbin2-2.2.7              |       h1b792b2_3         2.7 MB  bioconda
+    metabat2-2.12.1            |                1        16.4 MB  bioconda
+    numpy-1.20.3               |   py38h9894fe3_1         5.8 MB  conda-forge
+    openssl-1.1.1k             |       h7f98852_0         2.1 MB  conda-forge
+    pango-1.48.5               |       hb8ff022_0         398 KB  conda-forge
+    pcre-8.44                  |       he1b5a44_0         261 KB  conda-forge
+    pcre2-10.36                |       h032f7d1_1         1.1 MB  conda-forge
+    perl-5.26.2                |    h36c2ea0_1008        15.4 MB  conda-forge
+    perl-encode-2.88           |          pl526_1         2.1 MB  bioconda
+    perl-encode-locale-1.05    |          pl526_6          11 KB  bioconda
+    perl-exporter-5.72         |          pl526_1          13 KB  bioconda
+    perl-lwp-simple-6.15       |  pl526h470a237_4         348 KB  bioconda
+    perl-parent-0.236          |          pl526_1           5 KB  bioconda
+    pixman-0.40.0              |       h36c2ea0_0         627 KB  conda-forge
+    prodigal-2.6.3             |       h779adbc_3         776 KB  bioconda
+    pthread-stubs-0.4          |    h36c2ea0_1001           5 KB  conda-forge
+    r-base-4.1.0               |       h9e01966_1        24.8 MB  conda-forge
+    r-bitops-1.0_7             |    r41hcfec24a_0          44 KB  conda-forge
+    r-catools-1.18.2           |    r41h03ef668_0         222 KB  conda-forge
+    r-gplots-3.1.1             |    r41hc72bb7e_0         602 KB  conda-forge
+    r-gtools-3.8.2             |    r41hcfec24a_1         333 KB  conda-forge
+    r-kernsmooth-2.23_20       |    r41h742201e_0         104 KB  conda-forge
+    rhash-1.4.1                |       h7f98852_0         192 KB  conda-forge
+    samtools-1.12              |       h9aed4be_1         386 KB  bioconda
+    sed-4.8                    |       he412f7d_0         264 KB  conda-forge
+    subread-2.0.1              |       h5bf99c6_1        22.8 MB  bioconda
+    sysroot_linux-64-2.12      |      h77966d4_13        30.2 MB  conda-forge
+    tar-1.34                   |       ha1f6473_0         904 KB  conda-forge
+    tktable-2.10               |       hb7b940f_3          89 KB  conda-forge
+    xorg-kbproto-1.0.7         |    h7f98852_1002          27 KB  conda-forge
+    xorg-libice-1.0.10         |       h7f98852_0          58 KB  conda-forge
+    xorg-libsm-1.2.3           |    hd9c2040_1000          26 KB  conda-forge
+    xorg-libx11-1.7.1          |       h7f98852_0         946 KB  conda-forge
+    xorg-libxau-1.0.9          |       h7f98852_0          13 KB  conda-forge
+    xorg-libxdmcp-1.1.3        |       h7f98852_0          19 KB  conda-forge
+    xorg-libxext-1.3.4         |       h7f98852_1          54 KB  conda-forge
+    xorg-libxrender-0.9.10     |    h7f98852_1003          32 KB  conda-forge
+    xorg-libxt-1.2.1           |       h7f98852_2         375 KB  conda-forge
+    xorg-renderproto-0.11.1    |    h7f98852_1002           9 KB  conda-forge
+    xorg-xextproto-7.3.0       |    h7f98852_1002          28 KB  conda-forge
+    xorg-xproto-7.0.31         |    h7f98852_1007          73 KB  conda-forge
+    zstd-1.5.0                 |       ha95c52a_0         490 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:       333.8 MB
+
+The following NEW packages will be INSTALLED:
+
+  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-1_gnu
+  _r-mutex           conda-forge/noarch::_r-mutex-1.0.1-anacondar_1
+  binutils_impl_lin~ conda-forge/linux-64::binutils_impl_linux-64-2.35.1-h193b22a_2
+  binutils_linux-64  conda-forge/linux-64::binutils_linux-64-2.35-h67ddf6f_30
+  biopython          conda-forge/linux-64::biopython-1.78-py38h497a2fe_2
+  bowtie2            bioconda/linux-64::bowtie2-2.2.5-py38h8c62d01_8
+  bwa                bioconda/linux-64::bwa-0.7.17-h5bf99c6_8
+  bwidget            conda-forge/linux-64::bwidget-1.9.14-ha770c72_0
+  bzip2              conda-forge/linux-64::bzip2-1.0.8-h7f98852_4
+  c-ares             conda-forge/linux-64::c-ares-1.17.1-h7f98852_1
+  cairo              conda-forge/linux-64::cairo-1.16.0-h6cf1ce9_1008
+  cmake              conda-forge/linux-64::cmake-3.20.3-h8897547_0
+  curl               conda-forge/linux-64::curl-7.77.0-hea6ffbf_0
+  expat              conda-forge/linux-64::expat-2.4.1-h9c3ff4c_0
+  font-ttf-dejavu-s~ conda-forge/noarch::font-ttf-dejavu-sans-mono-2.37-hab24e00_0
+  font-ttf-inconsol~ conda-forge/noarch::font-ttf-inconsolata-3.000-h77eed37_0
+  font-ttf-source-c~ conda-forge/noarch::font-ttf-source-code-pro-2.038-h77eed37_0
+  font-ttf-ubuntu    conda-forge/noarch::font-ttf-ubuntu-0.83-hab24e00_0
+  fontconfig         conda-forge/linux-64::fontconfig-2.13.1-hba837de_1005
+  fonts-conda-ecosy~ conda-forge/noarch::fonts-conda-ecosystem-1-0
+  fonts-conda-forge  conda-forge/noarch::fonts-conda-forge-1-0
+  fraggenescan       bioconda/linux-64::fraggenescan-1.31-h779adbc_3
+  freetype           conda-forge/linux-64::freetype-2.10.4-h0708190_1
+  fribidi            conda-forge/linux-64::fribidi-1.0.10-h36c2ea0_0
+  gcc_impl_linux-64  conda-forge/linux-64::gcc_impl_linux-64-9.3.0-h70c0ae5_19
+  gcc_linux-64       conda-forge/linux-64::gcc_linux-64-9.3.0-hf25ea35_30
+  gettext            conda-forge/linux-64::gettext-0.19.8.1-h0b5b191_1005
+  gfortran_impl_lin~ conda-forge/linux-64::gfortran_impl_linux-64-9.3.0-hc4a2995_19
+  gfortran_linux-64  conda-forge/linux-64::gfortran_linux-64-9.3.0-hdc58fab_30
+  graphite2          conda-forge/linux-64::graphite2-1.3.13-h58526e2_1001
+  gsl                conda-forge/linux-64::gsl-2.6-he838d99_2
+  gxx_impl_linux-64  conda-forge/linux-64::gxx_impl_linux-64-9.3.0-hd87eabc_19
+  gxx_linux-64       conda-forge/linux-64::gxx_linux-64-9.3.0-h3fbe746_30
+  harfbuzz           conda-forge/linux-64::harfbuzz-2.8.1-h83ec7ef_0
+  hmmer              bioconda/linux-64::hmmer-3.3.2-h1b792b2_1
+  htslib             bioconda/linux-64::htslib-1.12-h9093b5e_1
+  icu                conda-forge/linux-64::icu-68.1-h58526e2_0
+  idba               bioconda/linux-64::idba-1.1.3-1
+  jbig               conda-forge/linux-64::jbig-2.1-h7f98852_2003
+  jpeg               conda-forge/linux-64::jpeg-9d-h36c2ea0_0
+  kernel-headers_li~ conda-forge/noarch::kernel-headers_linux-64-2.6.32-h77966d4_13
+  krb5               conda-forge/linux-64::krb5-1.19.1-hcc1bbae_0
+  lerc               conda-forge/linux-64::lerc-2.2.1-h9c3ff4c_0
+  libblas            conda-forge/linux-64::libblas-3.9.0-9_openblas
+  libcblas           conda-forge/linux-64::libcblas-3.9.0-9_openblas
+  libcurl            conda-forge/linux-64::libcurl-7.77.0-h2574ce0_0
+  libdeflate         conda-forge/linux-64::libdeflate-1.7-h7f98852_5
+  libedit            conda-forge/linux-64::libedit-3.1.20191231-he28a2e2_2
+  libev              conda-forge/linux-64::libev-4.33-h516909a_1
+  libgcc             conda-forge/linux-64::libgcc-7.2.0-h69d50b8_2
+  libgcc-devel_linu~ conda-forge/linux-64::libgcc-devel_linux-64-9.3.0-h7864c58_19
+  libgfortran-ng     conda-forge/linux-64::libgfortran-ng-9.3.0-hff62375_19
+  libgfortran5       conda-forge/linux-64::libgfortran5-9.3.0-hff62375_19
+  libglib            conda-forge/linux-64::libglib-2.68.2-h3e27bee_1
+  libgomp            conda-forge/linux-64::libgomp-9.3.0-h2828fa1_19
+  libiconv           conda-forge/linux-64::libiconv-1.16-h516909a_0
+  liblapack          conda-forge/linux-64::liblapack-3.9.0-9_openblas
+  libnghttp2         conda-forge/linux-64::libnghttp2-1.43.0-h812cca2_0
+  libopenblas        conda-forge/linux-64::libopenblas-0.3.15-pthreads_h8fe5266_1
+  libpng             conda-forge/linux-64::libpng-1.6.37-h21135ba_2
+  libssh2            conda-forge/linux-64::libssh2-1.9.0-ha56f1ee_6
+  libstdcxx-devel_l~ conda-forge/linux-64::libstdcxx-devel_linux-64-9.3.0-hb016644_19
+  libtiff            conda-forge/linux-64::libtiff-4.3.0-hf544144_1
+  libuuid            conda-forge/linux-64::libuuid-2.32.1-h7f98852_1000
+  libuv              conda-forge/linux-64::libuv-1.41.0-h7f98852_0
+  libwebp-base       conda-forge/linux-64::libwebp-base-1.2.0-h7f98852_2
+  libxcb             conda-forge/linux-64::libxcb-1.13-h7f98852_1003
+  libxml2            conda-forge/linux-64::libxml2-2.9.12-h72842e0_0
+  lz4-c              conda-forge/linux-64::lz4-c-1.9.3-h9c3ff4c_0
+  make               conda-forge/linux-64::make-4.3-hd18ef5c_1
+  maxbin2            bioconda/linux-64::maxbin2-2.2.7-h1b792b2_3
+  metabat2           bioconda/linux-64::metabat2-2.12.1-1
+  numpy              conda-forge/linux-64::numpy-1.20.3-py38h9894fe3_1
+  pango              conda-forge/linux-64::pango-1.48.5-hb8ff022_0
+  pcre               conda-forge/linux-64::pcre-8.44-he1b5a44_0
+  pcre2              conda-forge/linux-64::pcre2-10.36-h032f7d1_1
+  perl               conda-forge/linux-64::perl-5.26.2-h36c2ea0_1008
+  perl-encode        bioconda/linux-64::perl-encode-2.88-pl526_1
+  perl-encode-locale bioconda/linux-64::perl-encode-locale-1.05-pl526_6
+  perl-exporter      bioconda/linux-64::perl-exporter-5.72-pl526_1
+  perl-lwp-simple    bioconda/linux-64::perl-lwp-simple-6.15-pl526h470a237_4
+  perl-parent        bioconda/linux-64::perl-parent-0.236-pl526_1
+  pip                conda-forge/noarch::pip-21.1.2-pyhd8ed1ab_0
+  pixman             conda-forge/linux-64::pixman-0.40.0-h36c2ea0_0
+  pplacer            bioconda/linux-64::pplacer-1.1.alpha19-h9ee0642_2
+  prodigal           bioconda/linux-64::prodigal-2.6.3-h779adbc_3
+  pthread-stubs      conda-forge/linux-64::pthread-stubs-0.4-h36c2ea0_1001
+  python_abi         conda-forge/linux-64::python_abi-3.8-1_cp38
+  r-base             conda-forge/linux-64::r-base-4.1.0-h9e01966_1
+  r-bitops           conda-forge/linux-64::r-bitops-1.0_7-r41hcfec24a_0
+  r-catools          conda-forge/linux-64::r-catools-1.18.2-r41h03ef668_0
+  r-gplots           conda-forge/noarch::r-gplots-3.1.1-r41hc72bb7e_0
+  r-gtools           conda-forge/linux-64::r-gtools-3.8.2-r41hcfec24a_1
+  r-kernsmooth       conda-forge/linux-64::r-kernsmooth-2.23_20-r41h742201e_0
+  rhash              conda-forge/linux-64::rhash-1.4.1-h7f98852_0
+  samtools           bioconda/linux-64::samtools-1.12-h9aed4be_1
+  sed                conda-forge/linux-64::sed-4.8-he412f7d_0
+  subread            bioconda/linux-64::subread-2.0.1-h5bf99c6_1
+  sysroot_linux-64   conda-forge/noarch::sysroot_linux-64-2.12-h77966d4_13
+  tar                conda-forge/linux-64::tar-1.34-ha1f6473_0
+  tktable            conda-forge/linux-64::tktable-2.10-hb7b940f_3
+  wheel              conda-forge/noarch::wheel-0.36.2-pyhd3deb0d_0
+  xorg-kbproto       conda-forge/linux-64::xorg-kbproto-1.0.7-h7f98852_1002
+  xorg-libice        conda-forge/linux-64::xorg-libice-1.0.10-h7f98852_0
+  xorg-libsm         conda-forge/linux-64::xorg-libsm-1.2.3-hd9c2040_1000
+  xorg-libx11        conda-forge/linux-64::xorg-libx11-1.7.1-h7f98852_0
+  xorg-libxau        conda-forge/linux-64::xorg-libxau-1.0.9-h7f98852_0
+  xorg-libxdmcp      conda-forge/linux-64::xorg-libxdmcp-1.1.3-h7f98852_0
+  xorg-libxext       conda-forge/linux-64::xorg-libxext-1.3.4-h7f98852_1
+  xorg-libxrender    conda-forge/linux-64::xorg-libxrender-0.9.10-h7f98852_1003
+  xorg-libxt         conda-forge/linux-64::xorg-libxt-1.2.1-h7f98852_2
+  xorg-renderproto   conda-forge/linux-64::xorg-renderproto-0.11.1-h7f98852_1002
+  xorg-xextproto     conda-forge/linux-64::xorg-xextproto-7.3.0-h7f98852_1002
+  xorg-xproto        conda-forge/linux-64::xorg-xproto-7.0.31-h7f98852_1007
+  zstd               conda-forge/linux-64::zstd-1.5.0-ha95c52a_0
+
+The following packages will be UPDATED:
+
+  ca-certificates    pkgs/main::ca-certificates-2021.5.25-~ --> conda-forge::ca-certificates-2021.5.30-ha878542_0
+  certifi            pkgs/main::certifi-2020.12.5-py38h06a~ --> conda-forge::certifi-2021.5.30-py38h578d9bd_0
+  ld_impl_linux-64   pkgs/main::ld_impl_linux-64-2.33.1-h5~ --> conda-forge::ld_impl_linux-64-2.35.1-hea4e1c9_2
+  libgcc-ng           pkgs/main::libgcc-ng-9.1.0-hdf63c60_0 --> conda-forge::libgcc-ng-9.3.0-h2828fa1_19
+  libstdcxx-ng       pkgs/main::libstdcxx-ng-9.1.0-hdf63c6~ --> conda-forge::libstdcxx-ng-9.3.0-h6de172a_19
+
+The following packages will be SUPERSEDED by a higher-priority channel:
+
+  _libgcc_mutex           pkgs/main::_libgcc_mutex-0.1-main --> conda-forge::_libgcc_mutex-0.1-conda_forge
+  conda              pkgs/main::conda-4.10.1-py38h06a4308_1 --> conda-forge::conda-4.10.1-py38h578d9bd_0
+  openssl              pkgs/main::openssl-1.1.1k-h27cfd23_0 --> conda-forge::openssl-1.1.1k-h7f98852_0
+
+
+Proceed ([y]/n)? 
+
+Downloading and Extracting Packages
+liblapack-3.9.0      | 11 KB     |            |   0% liblapack-3.9.0      | 11 KB     | ########## | 100% liblapack-3.9.0      | 11 KB     | ########## | 100% 
+rhash-1.4.1          | 192 KB    |            |   0% rhash-1.4.1          | 192 KB    | ########## | 100% rhash-1.4.1          | 192 KB    | ########## | 100% 
+tar-1.34             | 904 KB    |            |   0% tar-1.34             | 904 KB    | ########## | 100% tar-1.34             | 904 KB    | ########## | 100% 
+harfbuzz-2.8.1       | 1.9 MB    |            |   0% harfbuzz-2.8.1       | 1.9 MB    | ########7  |  87% harfbuzz-2.8.1       | 1.9 MB    | ########## | 100% 
+numpy-1.20.3         | 5.8 MB    |            |   0% numpy-1.20.3         | 5.8 MB    |            |   0% numpy-1.20.3         | 5.8 MB    | ########## | 100% numpy-1.20.3         | 5.8 MB    | ########## | 100% 
+fribidi-1.0.10       | 112 KB    |            |   0% fribidi-1.0.10       | 112 KB    | ########## | 100% 
+maxbin2-2.2.7        | 2.7 MB    |            |   0% maxbin2-2.2.7        | 2.7 MB    |            |   1% maxbin2-2.2.7        | 2.7 MB    | 9          |   9% maxbin2-2.2.7        | 2.7 MB    | ###2       |  33% maxbin2-2.2.7        | 2.7 MB    | #######4   |  75% maxbin2-2.2.7        | 2.7 MB    | ########## | 100% maxbin2-2.2.7        | 2.7 MB    | ########## | 100% 
+jpeg-9d              | 264 KB    |            |   0% jpeg-9d              | 264 KB    | ########## | 100% 
+htslib-1.12          | 2.1 MB    |            |   0% htslib-1.12          | 2.1 MB    | ########## | 100% htslib-1.12          | 2.1 MB    | ########## | 100% 
+bzip2-1.0.8          | 484 KB    |            |   0% bzip2-1.0.8          | 484 KB    | ########## | 100% bzip2-1.0.8          | 484 KB    | ########## | 100% 
+tktable-2.10         | 89 KB     |            |   0% tktable-2.10         | 89 KB     | ########## | 100% 
+_r-mutex-1.0.1       | 3 KB      |            |   0% _r-mutex-1.0.1       | 3 KB      | ########## | 100% 
+sed-4.8              | 264 KB    |            |   0% sed-4.8              | 264 KB    | ########## | 100% sed-4.8              | 264 KB    | ########## | 100% 
+samtools-1.12        | 386 KB    |            |   0% samtools-1.12        | 386 KB    | ########## | 100% samtools-1.12        | 386 KB    | ########## | 100% 
+libgcc-ng-9.3.0      | 7.8 MB    |            |   0% libgcc-ng-9.3.0      | 7.8 MB    |            |   0% libgcc-ng-9.3.0      | 7.8 MB    | 2          |   2% libgcc-ng-9.3.0      | 7.8 MB    | 6          |   7% libgcc-ng-9.3.0      | 7.8 MB    | ###2       |  33% libgcc-ng-9.3.0      | 7.8 MB    | #####2     |  53% libgcc-ng-9.3.0      | 7.8 MB    | ######4    |  65% libgcc-ng-9.3.0      | 7.8 MB    | #######6   |  77% libgcc-ng-9.3.0      | 7.8 MB    | ########## | 100% libgcc-ng-9.3.0      | 7.8 MB    | ########## | 100% 
+hmmer-3.3.2          | 9.6 MB    |            |   0% hmmer-3.3.2          | 9.6 MB    |            |   0% hmmer-3.3.2          | 9.6 MB    | 7          |   8% hmmer-3.3.2          | 9.6 MB    | #9         |  19% hmmer-3.3.2          | 9.6 MB    | ####3      |  43% hmmer-3.3.2          | 9.6 MB    | ######1    |  62% hmmer-3.3.2          | 9.6 MB    | ########3  |  84% hmmer-3.3.2          | 9.6 MB    | ########## | 100% hmmer-3.3.2          | 9.6 MB    | ########## | 100% 
+curl-7.77.0          | 149 KB    |            |   0% curl-7.77.0          | 149 KB    | ########## | 100% 
+fontconfig-2.13.1    | 357 KB    |            |   0% fontconfig-2.13.1    | 357 KB    | ########## | 100% fontconfig-2.13.1    | 357 KB    | ########## | 100% 
+lerc-2.2.1           | 213 KB    |            |   0% lerc-2.2.1           | 213 KB    | ########## | 100% 
+icu-68.1             | 13.0 MB   |            |   0% icu-68.1             | 13.0 MB   | ###        |  30% icu-68.1             | 13.0 MB   | ######4    |  65% icu-68.1             | 13.0 MB   | #########8 |  99% icu-68.1             | 13.0 MB   | ########## | 100% 
+libxml2-2.9.12       | 772 KB    |            |   0% libxml2-2.9.12       | 772 KB    | ########## | 100% libxml2-2.9.12       | 772 KB    | ########## | 100% 
+libgcc-devel_linux-6 | 4.0 MB    |            |   0% libgcc-devel_linux-6 | 4.0 MB    | ########## | 100% libgcc-devel_linux-6 | 4.0 MB    | ########## | 100% 
+xorg-libx11-1.7.1    | 946 KB    |            |   0% xorg-libx11-1.7.1    | 946 KB    | ########## | 100% xorg-libx11-1.7.1    | 946 KB    | ########## | 100% 
+xorg-renderproto-0.1 | 9 KB      |            |   0% xorg-renderproto-0.1 | 9 KB      | ########## | 100% 
+gcc_linux-64-9.3.0   | 23 KB     |            |   0% gcc_linux-64-9.3.0   | 23 KB     | ########## | 100% 
+libcblas-3.9.0       | 11 KB     |            |   0% libcblas-3.9.0       | 11 KB     | ########## | 100% 
+xorg-libxt-1.2.1     | 375 KB    |            |   0% xorg-libxt-1.2.1     | 375 KB    | ########## | 100% 
+libstdcxx-devel_linu | 14.0 MB   |            |   0% libstdcxx-devel_linu | 14.0 MB   | ##4        |  24% libstdcxx-devel_linu | 14.0 MB   | #####9     |  60% libstdcxx-devel_linu | 14.0 MB   | ########## | 100% libstdcxx-devel_linu | 14.0 MB   | ########## | 100% 
+pthread-stubs-0.4    | 5 KB      |            |   0% pthread-stubs-0.4    | 5 KB      | ########## | 100% 
+libgfortran5-9.3.0   | 2.0 MB    |            |   0% libgfortran5-9.3.0   | 2.0 MB    | ########## | 100% libgfortran5-9.3.0   | 2.0 MB    | ########## | 100% 
+ld_impl_linux-64-2.3 | 618 KB    |            |   0% ld_impl_linux-64-2.3 | 618 KB    | ########## | 100% ld_impl_linux-64-2.3 | 618 KB    | ########## | 100% 
+r-kernsmooth-2.23_20 | 104 KB    |            |   0% r-kernsmooth-2.23_20 | 104 KB    | ########## | 100% 
+bwidget-1.9.14       | 119 KB    |            |   0% bwidget-1.9.14       | 119 KB    | ########## | 100% 
+xorg-libxau-1.0.9    | 13 KB     |            |   0% xorg-libxau-1.0.9    | 13 KB     | ########## | 100% 
+libuv-1.41.0         | 1.0 MB    |            |   0% libuv-1.41.0         | 1.0 MB    | ########## | 100% libuv-1.41.0         | 1.0 MB    | ########## | 100% 
+gettext-0.19.8.1     | 3.6 MB    |            |   0% gettext-0.19.8.1     | 3.6 MB    | ########## | 100% gettext-0.19.8.1     | 3.6 MB    | ########## | 100% 
+_libgcc_mutex-0.1    | 3 KB      |            |   0% _libgcc_mutex-0.1    | 3 KB      | ########## | 100% 
+graphite2-1.3.13     | 102 KB    |            |   0% graphite2-1.3.13     | 102 KB    | ########## | 100% 
+bwa-0.7.17           | 608 KB    |            |   0% bwa-0.7.17           | 608 KB    | ########## | 100% bwa-0.7.17           | 608 KB    | ########## | 100% 
+libnghttp2-1.43.0    | 808 KB    |            |   0% libnghttp2-1.43.0    | 808 KB    | ########## | 100% 
+gxx_impl_linux-64-9. | 10.7 MB   |            |   0% gxx_impl_linux-64-9. | 10.7 MB   | 3          |   3% gxx_impl_linux-64-9. | 10.7 MB   | ##6        |  27% gxx_impl_linux-64-9. | 10.7 MB   | ######1    |  61% gxx_impl_linux-64-9. | 10.7 MB   | ########## | 100% gxx_impl_linux-64-9. | 10.7 MB   | ########## | 100% 
+r-base-4.1.0         | 24.8 MB   |            |   0% r-base-4.1.0         | 24.8 MB   | #5         |  15% r-base-4.1.0         | 24.8 MB   | ####5      |  46% r-base-4.1.0         | 24.8 MB   | #######6   |  76% r-base-4.1.0         | 24.8 MB   | ########## | 100% r-base-4.1.0         | 24.8 MB   | ########## | 100% 
+cairo-1.16.0         | 1.5 MB    |            |   0% cairo-1.16.0         | 1.5 MB    | ########## | 100% cairo-1.16.0         | 1.5 MB    | ########## | 100% 
+xorg-libice-1.0.10   | 58 KB     |            |   0% xorg-libice-1.0.10   | 58 KB     | ########## | 100% 
+pcre2-10.36          | 1.1 MB    |            |   0% pcre2-10.36          | 1.1 MB    | ########## | 100% pcre2-10.36          | 1.1 MB    | ########## | 100% 
+libssh2-1.9.0        | 226 KB    |            |   0% libssh2-1.9.0        | 226 KB    | ########## | 100% 
+gsl-2.6              | 3.2 MB    |            |   0% gsl-2.6              | 3.2 MB    | ########## | 100% gsl-2.6              | 3.2 MB    | ########## | 100% 
+gfortran_impl_linux- | 10.1 MB   |            |   0% gfortran_impl_linux- | 10.1 MB   | ######4    |  65% gfortran_impl_linux- | 10.1 MB   | ########## | 100% gfortran_impl_linux- | 10.1 MB   | ########## | 100% 
+xorg-libxext-1.3.4   | 54 KB     |            |   0% xorg-libxext-1.3.4   | 54 KB     | ########## | 100% 
+font-ttf-dejavu-sans | 388 KB    |            |   0% font-ttf-dejavu-sans | 388 KB    | ########## | 100% 
+c-ares-1.17.1        | 109 KB    |            |   0% c-ares-1.17.1        | 109 KB    | ########## | 100% 
+prodigal-2.6.3       | 776 KB    |            |   0% prodigal-2.6.3       | 776 KB    | 2          |   2% prodigal-2.6.3       | 776 KB    | ########## | 100% prodigal-2.6.3       | 776 KB    | ########## | 100% 
+libtiff-4.3.0        | 668 KB    |            |   0% libtiff-4.3.0        | 668 KB    | ########## | 100% libtiff-4.3.0        | 668 KB    | ########## | 100% 
+libgomp-9.3.0        | 376 KB    |            |   0% libgomp-9.3.0        | 376 KB    | ########## | 100% 
+perl-5.26.2          | 15.4 MB   |            |   0% perl-5.26.2          | 15.4 MB   | #9         |  20% perl-5.26.2          | 15.4 MB   | ###6       |  37% perl-5.26.2          | 15.4 MB   | #######6   |  77% perl-5.26.2          | 15.4 MB   | ########## | 100% perl-5.26.2          | 15.4 MB   | ########## | 100% 
+biopython-1.78       | 2.6 MB    |            |   0% biopython-1.78       | 2.6 MB    | ########## | 100% biopython-1.78       | 2.6 MB    | ########## | 100% 
+gxx_linux-64-9.3.0   | 23 KB     |            |   0% gxx_linux-64-9.3.0   | 23 KB     | ########## | 100% 
+pixman-0.40.0        | 627 KB    |            |   0% pixman-0.40.0        | 627 KB    | ########## | 100% pixman-0.40.0        | 627 KB    | ########## | 100% 
+font-ttf-ubuntu-0.83 | 1.9 MB    |            |   0% font-ttf-ubuntu-0.83 | 1.9 MB    | ########## | 100% font-ttf-ubuntu-0.83 | 1.9 MB    | ########## | 100% 
+subread-2.0.1        | 22.8 MB   |            |   0% subread-2.0.1        | 22.8 MB   |            |   0% subread-2.0.1        | 22.8 MB   | 1          |   1% subread-2.0.1        | 22.8 MB   | 3          |   3% subread-2.0.1        | 22.8 MB   | 7          |   7% subread-2.0.1        | 22.8 MB   | #4         |  14% subread-2.0.1        | 22.8 MB   | ##2        |  22% subread-2.0.1        | 22.8 MB   | ###1       |  31% subread-2.0.1        | 22.8 MB   | ####2      |  43% subread-2.0.1        | 22.8 MB   | #####      |  50% subread-2.0.1        | 22.8 MB   | ######     |  60% subread-2.0.1        | 22.8 MB   | ######9    |  69% subread-2.0.1        | 22.8 MB   | #######8   |  79% subread-2.0.1        | 22.8 MB   | ########7  |  87% subread-2.0.1        | 22.8 MB   | #########6 |  97% subread-2.0.1        | 22.8 MB   | ########## | 100% 
+libpng-1.6.37        | 306 KB    |            |   0% libpng-1.6.37        | 306 KB    | ########## | 100% libpng-1.6.37        | 306 KB    | ########## | 100% 
+perl-parent-0.236    | 5 KB      |            |   0% perl-parent-0.236    | 5 KB      | ########## | 100% 
+fraggenescan-1.31    | 1.4 MB    |            |   0% fraggenescan-1.31    | 1.4 MB    | 1          |   1% fraggenescan-1.31    | 1.4 MB    | ###5       |  36% fraggenescan-1.31    | 1.4 MB    | ########## | 100% fraggenescan-1.31    | 1.4 MB    | ########## | 100% 
+pango-1.48.5         | 398 KB    |            |   0% pango-1.48.5         | 398 KB    | ########## | 100% pango-1.48.5         | 398 KB    | ########## | 100% 
+cmake-3.20.3         | 14.7 MB   |            |   0% cmake-3.20.3         | 14.7 MB   |            |   0% cmake-3.20.3         | 14.7 MB   | 5          |   5% cmake-3.20.3         | 14.7 MB   | ##5        |  25% cmake-3.20.3         | 14.7 MB   | ####       |  41% cmake-3.20.3         | 14.7 MB   | #####5     |  56% cmake-3.20.3         | 14.7 MB   | ######9    |  70% cmake-3.20.3         | 14.7 MB   | ########2  |  83% cmake-3.20.3         | 14.7 MB   | #########7 |  97% cmake-3.20.3         | 14.7 MB   | ########## | 100% 
+r-gtools-3.8.2       | 333 KB    |            |   0% r-gtools-3.8.2       | 333 KB    | ########## | 100% 
+font-ttf-source-code | 684 KB    |            |   0% font-ttf-source-code | 684 KB    | ########## | 100% 
+font-ttf-inconsolata | 94 KB     |            |   0% font-ttf-inconsolata | 94 KB     | ########## | 100% 
+expat-2.4.1          | 182 KB    |            |   0% expat-2.4.1          | 182 KB    | ########## | 100% 
+_openmp_mutex-4.5    | 22 KB     |            |   0% _openmp_mutex-4.5    | 22 KB     | ########## | 100% 
+fonts-conda-ecosyste | 4 KB      |            |   0% fonts-conda-ecosyste | 4 KB      | ########## | 100% 
+gcc_impl_linux-64-9. | 43.2 MB   |            |   0% gcc_impl_linux-64-9. | 43.2 MB   | #3         |  13% gcc_impl_linux-64-9. | 43.2 MB   | ###3       |  34% gcc_impl_linux-64-9. | 43.2 MB   | ####8      |  49% gcc_impl_linux-64-9. | 43.2 MB   | ######5    |  66% gcc_impl_linux-64-9. | 43.2 MB   | ########4  |  84% gcc_impl_linux-64-9. | 43.2 MB   | ########## | 100% gcc_impl_linux-64-9. | 43.2 MB   | ########## | 100% 
+xorg-xextproto-7.3.0 | 28 KB     |            |   0% xorg-xextproto-7.3.0 | 28 KB     | ########## | 100% 
+fonts-conda-forge-1  | 4 KB      |            |   0% fonts-conda-forge-1  | 4 KB      | ########## | 100% 
+perl-encode-2.88     | 2.1 MB    |            |   0% perl-encode-2.88     | 2.1 MB    | #######2   |  73% perl-encode-2.88     | 2.1 MB    | ########## | 100% perl-encode-2.88     | 2.1 MB    | ########## | 100% 
+bowtie2-2.2.5        | 14.9 MB   |            |   0% bowtie2-2.2.5        | 14.9 MB   |            |   0% bowtie2-2.2.5        | 14.9 MB   | #5         |  15% bowtie2-2.2.5        | 14.9 MB   | ###        |  31% bowtie2-2.2.5        | 14.9 MB   | ####4      |  44% bowtie2-2.2.5        | 14.9 MB   | #####9     |  60% bowtie2-2.2.5        | 14.9 MB   | #######    |  71% bowtie2-2.2.5        | 14.9 MB   | ########5  |  85% bowtie2-2.2.5        | 14.9 MB   | #########9 | 100% bowtie2-2.2.5        | 14.9 MB   | ########## | 100% 
+libgfortran-ng-9.3.0 | 22 KB     |            |   0% libgfortran-ng-9.3.0 | 22 KB     | ########## | 100% 
+zstd-1.5.0           | 490 KB    |            |   0% zstd-1.5.0           | 490 KB    | ########## | 100% zstd-1.5.0           | 490 KB    | ########## | 100% 
+gfortran_linux-64-9. | 22 KB     |            |   0% gfortran_linux-64-9. | 22 KB     | ########## | 100% 
+libblas-3.9.0        | 11 KB     |            |   0% libblas-3.9.0        | 11 KB     | ########## | 100% 
+r-catools-1.18.2     | 222 KB    |            |   0% r-catools-1.18.2     | 222 KB    | ########## | 100% 
+libstdcxx-ng-9.3.0   | 4.0 MB    |            |   0% libstdcxx-ng-9.3.0   | 4.0 MB    | ########## | 100% libstdcxx-ng-9.3.0   | 4.0 MB    | ########## | 100% 
+xorg-libsm-1.2.3     | 26 KB     |            |   0% xorg-libsm-1.2.3     | 26 KB     | ########## | 100% 
+r-gplots-3.1.1       | 602 KB    |            |   0% r-gplots-3.1.1       | 602 KB    | ########## | 100% 
+metabat2-2.12.1      | 16.4 MB   |            |   0% metabat2-2.12.1      | 16.4 MB   |            |   0% metabat2-2.12.1      | 16.4 MB   | 5          |   6% metabat2-2.12.1      | 16.4 MB   | #4         |  15% metabat2-2.12.1      | 16.4 MB   | ##8        |  28% metabat2-2.12.1      | 16.4 MB   | ###5       |  35% metabat2-2.12.1      | 16.4 MB   | #####3     |  54% metabat2-2.12.1      | 16.4 MB   | ######7    |  67% metabat2-2.12.1      | 16.4 MB   | #######7   |  78% metabat2-2.12.1      | 16.4 MB   | ########8  |  88% metabat2-2.12.1      | 16.4 MB   | ########## | 100% metabat2-2.12.1      | 16.4 MB   | ########## | 100% 
+freetype-2.10.4      | 890 KB    |            |   0% freetype-2.10.4      | 890 KB    | ########## | 100% freetype-2.10.4      | 890 KB    | ########## | 100% 
+pcre-8.44            | 261 KB    |            |   0% pcre-8.44            | 261 KB    | ########## | 100% 
+binutils_impl_linux- | 9.3 MB    |            |   0% binutils_impl_linux- | 9.3 MB    | ###8       |  38% binutils_impl_linux- | 9.3 MB    | ########6  |  87% binutils_impl_linux- | 9.3 MB    | ########## | 100% 
+libwebp-base-1.2.0   | 815 KB    |            |   0% libwebp-base-1.2.0   | 815 KB    | ########## | 100% libwebp-base-1.2.0   | 815 KB    | ########## | 100% 
+xorg-xproto-7.0.31   | 73 KB     |            |   0% xorg-xproto-7.0.31   | 73 KB     | ########## | 100% 
+krb5-1.19.1          | 1.4 MB    |            |   0% krb5-1.19.1          | 1.4 MB    | ########## | 100% krb5-1.19.1          | 1.4 MB    | ########## | 100% 
+libdeflate-1.7       | 67 KB     |            |   0% libdeflate-1.7       | 67 KB     | ########## | 100% 
+perl-encode-locale-1 | 11 KB     |            |   0% perl-encode-locale-1 | 11 KB     | ########## | 100% perl-encode-locale-1 | 11 KB     | ########## | 100% 
+openssl-1.1.1k       | 2.1 MB    |            |   0% openssl-1.1.1k       | 2.1 MB    | ########## | 100% openssl-1.1.1k       | 2.1 MB    | ########## | 100% 
+libopenblas-0.3.15   | 9.2 MB    |            |   0% libopenblas-0.3.15   | 9.2 MB    | ####4      |  44% libopenblas-0.3.15   | 9.2 MB    | #######5   |  76% libopenblas-0.3.15   | 9.2 MB    | ########## | 100% libopenblas-0.3.15   | 9.2 MB    | ########## | 100% 
+sysroot_linux-64-2.1 | 30.2 MB   |            |   0% sysroot_linux-64-2.1 | 30.2 MB   | #7         |  17% sysroot_linux-64-2.1 | 30.2 MB   | ####2      |  43% sysroot_linux-64-2.1 | 30.2 MB   | ######7    |  67% sysroot_linux-64-2.1 | 30.2 MB   | ########7  |  88% sysroot_linux-64-2.1 | 30.2 MB   | ########## | 100% 
+libuuid-2.32.1       | 28 KB     |            |   0% libuuid-2.32.1       | 28 KB     | ########## | 100% 
+xorg-libxdmcp-1.1.3  | 19 KB     |            |   0% xorg-libxdmcp-1.1.3  | 19 KB     | ########## | 100% 
+libglib-2.68.2       | 3.1 MB    |            |   0% libglib-2.68.2       | 3.1 MB    | ########## | 100% libglib-2.68.2       | 3.1 MB    | ########## | 100% 
+libcurl-7.77.0       | 334 KB    |            |   0% libcurl-7.77.0       | 334 KB    | ########## | 100% 
+lz4-c-1.9.3          | 179 KB    |            |   0% lz4-c-1.9.3          | 179 KB    | ########## | 100% 
+perl-exporter-5.72   | 13 KB     |            |   0% perl-exporter-5.72   | 13 KB     | ########## | 100% 
+kernel-headers_linux | 707 KB    |            |   0% kernel-headers_linux | 707 KB    | ########## | 100% kernel-headers_linux | 707 KB    | ########## | 100% 
+r-bitops-1.0_7       | 44 KB     |            |   0% r-bitops-1.0_7       | 44 KB     | ########## | 100% 
+perl-lwp-simple-6.15 | 348 KB    |            |   0% perl-lwp-simple-6.15 | 348 KB    | 4          |   5% perl-lwp-simple-6.15 | 348 KB    | ########## | 100% 
+jbig-2.1             | 43 KB     |            |   0% jbig-2.1             | 43 KB     | ########## | 100% 
+libiconv-1.16        | 1.4 MB    |            |   0% libiconv-1.16        | 1.4 MB    | ########## | 100% libiconv-1.16        | 1.4 MB    | ########## | 100% 
+xorg-libxrender-0.9. | 32 KB     |            |   0% xorg-libxrender-0.9. | 32 KB     | ########## | 100% 
+binutils_linux-64-2. | 22 KB     |            |   0% binutils_linux-64-2. | 22 KB     | ########## | 100% 
+libxcb-1.13          | 395 KB    |            |   0% libxcb-1.13          | 395 KB    | ########## | 100% 
+xorg-kbproto-1.0.7   | 27 KB     |            |   0% xorg-kbproto-1.0.7   | 27 KB     | ########## | 100% 
+libev-4.33           | 104 KB    |            |   0% libev-4.33           | 104 KB    | ########## | 100% 
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
++ mkdir /installs
++ cd /installs
++ git clone https://github.com/macroevolution/bamm.git
+Cloning into 'bamm'...
++ /bin/bash -c . /opt/conda/etc/profile.d/conda.sh ;  conda activate; cd /installs/bamm && mkdir build && cd build && cmake .. && make -j 4 && make install
+CMake Deprecation Warning at CMakeLists.txt:1 (CMAKE_MINIMUM_REQUIRED):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The C compiler identification is GNU 9.3.0
+-- The CXX compiler identification is GNU 9.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/conda/bin/x86_64-conda-linux-gnu-cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/conda/bin/x86_64-conda-linux-gnu-c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /installs/bamm/build
+[  1%] Building CXX object CMakeFiles/bamm.dir/src/AcceptanceDataWriter.cpp.o
+[  3%] Building CXX object CMakeFiles/bamm.dir/src/BetaInitProposal.cpp.o
+[  5%] Building CXX object CMakeFiles/bamm.dir/src/BetaShiftProposal.cpp.o
+[  7%] Building CXX object CMakeFiles/bamm.dir/src/BetaTimeModeProposal.cpp.o
+[  9%] Building CXX object CMakeFiles/bamm.dir/src/BranchEvent.cpp.o
+[ 11%] Building CXX object CMakeFiles/bamm.dir/src/BranchHistory.cpp.o
+[ 13%] Building CXX object CMakeFiles/bamm.dir/src/ChainSwapDataWriter.cpp.o
+[ 15%] Building CXX object CMakeFiles/bamm.dir/src/CommandLineProcessor.cpp.o
+[ 16%] Building CXX object CMakeFiles/bamm.dir/src/EventCountLog.cpp.o
+[ 18%] Building CXX object CMakeFiles/bamm.dir/src/EventDataWriter.cpp.o
+[ 20%] Building CXX object CMakeFiles/bamm.dir/src/EventNumberForBranchProposal.cpp.o
+[ 22%] Building CXX object CMakeFiles/bamm.dir/src/EventNumberProposal.cpp.o
+[ 24%] Building CXX object CMakeFiles/bamm.dir/src/EventParameterProposal.cpp.o
+[ 26%] Building CXX object CMakeFiles/bamm.dir/src/EventRateProposal.cpp.o
+[ 28%] Building CXX object CMakeFiles/bamm.dir/src/FastSimulatePrior.cpp.o
+[ 30%] Building CXX object CMakeFiles/bamm.dir/src/LambdaInitProposal.cpp.o
+[ 32%] Building CXX object CMakeFiles/bamm.dir/src/LambdaShiftProposal.cpp.o
+[ 33%] Building CXX object CMakeFiles/bamm.dir/src/LambdaTimeModeProposal.cpp.o
+[ 35%] Building CXX object CMakeFiles/bamm.dir/src/Log.cpp.o
+[ 37%] Building CXX object CMakeFiles/bamm.dir/src/MCMC.cpp.o
+[ 39%] Building CXX object CMakeFiles/bamm.dir/src/MCMCDataWriter.cpp.o
+[ 41%] Building CXX object CMakeFiles/bamm.dir/src/MbRandom.cpp.o
+[ 43%] Building CXX object CMakeFiles/bamm.dir/src/MetropolisCoupledMCMC.cpp.o
+[ 45%] Building CXX object CMakeFiles/bamm.dir/src/Model.cpp.o
+[ 47%] Building CXX object CMakeFiles/bamm.dir/src/ModelDataWriter.cpp.o
+[ 49%] Building CXX object CMakeFiles/bamm.dir/src/MoveEventProposal.cpp.o
+[ 50%] Building CXX object CMakeFiles/bamm.dir/src/MuInitProposal.cpp.o
+[ 52%] Building CXX object CMakeFiles/bamm.dir/src/MuShiftProposal.cpp.o
+[ 54%] Building CXX object CMakeFiles/bamm.dir/src/NewickTreeReader.cpp.o
+[ 56%] Building CXX object CMakeFiles/bamm.dir/src/Node.cpp.o
+[ 58%] Building CXX object CMakeFiles/bamm.dir/src/NodeStateDataWriter.cpp.o
+[ 60%] Building CXX object CMakeFiles/bamm.dir/src/NodeStateProposal.cpp.o
+[ 62%] Building CXX object CMakeFiles/bamm.dir/src/PreservationRateProposal.cpp.o
+[ 64%] Building CXX object CMakeFiles/bamm.dir/src/Prior.cpp.o
+[ 66%] Building CXX object CMakeFiles/bamm.dir/src/Proposal.cpp.o
+[ 67%] Building CXX object CMakeFiles/bamm.dir/src/Random.cpp.o
+[ 69%] Building CXX object CMakeFiles/bamm.dir/src/Settings.cpp.o
+/installs/bamm/src/Prior.cpp: In member function 'double Prior::preservationRatePrior(double)':
+/installs/bamm/src/Prior.cpp:294:44: warning: unused parameter 'x' [-Wunused-parameter]
+  294 | double Prior::preservationRatePrior(double x)
+      |                                     ~~~~~~~^
+[ 71%] Building CXX object CMakeFiles/bamm.dir/src/SettingsParameter.cpp.o
+[ 73%] Building CXX object CMakeFiles/bamm.dir/src/SpExBranchEvent.cpp.o
+/installs/bamm/src/Settings.cpp: In member function 'void Settings::validateSettings()':
+/installs/bamm/src/Settings.cpp:597:17: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+  597 |     if (poisson < minval & expected < minval){
+      |         ~~~~~~~~^~~~~~~~
+/installs/bamm/src/Settings.cpp:604:17: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+  604 |     if (poisson < minval & expected >= minval){
+      |         ~~~~~~~~^~~~~~~~
+[ 75%] Building CXX object CMakeFiles/bamm.dir/src/SpExDataWriter.cpp.o
+[ 77%] Building CXX object CMakeFiles/bamm.dir/src/SpExEventDataWriter.cpp.o
+[ 79%] Building CXX object CMakeFiles/bamm.dir/src/SpExModel.cpp.o
+[ 81%] Building CXX object CMakeFiles/bamm.dir/src/Stat.cpp.o
+[ 83%] Building CXX object CMakeFiles/bamm.dir/src/StdOutDataWriter.cpp.o
+[ 84%] Building CXX object CMakeFiles/bamm.dir/src/TimeModeProposal.cpp.o
+/installs/bamm/src/SpExModel.cpp: In member function 'void SpExModel::initializeHasPaleoData()':
+/installs/bamm/src/SpExModel.cpp:215:28: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+  215 |     if (_numberOccurrences > 0 & _settings.get<double>("preservationRateInit") < 0.000000001){
+      |         ~~~~~~~~~~~~~~~~~~~^~~
+/installs/bamm/src/SpExModel.cpp: In member function 'virtual double SpExModel::computeLogLikelihood()':
+/installs/bamm/src/SpExModel.cpp:495:32: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+  495 |                 if (left_shift == true & right_shift == true){
+      |                     ~~~~~~~~~~~^~~~~~~
+/installs/bamm/src/SpExModel.cpp:497:38: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+  497 |                 }else if (left_shift == true & right_shift == false){
+      |                           ~~~~~~~~~~~^~~~~~~
+/installs/bamm/src/SpExModel.cpp:499:38: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+  499 |                 }else if (left_shift == false & right_shift == true){
+      |                           ~~~~~~~~~~~^~~~~~~~
+/installs/bamm/src/SpExModel.cpp:501:38: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+  501 |                 }else if (left_shift == false & right_shift == false){
+      |                           ~~~~~~~~~~~^~~~~~~~
+/installs/bamm/src/SpExModel.cpp: In member function 'double SpExModel::computeSpExProbBranch(Node*)':
+/installs/bamm/src/SpExModel.cpp:585:28: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+  585 |     if (node->isInternal() == false & isExtant == false){
+      |         ~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/installs/bamm/src/SpExModel.cpp:662:35: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+  662 |         if (be->getAbsoluteTime() >= abs_start_time & be->getAbsoluteTime() < abs_end_time & be != _rootEvent){
+      |             ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/installs/bamm/src/SpExModel.cpp:662:97: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+  662 |         if (be->getAbsoluteTime() >= abs_start_time & be->getAbsoluteTime() < abs_end_time & be != _rootEvent){
+      |                                                                                              ~~~^~~~~~~~~~~~~
+/installs/bamm/src/SpExModel.cpp:792:16: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+  792 |     if (parent == _tree->getRoot() & _conditionOnSurvival == true){
+      |         ~~~~~~~^~~~~~~~~~~~~~~~~~~
+/installs/bamm/src/SpExModel.cpp:563:10: warning: variable 'recompute_E0' set but not used [-Wunused-but-set-variable]
+  563 |     bool recompute_E0 = false;
+      |          ^~~~~~~~~~~~
+[ 86%] Building CXX object CMakeFiles/bamm.dir/src/Tools.cpp.o
+[ 88%] Building CXX object CMakeFiles/bamm.dir/src/TraitBranchEvent.cpp.o
+[ 90%] Building CXX object CMakeFiles/bamm.dir/src/TraitDataWriter.cpp.o
+[ 92%] Building CXX object CMakeFiles/bamm.dir/src/TraitEventDataWriter.cpp.o
+[ 94%] Building CXX object CMakeFiles/bamm.dir/src/TraitModel.cpp.o
+[ 96%] Building CXX object CMakeFiles/bamm.dir/src/Tree.cpp.o
+[ 98%] Building CXX object CMakeFiles/bamm.dir/src/main.cpp.o
+[100%] Linking CXX executable bamm
+[100%] Built target bamm
+Consolidate compiler generated dependencies of target bamm
+[100%] Built target bamm
+Install the project...
+-- Install configuration: ""
+-- Installing: /usr/local/bin/bamm
++ pip install --no-cache-dir Binsanity
+Collecting Binsanity
+  Downloading Binsanity-0.5.4-py3-none-any.whl (56 kB)
+Collecting pandas>=0.13.0
+  Downloading pandas-1.2.4-cp38-cp38-manylinux1_x86_64.whl (9.7 MB)
+Collecting checkm-genome
+  Downloading checkm-genome-1.1.3.tar.gz (118 kB)
+Collecting scipy>=0.13.0
+  Downloading scipy-1.6.3-cp38-cp38-manylinux1_x86_64.whl (27.2 MB)
+Collecting scikit-learn>=0.23
+  Downloading scikit_learn-0.24.2-cp38-cp38-manylinux2010_x86_64.whl (24.9 MB)
+Requirement already satisfied: biopython in /opt/conda/lib/python3.8/site-packages (from Binsanity) (1.78)
+Collecting pytz>=2017.3
+  Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
+Collecting python-dateutil>=2.7.3
+  Downloading python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Requirement already satisfied: numpy>=1.16.5 in /opt/conda/lib/python3.8/site-packages (from pandas>=0.13.0->Binsanity) (1.20.3)
+Requirement already satisfied: six>=1.5 in /opt/conda/lib/python3.8/site-packages (from python-dateutil>=2.7.3->pandas>=0.13.0->Binsanity) (1.15.0)
+Collecting joblib>=0.11
+  Downloading joblib-1.0.1-py3-none-any.whl (303 kB)
+Collecting threadpoolctl>=2.0.0
+  Downloading threadpoolctl-2.1.0-py3-none-any.whl (12 kB)
+Collecting matplotlib>=2.1.0
+  Downloading matplotlib-3.4.2-cp38-cp38-manylinux1_x86_64.whl (10.3 MB)
+Collecting pysam>=0.12.0.1
+  Downloading pysam-0.16.0.1-cp38-cp38-manylinux1_x86_64.whl (10.2 MB)
+Collecting dendropy>=4.4.0
+  Downloading DendroPy-4.5.2.tar.gz (15.2 MB)
+Requirement already satisfied: setuptools in /opt/conda/lib/python3.8/site-packages (from checkm-genome->Binsanity) (52.0.0.post20210125)
+Collecting pillow>=6.2.0
+  Downloading Pillow-8.2.0-cp38-cp38-manylinux1_x86_64.whl (3.0 MB)
+Collecting pyparsing>=2.2.1
+  Downloading pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)
+Collecting kiwisolver>=1.0.1
+  Downloading kiwisolver-1.3.1-cp38-cp38-manylinux1_x86_64.whl (1.2 MB)
+Collecting cycler>=0.10
+  Downloading cycler-0.10.0-py2.py3-none-any.whl (6.5 kB)
+Building wheels for collected packages: checkm-genome, dendropy
+  Building wheel for checkm-genome (setup.py): started
+  Building wheel for checkm-genome (setup.py): finished with status 'done'
+  Created wheel for checkm-genome: filename=checkm_genome-1.1.3-py3-none-any.whl size=159023 sha256=b0715e147856c3315f52c9602d8bcd9f9139a41945654cf01a2ff9a0109373cd
+  Stored in directory: /tmp/pip-ephem-wheel-cache-12cpgwd0/wheels/2b/5b/f6/d71e855ca2a66c47d87d9dbac3599b8a036cb5157318100afa
+  Building wheel for dendropy (setup.py): started
+  Building wheel for dendropy (setup.py): finished with status 'done'
+  Created wheel for dendropy: filename=DendroPy-4.5.2-py3-none-any.whl size=453160 sha256=582ee15bac4e1f7a58235f86b201937a6fb7da44e1d5fccd26afbf57d2ef2e13
+  Stored in directory: /tmp/pip-ephem-wheel-cache-12cpgwd0/wheels/b2/40/33/50989096ef3b166cc37900f31624c157c7440a49bba57a951c
+Successfully built checkm-genome dendropy
+Installing collected packages: python-dateutil, pyparsing, pillow, kiwisolver, cycler, threadpoolctl, scipy, pytz, pysam, matplotlib, joblib, dendropy, scikit-learn, pandas, checkm-genome, Binsanity
+Successfully installed Binsanity-0.5.4 checkm-genome-1.1.3 cycler-0.10.0 dendropy-4.5.2 joblib-1.0.1 kiwisolver-1.3.1 matplotlib-3.4.2 pandas-1.2.4 pillow-8.2.0 pyparsing-2.4.7 pysam-0.16.0.1 python-dateutil-2.8.1 pytz-2021.1 scikit-learn-0.24.2 scipy-1.6.3 threadpoolctl-2.1.0
+WARNING: Running pip as root will break packages and permissions. You should install packages reliably by using venv: https://pip.pypa.io/warnings/venv
++ cd /installs
++ git clone https://github.com/minillinim/GroopM.git
+Cloning into 'GroopM'...
++ cd GroopM
++ pip install .
+Processing /installs/GroopM
+  DEPRECATION: A future pip version will change local packages to be built in-place without first copying to a temporary directory. We recommend you use --use-feature=in-tree-build to test your packages with this new behavior before it becomes the default.
+   pip 21.3 will remove support for this functionality. You can find discussion regarding this at https://github.com/pypa/pip/issues/7555.
+Requirement already satisfied: numpy>=1.6.1 in /opt/conda/lib/python3.8/site-packages (from GroopM==2.0.0) (1.20.3)
+Requirement already satisfied: scipy>=0.15.0 in /opt/conda/lib/python3.8/site-packages (from GroopM==2.0.0) (1.6.3)
+Collecting sklearn
+  Downloading sklearn-0.0.tar.gz (1.1 kB)
+Requirement already satisfied: pandas>=1.0.3 in /opt/conda/lib/python3.8/site-packages (from GroopM==2.0.0) (1.2.4)
+Requirement already satisfied: matplotlib>=1.1.0 in /opt/conda/lib/python3.8/site-packages (from GroopM==2.0.0) (3.4.2)
+Collecting tables>=2.3
+  Downloading tables-3.6.1-cp38-cp38-manylinux1_x86_64.whl (4.3 MB)
+Collecting imageio>=2.8.0
+  Downloading imageio-2.9.0-py3-none-any.whl (3.3 MB)
+Collecting umap-learn>=0.4.5
+  Downloading umap-learn-0.5.1.tar.gz (80 kB)
+Requirement already satisfied: pillow in /opt/conda/lib/python3.8/site-packages (from imageio>=2.8.0->GroopM==2.0.0) (8.2.0)
+Requirement already satisfied: pyparsing>=2.2.1 in /opt/conda/lib/python3.8/site-packages (from matplotlib>=1.1.0->GroopM==2.0.0) (2.4.7)
+Requirement already satisfied: python-dateutil>=2.7 in /opt/conda/lib/python3.8/site-packages (from matplotlib>=1.1.0->GroopM==2.0.0) (2.8.1)
+Requirement already satisfied: cycler>=0.10 in /opt/conda/lib/python3.8/site-packages (from matplotlib>=1.1.0->GroopM==2.0.0) (0.10.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /opt/conda/lib/python3.8/site-packages (from matplotlib>=1.1.0->GroopM==2.0.0) (1.3.1)
+Requirement already satisfied: six in /opt/conda/lib/python3.8/site-packages (from cycler>=0.10->matplotlib>=1.1.0->GroopM==2.0.0) (1.15.0)
+Requirement already satisfied: pytz>=2017.3 in /opt/conda/lib/python3.8/site-packages (from pandas>=1.0.3->GroopM==2.0.0) (2021.1)
+Collecting numexpr>=2.6.2
+  Downloading numexpr-2.7.3-cp38-cp38-manylinux2010_x86_64.whl (473 kB)
+Requirement already satisfied: scikit-learn>=0.22 in /opt/conda/lib/python3.8/site-packages (from umap-learn>=0.4.5->GroopM==2.0.0) (0.24.2)
+Collecting numba>=0.49
+  Downloading numba-0.53.1-cp38-cp38-manylinux2014_x86_64.whl (3.4 MB)
+Collecting pynndescent>=0.5
+  Downloading pynndescent-0.5.2.tar.gz (1.1 MB)
+Requirement already satisfied: setuptools in /opt/conda/lib/python3.8/site-packages (from numba>=0.49->umap-learn>=0.4.5->GroopM==2.0.0) (52.0.0.post20210125)
+Collecting llvmlite<0.37,>=0.36.0rc1
+  Downloading llvmlite-0.36.0-cp38-cp38-manylinux2010_x86_64.whl (25.3 MB)
+Requirement already satisfied: joblib>=0.11 in /opt/conda/lib/python3.8/site-packages (from pynndescent>=0.5->umap-learn>=0.4.5->GroopM==2.0.0) (1.0.1)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /opt/conda/lib/python3.8/site-packages (from scikit-learn>=0.22->umap-learn>=0.4.5->GroopM==2.0.0) (2.1.0)
+Building wheels for collected packages: GroopM, umap-learn, pynndescent, sklearn
+  Building wheel for GroopM (setup.py): started
+  Building wheel for GroopM (setup.py): finished with status 'done'
+  Created wheel for GroopM: filename=GroopM-2.0.0-py3-none-any.whl size=140358 sha256=ff17f4c4ef1d7cb22676813af162a35d7986177cb916413937a340f2d05d18b7
+  Stored in directory: /tmp/pip-ephem-wheel-cache-kawjqt7k/wheels/b2/6a/c7/771071311cf118c4785d4d98d75f2d7e650b2f8a0390fed0a9
+  Building wheel for umap-learn (setup.py): started
+  Building wheel for umap-learn (setup.py): finished with status 'done'
+  Created wheel for umap-learn: filename=umap_learn-0.5.1-py3-none-any.whl size=76566 sha256=edde8462fc426b9002dbe4a140153d8cd706960d0994a6ff6571eeaf60c9026d
+  Stored in directory: /root/.cache/pip/wheels/95/85/b7/b4b7040e49367b6d1505d7e8fb57e3e79b22fa6ac26f72520b
+  Building wheel for pynndescent (setup.py): started
+  Building wheel for pynndescent (setup.py): finished with status 'done'
+  Created wheel for pynndescent: filename=pynndescent-0.5.2-py3-none-any.whl size=51347 sha256=3a1f6374416ec392b140384e5df87ea2d1ab3254f96766ea27ac6ee869cef4db
+  Stored in directory: /root/.cache/pip/wheels/bb/81/5d/c78c8f15f3c815197129f91ec435d8ae0bb0a7a856d962c3ce
+  Building wheel for sklearn (setup.py): started
+  Building wheel for sklearn (setup.py): finished with status 'done'
+  Created wheel for sklearn: filename=sklearn-0.0-py2.py3-none-any.whl size=1316 sha256=3c7a623fff9c62daec66b3325d4c00794270520a081046340edbd82012168ddc
+  Stored in directory: /root/.cache/pip/wheels/22/0b/40/fd3f795caaa1fb4c6cb738bc1f56100be1e57da95849bfc897
+Successfully built GroopM umap-learn pynndescent sklearn
+Installing collected packages: llvmlite, numba, pynndescent, numexpr, umap-learn, tables, sklearn, imageio, GroopM
+Successfully installed GroopM-2.0.0 imageio-2.9.0 llvmlite-0.36.0 numba-0.53.1 numexpr-2.7.3 pynndescent-0.5.2 sklearn-0.0 tables-3.6.1 umap-learn-0.5.1
+WARNING: Running pip as root will break packages and permissions. You should install packages reliably by using venv: https://pip.pypa.io/warnings/venv
++ cd /installs
++ git clone https://github.com/dparks1134/UniteM
+Cloning into 'UniteM'...
++ cd UniteM
++ pip install .
+Processing /installs/UniteM
+  DEPRECATION: A future pip version will change local packages to be built in-place without first copying to a temporary directory. We recommend you use --use-feature=in-tree-build to test your packages with this new behavior before it becomes the default.
+   pip 21.3 will remove support for this functionality. You can find discussion regarding this at https://github.com/pypa/pip/issues/7555.
+Collecting biolib>=0.0.46
+  Downloading biolib-0.1.9-py3-none-any.whl (92 kB)
+Collecting svgwrite>=1.1.9
+  Downloading svgwrite-1.4.1-py3-none-any.whl (66 kB)
+Requirement already satisfied: numpy in /opt/conda/lib/python3.8/site-packages (from biolib>=0.0.46->unitem==0.0.18) (1.20.3)
+Requirement already satisfied: matplotlib in /opt/conda/lib/python3.8/site-packages (from biolib>=0.0.46->unitem==0.0.18) (3.4.2)
+Requirement already satisfied: scipy in /opt/conda/lib/python3.8/site-packages (from biolib>=0.0.46->unitem==0.0.18) (1.6.3)
+Requirement already satisfied: kiwisolver>=1.0.1 in /opt/conda/lib/python3.8/site-packages (from matplotlib->biolib>=0.0.46->unitem==0.0.18) (1.3.1)
+Requirement already satisfied: python-dateutil>=2.7 in /opt/conda/lib/python3.8/site-packages (from matplotlib->biolib>=0.0.46->unitem==0.0.18) (2.8.1)
+Requirement already satisfied: pyparsing>=2.2.1 in /opt/conda/lib/python3.8/site-packages (from matplotlib->biolib>=0.0.46->unitem==0.0.18) (2.4.7)
+Requirement already satisfied: cycler>=0.10 in /opt/conda/lib/python3.8/site-packages (from matplotlib->biolib>=0.0.46->unitem==0.0.18) (0.10.0)
+Requirement already satisfied: pillow>=6.2.0 in /opt/conda/lib/python3.8/site-packages (from matplotlib->biolib>=0.0.46->unitem==0.0.18) (8.2.0)
+Requirement already satisfied: six in /opt/conda/lib/python3.8/site-packages (from cycler>=0.10->matplotlib->biolib>=0.0.46->unitem==0.0.18) (1.15.0)
+Building wheels for collected packages: unitem
+  Building wheel for unitem (setup.py): started
+  Building wheel for unitem (setup.py): finished with status 'done'
+  Created wheel for unitem: filename=unitem-0.0.18-py3-none-any.whl size=48023 sha256=ecd89dad45456e7d7c522ca84870b4326be97fbd7c3fa98be257af74d10d8163
+  Stored in directory: /tmp/pip-ephem-wheel-cache-dh2aj7dc/wheels/55/c7/20/635b9b892f96ea498c7ff9fe92e907e92178a6368f46210ab5
+Successfully built unitem
+Installing collected packages: svgwrite, biolib, unitem
+Successfully installed biolib-0.1.9 svgwrite-1.4.1 unitem-0.0.18
+WARNING: Running pip as root will break packages and permissions. You should install packages reliably by using venv: https://pip.pypa.io/warnings/venv
+INFO:    Adding environment to container
+INFO:    Adding runscript
+INFO:    Creating SIF file...
+INFO:    Build complete: UniteM.sif
