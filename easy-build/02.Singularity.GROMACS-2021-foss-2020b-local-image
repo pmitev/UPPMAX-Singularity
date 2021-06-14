@@ -1,0 +1,58 @@
+Bootstrap: localimage
+From: foss-2020b.eb.sif
+
+%post
+export DEBIAN_FRONTEND=noninteractive
+
+# switch to 'easybuild' user for following commands
+# quotes around EOF delimiter are important to ensure environment variables are not expanded prematurely!
+su - easybuild << 'EOF'
+
+# verbose commands, exit on first error
+set -ve
+
+# configure EasyBuild
+
+# use /scratch as general prefix, used for sources, build directories, etc.
+export EASYBUILD_PREFIX=/scratch
+
+# also use /scratch for temporary directories
+export EASYBUILD_TMPDIR=/scratch/tmp
+
+# download sources to /scratch/sources, but also consider files located in /tmp/easybuild/sources;
+# that way, source files that can not be downloaded can be seeded in
+export EASYBUILD_SOURCEPATH=/scratch/sources:/tmp/easybuild/sources
+
+# install software & modules into /app
+export EASYBUILD_INSTALLPATH=/app
+
+# use EasyBuild to install specified software
+eb GROMACS-2021-foss-2020b.eb --robot 
+
+# update Lmod cache
+mkdir -p /app/lmodcache
+$LMOD_DIR/update_lmod_system_cache_files -d /app/lmodcache -t /app/lmodcache/timestamp /app/modules/all
+
+# end of set of commands to run as 'easybuild' user
+EOF
+
+# cleanup, everything in /scratch is assumed to be temporary
+rm -rf /scratch/*
+
+
+%environment
+# make sure that 'module' and 'ml' commands are defined
+. /etc/profile
+# increase threshold time for Lmod to write cache in $HOME (which we don't want to do)
+export LMOD_SHORT_TIME=86400
+# purge any modules that may be loaded outside container
+module --force purge
+# avoid picking up modules from outside of container
+module unuse $MODULEPATH
+# pick up modules installed in /app
+module use /app/modules/all
+# load module(s) corresponding to installed software
+# module load GROMACS/2021-foss-2020b
+
+%runscript
+eval "$@"

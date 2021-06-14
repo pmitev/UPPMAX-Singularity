@@ -1,0 +1,139 @@
+Bootstrap: docker
+From: ubuntu
+
+%post
+export LC_ALL=C
+export DEBIAN_FRONTEND=noninteractive
+mkdir -p /tmp/apt
+echo 'Dir::Cache /tmp/apt;'  > /etc/apt/apt.conf.d/singularity-cache.conf
+
+apt-get update && apt-get -y install python3-pip \
+   bzip2 gzip tar zip unzip xz-utils patch make git wget tclsh tcl-dev libreadline-dev \
+   libthread-queue-any-perl libdata-dumper-simple-perl libdata-dumper-concise-perl \
+   libssl-dev libibverbs-dev
+
+VER=8.4.2
+INSTALL_PATH=/opt/lmod/stable
+MODULEFILES_PATH=/app/modules/all
+
+mkdir -p /installs
+mkdir -p /tmp/downloads && cd /tmp/downloads
+#** ensure packages
+test -f lua-5.4.0.tar.gz || wget http://www.lua.org/ftp/lua-5.4.0.tar.gz
+tar zxf lua-5.4.0.tar.gz -C /installs
+test -f luarocks-3.3.1.tar.gz || wget https://luarocks.org/releases/luarocks-3.3.1.tar.gz
+tar zxpf luarocks-3.3.1.tar.gz -C /installs
+
+#** build lua
+cd /installs/lua-5.4.0
+sed -i "s|/usr/local|$INSTALL_PATH/lua|" ./Makefile
+sed -i "s|/usr/local/|$INSTALL_PATH/lua/|" ./src/luaconf.h
+make linux
+make install
+
+#** build luarocks
+cd /installs/luarocks-3.3.1
+./configure --prefix=$INSTALL_PATH/lua/  --with-lua=$INSTALL_PATH/lua
+make install
+
+#** build lmod lua requirements
+$INSTALL_PATH/lua/bin/luarocks install luaposix
+$INSTALL_PATH/lua/bin/luarocks install luajson
+$INSTALL_PATH/lua/bin/luarocks install luafilesystem
+
+#** build lmod
+cd /installs
+git clone https://github.com/TACC/Lmod.git
+cd /installs/Lmod
+git checkout $VER
+export PATH=$INSTALL_PATH/lua/bin:$PATH
+
+./configure --prefix=$INSTALL_PATH --with-siteControlPrefix=yes --with-useBuiltinPkgs=yes
+make install
+
+mkdir -p "$MODULEFILES_PATH"
+chmod -R a+rw /app
+
+cat > $INSTALL_PATH/init/.modulespath <<EOF
+$MODULEFILES_PATH
+EOF
+
+ln -s $INSTALL_PATH/init/profile /etc/profile.d/lmod.sh
+ln -s $INSTALL_PATH/init/cshrc   /etc/profile.d/lmod.csh
+. /etc/profile.d/lmod.sh
+
+
+# install EasyBuild using pip
+pip install -U pip
+pip install easybuild
+
+# create 'easybuild' user (if missing)
+id easybuild || useradd easybuild
+
+# create /app software installation prefix + /scratch sandbox directory
+if [ ! -d /app ]; then mkdir -p /app; chown easybuild:easybuild -R /app; fi
+if [ ! -d /scratch ]; then mkdir -p /scratch; chown easybuild:easybuild -R /scratch; fi
+
+# install Lmod RC file
+cat > /etc/lmodrc.lua << EOF
+scDescriptT = {
+  {
+    ["dir"]       = "/app/lmodcache",
+    ["timestamp"] = "/app/lmodcache/timestamp",
+  },
+}
+EOF
+
+# switch to 'easybuild' user for following commands
+# quotes around EOF delimiter are important to ensure environment variables are not expanded prematurely!
+su - easybuild << 'EOF'
+
+# verbose commands, exit on first error
+set -ve
+
+# configure EasyBuild
+
+# use /scratch as general prefix, used for sources, build directories, etc.
+export EASYBUILD_PREFIX=/scratch
+
+# also use /scratch for temporary directories
+export EASYBUILD_TMPDIR=/scratch/tmp
+
+# download sources to /scratch/sources, but also consider files located in /tmp/easybuild/sources;
+# that way, source files that can not be downloaded can be seeded in
+export EASYBUILD_SOURCEPATH=/scratch/sources:/tmp/easybuild/sources
+
+# install software & modules into /app
+export EASYBUILD_INSTALLPATH=/app
+
+# use EasyBuild to install specified software
+eb foss-2020b.eb --robot  --optarch=march=broadwell
+
+# update Lmod cache
+mkdir -p /app/lmodcache
+$LMOD_DIR/update_lmod_system_cache_files -d /app/lmodcache -t /app/lmodcache/timestamp /app/modules/all
+
+# end of set of commands to run as 'easybuild' user
+EOF
+
+# cleanup, everything in /scratch is assumed to be temporary
+rm -rf /scratch/*
+
+
+%environment
+export LC_ALL=C
+PATH=/opt/lmod/stable/lua/bin:$PATH
+# make sure that 'module' and 'ml' commands are defined
+. /etc/profile
+# increase threshold time for Lmod to write cache in $HOME (which we don't want to do)
+export LMOD_SHORT_TIME=86400
+# purge any modules that may be loaded outside container
+module --force purge
+# avoid picking up modules from outside of container
+module unuse $MODULEPATH
+# pick up modules installed in /app
+module use /app/modules/all
+
+
+%runscript
+eval "$@"
