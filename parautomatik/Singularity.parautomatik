@@ -1,0 +1,84 @@
+# Clone repositories outside the build - private repositories
+# git clone https://github.com/peterbmob/parautomatik.git
+# cd parautomatik/pgm
+# git clone https://github.com/Teoroo-CMC/CCS
+
+Bootstrap: docker
+From: ubuntu:20.04
+
+%files
+  parautomatik /app/
+
+%post
+  export LC_ALL=C
+  export PYTHONNOUSERSITE=True
+  export DEBIAN_FRONTEND=noninteractive
+  export CONDA_PKGS_DIRS=/tmp/conda_pkgs_dir
+  mkdir -p ${CONDA_PKGS_DIRS}
+  export TMPD=/tmp/downloads
+  export NCPU=$(grep -c ^processor /proc/cpuinfo)
+
+  mkdir -p /tmp/apt
+  echo "Dir::Cache "/tmp/apt";" > /etc/apt/apt.conf.d/singularity-cache.conf
+
+  apt-get update &&  apt-get install -y wget bzip2 git build-essential gfortran cmake pkg-config python3-pip
+
+  mkdir -p /app
+  # install anaconda
+  if [ ! -d /app/anaconda ]; then
+      #  wget -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda-latest-Linux-x86_64.sh \
+      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /app/anaconda.sh && \
+      bash /app/anaconda.sh -b -p /app/anaconda && \
+      rm -rf /app/anaconda.sh
+  fi
+
+
+  # set anaconda path
+  export PATH="/app/anaconda/bin:$PATH"
+
+  conda create -n parautomatik -c conda-forge python=3.7 ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tensorflow==1.15.0
+ 
+  # Parautomatik
+  cd /app 
+  # git clone https://github.com/peterbmob/parautomatik.git
+  export PARAUTOMATIK=$PWD/parautomatik
+  #cd $PARAUTOMATIK/pgm
+
+  # libxc
+  mkdir -p /installs && cd /installs
+  wget -P $TMPD -c http://www.tddft.org/programs/libxc/down.php?file=5.1.7/libxc-5.1.7.tar.gz -O  $TMPD/libxc-5.1.7.tar.gz
+  tar -xvf $TMPD/libxc-5.1.7.tar.gz 
+  cd libxc-5.1.7 && ./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ &&  make -j 4 && make install
+
+  # skprogs
+  cd $PARAUTOMATIK/pgm
+  git clone https://github.com/dftbplus/skprogs
+  cd skprogs &&  CMAKE_PREFIX_PATH=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build . && cmake --build _build -- -j && cmake --install _build
+  
+
+  # CCS
+  # done outside
+  
+
+  # PiNN and tensorflow installed system-wide
+  python3 -m pip install -U pip
+  python3 -m pip install git+https://github.com/Teoroo-CMC/PiNN.git -U
+  python3 -m pip install tensorflow
+   
+
+  #cd / && rm -r /installs
+  rm /etc/apt/apt.conf.d/singularity-cache.conf
+
+
+
+%environment
+  export LC_ALL=C
+  export PYTHONNOUSERSITE=True
+  export PATH=/app/anaconda/bin:$PATH
+  export PARAUTOMATIK=$PWD/parautomatik/
+
+%runscript
+#!/bin/bash
+  source /app/anaconda/etc/profile.d/conda.sh
+  /bin/bash
+
