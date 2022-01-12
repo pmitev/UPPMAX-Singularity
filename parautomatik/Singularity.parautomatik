@@ -37,6 +37,9 @@ From: ubuntu:20.04
   export PATH="/app/anaconda/bin:$PATH"
 
   conda create -n parautomatik -c conda-forge python=3.7 ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tensorflow==1.15.0
+
+  # setup conda for interactive bash 
+  echo "source /app/anaconda/etc/profile.d/conda.sh" >> /etc/bash.bashrc
  
   # Parautomatik
   cd /app 
@@ -78,7 +81,5 @@ From: ubuntu:20.04
   export PARAUTOMATIK=$PWD/parautomatik/
 
 %runscript
-#!/bin/bash
-  source /app/anaconda/etc/profile.d/conda.sh
-  /bin/bash
+  /bin/bash "$@"
 
