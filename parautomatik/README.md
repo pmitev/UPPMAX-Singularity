@@ -18,6 +18,9 @@ sudo singularity build parautomatik.sif Singularity.parautomatik
 
 ```bash
 ./parautomatik.sif
+Singularity> conda activate parautomatik
+(parautomatik) Singularity> 
 
+# follow the instructions from the documetation
 ```
 
