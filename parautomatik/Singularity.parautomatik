@@ -16,12 +16,13 @@ From: ubuntu:20.04
   export CONDA_PKGS_DIRS=/tmp/conda_pkgs_dir
   mkdir -p ${CONDA_PKGS_DIRS}
   export TMPD=/tmp/downloads
+  mkdir -p ${TMPD}
   export NCPU=$(grep -c ^processor /proc/cpuinfo)
 
   mkdir -p /tmp/apt
   echo "Dir::Cache "/tmp/apt";" > /etc/apt/apt.conf.d/singularity-cache.conf
 
-  apt-get update &&  apt-get install -y wget bzip2 git build-essential gfortran cmake pkg-config python3-pip
+  apt-get update &&  apt-get install -y wget bzip2 git build-essential pkg-config
 
   mkdir -p /app
   # install anaconda
@@ -34,40 +35,52 @@ From: ubuntu:20.04
 
 
   # set anaconda path
-  export PATH="/app/anaconda/bin:$PATH"
+  export PATH="$PATH:/app/anaconda/bin"
 
-  conda create -n parautomatik -c conda-forge python=3.7 ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tensorflow==1.15.0
+  conda create -n parautomatik -c conda-forge python=3.9 ase dftbplus gfortran cmake jupyterlab pandas cvxopt seaborn pip setuptools wheel pkgconfig unzip
 
   # setup conda for interactive bash 
   echo "source /app/anaconda/etc/profile.d/conda.sh" >> /etc/bash.bashrc
+
+/bin/bash<<EOF
+export SETUPTOOLS_USE_DISTUTILS=stdlib
+export XDG_CACHE_HOME=/tmp/XDG_CACHE_HOME
+mkdir -p \$XDG_CACHE_HOME
+
+source /app/anaconda/etc/profile.d/conda.sh
+conda activate parautomatik
+
+# Parautomatik
+cd /app 
+# git clone https://github.com/peterbmob/parautomatik.git
+export PARAUTOMATIK=/app/parautomatik
+
+# libxc
+mkdir -p /installs && cd /installs
+wget -P \$TMPD -c http://www.tddft.org/programs/libxc/down.php?file=5.1.7/libxc-5.1.7.tar.gz -O  \$TMPD/libxc-5.1.7.tar.gz
+tar -xvf \$TMPD/libxc-5.1.7.tar.gz 
+cd libxc-5.1.7 && ./configure --prefix=\$PARAUTOMATIK/pgm/libxc-5.1.7 &&  make -j 4 && make install
+
+# skprogs
+export PYTHONPATH=\$PARAUTOMATIK/pgm/skprogs/lib/python3.9/site-packages:\$PYTHONPATH
+cd \$PARAUTOMATIK/pgm
+git clone https://github.com/dftbplus/skprogs
+cd skprogs &&  CMAKE_PREFIX_PATH=\$PARAUTOMATIK/pgm/libxc-5.1.7 FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=\$PARAUTOMATIK/pgm/skprogs -DCMAKE_Fortran_FLAGS=-fopenmp -B _build . && cmake --build _build -- -j && cmake --install _build
+ln -s \$PARAUTOMATIK/pgm/skprogs/bin/skgen \$PARAUTOMATIK/pgm/skprogs/lib/python3.9/site-packages/sktools/sk_util.py
+echo "source \$PARAUTOMATIK/pgm/skprogs/bin/skprogs-activate.sh" >> /etc/bash.bashrc
+
+
+# PiNN and tensorflow installed system-wide
+python3 -m pip install -U pip
+python3 -m pip install git+https://github.com/Teoroo-CMC/PiNN.git -U
+python3 -m pip install tensorflow 
  
-  # Parautomatik
-  cd /app 
-  # git clone https://github.com/peterbmob/parautomatik.git
-  export PARAUTOMATIK=$PWD/parautomatik
-  #cd $PARAUTOMATIK/pgm
-
-  # libxc
-  mkdir -p /installs && cd /installs
-  wget -P $TMPD -c http://www.tddft.org/programs/libxc/down.php?file=5.1.7/libxc-5.1.7.tar.gz -O  $TMPD/libxc-5.1.7.tar.gz
-  tar -xvf $TMPD/libxc-5.1.7.tar.gz 
-  cd libxc-5.1.7 && ./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ &&  make -j 4 && make install
-
-  # skprogs
-  cd $PARAUTOMATIK/pgm
-  git clone https://github.com/dftbplus/skprogs
-  cd skprogs &&  CMAKE_PREFIX_PATH=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build . && cmake --build _build -- -j && cmake --install _build
+# CCS
+# git clone https://github.com/Teoroo-CMC/CCS # done outside
+#cd $PARAUTOMATIK/pgm/CCS
+#python3 setup.py install
   
-
-  # CCS
-  # done outside
-  
-
-  # PiNN and tensorflow installed system-wide
-  python3 -m pip install -U pip
-  python3 -m pip install git+https://github.com/Teoroo-CMC/PiNN.git -U
-  python3 -m pip install tensorflow
-   
+EOF
 
   #cd / && rm -r /installs
   rm /etc/apt/apt.conf.d/singularity-cache.conf
@@ -77,8 +90,9 @@ From: ubuntu:20.04
 %environment
   export LC_ALL=C
   export PYTHONNOUSERSITE=True
-  export PATH=/app/anaconda/bin:$PATH
-  export PARAUTOMATIK=$PWD/parautomatik/
+  export PARAUTOMATIK=/app/parautomatik
+  export PYTHONPATH=$PARAUTOMATIK/pgm/CSS:$PARAUTOMATIK/pgm/skprogs:$PYTHONPATH
+  export PATH=$PATH:/app/anaconda/bin:$PARAUTOMATIK/pgm/CCS/bin
 
 %runscript
   /bin/bash "$@"
