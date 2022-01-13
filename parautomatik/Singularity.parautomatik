@@ -91,7 +91,7 @@ EOF
   export LC_ALL=C
   export PYTHONNOUSERSITE=True
   export PARAUTOMATIK=/app/parautomatik
-  export PYTHONPATH=$PARAUTOMATIK/pgm/CSS:$PARAUTOMATIK/pgm/skprogs:$PYTHONPATH
+  export PYTHONPATH=$PARAUTOMATIK/pgm/CCS:$PARAUTOMATIK/pgm/skprogs:$PYTHONPATH
   export PATH=$PATH:/app/anaconda/bin:$PARAUTOMATIK/pgm/CCS/bin
 
 %runscript
