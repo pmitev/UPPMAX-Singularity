@@ -1,0 +1,1028 @@
+Build target 'HiCExplorer.sif' already exists and will be deleted during the build process. Do you want to continue? [N/y] INFO:    Starting build...
+Getting image source signatures
+Copying blob sha256:a2abf6c4d29d43a4bf9fbb769f524d0fb36a2edab49819c1bf3e76f409f953ea
+Copying blob sha256:c256cb8a03f53bc258cce8c545ce0d4fd1f17cf695dfd11aa550f602a020e181
+Copying blob sha256:96470ebef4adc6521c81f93d2437e182de590faa6efdcc38a83484b502f46d6c
+Copying config sha256:397371bbd8abbd2f471f36b0af8aa3b7e9b04929f45f2540af55deec18240dce
+Writing manifest to image destination
+Storing signatures
+2022/02/18 18:54:08  info unpack layer: sha256:a2abf6c4d29d43a4bf9fbb769f524d0fb36a2edab49819c1bf3e76f409f953ea
+2022/02/18 18:54:08  info unpack layer: sha256:c256cb8a03f53bc258cce8c545ce0d4fd1f17cf695dfd11aa550f602a020e181
+2022/02/18 18:54:09  info unpack layer: sha256:96470ebef4adc6521c81f93d2437e182de590faa6efdcc38a83484b502f46d6c
+INFO:    Running setup scriptlet
+INFO:    Running post scriptlet
++ export LC_ALL=C
++ conda install -c conda-forge mamba
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 4.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /opt/conda
+
+  added / updated specs:
+    - mamba
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    _libgcc_mutex-0.1          |      conda_forge           3 KB  conda-forge
+    _openmp_mutex-4.5          |            1_gnu          22 KB  conda-forge
+    bzip2-1.0.8                |       h7f98852_4         484 KB  conda-forge
+    c-ares-1.18.1              |       h7f98852_0         113 KB  conda-forge
+    ca-certificates-2021.10.8  |       ha878542_0         139 KB  conda-forge
+    certifi-2021.10.8          |   py39hf3d152e_1         145 KB  conda-forge
+    conda-4.11.0               |   py39hf3d152e_0        16.8 MB  conda-forge
+    icu-68.2                   |       h9c3ff4c_0        13.1 MB  conda-forge
+    krb5-1.19.2                |       hcc1bbae_0         1.4 MB  conda-forge
+    libarchive-3.5.2           |       hccf745f_1         1.6 MB  conda-forge
+    libcurl-7.80.0             |       h0b77cf5_0         339 KB
+    libedit-3.1.20191231       |       he28a2e2_2         121 KB  conda-forge
+    libev-4.33                 |       h516909a_1         104 KB  conda-forge
+    libgcc-ng-11.2.0           |      h1d223b6_12         904 KB  conda-forge
+    libgomp-11.2.0             |      h1d223b6_12         426 KB  conda-forge
+    libiconv-1.16              |       h516909a_0         1.4 MB  conda-forge
+    libnghttp2-1.46.0          |       hce63b2e_0         680 KB
+    libsolv-0.7.19             |       h780b84a_5         445 KB  conda-forge
+    libssh2-1.10.0             |       ha56f1ee_2         233 KB  conda-forge
+    libstdcxx-ng-11.2.0        |      he4da1e4_12         4.2 MB  conda-forge
+    libxml2-2.9.12             |       h72842e0_0         772 KB  conda-forge
+    lz4-c-1.9.3                |       h9c3ff4c_1         179 KB  conda-forge
+    lzo-2.10                   |    h516909a_1000         314 KB  conda-forge
+    mamba-0.15.3               |   py39h951de11_0         734 KB  conda-forge
+    openssl-1.1.1l             |       h7f98852_0         2.1 MB  conda-forge
+    python_abi-3.9             |           2_cp39           4 KB  conda-forge
+    reproc-14.2.3              |       h7f98852_0          28 KB  conda-forge
+    reproc-cpp-14.2.3          |       h9c3ff4c_0          20 KB  conda-forge
+    zstd-1.5.0                 |       ha4553b6_1         524 KB
+    ------------------------------------------------------------
+                                           Total:        47.3 MB
+
+The following NEW packages will be INSTALLED:
+
+  bzip2              conda-forge/linux-64::bzip2-1.0.8-h7f98852_4
+  c-ares             conda-forge/linux-64::c-ares-1.18.1-h7f98852_0
+  icu                conda-forge/linux-64::icu-68.2-h9c3ff4c_0
+  krb5               conda-forge/linux-64::krb5-1.19.2-hcc1bbae_0
+  libarchive         conda-forge/linux-64::libarchive-3.5.2-hccf745f_1
+  libcurl            pkgs/main/linux-64::libcurl-7.80.0-h0b77cf5_0
+  libedit            conda-forge/linux-64::libedit-3.1.20191231-he28a2e2_2
+  libev              conda-forge/linux-64::libev-4.33-h516909a_1
+  libiconv           conda-forge/linux-64::libiconv-1.16-h516909a_0
+  libnghttp2         pkgs/main/linux-64::libnghttp2-1.46.0-hce63b2e_0
+  libsolv            conda-forge/linux-64::libsolv-0.7.19-h780b84a_5
+  libssh2            conda-forge/linux-64::libssh2-1.10.0-ha56f1ee_2
+  libxml2            conda-forge/linux-64::libxml2-2.9.12-h72842e0_0
+  lz4-c              conda-forge/linux-64::lz4-c-1.9.3-h9c3ff4c_1
+  lzo                conda-forge/linux-64::lzo-2.10-h516909a_1000
+  mamba              conda-forge/linux-64::mamba-0.15.3-py39h951de11_0
+  python_abi         conda-forge/linux-64::python_abi-3.9-2_cp39
+  reproc             conda-forge/linux-64::reproc-14.2.3-h7f98852_0
+  reproc-cpp         conda-forge/linux-64::reproc-cpp-14.2.3-h9c3ff4c_0
+  zstd               pkgs/main/linux-64::zstd-1.5.0-ha4553b6_1
+
+The following packages will be UPDATED:
+
+  ca-certificates    pkgs/main::ca-certificates-2021.7.5-h~ --> conda-forge::ca-certificates-2021.10.8-ha878542_0
+  certifi            pkgs/main::certifi-2021.5.30-py39h06a~ --> conda-forge::certifi-2021.10.8-py39hf3d152e_1
+  conda              pkgs/main::conda-4.10.3-py39h06a4308_0 --> conda-forge::conda-4.11.0-py39hf3d152e_0
+  libgcc-ng          pkgs/main::libgcc-ng-9.3.0-h5101ec6_17 --> conda-forge::libgcc-ng-11.2.0-h1d223b6_12
+  libgomp              pkgs/main::libgomp-9.3.0-h5101ec6_17 --> conda-forge::libgomp-11.2.0-h1d223b6_12
+  libstdcxx-ng       pkgs/main::libstdcxx-ng-9.3.0-hd4cf53~ --> conda-forge::libstdcxx-ng-11.2.0-he4da1e4_12
+  openssl              pkgs/main::openssl-1.1.1k-h27cfd23_0 --> conda-forge::openssl-1.1.1l-h7f98852_0
+
+The following packages will be SUPERSEDED by a higher-priority channel:
+
+  _libgcc_mutex           pkgs/main::_libgcc_mutex-0.1-main --> conda-forge::_libgcc_mutex-0.1-conda_forge
+  _openmp_mutex                                   pkgs/main --> conda-forge
+
+
+Proceed ([y]/n)? 
+
+Downloading and Extracting Packages
+c-ares-1.18.1        | 113 KB    |            |   0% c-ares-1.18.1        | 113 KB    | #4         |  14% c-ares-1.18.1        | 113 KB    | ########## | 100% 
+_openmp_mutex-4.5    | 22 KB     |            |   0% _openmp_mutex-4.5    | 22 KB     | ########## | 100% 
+openssl-1.1.1l       | 2.1 MB    |            |   0% openssl-1.1.1l       | 2.1 MB    | ########6  |  87% openssl-1.1.1l       | 2.1 MB    | ########## | 100% 
+libedit-3.1.20191231 | 121 KB    |            |   0% libedit-3.1.20191231 | 121 KB    | ########## | 100% 
+libcurl-7.80.0       | 339 KB    |            |   0% libcurl-7.80.0       | 339 KB    | ########## | 100% libcurl-7.80.0       | 339 KB    | ########## | 100% 
+ca-certificates-2021 | 139 KB    |            |   0% ca-certificates-2021 | 139 KB    | ########## | 100% 
+libiconv-1.16        | 1.4 MB    |            |   0% libiconv-1.16        | 1.4 MB    | ########## | 100% libiconv-1.16        | 1.4 MB    | ########## | 100% 
+bzip2-1.0.8          | 484 KB    |            |   0% bzip2-1.0.8          | 484 KB    | ########## | 100% bzip2-1.0.8          | 484 KB    | ########## | 100% 
+reproc-cpp-14.2.3    | 20 KB     |            |   0% reproc-cpp-14.2.3    | 20 KB     | ########## | 100% 
+libssh2-1.10.0       | 233 KB    |            |   0% libssh2-1.10.0       | 233 KB    | ########## | 100% 
+mamba-0.15.3         | 734 KB    |            |   0% mamba-0.15.3         | 734 KB    | ########## | 100% mamba-0.15.3         | 734 KB    | ########## | 100% 
+libgomp-11.2.0       | 426 KB    |            |   0% libgomp-11.2.0       | 426 KB    | ########## | 100% 
+libev-4.33           | 104 KB    |            |   0% libev-4.33           | 104 KB    | ########## | 100% 
+libxml2-2.9.12       | 772 KB    |            |   0% libxml2-2.9.12       | 772 KB    | ########## | 100% libxml2-2.9.12       | 772 KB    | ########## | 100% 
+conda-4.11.0         | 16.8 MB   |            |   0% conda-4.11.0         | 16.8 MB   | 9          |  10% conda-4.11.0         | 16.8 MB   | ####2      |  42% conda-4.11.0         | 16.8 MB   | ########5  |  86% conda-4.11.0         | 16.8 MB   | ########## | 100% 
+libarchive-3.5.2     | 1.6 MB    |            |   0% libarchive-3.5.2     | 1.6 MB    | ########## | 100% libarchive-3.5.2     | 1.6 MB    | ########## | 100% 
+libstdcxx-ng-11.2.0  | 4.2 MB    |            |   0% libstdcxx-ng-11.2.0  | 4.2 MB    | ######1    |  62% libstdcxx-ng-11.2.0  | 4.2 MB    | ########## | 100% 
+python_abi-3.9       | 4 KB      |            |   0% python_abi-3.9       | 4 KB      | ########## | 100% 
+zstd-1.5.0           | 524 KB    |            |   0% zstd-1.5.0           | 524 KB    | ########## | 100% 
+certifi-2021.10.8    | 145 KB    |            |   0% certifi-2021.10.8    | 145 KB    | ########## | 100% 
+lzo-2.10             | 314 KB    |            |   0% lzo-2.10             | 314 KB    | ########## | 100% 
+_libgcc_mutex-0.1    | 3 KB      |            |   0% _libgcc_mutex-0.1    | 3 KB      | ########## | 100% 
+libgcc-ng-11.2.0     | 904 KB    |            |   0% libgcc-ng-11.2.0     | 904 KB    | ########## | 100% libgcc-ng-11.2.0     | 904 KB    | ########## | 100% 
+icu-68.2             | 13.1 MB   |            |   0% icu-68.2             | 13.1 MB   | #1         |  11% icu-68.2             | 13.1 MB   | ######3    |  64% icu-68.2             | 13.1 MB   | #########9 |  99% icu-68.2             | 13.1 MB   | ########## | 100% 
+libsolv-0.7.19       | 445 KB    |            |   0% libsolv-0.7.19       | 445 KB    | ########## | 100% 
+libnghttp2-1.46.0    | 680 KB    |            |   0% libnghttp2-1.46.0    | 680 KB    | ########## | 100% 
+lz4-c-1.9.3          | 179 KB    |            |   0% lz4-c-1.9.3          | 179 KB    | ########## | 100% lz4-c-1.9.3          | 179 KB    | ########## | 100% 
+reproc-14.2.3        | 28 KB     |            |   0% reproc-14.2.3        | 28 KB     | ########## | 100% 
+krb5-1.19.2          | 1.4 MB    |            |   0% krb5-1.19.2          | 1.4 MB    | ########## | 100% krb5-1.19.2          | 1.4 MB    | ########## | 100% 
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
++ mamba install hicexplorer -c bioconda -c conda-forge
+bioconda/linux-64         
+pkgs/main/linux-64        
+bioconda/noarch           
+pkgs/r/noarch             
+pkgs/r/linux-64           
+pkgs/main/noarch          
+conda-forge/noarch        
+conda-forge/linux-64      
+Transaction
+
+  Prefix: /opt/conda
+
+  Updating specs:
+
+   - hicexplorer
+   - ca-certificates
+   - certifi
+   - openssl
+
+
+  Package                            Version  Build                   Channel                    Size
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Install:
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  + argcomplete                        2.0.0  pyhd8ed1ab_0            conda-forge/noarch        34 KB
+  + argh                              0.26.2  pyh9f0ad1d_1002         conda-forge/noarch        26 KB
+  + asciitree                          0.3.3  py_2                    conda-forge/noarch         6 KB
+  + asttokens                          2.0.5  pyhd8ed1ab_0            conda-forge/noarch        21 KB
+  + atk-1.0                           2.36.0  h3371d22_4              conda-forge/linux-64     560 KB
+  + backcall                           0.2.0  pyh9f0ad1d_0            conda-forge/noarch        13 KB
+  + backports                            1.0  py_2                    conda-forge/noarch         4 KB
+  + backports.functools_lru_cache      1.6.4  pyhd8ed1ab_0            conda-forge/noarch         9 KB
+  + bedtools                          2.30.0  h7d7f7ad_2              bioconda/linux-64         18 MB
+  + biopython                           1.79  py39h3811e60_1          conda-forge/linux-64       3 MB
+  + black                             22.1.0  pyhd8ed1ab_0            conda-forge/noarch       124 KB
+  + blosc                             1.21.0  h9c3ff4c_0              conda-forge/linux-64     841 KB
+  + bokeh                              2.4.2  py39hf3d152e_0          conda-forge/linux-64      14 MB
+  + cached-property                    1.5.2  hd8ed1ab_1              conda-forge/noarch         4 KB
+  + cached_property                    1.5.2  pyha770c72_1            conda-forge/noarch        11 KB
+  + cairo                             1.16.0  h6cf1ce9_1008           conda-forge/linux-64       1 MB
+  + cleanlab                             1.0  pyhd8ed1ab_2            conda-forge/noarch        65 KB
+  + click                              8.0.3  py39hf3d152e_1          conda-forge/linux-64     147 KB
+  + cloudpickle                        2.0.0  pyhd8ed1ab_0            conda-forge/noarch        24 KB
+  + cooler                            0.8.11  pyh5e36f6f_1            bioconda/noarch           78 KB
+  + cycler                            0.11.0  pyhd8ed1ab_0            conda-forge/noarch        10 KB
+  + cytoolz                           0.11.2  py39h3811e60_1          conda-forge/linux-64     411 KB
+  + dask                            2022.2.0  pyhd8ed1ab_0            conda-forge/noarch         5 KB
+  + dask-core                       2022.2.0  pyhd8ed1ab_0            conda-forge/noarch       803 KB
+  + dataclasses                          0.8  pyhc8e2a94_3            conda-forge/noarch        10 KB
+  + debugpy                            1.5.1  py39he80948d_0          conda-forge/linux-64       2 MB
+  + decorator                          5.1.1  pyhd8ed1ab_0            conda-forge/noarch        12 KB
+  + dill                               0.3.4  pyhd8ed1ab_0            conda-forge/noarch        62 KB
+  + distributed                     2022.2.0  py39hf3d152e_0          conda-forge/linux-64       1 MB
+  + eigen                              3.4.0  h4bd325d_0              conda-forge/linux-64       1 MB
+  + entrypoints                          0.4  pyhd8ed1ab_0            conda-forge/noarch         9 KB
+  + executing                          0.8.2  pyhd8ed1ab_0            conda-forge/noarch        18 KB
+  + expat                              2.4.4  h9c3ff4c_0              conda-forge/linux-64     183 KB
+  + fit_nbinom                           1.1  pyh864c0ab_2            bioconda/noarch           18 KB
+  + font-ttf-dejavu-sans-mono           2.37  hab24e00_0              conda-forge/noarch       388 KB
+  + font-ttf-inconsolata               3.000  h77eed37_0              conda-forge/noarch        94 KB
+  + font-ttf-source-code-pro           2.038  h77eed37_0              conda-forge/noarch       684 KB
+  + font-ttf-ubuntu                     0.83  hab24e00_0              conda-forge/noarch         2 MB
+  + fontconfig                       2.13.96  ha180cfb_0              conda-forge/linux-64     372 KB
+  + fonts-conda-ecosystem                  1  0                       conda-forge/noarch         4 KB
+  + fonts-conda-forge                      1  0                       conda-forge/noarch         4 KB
+  + freetype                          2.10.4  h0708190_1              conda-forge/linux-64     890 KB
+  + fribidi                           1.0.10  h36c2ea0_0              conda-forge/linux-64     112 KB
+  + fsspec                          2022.1.0  pyhd8ed1ab_0            conda-forge/noarch        91 KB
+  + future                            0.18.2  py39hf3d152e_4          conda-forge/linux-64     715 KB
+  + gdk-pixbuf                        2.42.6  h04a7f16_0              conda-forge/linux-64     609 KB
+  + gettext                         0.19.8.1  h0b5b191_1005           conda-forge/linux-64       4 MB
+  + gffutils                          0.10.1  pyh864c0ab_1            bioconda/noarch            1 MB
+  + giflib                             5.2.1  h36c2ea0_2              conda-forge/linux-64      77 KB
+  + graphite2                         1.3.13  h58526e2_1001           conda-forge/linux-64     102 KB
+  + graphviz                          2.49.0  h85b4f2f_0              conda-forge/linux-64       4 MB
+  + gtk2                             2.24.33  h539f30e_1              conda-forge/linux-64       7 MB
+  + gts                                0.7.6  h64030ff_2              conda-forge/linux-64     411 KB
+  + h5py                               3.6.0  nompi_py39h7e08c79_100  conda-forge/linux-64       1 MB
+  + harfbuzz                           3.0.0  h83ec7ef_1              conda-forge/linux-64       2 MB
+  + hdf5                              1.12.1  nompi_h2750804_100      conda-forge/linux-64       4 MB
+  + heapdict                           1.0.1  py_0                    conda-forge/noarch         7 KB
+  + hic2cool                           0.8.3  pyh864c0ab_2            bioconda/noarch           26 KB
+  + hicexplorer                        3.7.2  pyhdfd78af_1            bioconda/noarch            2 MB
+  + hicmatrix                             16  pyhdfd78af_0            bioconda/noarch           25 KB
+  + htslib                              1.13  h9093b5e_0              bioconda/linux-64          2 MB
+  + hyperopt                           0.2.5  pyh9f0ad1d_0            conda-forge/noarch       762 KB
+  + imbalanced-learn                   0.9.0  pyhd8ed1ab_0            conda-forge/noarch       115 KB
+  + importlib-metadata                4.11.1  py39hf3d152e_0          conda-forge/linux-64      33 KB
+  + importlib_metadata                4.11.1  hd8ed1ab_0              conda-forge/noarch         4 KB
+  + intervaltree                       3.0.2  py_0                    conda-forge/noarch        23 KB
+  + ipykernel                          6.9.1  py39hef51801_0          conda-forge/linux-64     182 KB
+  + ipython                            8.0.1  py39hf3d152e_2          conda-forge/linux-64       1 MB
+  + jbig                                 2.1  h7f98852_2003           conda-forge/linux-64      43 KB
+  + jedi                              0.18.1  py39hf3d152e_0          conda-forge/linux-64     992 KB
+  + jinja2                             3.0.3  pyhd8ed1ab_0            conda-forge/noarch        99 KB
+  + joblib                             1.1.0  pyhd8ed1ab_0            conda-forge/noarch       210 KB
+  + jpeg                                  9e  h7f98852_0              conda-forge/linux-64     269 KB
+  + jupyter_client                     7.1.2  pyhd8ed1ab_0            conda-forge/noarch        90 KB
+  + jupyter_core                       4.9.2  py39hf3d152e_0          conda-forge/linux-64      81 KB
+  + kiwisolver                         1.3.2  py39h1a9c180_1          conda-forge/linux-64      80 KB
+  + krbalancing                        0.0.5  py39h7cff6ad_3          bioconda/linux-64        110 KB
+  + lcms2                               2.12  hddcbb42_0              conda-forge/linux-64     443 KB
+  + lerc                               2.2.1  h9c3ff4c_0              conda-forge/linux-64     213 KB
+  + libblas                            3.9.0  13_linux64_openblas     conda-forge/linux-64      12 KB
+  + libcblas                           3.9.0  13_linux64_openblas     conda-forge/linux-64      12 KB
+  + libdeflate                           1.7  h7f98852_5              conda-forge/linux-64      67 KB
+  + libgd                              2.3.3  h6ad9fb6_0              conda-forge/linux-64     279 KB
+  + libgfortran-ng                    11.2.0  h69a702a_12             conda-forge/linux-64      19 KB
+  + libgfortran5                      11.2.0  h5c6108e_12             conda-forge/linux-64       2 MB
+  + libglib                           2.68.4  h3e27bee_0              conda-forge/linux-64       3 MB
+  + liblapack                          3.9.0  13_linux64_openblas     conda-forge/linux-64      12 KB
+  + libopenblas                       0.3.18  pthreads_h8fe5266_0     conda-forge/linux-64      10 MB
+  + libpng                            1.6.37  h21135ba_2              conda-forge/linux-64     306 KB
+  + librsvg                           2.52.2  hc3c00ef_0              conda-forge/linux-64       5 MB
+  + libsodium                         1.0.18  h36c2ea0_1              conda-forge/linux-64     366 KB
+  + libtiff                            4.3.0  hf544144_1              conda-forge/linux-64     668 KB
+  + libtool                            2.4.6  h9c3ff4c_1008           conda-forge/linux-64     511 KB
+  + libuuid                           2.32.1  h7f98852_1000           conda-forge/linux-64      28 KB
+  + libwebp                            1.2.2  h3452ae3_0              conda-forge/linux-64      85 KB
+  + libwebp-base                       1.2.2  h7f98852_1              conda-forge/linux-64     824 KB
+  + libxcb                              1.13  h7f98852_1004           conda-forge/linux-64     391 KB
+  + locket                             0.2.0  py_2                    conda-forge/noarch         6 KB
+  + markupsafe                         2.1.0  py39hb9d737c_0          conda-forge/linux-64      22 KB
+  + matplotlib-base                    3.3.2  py39h98787fa_1          conda-forge/linux-64       7 MB
+  + matplotlib-inline                  0.1.3  pyhd8ed1ab_0            conda-forge/noarch        11 KB
+  + mock                               4.0.3  py39hf3d152e_2          conda-forge/linux-64      51 KB
+  + msgpack-python                     1.0.3  py39h1a9c180_0          conda-forge/linux-64      92 KB
+  + multiprocess                   0.70.12.2  py39h3811e60_1          conda-forge/linux-64     210 KB
+  + mypy_extensions                    0.4.3  py39hf3d152e_4          conda-forge/linux-64      10 KB
+  + nest-asyncio                       1.5.4  pyhd8ed1ab_0            conda-forge/noarch         9 KB
+  + networkx                           2.6.3  pyhd8ed1ab_1            conda-forge/noarch         1 MB
+  + nomkl                                1.0  h5ca1d4c_0              conda-forge/noarch         4 KB
+  + numexpr                            2.8.0  py39hbd72853_101        conda-forge/linux-64     422 KB
+  + numpy                             1.22.2  py39h91f2184_0          conda-forge/linux-64       7 MB
+  + olefile                             0.46  pyh9f0ad1d_1            conda-forge/noarch        32 KB
+  + openjpeg                           2.4.0  hb52868f_1              conda-forge/linux-64     444 KB
+  + packaging                           21.3  pyhd8ed1ab_0            conda-forge/noarch        36 KB
+  + pairix                             0.3.7  py39hd1f1204_3          bioconda/linux-64        106 KB
+  + pandas                             1.4.1  py39hde0f152_0          conda-forge/linux-64      13 MB
+  + pango                            1.48.10  h54213e6_2              conda-forge/linux-64     403 KB
+  + parso                              0.8.3  pyhd8ed1ab_0            conda-forge/noarch        69 KB
+  + partd                              1.2.0  pyhd8ed1ab_0            conda-forge/noarch        18 KB
+  + pathspec                           0.9.0  pyhd8ed1ab_0            conda-forge/noarch        31 KB
+  + pcre                                8.45  h9c3ff4c_0              conda-forge/linux-64     253 KB
+  + pexpect                            4.8.0  pyh9f0ad1d_2            conda-forge/noarch        47 KB
+  + pickleshare                        0.7.5  py39hde42818_1002       conda-forge/linux-64      13 KB
+  + pillow                             8.3.1  py39ha612740_0          conda-forge/linux-64     687 KB
+  + pixman                            0.40.0  h36c2ea0_0              conda-forge/linux-64     627 KB
+  + platformdirs                       2.5.0  pyhd8ed1ab_0            conda-forge/noarch        15 KB
+  + prompt-toolkit                    3.0.27  pyha770c72_0            conda-forge/noarch       252 KB
+  + psutil                             5.9.0  py39h3811e60_0          conda-forge/linux-64     398 KB
+  + pthread-stubs                        0.4  h36c2ea0_1001           conda-forge/linux-64       5 KB
+  + ptyprocess                         0.7.0  pyhd3deb0d_0            conda-forge/noarch        16 KB
+  + pure_eval                          0.2.2  pyhd8ed1ab_0            conda-forge/noarch        14 KB
+  + pybedtools                         0.8.2  py39h39abbe0_1          bioconda/linux-64         12 MB
+  + pybigwig                          0.3.18  py39h015b436_1          bioconda/linux-64         80 KB
+  + pybind11                           2.9.1  py39h1a9c180_0          conda-forge/linux-64     162 KB
+  + pybind11-global                    2.9.1  py39h1a9c180_0          conda-forge/linux-64     194 KB
+  + pyfaidx                            0.6.4  pyh5e36f6f_0            bioconda/noarch           30 KB
+  + pygenometracks                       3.6  py_0                    bioconda/noarch           74 KB
+  + pygments                          2.11.2  pyhd8ed1ab_0            conda-forge/noarch       796 KB
+  + pymongo                            4.0.1  py39he80948d_1          conda-forge/linux-64       2 MB
+  + pyparsing                          3.0.7  pyhd8ed1ab_0            conda-forge/noarch        79 KB
+  + pysam                             0.17.0  py39h051187c_0          bioconda/linux-64          3 MB
+  + pytables                           3.6.1  py39h2669a42_4          conda-forge/linux-64       2 MB
+  + python-dateutil                    2.8.2  pyhd8ed1ab_0            conda-forge/noarch       240 KB
+  + python-graphviz                   0.19.1  pyhaef67bd_0            conda-forge/noarch        34 KB
+  + pytz                              2021.3  pyhd8ed1ab_0            conda-forge/noarch       242 KB
+  + pyyaml                               6.0  py39h3811e60_3          conda-forge/linux-64     192 KB
+  + pyzmq                             22.3.0  py39h37b5a0c_1          conda-forge/linux-64     537 KB
+  + scikit-learn                       1.0.2  py39h4dfa638_0          conda-forge/linux-64      27 MB
+  + scipy                              1.8.0  py39hee8e79c_1          conda-forge/linux-64      25 MB
+  + simplejson                        3.17.6  py39h3811e60_0          conda-forge/linux-64     104 KB
+  + sortedcontainers                   2.4.0  pyhd8ed1ab_0            conda-forge/noarch        26 KB
+  + stack_data                         0.2.0  pyhd8ed1ab_0            conda-forge/noarch        21 KB
+  + tblib                              1.7.0  pyhd8ed1ab_0            conda-forge/noarch        15 KB
+  + threadpoolctl                      3.1.0  pyh8a188c0_0            conda-forge/noarch        18 KB
+  + tomli                              2.0.1  pyhd8ed1ab_0            conda-forge/noarch        16 KB
+  + toolz                             0.11.2  pyhd8ed1ab_0            conda-forge/noarch        48 KB
+  + tornado                              6.1  py39h3811e60_2          conda-forge/linux-64     646 KB
+  + traitlets                          5.1.1  pyhd8ed1ab_0            conda-forge/noarch        82 KB
+  + typed-ast                          1.5.2  py39h3811e60_0          conda-forge/linux-64     811 KB
+  + typing_extensions                  4.1.1  pyha770c72_0            conda-forge/noarch        29 KB
+  + unidecode                          1.3.2  pyhd8ed1ab_0            conda-forge/noarch       155 KB
+  + wcwidth                            0.2.5  pyh9f0ad1d_2            conda-forge/noarch        33 KB
+  + xorg-kbproto                       1.0.7  h7f98852_1002           conda-forge/linux-64      27 KB
+  + xorg-libice                       1.0.10  h7f98852_0              conda-forge/linux-64      58 KB
+  + xorg-libsm                         1.2.3  hd9c2040_1000           conda-forge/linux-64      26 KB
+  + xorg-libx11                        1.7.2  h7f98852_0              conda-forge/linux-64     941 KB
+  + xorg-libxau                        1.0.9  h7f98852_0              conda-forge/linux-64      13 KB
+  + xorg-libxdmcp                      1.1.3  h7f98852_0              conda-forge/linux-64      19 KB
+  + xorg-libxext                       1.3.4  h7f98852_1              conda-forge/linux-64      54 KB
+  + xorg-libxrender                   0.9.10  h7f98852_1003           conda-forge/linux-64      32 KB
+  + xorg-renderproto                  0.11.1  h7f98852_1002           conda-forge/linux-64       9 KB
+  + xorg-xextproto                     7.3.0  h7f98852_1002           conda-forge/linux-64      28 KB
+  + xorg-xproto                       7.0.31  h7f98852_1007           conda-forge/linux-64      73 KB
+  + zeromq                             4.3.4  h9c3ff4c_1              conda-forge/linux-64     351 KB
+  + zict                               2.0.0  py_0                    conda-forge/noarch        10 KB
+  + zipp                               3.7.0  pyhd8ed1ab_1            conda-forge/noarch        12 KB
+
+  Summary:
+
+  Install: 175 packages
+
+  Total download: 213 MB
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Confirm changes: [Y/n] Finished blosc                                (00m:00s)             841 KB      9 MB/s
+Finished psutil                               (00m:00s)             398 KB      4 MB/s
+Finished click                                (00m:00s)             147 KB      1 MB/s
+Finished simplejson                           (00m:00s)             104 KB    875 KB/s
+Finished future                               (00m:00s)             715 KB      6 MB/s
+Finished tornado                              (00m:00s)             646 KB      4 MB/s
+Finished pymongo                              (00m:00s)               2 MB      8 MB/s
+Finished libwebp-base                         (00m:00s)             824 KB      4 MB/s
+Finished pickleshare                          (00m:00s)              13 KB     61 KB/s
+Finished pixman                               (00m:00s)             627 KB      3 MB/s
+Finished xorg-kbproto                         (00m:00s)              27 KB    114 KB/s
+Finished libsodium                            (00m:00s)             366 KB      2 MB/s
+Finished gettext                              (00m:00s)               4 MB     15 MB/s
+Finished xorg-libxau                          (00m:00s)              13 KB     48 KB/s
+Finished libpng                               (00m:00s)             306 KB      1 MB/s
+Finished pybind11                             (00m:00s)             162 KB    523 KB/s
+Finished graphite2                            (00m:00s)             102 KB    327 KB/s
+Finished libxcb                               (00m:00s)             391 KB      1 MB/s
+Finished hdf5                                 (00m:00s)               4 MB     10 MB/s
+Finished gdk-pixbuf                           (00m:00s)             609 KB      2 MB/s
+Finished xorg-libx11                          (00m:00s)             941 KB      2 MB/s
+Finished libtiff                              (00m:00s)             668 KB      2 MB/s
+Finished xorg-libxrender                      (00m:00s)              32 KB     79 KB/s
+Finished openjpeg                             (00m:00s)             444 KB      1 MB/s
+Finished fsspec                               (00m:00s)              91 KB    202 KB/s
+Finished biopython                            (00m:00s)               3 MB      6 MB/s
+Finished argh                                 (00m:00s)              26 KB     55 KB/s
+Finished cairo                                (00m:00s)               1 MB      3 MB/s
+Finished joblib                               (00m:00s)             210 KB    434 KB/s
+Finished nest-asyncio                         (00m:00s)               9 KB     19 KB/s
+Finished locket                               (00m:00s)               6 KB     11 KB/s
+Finished python-dateutil                      (00m:00s)             240 KB    467 KB/s
+Finished tblib                                (00m:00s)              15 KB     28 KB/s
+Finished font-ttf-dejavu-sans-mono            (00m:00s)             388 KB    727 KB/s
+Finished pathspec                             (00m:00s)              31 KB     55 KB/s
+Finished decorator                            (00m:00s)              12 KB     21 KB/s
+Finished platformdirs                         (00m:00s)              15 KB     27 KB/s
+Finished pure_eval                            (00m:00s)              14 KB     25 KB/s
+Finished backports                            (00m:00s)               4 KB      6 KB/s
+Finished font-ttf-ubuntu                      (00m:00s)               2 MB      3 MB/s
+Finished cached-property                      (00m:00s)               4 KB      7 KB/s
+Finished fonts-conda-ecosystem                (00m:00s)               4 KB      6 KB/s
+Finished pyfaidx                              (00m:00s)              30 KB     47 KB/s
+Finished black                                (00m:00s)             124 KB    197 KB/s
+Finished partd                                (00m:00s)              18 KB     28 KB/s
+Finished intervaltree                         (00m:00s)              23 KB     36 KB/s
+Finished pybigwig                             (00m:00s)              80 KB    118 KB/s
+Finished pillow                               (00m:00s)             687 KB    978 KB/s
+Finished multiprocess                         (00m:00s)             210 KB    292 KB/s
+Finished htslib                               (00m:00s)               2 MB      3 MB/s
+Finished pango                                (00m:00s)             403 KB    550 KB/s
+Finished jupyter_client                       (00m:00s)              90 KB    114 KB/s
+Finished pytables                             (00m:00s)               2 MB      2 MB/s
+Finished dask                                 (00m:00s)               5 KB      4 KB/s
+Finished hyperopt                             (00m:00s)             762 KB    656 KB/s
+Finished cooler                               (00m:00s)              78 KB     67 KB/s
+Finished hicmatrix                            (00m:00s)              25 KB     21 KB/s
+Finished pybind11-global                      (00m:00s)             194 KB    147 KB/s
+Finished pyyaml                               (00m:00s)             192 KB    142 KB/s
+Finished mock                                 (00m:00s)              51 KB     38 KB/s
+Finished msgpack-python                       (00m:00s)              92 KB     65 KB/s
+Finished expat                                (00m:00s)             183 KB    118 KB/s
+Finished xorg-xextproto                       (00m:00s)              28 KB     17 KB/s
+Finished mypy_extensions                      (00m:00s)              10 KB      6 KB/s
+Finished kiwisolver                           (00m:00s)              80 KB     46 KB/s
+Finished giflib                               (00m:00s)              77 KB     44 KB/s
+Finished libgfortran-ng                       (00m:00s)              19 KB     11 KB/s
+Finished ipython                              (00m:00s)               1 MB    622 KB/s
+Finished libwebp                              (00m:00s)              85 KB     45 KB/s
+Finished libblas                              (00m:00s)              12 KB      6 KB/s
+Finished gtk2                                 (00m:01s)               7 MB      4 MB/s
+Finished liblapack                            (00m:00s)              12 KB      6 KB/s
+Finished freetype                             (00m:00s)             890 KB    436 KB/s
+Finished sortedcontainers                     (00m:00s)              26 KB     12 KB/s
+Finished gts                                  (00m:00s)             411 KB    197 KB/s
+Finished threadpoolctl                        (00m:00s)              18 KB      9 KB/s
+Finished dill                                 (00m:00s)              62 KB     29 KB/s
+Finished entrypoints                          (00m:00s)               9 KB      4 KB/s
+Finished cached_property                      (00m:00s)              11 KB      5 KB/s
+Finished typing_extensions                    (00m:00s)              29 KB     14 KB/s
+Finished ptyprocess                           (00m:00s)              16 KB      7 KB/s
+Finished pygments                             (00m:00s)             796 KB    331 KB/s
+Finished matplotlib-inline                    (00m:00s)              11 KB      4 KB/s
+Finished fonts-conda-forge                    (00m:00s)               4 KB      2 KB/s
+Finished parso                                (00m:00s)              69 KB     28 KB/s
+Finished backports.functools_lru_cache        (00m:00s)               9 KB      4 KB/s
+Finished prompt-toolkit                       (00m:00s)             252 KB     94 KB/s
+Finished cytoolz                              (00m:00s)             411 KB    151 KB/s
+Finished jupyter_core                         (00m:00s)              81 KB     28 KB/s
+Finished h5py                                 (00m:00s)               1 MB    418 KB/s
+Finished pysam                                (00m:00s)               3 MB    845 KB/s
+Finished importlib_metadata                   (00m:00s)               4 KB      1 KB/s
+Finished argcomplete                          (00m:00s)              34 KB      9 KB/s
+Finished gffutils                             (00m:00s)               1 MB    282 KB/s
+Finished graphviz                             (00m:01s)               4 MB    823 KB/s
+Finished hicexplorer                          (00m:00s)               2 MB    360 KB/s
+Finished markupsafe                           (00m:00s)              22 KB      4 KB/s
+Finished jbig                                 (00m:00s)              43 KB      8 KB/s
+Finished xorg-renderproto                     (00m:00s)               9 KB      2 KB/s
+Finished pthread-stubs                        (00m:00s)               5 KB   1006  B/s
+Finished xorg-libice                          (00m:00s)              58 KB     10 KB/s
+Finished debugpy                              (00m:00s)               2 MB    356 KB/s
+Finished xorg-libsm                           (00m:00s)              26 KB      4 KB/s
+Finished xorg-libxext                         (00m:00s)              54 KB      9 KB/s
+Finished lcms2                                (00m:00s)             443 KB     73 KB/s
+Finished cloudpickle                          (00m:00s)              24 KB      4 KB/s
+Finished nomkl                                (00m:00s)               4 KB    619  B/s
+Finished heapdict                             (00m:00s)               7 KB      1 KB/s
+Finished matplotlib-base                      (00m:03s)               7 MB      1 MB/s
+Finished asttokens                            (00m:00s)              21 KB      3 KB/s
+Finished font-ttf-source-code-pro             (00m:00s)             684 KB    102 KB/s
+Finished tomli                                (00m:00s)              16 KB      2 KB/s
+Finished harfbuzz                             (00m:00s)               2 MB    308 KB/s
+Finished jinja2                               (00m:00s)              99 KB     15 KB/s
+Finished pexpect                              (00m:00s)              47 KB      7 KB/s
+Finished importlib-metadata                   (00m:00s)              33 KB      5 KB/s
+Finished pairix                               (00m:00s)             106 KB     15 KB/s
+Finished imbalanced-learn                     (00m:00s)             115 KB     16 KB/s
+Finished python-graphviz                      (00m:00s)              34 KB      5 KB/s
+Finished fit_nbinom                           (00m:00s)              18 KB      3 KB/s
+Finished hic2cool                             (00m:00s)              26 KB      4 KB/s
+Finished scikit-learn                         (00m:06s)              27 MB      4 MB/s
+Finished eigen                                (00m:00s)               1 MB    168 KB/s
+Finished xorg-libxdmcp                        (00m:00s)              19 KB      3 KB/s
+Finished libtool                              (00m:00s)             511 KB     69 KB/s
+Finished distributed                          (00m:00s)               1 MB    152 KB/s
+Finished zeromq                               (00m:00s)             351 KB     47 KB/s
+Finished toolz                                (00m:00s)              48 KB      6 KB/s
+Finished typed-ast                            (00m:00s)             811 KB    107 KB/s
+Finished zipp                                 (00m:00s)              12 KB      2 KB/s
+Finished pyzmq                                (00m:00s)             537 KB     71 KB/s
+Finished dataclasses                          (00m:00s)              10 KB      1 KB/s
+Finished olefile                              (00m:00s)              32 KB      4 KB/s
+Finished packaging                            (00m:00s)              36 KB      5 KB/s
+Finished wcwidth                              (00m:00s)              33 KB      4 KB/s
+Finished libgd                                (00m:00s)             279 KB     36 KB/s
+Finished ipykernel                            (00m:00s)             182 KB     23 KB/s
+Finished cleanlab                             (00m:00s)              65 KB      8 KB/s
+Finished lerc                                 (00m:00s)             213 KB     26 KB/s
+Finished libuuid                              (00m:00s)              28 KB      3 KB/s
+Finished atk-1.0                              (00m:00s)             560 KB     64 KB/s
+Finished libgfortran5
+                  __    __    __    __
+                 /  \  /  \  /  \  /  \
+                /    \/    \/    \/    \
+███████████████/  /██/  /██/  /██/  /████████████████████████
+              /  / \   / \   / \   / \  \____
+             /  /   \_/   \_/   \_/   \    o \__,
+            / _/                       \_____/  `
+            |/
+        ███╗   ███╗ █████╗ ███╗   ███╗██████╗  █████╗
+        ████╗ ████║██╔══██╗████╗ ████║██╔══██╗██╔══██╗
+        ██╔████╔██║███████║██╔████╔██║██████╔╝███████║
+        ██║╚██╔╝██║██╔══██║██║╚██╔╝██║██╔══██╗██╔══██║
+        ██║ ╚═╝ ██║██║  ██║██║ ╚═╝ ██║██████╔╝██║  ██║
+        ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚═════╝ ╚═╝  ╚═╝
+
+        mamba (0.15.3) supported by @QuantStack
+
+        GitHub:  https://github.com/mamba-org/mamba
+        Twitter: https://twitter.com/QuantStack
+
+█████████████████████████████████████████████████████████████
+
+
+Looking for: ['hicexplorer']
+
+
+Pinned packages:
+  - python 3.9.*
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... 
+
+done
+                         (00m:00s)               2 MB    202 KB/s
+Finished asciitree                            (00m:00s)               6 KB    697  B/s
+Finished unidecode                            (00m:00s)             155 KB     17 KB/s
+Finished zict                                 (00m:00s)              10 KB      1 KB/s
+Finished scipy                                (00m:07s)              25 MB      3 MB/s
+Finished backcall                             (00m:00s)              13 KB      1 KB/s
+Finished jedi                                 (00m:00s)             992 KB    103 KB/s
+Finished libdeflate                           (00m:00s)              67 KB      7 KB/s
+Finished numpy                                (00m:02s)               7 MB    712 KB/s
+Finished networkx                             (00m:00s)               1 MB    149 KB/s
+Finished pytz                                 (00m:00s)             242 KB     24 KB/s
+Finished font-ttf-inconsolata                 (00m:00s)              94 KB      9 KB/s
+Finished stack_data                           (00m:00s)              21 KB      2 KB/s
+Finished xorg-xproto                          (00m:00s)              73 KB      7 KB/s
+Finished numexpr                              (00m:00s)             422 KB     40 KB/s
+Finished jpeg                                 (00m:00s)             269 KB     25 KB/s
+Finished fontconfig                           (00m:00s)             372 KB     34 KB/s
+Finished pyparsing                            (00m:00s)              79 KB      7 KB/s
+Finished dask-core                            (00m:00s)             803 KB     70 KB/s
+Finished pandas                               (00m:03s)              13 MB      1 MB/s
+Finished fribidi                              (00m:00s)             112 KB     10 KB/s
+Finished traitlets                            (00m:00s)              82 KB      7 KB/s
+Finished krbalancing                          (00m:00s)             110 KB      9 KB/s
+Finished pcre                                 (00m:00s)             253 KB     21 KB/s
+Finished executing                            (00m:00s)              18 KB      1 KB/s
+Finished pygenometracks                       (00m:00s)              74 KB      6 KB/s
+Finished cycler                               (00m:00s)              10 KB    855  B/s
+Finished libcblas                             (00m:00s)              12 KB    986  B/s
+Finished librsvg                              (00m:01s)               5 MB    406 KB/s
+Finished libopenblas                          (00m:04s)              10 MB    694 KB/s
+Finished libglib                              (00m:01s)               3 MB    216 KB/s
+Finished bedtools                             (00m:05s)              18 MB      1 MB/s
+Finished pybedtools                           (00m:03s)              12 MB    851 KB/s
+Finished bokeh                                (00m:02s)              14 MB    914 KB/s
++ conda clean --all --yes
+Cache location: /opt/conda/pkgs
+Will remove the following tarballs:
+
+/opt/conda/pkgs
+---------------
+unidecode-1.3.2-pyhd8ed1ab_0.tar.bz2         155 KB
+zict-2.0.0-py_0.tar.bz2                       10 KB
+distributed-2022.2.0-py39hf3d152e_0.tar.bz2     1.1 MB
+nomkl-1.0-h5ca1d4c_0.tar.bz2                   4 KB
+fonts-conda-ecosystem-1-0.tar.bz2              4 KB
+imbalanced-learn-0.9.0-pyhd8ed1ab_0.tar.bz2     115 KB
+htslib-1.13-h9093b5e_0.tar.bz2               2.2 MB
+xorg-libxrender-0.9.10-h7f98852_1003.tar.bz2      32 KB
+numexpr-2.8.0-py39hbd72853_101.tar.bz2       422 KB
+_openmp_mutex-4.5-1_gnu.tar.bz2               22 KB
+pygenometracks-3.6-py_0.tar.bz2               74 KB
+joblib-1.1.0-pyhd8ed1ab_0.tar.bz2            210 KB
+toolz-0.11.2-pyhd8ed1ab_0.tar.bz2             48 KB
+ca-certificates-2021.10.8-ha878542_0.tar.bz2     139 KB
+pcre-8.45-h9c3ff4c_0.tar.bz2                 253 KB
+hic2cool-0.8.3-pyh864c0ab_2.tar.bz2           26 KB
+reproc-14.2.3-h7f98852_0.tar.bz2              28 KB
+intervaltree-3.0.2-py_0.tar.bz2               23 KB
+pymongo-4.0.1-py39he80948d_1.tar.bz2         1.5 MB
+mock-4.0.3-py39hf3d152e_2.tar.bz2             51 KB
+hyperopt-0.2.5-pyh9f0ad1d_0.tar.bz2          762 KB
+threadpoolctl-3.1.0-pyh8a188c0_0.tar.bz2      18 KB
+openjpeg-2.4.0-hb52868f_1.tar.bz2            444 KB
+msgpack-python-1.0.3-py39h1a9c180_0.tar.bz2      92 KB
+cycler-0.11.0-pyhd8ed1ab_0.tar.bz2            10 KB
+icu-68.2-h9c3ff4c_0.tar.bz2                 13.1 MB
+backports.functools_lru_cache-1.6.4-pyhd8ed1ab_0.tar.bz2       9 KB
+libpng-1.6.37-h21135ba_2.tar.bz2             306 KB
+harfbuzz-3.0.0-h83ec7ef_1.tar.bz2            2.0 MB
+xorg-libxau-1.0.9-h7f98852_0.tar.bz2          13 KB
+gffutils-0.10.1-pyh864c0ab_1.tar.bz2         1.2 MB
+python-graphviz-0.19.1-pyhaef67bd_0.tar.bz2      34 KB
+importlib-metadata-4.11.1-py39hf3d152e_0.tar.bz2      33 KB
+conda-4.11.0-py39hf3d152e_0.tar.bz2         16.8 MB
+giflib-5.2.1-h36c2ea0_2.tar.bz2               77 KB
+libopenblas-0.3.18-pthreads_h8fe5266_0.tar.bz2     9.6 MB
+libnghttp2-1.46.0-hce63b2e_0.conda           680 KB
+dill-0.3.4-pyhd8ed1ab_0.tar.bz2               62 KB
+matplotlib-base-3.3.2-py39h98787fa_1.tar.bz2     6.7 MB
+fribidi-1.0.10-h36c2ea0_0.tar.bz2            112 KB
+asciitree-0.3.3-py_2.tar.bz2                   6 KB
+libiconv-1.16-h516909a_0.tar.bz2             1.4 MB
+prompt-toolkit-3.0.27-pyha770c72_0.tar.bz2     252 KB
+c-ares-1.18.1-h7f98852_0.tar.bz2             113 KB
+jedi-0.18.1-py39hf3d152e_0.tar.bz2           992 KB
+xorg-libsm-1.2.3-hd9c2040_1000.tar.bz2        26 KB
+reproc-cpp-14.2.3-h9c3ff4c_0.tar.bz2          20 KB
+pathspec-0.9.0-pyhd8ed1ab_0.tar.bz2           31 KB
+typed-ast-1.5.2-py39h3811e60_0.tar.bz2       811 KB
+backports-1.0-py_2.tar.bz2                     4 KB
+markupsafe-2.1.0-py39hb9d737c_0.tar.bz2       22 KB
+atk-1.0-2.36.0-h3371d22_4.tar.bz2            560 KB
+cloudpickle-2.0.0-pyhd8ed1ab_0.tar.bz2        24 KB
+xorg-libx11-1.7.2-h7f98852_0.tar.bz2         941 KB
+zstd-1.5.0-ha4553b6_1.conda                  524 KB
+hicexplorer-3.7.2-pyhdfd78af_1.tar.bz2       1.8 MB
+libcblas-3.9.0-13_linux64_openblas.tar.bz2      12 KB
+librsvg-2.52.2-hc3c00ef_0.tar.bz2            5.2 MB
+libgomp-11.2.0-h1d223b6_12.tar.bz2           426 KB
+lerc-2.2.1-h9c3ff4c_0.tar.bz2                213 KB
+pyzmq-22.3.0-py39h37b5a0c_1.tar.bz2          537 KB
+openssl-1.1.1l-h7f98852_0.tar.bz2            2.1 MB
+graphviz-2.49.0-h85b4f2f_0.tar.bz2           3.9 MB
+argh-0.26.2-pyh9f0ad1d_1002.tar.bz2           26 KB
+python-dateutil-2.8.2-pyhd8ed1ab_0.tar.bz2     240 KB
+stack_data-0.2.0-pyhd8ed1ab_0.tar.bz2         21 KB
+h5py-3.6.0-nompi_py39h7e08c79_100.tar.bz2     1.3 MB
+black-22.1.0-pyhd8ed1ab_0.tar.bz2            124 KB
+gettext-0.19.8.1-h0b5b191_1005.tar.bz2       3.6 MB
+gdk-pixbuf-2.42.6-h04a7f16_0.tar.bz2         609 KB
+pure_eval-0.2.2-pyhd8ed1ab_0.tar.bz2          14 KB
+dask-core-2022.2.0-pyhd8ed1ab_0.tar.bz2      803 KB
+xorg-xextproto-7.3.0-h7f98852_1002.tar.bz2      28 KB
+fonts-conda-forge-1-0.tar.bz2                  4 KB
+jupyter_core-4.9.2-py39hf3d152e_0.tar.bz2      81 KB
+eigen-3.4.0-h4bd325d_0.tar.bz2               1.2 MB
+olefile-0.46-pyh9f0ad1d_1.tar.bz2             32 KB
+pairix-0.3.7-py39hd1f1204_3.tar.bz2          106 KB
+libglib-2.68.4-h3e27bee_0.tar.bz2            3.0 MB
+libtool-2.4.6-h9c3ff4c_1008.tar.bz2          511 KB
+cached-property-1.5.2-hd8ed1ab_1.tar.bz2       4 KB
+tornado-6.1-py39h3811e60_2.tar.bz2           646 KB
+zeromq-4.3.4-h9c3ff4c_1.tar.bz2              351 KB
+dask-2022.2.0-pyhd8ed1ab_0.tar.bz2             5 KB
+krb5-1.19.2-hcc1bbae_0.tar.bz2               1.4 MB
+_libgcc_mutex-0.1-conda_forge.tar.bz2          3 KB
+kiwisolver-1.3.2-py39h1a9c180_1.tar.bz2       80 KB
+certifi-2021.10.8-py39hf3d152e_1.tar.bz2     145 KB
+libgd-2.3.3-h6ad9fb6_0.tar.bz2               279 KB
+dataclasses-0.8-pyhc8e2a94_3.tar.bz2          10 KB
+cached_property-1.5.2-pyha770c72_1.tar.bz2      11 KB
+gts-0.7.6-h64030ff_2.tar.bz2                 411 KB
+jpeg-9e-h7f98852_0.tar.bz2                   269 KB
+tblib-1.7.0-pyhd8ed1ab_0.tar.bz2              15 KB
+biopython-1.79-py39h3811e60_1.tar.bz2        2.6 MB
+pyyaml-6.0-py39h3811e60_3.tar.bz2            192 KB
+click-8.0.3-py39hf3d152e_1.tar.bz2           147 KB
+networkx-2.6.3-pyhd8ed1ab_1.tar.bz2          1.5 MB
+pixman-0.40.0-h36c2ea0_0.tar.bz2             627 KB
+multiprocess-0.70.12.2-py39h3811e60_1.tar.bz2     210 KB
+decorator-5.1.1-pyhd8ed1ab_0.tar.bz2          12 KB
+numpy-1.22.2-py39h91f2184_0.tar.bz2          6.9 MB
+bedtools-2.30.0-h7d7f7ad_2.tar.bz2          17.9 MB
+pthread-stubs-0.4-h36c2ea0_1001.tar.bz2        5 KB
+libev-4.33-h516909a_1.tar.bz2                104 KB
+libstdcxx-ng-11.2.0-he4da1e4_12.tar.bz2      4.2 MB
+libgfortran5-11.2.0-h5c6108e_12.tar.bz2      1.7 MB
+tomli-2.0.1-pyhd8ed1ab_0.tar.bz2              16 KB
+pybedtools-0.8.2-py39h39abbe0_1.tar.bz2     12.1 MB
+heapdict-1.0.1-py_0.tar.bz2                    7 KB
+pysam-0.17.0-py39h051187c_0.tar.bz2          2.9 MB
+backcall-0.2.0-pyh9f0ad1d_0.tar.bz2           13 KB
+future-0.18.2-py39hf3d152e_4.tar.bz2         715 KB
+parso-0.8.3-pyhd8ed1ab_0.tar.bz2              69 KB
+libtiff-4.3.0-hf544144_1.tar.bz2             668 KB
+font-ttf-source-code-pro-2.038-h77eed37_0.tar.bz2     684 KB
+libedit-3.1.20191231-he28a2e2_2.tar.bz2      121 KB
+font-ttf-inconsolata-3.000-h77eed37_0.tar.bz2      94 KB
+pybind11-global-2.9.1-py39h1a9c180_0.tar.bz2     194 KB
+libarchive-3.5.2-hccf745f_1.tar.bz2          1.6 MB
+executing-0.8.2-pyhd8ed1ab_0.tar.bz2          18 KB
+cytoolz-0.11.2-py39h3811e60_1.tar.bz2        411 KB
+libsolv-0.7.19-h780b84a_5.tar.bz2            445 KB
+fit_nbinom-1.1-pyh864c0ab_2.tar.bz2           18 KB
+typing_extensions-4.1.1-pyha770c72_0.tar.bz2      29 KB
+psutil-5.9.0-py39h3811e60_0.tar.bz2          398 KB
+libblas-3.9.0-13_linux64_openblas.tar.bz2      12 KB
+wcwidth-0.2.5-pyh9f0ad1d_2.tar.bz2            33 KB
+lcms2-2.12-hddcbb42_0.tar.bz2                443 KB
+pytz-2021.3-pyhd8ed1ab_0.tar.bz2             242 KB
+locket-0.2.0-py_2.tar.bz2                      6 KB
+ipykernel-6.9.1-py39hef51801_0.tar.bz2       182 KB
+libsodium-1.0.18-h36c2ea0_1.tar.bz2          366 KB
+xorg-libxdmcp-1.1.3-h7f98852_0.tar.bz2        19 KB
+libxml2-2.9.12-h72842e0_0.tar.bz2            772 KB
+lz4-c-1.9.3-h9c3ff4c_1.tar.bz2               179 KB
+scikit-learn-1.0.2-py39h4dfa638_0.tar.bz2    26.8 MB
+jbig-2.1-h7f98852_2003.tar.bz2                43 KB
+bzip2-1.0.8-h7f98852_4.tar.bz2               484 KB
+cleanlab-1.0-pyhd8ed1ab_2.tar.bz2             65 KB
+libcurl-7.80.0-h0b77cf5_0.conda              339 KB
+cooler-0.8.11-pyh5e36f6f_1.tar.bz2            78 KB
+krbalancing-0.0.5-py39h7cff6ad_3.tar.bz2     110 KB
+hicmatrix-16-pyhdfd78af_0.tar.bz2             25 KB
+pango-1.48.10-h54213e6_2.tar.bz2             403 KB
+pickleshare-0.7.5-py39hde42818_1002.tar.bz2      13 KB
+bokeh-2.4.2-py39hf3d152e_0.tar.bz2          13.6 MB
+pygments-2.11.2-pyhd8ed1ab_0.tar.bz2         796 KB
+ptyprocess-0.7.0-pyhd3deb0d_0.tar.bz2         16 KB
+scipy-1.8.0-py39hee8e79c_1.tar.bz2          25.4 MB
+pillow-8.3.1-py39ha612740_0.tar.bz2          687 KB
+blosc-1.21.0-h9c3ff4c_0.tar.bz2              841 KB
+jupyter_client-7.1.2-pyhd8ed1ab_0.tar.bz2      90 KB
+graphite2-1.3.13-h58526e2_1001.tar.bz2       102 KB
+nest-asyncio-1.5.4-pyhd8ed1ab_0.tar.bz2        9 KB
+fsspec-2022.1.0-pyhd8ed1ab_0.tar.bz2          91 KB
+matplotlib-inline-0.1.3-pyhd8ed1ab_0.tar.bz2      11 KB
+partd-1.2.0-pyhd8ed1ab_0.tar.bz2              18 KB
+platformdirs-2.5.0-pyhd8ed1ab_0.tar.bz2       15 KB
+simplejson-3.17.6-py39h3811e60_0.tar.bz2     104 KB
+mamba-0.15.3-py39h951de11_0.tar.bz2          734 KB
+ipython-8.0.1-py39hf3d152e_2.tar.bz2         1.1 MB
+libwebp-1.2.2-h3452ae3_0.tar.bz2              85 KB
+pybind11-2.9.1-py39h1a9c180_0.tar.bz2        162 KB
+expat-2.4.4-h9c3ff4c_0.tar.bz2               183 KB
+traitlets-5.1.1-pyhd8ed1ab_0.tar.bz2          82 KB
+argcomplete-2.0.0-pyhd8ed1ab_0.tar.bz2        34 KB
+zipp-3.7.0-pyhd8ed1ab_1.tar.bz2               12 KB
+pandas-1.4.1-py39hde0f152_0.tar.bz2         13.3 MB
+libssh2-1.10.0-ha56f1ee_2.tar.bz2            233 KB
+libgcc-ng-11.2.0-h1d223b6_12.tar.bz2         904 KB
+mypy_extensions-0.4.3-py39hf3d152e_4.tar.bz2      10 KB
+libxcb-1.13-h7f98852_1004.tar.bz2            391 KB
+pexpect-4.8.0-pyh9f0ad1d_2.tar.bz2            47 KB
+pyparsing-3.0.7-pyhd8ed1ab_0.tar.bz2          79 KB
+entrypoints-0.4-pyhd8ed1ab_0.tar.bz2           9 KB
+libuuid-2.32.1-h7f98852_1000.tar.bz2          28 KB
+font-ttf-dejavu-sans-mono-2.37-hab24e00_0.tar.bz2     388 KB
+asttokens-2.0.5-pyhd8ed1ab_0.tar.bz2          21 KB
+pybigwig-0.3.18-py39h015b436_1.tar.bz2        80 KB
+gtk2-2.24.33-h539f30e_1.tar.bz2              7.3 MB
+pyfaidx-0.6.4-pyh5e36f6f_0.tar.bz2            30 KB
+fontconfig-2.13.96-ha180cfb_0.tar.bz2        372 KB
+debugpy-1.5.1-py39he80948d_0.tar.bz2         2.0 MB
+freetype-2.10.4-h0708190_1.tar.bz2           890 KB
+jinja2-3.0.3-pyhd8ed1ab_0.tar.bz2             99 KB
+hdf5-1.12.1-nompi_h2750804_100.tar.bz2       3.5 MB
+lzo-2.10-h516909a_1000.tar.bz2               314 KB
+liblapack-3.9.0-13_linux64_openblas.tar.bz2      12 KB
+xorg-libice-1.0.10-h7f98852_0.tar.bz2         58 KB
+libdeflate-1.7-h7f98852_5.tar.bz2             67 KB
+cairo-1.16.0-h6cf1ce9_1008.tar.bz2           1.5 MB
+sortedcontainers-2.4.0-pyhd8ed1ab_0.tar.bz2      26 KB
+libwebp-base-1.2.2-h7f98852_1.tar.bz2        824 KB
+libgfortran-ng-11.2.0-h69a702a_12.tar.bz2      19 KB
+pytables-3.6.1-py39h2669a42_4.tar.bz2        1.5 MB
+xorg-renderproto-0.11.1-h7f98852_1002.tar.bz2       9 KB
+font-ttf-ubuntu-0.83-hab24e00_0.tar.bz2      1.9 MB
+packaging-21.3-pyhd8ed1ab_0.tar.bz2           36 KB
+xorg-kbproto-1.0.7-h7f98852_1002.tar.bz2      27 KB
+python_abi-3.9-2_cp39.tar.bz2                  4 KB
+xorg-xproto-7.0.31-h7f98852_1007.tar.bz2      73 KB
+xorg-libxext-1.3.4-h7f98852_1.tar.bz2         54 KB
+importlib_metadata-4.11.1-hd8ed1ab_0.tar.bz2       4 KB
+
+---------------------------------------------------
+Total:                                     260.7 MB
+
+Removed unidecode-1.3.2-pyhd8ed1ab_0.tar.bz2
+Removed zict-2.0.0-py_0.tar.bz2
+Removed distributed-2022.2.0-py39hf3d152e_0.tar.bz2
+Removed nomkl-1.0-h5ca1d4c_0.tar.bz2
+Removed fonts-conda-ecosystem-1-0.tar.bz2
+Removed imbalanced-learn-0.9.0-pyhd8ed1ab_0.tar.bz2
+Removed htslib-1.13-h9093b5e_0.tar.bz2
+Removed xorg-libxrender-0.9.10-h7f98852_1003.tar.bz2
+Removed numexpr-2.8.0-py39hbd72853_101.tar.bz2
+Removed _openmp_mutex-4.5-1_gnu.tar.bz2
+Removed pygenometracks-3.6-py_0.tar.bz2
+Removed joblib-1.1.0-pyhd8ed1ab_0.tar.bz2
+Removed toolz-0.11.2-pyhd8ed1ab_0.tar.bz2
+Removed ca-certificates-2021.10.8-ha878542_0.tar.bz2
+Removed pcre-8.45-h9c3ff4c_0.tar.bz2
+Removed hic2cool-0.8.3-pyh864c0ab_2.tar.bz2
+Removed reproc-14.2.3-h7f98852_0.tar.bz2
+Removed intervaltree-3.0.2-py_0.tar.bz2
+Removed pymongo-4.0.1-py39he80948d_1.tar.bz2
+Removed mock-4.0.3-py39hf3d152e_2.tar.bz2
+Removed hyperopt-0.2.5-pyh9f0ad1d_0.tar.bz2
+Removed threadpoolctl-3.1.0-pyh8a188c0_0.tar.bz2
+Removed openjpeg-2.4.0-hb52868f_1.tar.bz2
+Removed msgpack-python-1.0.3-py39h1a9c180_0.tar.bz2
+Removed cycler-0.11.0-pyhd8ed1ab_0.tar.bz2
+Removed icu-68.2-h9c3ff4c_0.tar.bz2
+Removed backports.functools_lru_cache-1.6.4-pyhd8ed1ab_0.tar.bz2
+Removed libpng-1.6.37-h21135ba_2.tar.bz2
+Removed harfbuzz-3.0.0-h83ec7ef_1.tar.bz2
+Removed xorg-libxau-1.0.9-h7f98852_0.tar.bz2
+Removed gffutils-0.10.1-pyh864c0ab_1.tar.bz2
+Removed python-graphviz-0.19.1-pyhaef67bd_0.tar.bz2
+Removed importlib-metadata-4.11.1-py39hf3d152e_0.tar.bz2
+Removed conda-4.11.0-py39hf3d152e_0.tar.bz2
+Removed giflib-5.2.1-h36c2ea0_2.tar.bz2
+Removed libopenblas-0.3.18-pthreads_h8fe5266_0.tar.bz2
+Removed libnghttp2-1.46.0-hce63b2e_0.conda
+Removed dill-0.3.4-pyhd8ed1ab_0.tar.bz2
+Removed matplotlib-base-3.3.2-py39h98787fa_1.tar.bz2
+Removed fribidi-1.0.10-h36c2ea0_0.tar.bz2
+Removed asciitree-0.3.3-py_2.tar.bz2
+Removed libiconv-1.16-h516909a_0.tar.bz2
+Removed prompt-toolkit-3.0.27-pyha770c72_0.tar.bz2
+Removed c-ares-1.18.1-h7f98852_0.tar.bz2
+Removed jedi-0.18.1-py39hf3d152e_0.tar.bz2
+Removed xorg-libsm-1.2.3-hd9c2040_1000.tar.bz2
+Removed reproc-cpp-14.2.3-h9c3ff4c_0.tar.bz2
+Removed pathspec-0.9.0-pyhd8ed1ab_0.tar.bz2
+Removed typed-ast-1.5.2-py39h3811e60_0.tar.bz2
+Removed backports-1.0-py_2.tar.bz2
+Removed markupsafe-2.1.0-py39hb9d737c_0.tar.bz2
+Removed atk-1.0-2.36.0-h3371d22_4.tar.bz2
+Removed cloudpickle-2.0.0-pyhd8ed1ab_0.tar.bz2
+Removed xorg-libx11-1.7.2-h7f98852_0.tar.bz2
+Removed zstd-1.5.0-ha4553b6_1.conda
+Removed hicexplorer-3.7.2-pyhdfd78af_1.tar.bz2
+Removed libcblas-3.9.0-13_linux64_openblas.tar.bz2
+Removed librsvg-2.52.2-hc3c00ef_0.tar.bz2
+Removed libgomp-11.2.0-h1d223b6_12.tar.bz2
+Removed lerc-2.2.1-h9c3ff4c_0.tar.bz2
+Removed pyzmq-22.3.0-py39h37b5a0c_1.tar.bz2
+Removed openssl-1.1.1l-h7f98852_0.tar.bz2
+Removed graphviz-2.49.0-h85b4f2f_0.tar.bz2
+Removed argh-0.26.2-pyh9f0ad1d_1002.tar.bz2
+Removed python-dateutil-2.8.2-pyhd8ed1ab_0.tar.bz2
+Removed stack_data-0.2.0-pyhd8ed1ab_0.tar.bz2
+Removed h5py-3.6.0-nompi_py39h7e08c79_100.tar.bz2
+Removed black-22.1.0-pyhd8ed1ab_0.tar.bz2
+Removed gettext-0.19.8.1-h0b5b191_1005.tar.bz2
+Removed gdk-pixbuf-2.42.6-h04a7f16_0.tar.bz2
+Removed pure_eval-0.2.2-pyhd8ed1ab_0.tar.bz2
+Removed dask-core-2022.2.0-pyhd8ed1ab_0.tar.bz2
+Removed xorg-xextproto-7.3.0-h7f98852_1002.tar.bz2
+Removed fonts-conda-forge-1-0.tar.bz2
+Removed jupyter_core-4.9.2-py39hf3d152e_0.tar.bz2
+Removed eigen-3.4.0-h4bd325d_0.tar.bz2
+Removed olefile-0.46-pyh9f0ad1d_1.tar.bz2
+Removed pairix-0.3.7-py39hd1f1204_3.tar.bz2
+Removed libglib-2.68.4-h3e27bee_0.tar.bz2
+Removed libtool-2.4.6-h9c3ff4c_1008.tar.bz2
+Removed cached-property-1.5.2-hd8ed1ab_1.tar.bz2
+Removed tornado-6.1-py39h3811e60_2.tar.bz2
+Removed zeromq-4.3.4-h9c3ff4c_1.tar.bz2
+Removed dask-2022.2.0-pyhd8ed1ab_0.tar.bz2
+Removed krb5-1.19.2-hcc1bbae_0.tar.bz2
+Removed _libgcc_mutex-0.1-conda_forge.tar.bz2
+Removed kiwisolver-1.3.2-py39h1a9c180_1.tar.bz2
+Removed certifi-2021.10.8-py39hf3d152e_1.tar.bz2
+Removed libgd-2.3.3-h6ad9fb6_0.tar.bz2
+Removed dataclasses-0.8-pyhc8e2a94_3.tar.bz2
+Removed cached_property-1.5.2-pyha770c72_1.tar.bz2
+Removed gts-0.7.6-h64030ff_2.tar.bz2
+Removed jpeg-9e-h7f98852_0.tar.bz2
+Removed tblib-1.7.0-pyhd8ed1ab_0.tar.bz2
+Removed biopython-1.79-py39h3811e60_1.tar.bz2
+Removed pyyaml-6.0-py39h3811e60_3.tar.bz2
+Removed click-8.0.3-py39hf3d152e_1.tar.bz2
+Removed networkx-2.6.3-pyhd8ed1ab_1.tar.bz2
+Removed pixman-0.40.0-h36c2ea0_0.tar.bz2
+Removed multiprocess-0.70.12.2-py39h3811e60_1.tar.bz2
+Removed decorator-5.1.1-pyhd8ed1ab_0.tar.bz2
+Removed numpy-1.22.2-py39h91f2184_0.tar.bz2
+Removed bedtools-2.30.0-h7d7f7ad_2.tar.bz2
+Removed pthread-stubs-0.4-h36c2ea0_1001.tar.bz2
+Removed libev-4.33-h516909a_1.tar.bz2
+Removed libstdcxx-ng-11.2.0-he4da1e4_12.tar.bz2
+Removed libgfortran5-11.2.0-h5c6108e_12.tar.bz2
+Removed tomli-2.0.1-pyhd8ed1ab_0.tar.bz2
+Removed pybedtools-0.8.2-py39h39abbe0_1.tar.bz2
+Removed heapdict-1.0.1-py_0.tar.bz2
+Removed pysam-0.17.0-py39h051187c_0.tar.bz2
+Removed backcall-0.2.0-pyh9f0ad1d_0.tar.bz2
+Removed future-0.18.2-py39hf3d152e_4.tar.bz2
+Removed parso-0.8.3-pyhd8ed1ab_0.tar.bz2
+Removed libtiff-4.3.0-hf544144_1.tar.bz2
+Removed font-ttf-source-code-pro-2.038-h77eed37_0.tar.bz2
+Removed libedit-3.1.20191231-he28a2e2_2.tar.bz2
+Removed font-ttf-inconsolata-3.000-h77eed37_0.tar.bz2
+Removed pybind11-global-2.9.1-py39h1a9c180_0.tar.bz2
+Removed libarchive-3.5.2-hccf745f_1.tar.bz2
+Removed executing-0.8.2-pyhd8ed1ab_0.tar.bz2
+Removed cytoolz-0.11.2-py39h3811e60_1.tar.bz2
+Removed libsolv-0.7.19-h780b84a_5.tar.bz2
+Removed fit_nbinom-1.1-pyh864c0ab_2.tar.bz2
+Removed typing_extensions-4.1.1-pyha770c72_0.tar.bz2
+Removed psutil-5.9.0-py39h3811e60_0.tar.bz2
+Removed libblas-3.9.0-13_linux64_openblas.tar.bz2
+Removed wcwidth-0.2.5-pyh9f0ad1d_2.tar.bz2
+Removed lcms2-2.12-hddcbb42_0.tar.bz2
+Removed pytz-2021.3-pyhd8ed1ab_0.tar.bz2
+Removed locket-0.2.0-py_2.tar.bz2
+Removed ipykernel-6.9.1-py39hef51801_0.tar.bz2
+Removed libsodium-1.0.18-h36c2ea0_1.tar.bz2
+Removed xorg-libxdmcp-1.1.3-h7f98852_0.tar.bz2
+Removed libxml2-2.9.12-h72842e0_0.tar.bz2
+Removed lz4-c-1.9.3-h9c3ff4c_1.tar.bz2
+Removed scikit-learn-1.0.2-py39h4dfa638_0.tar.bz2
+Removed jbig-2.1-h7f98852_2003.tar.bz2
+Removed bzip2-1.0.8-h7f98852_4.tar.bz2
+Removed cleanlab-1.0-pyhd8ed1ab_2.tar.bz2
+Removed libcurl-7.80.0-h0b77cf5_0.conda
+Removed cooler-0.8.11-pyh5e36f6f_1.tar.bz2
+Removed krbalancing-0.0.5-py39h7cff6ad_3.tar.bz2
+Removed hicmatrix-16-pyhdfd78af_0.tar.bz2
+Removed pango-1.48.10-h54213e6_2.tar.bz2
+Removed pickleshare-0.7.5-py39hde42818_1002.tar.bz2
+Removed bokeh-2.4.2-py39hf3d152e_0.tar.bz2
+Removed pygments-2.11.2-pyhd8ed1ab_0.tar.bz2
+Removed ptyprocess-0.7.0-pyhd3deb0d_0.tar.bz2
+Removed scipy-1.8.0-py39hee8e79c_1.tar.bz2
+Removed pillow-8.3.1-py39ha612740_0.tar.bz2
+Removed blosc-1.21.0-h9c3ff4c_0.tar.bz2
+Removed jupyter_client-7.1.2-pyhd8ed1ab_0.tar.bz2
+Removed graphite2-1.3.13-h58526e2_1001.tar.bz2
+Removed nest-asyncio-1.5.4-pyhd8ed1ab_0.tar.bz2
+Removed fsspec-2022.1.0-pyhd8ed1ab_0.tar.bz2
+Removed matplotlib-inline-0.1.3-pyhd8ed1ab_0.tar.bz2
+Removed partd-1.2.0-pyhd8ed1ab_0.tar.bz2
+Removed platformdirs-2.5.0-pyhd8ed1ab_0.tar.bz2
+Removed simplejson-3.17.6-py39h3811e60_0.tar.bz2
+Removed mamba-0.15.3-py39h951de11_0.tar.bz2
+Removed ipython-8.0.1-py39hf3d152e_2.tar.bz2
+Removed libwebp-1.2.2-h3452ae3_0.tar.bz2
+Removed pybind11-2.9.1-py39h1a9c180_0.tar.bz2
+Removed expat-2.4.4-h9c3ff4c_0.tar.bz2
+Removed traitlets-5.1.1-pyhd8ed1ab_0.tar.bz2
+Removed argcomplete-2.0.0-pyhd8ed1ab_0.tar.bz2
+Removed zipp-3.7.0-pyhd8ed1ab_1.tar.bz2
+Removed pandas-1.4.1-py39hde0f152_0.tar.bz2
+Removed libssh2-1.10.0-ha56f1ee_2.tar.bz2
+Removed libgcc-ng-11.2.0-h1d223b6_12.tar.bz2
+Removed mypy_extensions-0.4.3-py39hf3d152e_4.tar.bz2
+Removed libxcb-1.13-h7f98852_1004.tar.bz2
+Removed pexpect-4.8.0-pyh9f0ad1d_2.tar.bz2
+Removed pyparsing-3.0.7-pyhd8ed1ab_0.tar.bz2
+Removed entrypoints-0.4-pyhd8ed1ab_0.tar.bz2
+Removed libuuid-2.32.1-h7f98852_1000.tar.bz2
+Removed font-ttf-dejavu-sans-mono-2.37-hab24e00_0.tar.bz2
+Removed asttokens-2.0.5-pyhd8ed1ab_0.tar.bz2
+Removed pybigwig-0.3.18-py39h015b436_1.tar.bz2
+Removed gtk2-2.24.33-h539f30e_1.tar.bz2
+Removed pyfaidx-0.6.4-pyh5e36f6f_0.tar.bz2
+Removed fontconfig-2.13.96-ha180cfb_0.tar.bz2
+Removed debugpy-1.5.1-py39he80948d_0.tar.bz2
+Removed freetype-2.10.4-h0708190_1.tar.bz2
+Removed jinja2-3.0.3-pyhd8ed1ab_0.tar.bz2
+Removed hdf5-1.12.1-nompi_h2750804_100.tar.bz2
+Removed lzo-2.10-h516909a_1000.tar.bz2
+Removed liblapack-3.9.0-13_linux64_openblas.tar.bz2
+Removed xorg-libice-1.0.10-h7f98852_0.tar.bz2
+Removed libdeflate-1.7-h7f98852_5.tar.bz2
+Removed cairo-1.16.0-h6cf1ce9_1008.tar.bz2
+Removed sortedcontainers-2.4.0-pyhd8ed1ab_0.tar.bz2
+Removed libwebp-base-1.2.2-h7f98852_1.tar.bz2
+Removed libgfortran-ng-11.2.0-h69a702a_12.tar.bz2
+Removed pytables-3.6.1-py39h2669a42_4.tar.bz2
+Removed xorg-renderproto-0.11.1-h7f98852_1002.tar.bz2
+Removed font-ttf-ubuntu-0.83-hab24e00_0.tar.bz2
+Removed packaging-21.3-pyhd8ed1ab_0.tar.bz2
+Removed xorg-kbproto-1.0.7-h7f98852_1002.tar.bz2
+Removed python_abi-3.9-2_cp39.tar.bz2
+Removed xorg-xproto-7.0.31-h7f98852_1007.tar.bz2
+Removed xorg-libxext-1.3.4-h7f98852_1.tar.bz2
+Removed importlib_metadata-4.11.1-hd8ed1ab_0.tar.bz2
+WARNING: /root/.conda/pkgs does not exist
+Cache location: /opt/conda/pkgs
+Will remove the following packages:
+/opt/conda/pkgs
+---------------
+
+dask-2022.2.0-pyhd8ed1ab_0                    13 KB
+cached-property-1.5.2-hd8ed1ab_1              10 KB
+libblas-3.9.0-13_linux64_openblas             46 KB
+libgfortran-ng-11.2.0-h69a702a_12             86 KB
+nomkl-1.0-h5ca1d4c_0                          10 KB
+importlib_metadata-4.11.1-hd8ed1ab_0          10 KB
+libcblas-3.9.0-13_linux64_openblas            45 KB
+fonts-conda-ecosystem-1-0                      9 KB
+_openmp_mutex-4.5-1_gnu                       93 KB
+pthread-stubs-0.4-h36c2ea0_1001               14 KB
+_libgcc_mutex-0.1-conda_forge                  6 KB
+fonts-conda-forge-1-0                         11 KB
+python_abi-3.9-2_cp39                         11 KB
+liblapack-3.9.0-13_linux64_openblas           45 KB
+
+---------------------------------------------------
+Total:                                       408 KB
+
+removing dask-2022.2.0-pyhd8ed1ab_0
+removing cached-property-1.5.2-hd8ed1ab_1
+removing libblas-3.9.0-13_linux64_openblas
+removing libgfortran-ng-11.2.0-h69a702a_12
+removing nomkl-1.0-h5ca1d4c_0
+removing importlib_metadata-4.11.1-hd8ed1ab_0
+removing libcblas-3.9.0-13_linux64_openblas
+removing fonts-conda-ecosystem-1-0
+removing _openmp_mutex-4.5-1_gnu
+removing pthread-stubs-0.4-h36c2ea0_1001
+removing _libgcc_mutex-0.1-conda_forge
+removing fonts-conda-forge-1-0
+removing python_abi-3.9-2_cp39
+removing liblapack-3.9.0-13_linux64_openblas
+INFO:    Adding environment to container
+INFO:    Adding runscript
+INFO:    Creating SIF file...
+INFO:    Build complete: HiCExplorer.sif
