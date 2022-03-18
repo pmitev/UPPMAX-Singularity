@@ -9,10 +9,12 @@ From: continuumio/miniconda3
 
 %environment
   export LC_ALL=C
+  export PROTTEST_HOME=/opt/prottest-3.4.2
 
 
 %post
   export LC_ALL=C
+  export PROTTEST_HOME=/opt/prottest-3.4.2
   export DEBIAN_FRONTEND=noninteractive
 
   mkdir -p /tmp/apt
@@ -20,14 +22,13 @@ From: continuumio/miniconda3
 
   apt-get update; apt-get -y dist-upgrade && apt-get install -y wget git ant perl build-essential cmake openjdk-11-jdk autoconf
 
-
-
-  # VESPA
+  # VESPA -----------------------------------------------
   cd /opt ; tar -xvf /VESPA.tar.gz 
   cd VESPA-1.0.1; chmod +x vespa.py ; cp vespa.py /usr/local/bin
   chmod +x *Codeml*.pl ; cp *Codeml*.pl /usr/local/bin ; cp -a CodemlWrapper/ /usr/share/perl/5.32
 
-  # Beagle
+
+  # Beagle ----------------------------------------------
   cd /opt
   #export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
   git clone --depth=1 https://github.com/beagle-dev/beagle-lib.git
@@ -35,20 +36,24 @@ From: continuumio/miniconda3
   cmake ..
   make install
 
-  # MrBayes
+  # MrBayes ---------------------------------------------
   cd /opt ; tar -xvf /mrbayes-3.2.3.tar.gz
   cd mrbayes_3.2.3/src && autoconf && ./configure LDFLAGS="-Wl,--allow-multiple-definition" && make install 
 
+  # prottest3 ------------------------------------------
+  cd /opt
+  tar -xvf /prottest-3.4.2-20160508.tar.gz 
 
-  # Conda
+  # Conda ----------------------------------------------
   conda update -n base -c defaults conda
   #conda install -c conda-forge pip mamba
 
   conda env create -f /vespa.yaml -n VESPA
+  echo "conda activate VESPA" >> /opt/conda/etc/profile.d/conda.sh
 
   #python3 -m pip install -U --no-cache-dir setuptools pip 
-
-  #conda clean --all --yes
+  conda clean --all --yes
 
 %runscript
-  /bin/bash --rcfile /opt/conda/etc/profile.d/conda.sh "$@"
+   params="$@"
+  /bin/bash --rcfile /opt/conda/etc/profile.d/conda.sh -ic "vespa.py $params"
