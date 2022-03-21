@@ -5,6 +5,8 @@ From: continuumio/miniconda3
   VESPA.tar.gz /
   mrbayes-3.2.3.tar.gz /
   prottest-3.4.2-20160508.tar.gz /
+  VESPA/executables/Linux/normd /usr/local/bin
+  VESPA/executables/Linux/metal /usr/local/bin
   vespa.yaml /
 
 %environment
@@ -51,8 +53,8 @@ From: continuumio/miniconda3
   conda env create -f /vespa.yaml -n VESPA
   echo "conda activate VESPA" >> /opt/conda/etc/profile.d/conda.sh
 
-  #python3 -m pip install -U --no-cache-dir setuptools pip 
   conda clean --all --yes
+  rm /*.tar.gz
 
 %runscript
    params="$@"
