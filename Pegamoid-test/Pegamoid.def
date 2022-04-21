@@ -1,0 +1,23 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%environment
+  export LC_ALL=C
+  export PYTHONNOUSERSITE=True
+
+
+%post
+  export LC_ALL=C
+  export DEBIAN_FRONTEND=noninteractive
+  export PYTHONNOUSERSITE=True
+
+  mkdir -p /tmp/apt
+  echo "Dir::Cache /tmp/apt;" > /etc/apt/apt.conf.d/singularity-cache.conf
+
+  apt-get update && \
+  apt-get -y install  wget git python3-pip python3-qtpy
+
+  python3 -m pip install --no-cache-dir -U Pegamoid PyQt5
+
+%runscript
+  pegamoid.py "$@"
