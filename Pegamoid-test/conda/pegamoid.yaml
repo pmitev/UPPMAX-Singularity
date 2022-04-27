@@ -1,0 +1,11 @@
+# conda env create -f  pegamoid.yaml
+name: pegamoid
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - Pegamoid
+    - pyqt5
