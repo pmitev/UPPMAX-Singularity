@@ -1,0 +1,48 @@
+Bootstrap: docker
+From: continuumio/miniconda3
+
+%environment
+  export LC_ALL=C
+  export PATH=/opt/conda/envs/py36deeprepeat/bin:/app:$PATH
+  export DR_conda_base="/opt/conda/envs/py36deeprepeat/"
+#  export LD_LIBRARY_PATH=${DR_conda_base}/lib
+  export PYTHONWARNINGS="ignore"
+  export PYTHONNOUSERSITE=True
+
+%post
+  export LC_ALL=C
+  export DEBIAN_FRONTEND=noninteractive
+  export PYTHONWARNINGS="ignore"
+  export PYTHONNOUSERSITE=True
+
+  mkdir -p /tmp/conda_pkg_dir
+  conda config --add pkgs_dirs /tmp/conda_pkg_dir
+
+  mkdir /installs && cd /installs
+  git clone https://github.com/WGLab/DeepRepeat.git
+  sed -i 's/gxx_linux-64.*/gxx_linux-64=7.5/' DeepRepeat/environment.yml
+
+  conda env create -f DeepRepeat/environment.yml 
+
+  cp -r DeepRepeat/bin /app/
+  
+  export PATH=/opt/conda/envs/py36deeprepeat/bin:$PATH
+  export DR_conda_base="/opt/conda/envs/py36deeprepeat/"
+
+  cd /app/scripts
+
+/bin/bash <<EOF
+  conda activate py36deeprepeat
+  
+  h5c++ -O3 -std=c++11 -o IndexF5files ComFunction.c Fast5Index.c IndexF5files.c
+  h5c++ -O3 -std=c++11 -I ${DR_conda_base}/include -L${DR_conda_base}/lib -lhts -o genomic1FE ComFunction.c ComOption.c BamReader.c Fast5Index.c Fast5Reader.c RepeatFeatExtract.c genomic1FE.c ${DR_conda_base}/lib/libhdf5_hl_cpp.a ${DR_conda_base}/lib/libhdf5_cpp.a ${DR_conda_base}/lib/libhdf5_hl.a ${DR_conda_base}/lib/libhdf5.a -lz -ldl -lpthread
+EOF
+  
+  chmod a+x /app/scripts/IndexF5files
+  chmod a+x /app/scripts/genomic1FE
+  chmod a+x /app/DeepRepeat.py
+
+  cd / && rm -r /installs
+
+%runscript
+  python /app/DeepRepeat.py "$@"
