@@ -15,21 +15,11 @@ From: continuumio/miniconda3
   export PYTHONWARNINGS="ignore"
   export PYTHONNOUSERSITE=True
 
-
-  apt-get update; apt-get install -y glibc-source
-
   mkdir /installs && cd /installs
   git clone https://github.com/WGLab/DeepRepeat.git
 
   conda env create -f DeepRepeat/environment.yml && conda clean --yes --all
-
   cp -r DeepRepeat/bin /app/
-
-#  export PATH=/opt/conda/envs/py36deeprepeat/bin:$PATH
-#  export DR_conda_base="/opt/conda/envs/py36deeprepeat/"
-#  export LD_LIBRARY_PATH=${DR_conda_base}/lib
-
-#  cd /app/scripts
 
 #/bin/bash <<EOF
 #  conda activate py36deeprepeat
@@ -41,6 +31,8 @@ From: continuumio/miniconda3
   chmod a+x /app/scripts/IndexF5files
   chmod a+x /app/scripts/genomic1FE
   chmod a+x /app/DeepRepeat.py
+
+  cd / && rm -r /installs
 
 %runscript
   python /app/DeepRepeat.py "$@"
