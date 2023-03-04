@@ -1,0 +1,72 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+
+%environment
+  export PYTHONNOUSERSITE=True
+  export PATH=/usr/lib/rstudio/bin:${PATH}
+  export LANG=C.UTF-8 LC_ALL=C.UTF-8
+  export XDG_RUNTIME_DIR=/tmp/.run_$(uuidgen)
+ 
+%post
+  export DEBIAN_FRONTEND=noninteractive
+  export LC_ALL=C
+  export NCPU=$(grep -c ^processor /proc/cpuinfo)
+
+  mkdir -p /tmp/apt
+  echo "Dir::Cache "/tmp/apt";" > /etc/apt/apt.conf.d/singularity-cache.conf
+ 
+  apt-get update && \
+  apt-get -y --no-install-recommends install --fix-missing \
+        less vim nano wget curl build-essential automake \
+        libcurl4-openssl-dev libssl-dev	libbz2-dev liblzma-dev libxml2-dev libcairo2-dev libsqlite3-dev libmariadbd-dev \
+        libnss3 libxdamage1 libasound2 libatk1.0-0 libatk-bridge2.0-0 libdrm2 libgtk-3-0 libxrandr2 libx11-dev libxt-dev \
+        libgbm1 qmmp libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libgsl-dev \
+        python3-pip python3-venv uuid-runtime 
+        
+
+  mkdir /installs && cd /installs
+
+  # R-CRAN
+  apt-get -y  install dirmngr gnupg apt-transport-https ca-certificates software-properties-common
+  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+  add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/'
+  apt-get update && apt-get -y  install r-base 
+
+  # Add a default CRAN mirror
+  echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl')" >> /usr/lib/R/etc/Rprofile.site
+
+  # Add a directory for host R libraries
+  mkdir -p /library
+  echo "R_LIBS_SITE=/library:\${R_LIBS_SITE}" >> /usr/lib/R/etc/Renviron.site
+
+cat << EOF > /installs/install.R
+  if (!requireNamespace("devtools", quietly = TRUE)) install.packages("devtools")
+  if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+  library(devtools)
+  devtools::install_github("GreenleafLab/ArchR", ref="master", repos = BiocManager::repositories())
+  library(ArchR)
+  ArchR::installExtraPackages()
+EOF
+
+  R -f /installs/install.R
+
+  # Rstudio desktop 
+  wget -P /tmp/ -c https://download1.rstudio.org/electron/jammy/amd64/rstudio-2022.12.0-353-amd64.deb
+  apt-get -y install /tmp/rstudio-2022.12.0-353-amd64.deb
+
+  # Fix for:
+  # The SUID sandbox helper binary was found, but is not configured correctly. 
+  # Rather than run without sandboxing Im aborting now. 
+  # You need to make sure that /usr/lib/rstudio/chrome-sandbox is owned by root and has mode 4755.
+
+  # chmod 4755 /usr/lib/rstudio/chrome-sandbox
+
+  # Clean
+  rm /etc/apt/apt.conf.d/singularity-cache.conf
+  rm -rf /installs
+
+%runscript
+  export XDG_RUNTIME_DIR=/tmp/.run_$(uuidgen)
+  mkdir -p $XDG_RUNTIME_DIR
+  exec rstudio --no-sandbox "$@"
