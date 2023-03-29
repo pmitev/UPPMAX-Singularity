@@ -1,26 +1,26 @@
 Build target 'mafTools.sif' already exists and will be deleted during the build process. Do you want to continue? [N/y] INFO:    Starting build...
 Getting image source signatures
 Copying blob sha256:4acc342562b4e8e55affdfcd7df103b073d3dcb38f0e2725d34ce34bd0bba0da
+Copying blob sha256:6fe350d2b14088b19ffff7a1c6683f0949fb0161e6ab87011a24e21e5d7fed4e
+Copying blob sha256:7568c21980bd8003ca9d23a218302c6386aac91e069cc0c0be6bedf45476f056
 Copying blob sha256:4a9f2207c812b2530bc06352aa57cf50244726c52db6ff775ca9f9a76d6ea880
 Copying blob sha256:d95a2fdc8b3d1140238f9ea09e64cff45e839a31e5e5d25309af9fa7f0c331eb
-Copying blob sha256:7568c21980bd8003ca9d23a218302c6386aac91e069cc0c0be6bedf45476f056
 Copying blob sha256:760eb225f9e8869867711c15319e22ffa8def84a53c980ee038dea7106bd7242
-Copying blob sha256:6fe350d2b14088b19ffff7a1c6683f0949fb0161e6ab87011a24e21e5d7fed4e
 Copying blob sha256:a7903e427e3f726eac0b29bc9fcdcad526df65471bd55ccf72927eecebb9088d
 Copying blob sha256:44360edd3f0294b28cbe66d5597d139d7e7def5a299e64243978e0aa94f35854
 Copying blob sha256:d7721ae168a32d157b0de245a836d686157e7169e63741d51951b38198a7a4b2
 Copying config sha256:780653c666431ee78832699c653611d4542fefaf101994981ebb19f3fc0145aa
 Writing manifest to image destination
 Storing signatures
-2023/03/29 11:50:11  info unpack layer: sha256:7568c21980bd8003ca9d23a218302c6386aac91e069cc0c0be6bedf45476f056
-2023/03/29 11:50:12  info unpack layer: sha256:4a9f2207c812b2530bc06352aa57cf50244726c52db6ff775ca9f9a76d6ea880
-2023/03/29 11:50:12  info unpack layer: sha256:6fe350d2b14088b19ffff7a1c6683f0949fb0161e6ab87011a24e21e5d7fed4e
-2023/03/29 11:50:12  info unpack layer: sha256:d95a2fdc8b3d1140238f9ea09e64cff45e839a31e5e5d25309af9fa7f0c331eb
-2023/03/29 11:50:13  info unpack layer: sha256:760eb225f9e8869867711c15319e22ffa8def84a53c980ee038dea7106bd7242
-2023/03/29 11:50:16  info unpack layer: sha256:4acc342562b4e8e55affdfcd7df103b073d3dcb38f0e2725d34ce34bd0bba0da
-2023/03/29 11:50:16  info unpack layer: sha256:a7903e427e3f726eac0b29bc9fcdcad526df65471bd55ccf72927eecebb9088d
-2023/03/29 11:50:17  info unpack layer: sha256:44360edd3f0294b28cbe66d5597d139d7e7def5a299e64243978e0aa94f35854
-2023/03/29 11:50:17  info unpack layer: sha256:d7721ae168a32d157b0de245a836d686157e7169e63741d51951b38198a7a4b2
+2023/03/29 12:03:27  info unpack layer: sha256:7568c21980bd8003ca9d23a218302c6386aac91e069cc0c0be6bedf45476f056
+2023/03/29 12:03:27  info unpack layer: sha256:4a9f2207c812b2530bc06352aa57cf50244726c52db6ff775ca9f9a76d6ea880
+2023/03/29 12:03:27  info unpack layer: sha256:6fe350d2b14088b19ffff7a1c6683f0949fb0161e6ab87011a24e21e5d7fed4e
+2023/03/29 12:03:28  info unpack layer: sha256:d95a2fdc8b3d1140238f9ea09e64cff45e839a31e5e5d25309af9fa7f0c331eb
+2023/03/29 12:03:28  info unpack layer: sha256:760eb225f9e8869867711c15319e22ffa8def84a53c980ee038dea7106bd7242
+2023/03/29 12:03:32  info unpack layer: sha256:4acc342562b4e8e55affdfcd7df103b073d3dcb38f0e2725d34ce34bd0bba0da
+2023/03/29 12:03:32  info unpack layer: sha256:a7903e427e3f726eac0b29bc9fcdcad526df65471bd55ccf72927eecebb9088d
+2023/03/29 12:03:32  info unpack layer: sha256:44360edd3f0294b28cbe66d5597d139d7e7def5a299e64243978e0aa94f35854
+2023/03/29 12:03:32  info unpack layer: sha256:d7721ae168a32d157b0de245a836d686157e7169e63741d51951b38198a7a4b2
 INFO:    Running post scriptlet
 + export DEBIAN_FRONTEND=noninteractive
 + export LC_ALL=C
@@ -34,34 +34,38 @@ Get:4 http://deb.debian.org/debian stretch Release [118 kB]
 Get:5 http://deb.debian.org/debian stretch Release.gpg [3177 B]
 Get:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages [782 kB]
 Get:7 http://deb.debian.org/debian stretch/main amd64 Packages [7080 kB]
-Fetched 8135 kB in 0s (8279 kB/s)
+Fetched 8135 kB in 0s (9338 kB/s)
 Reading package lists...
-+ apt-get -y --no-install-recommends install --fix-missing wget curl git build-essential libz-dev python-dev python-pip cython
++ apt-get -y --no-install-recommends install --fix-missing wget curl git build-essential libz-dev valgrind python-dev python-pip cython
 Reading package lists...
 Building dependency tree...
 Reading state information...
 wget is already the newest version (1.18-5+deb9u3).
 The following additional packages will be installed:
-  libcurl3 libcurl4-openssl-dev libpython-dev libpython2.7 libpython2.7-dev
-  libpython2.7-minimal libpython2.7-stdlib python-pip-whl python2.7
-  python2.7-dev python2.7-minimal zlib1g
+  libc6-dbg libcurl3 libcurl4-openssl-dev libpython-dev libpython2.7
+  libpython2.7-dev libpython2.7-minimal libpython2.7-stdlib python-pip-whl
+  python2.7 python2.7-dev python2.7-minimal zlib1g
 Suggested packages:
   cython-doc gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-el
   git-email git-gui gitk gitweb git-arch git-cvs git-mediawiki git-svn
   libcurl4-doc libcurl3-dbg libidn11-dev libldap2-dev librtmp-dev
   libssh2-1-dev libssl1.0-dev | libssl-dev python2.7-doc binfmt-support
+  valgrind-mpi kcachegrind alleyoop valkyrie
 Recommended packages:
-  less rsync python-all-dev python-setuptools python-wheel
+  less rsync python-all-dev python-setuptools python-wheel valgrind-dbg gdb
 The following NEW packages will be installed:
-  build-essential cython libpython-dev libpython2.7 libpython2.7-dev
-  python-dev python-pip python-pip-whl python2.7-dev
+  build-essential cython libc6-dbg libpython-dev libpython2.7 libpython2.7-dev
+  python-dev python-pip python-pip-whl python2.7-dev valgrind
 The following packages will be upgraded:
   curl git libcurl3 libcurl4-openssl-dev libpython2.7-minimal
   libpython2.7-stdlib python2.7 python2.7-minimal zlib1g zlib1g-dev
+10 upgraded, 11 newly installed, 0 to remove and 149 not upgraded.
+Need to get 17.9 MB/60.3 MB of archives.
+After this operation, 136 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian stretch/main amd64 libc6-dbg amd64 2.24-11+deb9u4 [9155 kB]
+Get:2 http://deb.debian.org/debian stretch/main amd64 valgrind amd64 1:3.12.0~svn20160714-1+b1 [8749 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-10 upgraded, 9 newly installed, 0 to remove and 149 not upgraded.
-Need to get 0 B/42.4 MB of archives.
-After this operation, 56.3 MB of additional disk space will be used.
+Fetched 17.9 MB in 0s (85.4 MB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 30535 files and directories currently installed.)
 Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-5+deb9u1_amd64.deb ...
 Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-5+deb9u1) over (1:1.2.8.dfsg-5) ...
@@ -112,12 +116,20 @@ Unpacking python-pip-whl (9.0.1-2+deb9u2) ...
 Selecting previously unselected package python-pip.
 Preparing to unpack .../16-python-pip_9.0.1-2+deb9u2_all.deb ...
 Unpacking python-pip (9.0.1-2+deb9u2) ...
+Selecting previously unselected package libc6-dbg:amd64.
+Preparing to unpack .../17-libc6-dbg_2.24-11+deb9u4_amd64.deb ...
+Unpacking libc6-dbg:amd64 (2.24-11+deb9u4) ...
+Selecting previously unselected package valgrind.
+Preparing to unpack .../18-valgrind_1%3a3.12.0~svn20160714-1+b1_amd64.deb ...
+Unpacking valgrind (1:3.12.0~svn20160714-1+b1) ...
 Setting up python-pip-whl (9.0.1-2+deb9u2) ...
+Setting up libc6-dbg:amd64 (2.24-11+deb9u4) ...
 Processing triggers for mime-support (3.60) ...
 Setting up build-essential (12.3) ...
 Setting up libcurl3:amd64 (7.52.1-5+deb9u16) ...
 Setting up cython (0.25.2-1) ...
 Processing triggers for libc-bin (2.24-11+deb9u4) ...
+Setting up valgrind (1:3.12.0~svn20160714-1+b1) ...
 Setting up libpython2.7-minimal:amd64 (2.7.13-2+deb9u6) ...
 Setting up python-pip (9.0.1-2+deb9u2) ...
 Setting up libcurl4-openssl-dev:amd64 (7.52.1-5+deb9u16) ...
@@ -316,173 +328,116 @@ make[1]: Leaving directory '/opt/sonLib/C'
 cp sonLib_daemonize.py ./bin/sonLib_daemonize.py
 chmod +x ./bin/sonLib_daemonize.py
 PYTHONPATH=.. PATH=../../bin:$PATH python allTests.py --testLength=SHORT --logLevel=CRITICAL
-.cigar: two 9199 10172 + two 5393 4915 - -947.000000 X 26 0.863992 X 13 0.898829 Z 44 0.488257 Y 78 0.190667 Y 67 0.747898 X 62 0.822764 Y 1 0.931860 X 44 0.409729 Y 28 0.872536 Y 93 0.982281 X 2 0.386430 Z 82 0.405230 Z 37 0.984292 Y 21 0.405438 Z 68 0.223014 Y 32 0.464913 Y 3 0.579600 Z 69 0.928860 Z 37 0.907057 Z 70 0.049250 Z 9 0.099976 Z 25 0.408417 Z 69 0.099921 Z 56 0.176974 Z 76 0.587139 Z 57 0.796755 Z 54 0.359637 Z 8 0.279180 Z 7 0.014490 Z 53 0.989550 Y 6 0.364584 Z 5 0.122808 Y 2 0.384128
-cigar: two 9199 10172 + two 5393 4915 - -947.000000 X 26 0.863992 X 13 0.898829 Z 44 0.488257 Y 78 0.190667 Y 67 0.747898 X 62 0.822764 Y 1 0.931860 X 44 0.409729 Y 28 0.872536 Y 93 0.982281 X 2 0.386430 Z 82 0.405230 Z 37 0.984292 Y 21 0.405438 Z 68 0.223014 Y 32 0.464913 Y 3 0.579600 Z 69 0.928860 Z 37 0.907057 Z 70 0.049250 Z 9 0.099976 Z 25 0.408417 Z 69 0.099921 Z 56 0.176974 Z 76 0.587139 Z 57 0.796755 Z 54 0.359637 Z 8 0.279180 Z 7 0.014490 Z 53 0.989550 Y 6 0.364584 Z 5 0.122808 Y 2 0.384128
-cigar: two 6581 5864 - two 7022 6262 - 310.000000 X 69 0.664911 Z 98 0.675665 Z 81 0.634383 Y 92 0.837335 Z 29 0.931459 Y 26 0.813489 Y 33 0.514215 Z 58 0.258383 X 42 0.279652 Y 54 0.581292 Y 54 0.706799 Y 69 0.909243 Z 59 0.438617 X 78 0.406135 Z 48 0.830229 Z 18 0.576723 X 9 0.473724 X 30 0.877748 Z 5 0.289351 Z 41 0.184280 Y 6 0.898810 Y 91 0.242946 Y 54 0.968583 X 50 0.373596 X 2 0.792513 Y 1 0.342281
-cigar: two 6581 5864 - two 7022 6262 - 310.000000 X 69 0.664911 Z 98 0.675665 Z 81 0.634383 Y 92 0.837335 Z 29 0.931459 Y 26 0.813489 Y 33 0.514215 Z 58 0.258383 X 42 0.279652 Y 54 0.581292 Y 54 0.706799 Y 69 0.909243 Z 59 0.438617 X 78 0.406135 Z 48 0.830229 Z 18 0.576723 X 9 0.473724 X 30 0.877748 Z 5 0.289351 Z 41 0.184280 Y 6 0.898810 Y 91 0.242946 Y 54 0.968583 X 50 0.373596 X 2 0.792513 Y 1 0.342281
-cigar: two 271 895 + one 4465 5382 + 473.000000 X 58 0.772361 X 56 0.658612 X 75 0.107577 X 97 0.541589 Z 13 0.200193 Y 92 0.521669 Z 6 0.000522 Z 88 0.108688 Z 86 0.587343 Z 31 0.319508 Z 98 0.153060 Y 89 0.737421 Y 28 0.873898 Y 11 0.539535 Y 53 0.235848 Y 67 0.510963 Y 47 0.794255 Y 30 0.223369 Y 30 0.578197 Z 6 0.227053 Y 2 0.405846 Y 45 0.527069 Y 51 0.306348 Y 81 0.268249 X 3 0.606960 Z 4 0.966839 Z 2 0.252867 Y 2 0.096639 Z 1 0.229378
-cigar: two 271 895 + one 4465 5382 + 473.000000 X 58 0.772361 X 56 0.658612 X 75 0.107577 X 97 0.541589 Z 13 0.200193 Y 92 0.521669 Z 6 0.000522 Z 88 0.108688 Z 86 0.587343 Z 31 0.319508 Z 98 0.153060 Y 89 0.737421 Y 28 0.873898 Y 11 0.539535 Y 53 0.235848 Y 67 0.510963 Y 47 0.794255 Y 30 0.223369 Y 30 0.578197 Z 6 0.227053 Y 2 0.405846 Y 45 0.527069 Y 51 0.306348 Y 81 0.268249 X 3 0.606960 Z 4 0.966839 Z 2 0.252867 Y 2 0.096639 Z 1 0.229378
-cigar: four 6230 6161 - four 6881 7854 + -28.000000 Y 93 0.899025 X 66 0.548718 Y 11 0.094870 Y 26 0.192685 Y 87 0.869069 Y 72 0.950350 Y 49 0.660824 Y 17 0.294198 Y 60 0.537249 Y 84 0.086334 Y 29 0.727266 Y 62 0.578899 Y 90 0.636548 X 2 0.096070 Y 67 0.410959 Y 89 0.082086 Y 11 0.487109 Y 32 0.954819 Y 25 0.971213 X 1 0.666974
-cigar: four 6230 6161 - four 6881 7854 + -28.000000 Y 93 0.899025 X 66 0.548718 Y 11 0.094870 Y 26 0.192685 Y 87 0.869069 Y 72 0.950350 Y 49 0.660824 Y 17 0.294198 Y 60 0.537249 Y 84 0.086334 Y 29 0.727266 Y 62 0.578899 Y 90 0.636548 X 2 0.096070 Y 67 0.410959 Y 89 0.082086 Y 11 0.487109 Y 32 0.954819 Y 25 0.971213 X 1 0.666974
->0C	9C C	0C9A   CA  9A	C	9
-CTNGTACGGAGGACACCCGCNGTCAAATGGACTCTAACATCTTTNGTTGACTCTGCGGTACGATTGCGTGACCCCCAGCTGTTGNATGTGACAACAGAGG
-CNATTGTAGAGATGGGNCTGAAGCTAGGCTAAGAGAGCCTCTAGTCTCTAATGCAAGGNCCGGTAGCCTACGATGATCGGGACCTTCAATCCCCTNGGGG
-AGCTACATGATGTTATGACATGAGGTGCATCCCCCAANACGACGTATAAACTTAGAAATGTNAANNCATTCATGCGNGTTCCCCGCCCGCACGGAAGTTC
-ACGTATTNCTNCTTCATTGTCTCCAG
->0	 0CAAC	C AA9	A0			99	9A9	9A	0AC9A9C	0A	CCCAC99AA0 A
-GTCTC
->9 CC A090C	CC09CA0C0 C9 9 A	 	A	 C	0A 	 90990    A  C9A  0A9C000AC	
-CNTCACGGCTGATACAACGCCGTTCTGAGCGACTCAATTGTAGGTCTCCCGGACCTCNGGTGCCATNGCGCGGGTNGAGATNCAGGTTATNCGTTCNTGT
-CGGGGAGACATTCAAGCGAATGCGCNTCATCTCATTTGGCTGTTCCGCGACNTGNCTTCTTCGTGCTGGACTAATCCGTCTAGGNGCTTCATGCCCGGTC
-GACCGNGTANATCGCNCCACAGAATAA./bin/sh: 1: sonLib_fastaCTest: not found
-EGGCCTTGGGTGATGGCGGGNAAAACTAATGTTGAGCCCCGCCATCTCTTAATAGTCTTANTATTCGCTAACTA
-CAGGATATGACCCCATCCGTTGCTTTGCGCAGTTCCCGGTGGGTTCGANCCATNTCAGAGCATAACACTTNCGNGACGCTGTTCNATTNGGCCGGGCAGC
-ATNAGAATAANTACNTTCACACAACANAAGGTAGTCCACTTGGTACATGNTTCCCT
->A0 9  A
-CGGTCATGCCCTGTGCTCGCCAGAGGATAGATGGCAGAAGTCAGANNNGAATGGGGAAGTGAACTNAGTTGATTGTTATGATGGGGCATAACCTCAGGCA
-ACTNGACCGCTACGCCTTGTCACGTATGCCCCACTGGGGCCTACCTANATATGGAGGCCGGTAAACTACGCTGTGGAGGTCAGTCCTATAGCACATATAG
-AACATCGTATATGCGGCCCTCACACTCGGCCGCGTGATGCACTNTTGGCAGGTATTAGCCACACACGCCCACACGNCTNACCACTTCGTTAGGCAGCGCT
-CGCCGATTCGNATCTCTAANCACACATGTGAAGAAGAGTTCCNAGGTGAGGCGACCCCATATCCCTGGAAATCCCGGCCGATGAATGGCCGAACTTCTAA
-CGCTTNAAAGNGCCTCTGATTCGACGNCACCTAGGGTGCCTAATTCTATCCANAGGTCGGAANGTAGACGTTGTGTCCCAGCGGTTACGCATGAG
->C		C	999C	00 90 CAAA  A9 A9	9AC	0 99	 C0 9C9C9 AC09	0CA00A090AC	0099C	0A	
-TGAAGGCAGTGGTGTCAGACAAGTATGCGATTANCCGGTTTCCAATAACATCCCGTTCACTTCTCGATTGCCGTGGGCTGGCGATACATNGTTGTNCTGT
-CCACGCTNTAAGTTTGGCTCTTTCGCNCTTGNCTGATCTCGACATCAGNNCGCGGGTTCTTCTTAGAANCTCATGCCNAAAAATGATGCGGACAAGTTCA
-CCTAGCCNGACNTTTGTACCGACGCACTACCNAGACGAGNATTGTCTCAGCAACGAGCT
->A	CA	CA	0A0	 9	ACC 	 09AA0		C9	A0C99C0 		C99A	9	A	0CA9	CA90A0C	09AA9A			99	A0CCC9	  00CA	9
-GNACTCNCTAGGCGATNAATTAGTGCGCGACGCACTGGCTCGCAGGCTGGTACCGCGCAGAATGAANGGGCCCGGATAAGGACNCTGGGTGTAACCTGTN
-CTGGTTTCTGGCCCCGNAGACACCTCTNGGCTCCTTCCGGGTNATGGNGTCATCCGCGACCAGCTGTTCCGTAGCACNGTGTGTATTCTGTATCAGGATA
-ATGCCTTTGCCAAAAAGGTTGGAAGAGATAGTNTCGTTNTAAGTCTGCTCGCGGTTTTTNCCCGTTCTCCGTGCCGTTTATTACNATATCCTGCNATCNA
-ATGTCTNAAACTNGCAATTTACTCAGNTTNGAGTCCCCGCCC
->		9C9	C 	C CA 9CC  	A 9AC00A	CA	AA9	A	
-GGANGTACGGCGACTTGACCGCGATGACTCTCGATGCCTAATGCTNCGGGACAGTAATCNTTGAGGNATAATTGCATATAAAATGCACAGCTTCATATTA
-AGTCCTTACGAATNGTGTGTCGGATTAANAACGCCTCCAGTNAGTCACGTCTAATTTTAGTGAAGTGGTAACAAAATTTCCAGA
-sonLib_fastaCTest /tmp/tmpuw6xw4 /tmp/tmpdxRz2p
-@	 A 0A0 AC C  AA0 CC A9C90C0CA0  	0	CA0 9  9 AAC90A 0A09A		AA  0	099	09CCC0	9A  	0	AA 0  AAA90		 0
-CTGTCTACGGCCCATTTTAGTTGCGAGCCCGTGTGGTTTGAANAGAGATATTAAAANTTGAGCTGCGATGGAGGGTCTGTNGNGCNAGGANCTATAATAGTAGGAAGCAGCCTAATCTGGTNACTCAACCAATAGTTAAGCACCCGTGACAATAGTCTGGGGCCCGCA
+../bin/sh: 1: sonLib_fastaCTest: not found
+E....>A009 A9C 90CA	
+GGGGCCGATGNACACCTCATACCTACGGTCCTCCG
+sonLib_fastaCTest /tmp/tmpBfSgZ7 /tmp/tmpWIUXV4
+@ 0 	A  A00A0C  C  	A90C 9
+NTNGAGGCCGGTAACGCGTATGGCTNATCGTTAANTCACTACGTGNGTGCCGAGATCCGCCCGTATCTACGGATCTGTGGCGCAACGTCATACGCTATTAAGAACGTGTAATGCGGCGGANGAAAAGTGACGTTGAATCATCGTCTGTAGTTAAGAGACCCGCTTACTTATTGAAACGTAAGNATTAGCGNATGATTCGTCAGTGCGGNNCGATGTAACGCTGCTGGTATCCTGCAATNAAGGCCCGATTATTAGTTTNGNCTCTACGACGCTTCCCCCGANCGTCGGTACCACTNATCGGGCTCGTTCCTCCATTCTCGTGATTAGATCAAAGCTAGCTTTCGATTGACCGNGATATCANTTCGTTCAATAGNGCGCAAGTTTTNCACCGTAGTTGAAGCCAACTGAGTANTCCACTAAAACGGANANCCGCNAGAC
 +
-D/>n;Zr>(RB(DF3rx3k)Uw3w;FE(E)][*TS379'VN=p1e|>:6iNH9jE[U&qR13V;Bsv=,DUs*n4BFEOR]2U"?A:LalBka()dWku>:Ut^0]9N!jIs#Iz0_>"$<boDD*3U6ZNTej-~|~=<zgQ:&#6UQ"ne'wH;W9plU1$yr>oR
-@	999A	AAC AC AA0	AA0C9 	   090C	 C0	0A09	0AAA CA		A			99	AA	0C	A
-AGCCCNTGTAGCCTTTGCCCGCGGTATTTCGCACCTACCGGTGAGTACGNCTGACGGCTTNTGNCGACCTTGACCCTACAGCGGCCTAGATCATTCACTGTACCCNCAGGTGTTTTAGGATTNGTGGTCAGAGCTGGAGTAGTTCGNAATCGTCCCCGAGGGTCGGGATGACGCTCCGAATCCGAGCACAACTCAGGNGGGACAACAACTGGGAGATCGGACCCGNAACGATCNTCCGACTAAAANCTGTAA
-+
-&S8{&ybCG#/a-U*[#xhp#b7K-4gpUHZMNk,-kfO}jAnW=%QBN,*3g*Dv.a%"h0d~[C>5]BzfEUH.4&C1ol48Tif&TV"`R,eL/~\j`Yb#>\Ir..Xar7x)0GwF$70w9LnJx<eRQ%P9l(*?>,E:;"X^v:/U~-Z*HU7I~<DQC+]Loj4aI$xu^_t(EfXR5C}4w9+Lv6)4g*ZV!WT;(_fHTMpLzEvEj81e'%J^6wi[]u}"As"Fj>+x%=?|iX6b5+Kw
-@ A	CAACC 09CA	C	0 90AA99C A	 CC0CCA 	 C0	C	C9 AA C9	 A0C0	C	C AA	90			9	CA0AC C9	 	 9C0C	 C
-TCTATTGCACGAGCGTTATTGNTCAAGGGGCCGTGTAACTTGGGCCGTNGAGATCTACCTCCGGGCAAGGGGGCGCTTNACCTACGGCGGGGTNTTTACCNT
-+
-13HKayQ5k24@jY"]q0&`L*iG\89n[*KUPWy@j\ew#QS]%Ym(+Ib6uBt#LdAy(:yT7?;IOzxP"T~B`',)iFH(A++7ntYN$%6C1mYVx-
-@9		0C0C9999
-AGCCTGTCCGGCACCGTAAGTGTGTCATTGAGCATCGGACATGTTAGCAGACATNCTGTCCATAACTTCATCGTCGCATGCTANTCCGCAGACTATTATATGGAGTCGCAAGCCATCATCNGTTACGTCGTATGTCTCTCCTCCAAAAACCTCCATGTCCATAAAATCNGCTATNCTGGCACTCAGGTTGTATTGCCTTATGCCGGGGTACCCACANAGAGCAGTGGCTGGACTTTATGGCTGGTCGTTNGAAACTNTAATAGTGCTTTGGNGNATTTTCCTAAAGACCCCGCTAAGTGAGCAGCTACAGGCCATTCGTGGCGATGCGCAGCAATTGGCGCACACTCGAAGTGATCCCCTATAGAAACTATCAACTCGACNGTGTTGGCAGNCTTACAAAATAGAGACGCATGCAGCGATCGATACCTATGGTCCCAGCTTGTCNTACTTACGGTNNCGCCTGGGGGATTCT
-+
-;FB0h}XG)gU^RW_#T1$gUvYlNX1s;5mZ+<3dC@VWl/,qaYr`R6Lf#wucM3"cFN<LLfbQ|Tq"~ItObQON^qZr{fdVgTOIEla]v=ypm\(2lLh7369QmE\zAv/h[cm/nnQ'~XF?#!hsW!Y7zu!YamBU<;tmvpd"=K8x4yzRpi$~lx}&-H,D-;r5gg7e&0?d|=7{(dtLW4{HvJ{k.`;<r(#Hxo8q,^rb9uN7-SJ`j.w`m)WhHd,+&85(^y-^U%nB?Ui-T!FbYNy"~+)jZ.,wu'ACj.P+&I%/LBb3L/h6Vva3}Mve]uf6,J_vMieNNa4iK[YYE(DU.@i4fj*L[rEbbG?+ch2<$&^fvK^\Z:$l7cfkia7iWbn1%wKK_6n2EEfiT2Xr?n>.O9i&K$@f\p/uz-UQ5%rktr#:\>W2J'c:[=)j"5XN/DL'DDOr9w3ft$-mv&\P$%`W)}>NBtDi~pHoTp0]N-BO
-@	9	 	99C	 CC	909AA9C99A9A09AA.... AC 		 0	A9C	C0	C	CA	 A90 	0A9
-NCGTTNGTGACGCGTAGGGTTTTACTGAACGCNTACCTGTCAGTGAAGTTAATGCCTGANTGGGGTCTTGGGAAAGGGNACATTAGTGTTCGTNTANACTTCGGANGACACACGATCCTTTCAAAACGCNGATACCTCTTTCTGGAGNTGTAGACGTCAGGCCTCATGAGTACACGCTCTTCCCG
-+
-w}>k2J?b.;;S|{IcIl/8@i"S#2u|%CEg-K,zce>:=gWN*jM6%ad{g1w.WnBIkSC_6\-H<K8`C8Jj;cu"fSb&.xY3:bc/"YG2N#1te%,mphctqi:2F_#yp8[wBVhM/<GY2~x7pc:jqjC;xw{Gi!("`J{jyKZo7=j1d^A$#_N(@%WcqUm/hC6VX;L&J
-@A09 A AC		CC  99 AC0 9 A0C0
-GCATAGTATCTGCAANATNTGTCCAAGAGCAGATTTGAGGCATNCACCGTTTNTAGACGTAATCAGTCGGTCAC
-+
-Lo(->F-<1$a4UWg|T&O:9aq^**KKb=Fdw;h]4?nadJR'z6aH'+EZZ@4i(`:Ld!Mn@_?Z,;^RA*
+A;sI7|})TFcN_7A"rQ.rIH;1iz<Gms)&PbW2ck><V(*;zI0W^4wTd})I6\R>j"xvQI}|fc-4R#+jEdC.7O|gPu/VL9vT9<sb6p+lvJi9+Ryj[:-eW>?6{*3n|-$aGDJT{dm>jy05/g]W8Ex.aG<533\gl^nLN9;::&%b@z!tAZmR7GtxLo$N*{>}Pj>?"n{(iJ|+q}=i]-@lDY>MX)"J\sRyz,=0C_ye5`O$U=3J|nn"-jGw">O|ebSH\kmwBx>bVC^Ig~r|iag1A&moMO=,m9ieoHmr-?lalmtMu;$pKKyy'S!g,"Zq+egysd6><@Y;]R1<\'<;ZBT>bcEJsV[Vr9R+vWZ2o]gD}>,]gNLnk!M&ur4TObp4g)G!bbTEdAp<i9N?)y'/:.$dnxza9{(].hrV?*T;"9.pC?94Hc*+z@T#u/BiYE!|'O
 ((human,baboon),chimp); ((human,baboon),chimp);
+Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 1 levels, 4 fileNo and 4 maxTempFiles
+Got 1 levels, 3 fileNo and 3 maxTempFiles
+Got 2 levels, 4 fileNo and 16 maxTempFiles
 Got 1 levels, 2 fileNo and 2 maxTempFiles
-Got 3 levels, 5 fileNo and 125 maxTempFiles
-Got 2 levels, 2 fileNo and 4 maxTempFiles
-Got 1 levels, 4 fileNo and 4 maxTempFiles
-Got 2 levels, 2 fileNo and 4 maxTempFiles
-Got 2 levels, 2 fileNo and 4 maxTempFiles
-Got 1 levels, 4 fileNo and 4 maxTempFiles
-Got 2 levels, 3 fileNo and 9 maxTempFiles
 Got 3 levels, 1 fileNo and 1 maxTempFiles
-Got 1 levels, 1 fileNo and 1 maxTempFiles
-Got 2 levels, 2 fileNo and 4 maxTempFiles
-Got 2 levels, 3 fileNo and 9 maxTempFiles
-Got 2 levels, 4 fileNo and 16 maxTempFiles
-Got 2 levels, 4 fileNo and 16 maxTempFiles
-Got 3 levels, 2 fileNo and 8 maxTempFiles
 Got 1 levels, 5 fileNo and 5 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 1 levels, 3 fileNo and 3 maxTempFiles
+Got 1 levels, 4 fileNo and 4 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 1 levels, 1 fileNo and 1 maxTempFiles
+Got 2 levels, 5 fileNo and 25 maxTempFiles
+Got 2 levels, 5 fileNo and 25 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 1 levels, 3 fileNo and 3 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
 Got 2 levels, 1 fileNo and 1 maxTempFiles
 Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 1 levels, 5 fileNo and 5 maxTempFiles
+Got 1 levels, 2 fileNo and 2 maxTempFiles
+Got 3 levels, 4 fileNo and 64 maxTempFiles
+Got 3 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
 Got 1 levels, 3 fileNo and 3 maxTempFiles
-Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 3 levels, 1 fileNo and 1 maxTempFiles
+Got 1 levels, 2 fileNo and 2 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 1 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 1 levels, 5 fileNo and 5 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
 Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 1 levels, 4 fileNo and 4 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 1 levels, 5 fileNo and 5 maxTempFiles
+Got 1 levels, 4 fileNo and 4 maxTempFiles
+Got 1 levels, 3 fileNo and 3 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 1 levels, 2 fileNo and 2 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 1 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 1 levels, 2 fileNo and 2 maxTempFiles
+Got 1 levels, 5 fileNo and 5 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 3 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 1 levels, 4 fileNo and 4 maxTempFiles
+Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 1 levels, 5 fileNo and 5 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 1 levels, 5 fileNo and 5 maxTempFiles
 Got 3 levels, 3 fileNo and 27 maxTempFiles
 Got 1 levels, 3 fileNo and 3 maxTempFiles
-Got 2 levels, 4 fileNo and 16 maxTempFiles
-Got 1 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 1 levels, 5 fileNo and 5 maxTempFiles
+Got 3 levels, 3 fileNo and 27 max./bin/sh: 1: sonLib_cigarTest: not found
+E.TempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 2 levels, 5 fileNo and 25 maxTempFiles
+Got 3 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
 Got 3 levels, 4 fileNo and 64 maxTempFiles
 Got 2 levels, 3 fileNo and 9 maxTempFiles
-Got 3 levels, 1 fileNo and 1 maxTempFiles
-Got 1 levels, 2 fileNo and 2 maxTempFiles
-Got 1 levels, 3 fileNo and 3 maxTempFiles
-Got 3 levels, 1 fileNo and 1 maxTempFiles
-Got 2 levels, 2 fileNo and 4 maxTempFiles
-Got 1 levels, 2 fileNo and 2 maxTempFiles
-Got 2 levels, 3 fileNo and 9 maxTempFiles
-Got 1 levels, 2 fileNo and 2 maxTempFiles
-Got 3 levels, 3 fileNo and 27 maxTempFiles
-Got 2 levels, 2 fileNo and 4 maxTempFiles
 Got 1 levels, 1 fileNo and 1 maxTempFiles
-Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
 Got 1 levels, 1 fileNo and 1 maxTempFiles
-Got 2 levels, 4 fileNo and 16 maxTempFiles
-Got 3 levels, 5 fileNo and 125 maxTempFiles
-Got 3 levels, 2 fileNo and 8 maxTempFiles
-Got 1 levels, 5 fileNo and 5 maxTempFiles
-Got 1 levels, 3 fileNo and 3 maxTempFiles
-Got 3 levels, 2 fileNo and 8 maxTempFiles
-Got 3 levels, 3 fileNo and 27 maxTempFiles
-Got 3 levels, 3 fileNo and 27 maxTempFiles
-Got 1 levels, 4 fileNo and 4 maxTempFiles
-Got 2 levels, 1 fileNo and 1 maxTempFiles
-Got 1 levels, 3 fileNo and 3 maxTempFiles
-Got 1 levels, 4 fileNo and 4 maxTempFiles
-Got 2 levels, 1 fileNo and 1 maxTempFiles
-Got 1 levels, 4 fileNo and 4 maxTempFiles
-Got 2 levels, 5 fileNo and 25 maxTempFiles
-Got 2 levels, 5 fileNo and 25 maxTempFiles
-Got 1 levels, 2 fileNo and 2 maxTempFiles
-Got 2 levels, 4 fileNo and 16 maxTempFiles
-Got 2 levels, 2 fileNo and 4 maxTempFiles
-Got 3 levels, 5 fileNo and 125 maxTempFiles
-Got 2 levels, 3 fileNo and 9 maxTempFiles
-Got 2 levels, 3 fileNo and 9 maxTempFiles
-Got 2 levels, 1 fileNo and 1 maxTempFiles
-Got 2 levels, 1 fileNo and 1 maxTempFiles
-Got 3 levels, 2 fileNo and 8 maxTempFiles
-Got 2 levels, 1 fileNo and 1 maxTempFiles
-Got 3 levels, 5 fileNo and 125 maxTempFiles
-Got 2 levels, 3 fileNo and 9 maxTempFiles
-Got 1 levels, 3 fileNo and 3 maxTempFiles
-Got 3 levels, 2 fileNo and 8 maxTempFiles
-Got 3 levels, 5 fileNo and 125 maxTempFiles
-Got 1 levels, 4 fileNo and 4 maxTempFiles
-Got 3 levels, 5 fileNo and 125 maxTempFiles
-Got 2 levels, 3 fileNo and 9 maxTempFiles
-Got 2 levels, 5 fileNo and 25 maxTempFiles
 Got 3 levels, 4 fileNo and 64 maxTempFiles
-Got 2 levels, 1 fileNo and 1 maxTempFiles
-Got 1 levels, 3 fileNo and 3 maxTempFiles
-Got 2 levels, 2 fileNo and 4 maxTempFiles
-Got 3 levels, 5 fileNo and 125 maxTempFiles
-Got 2 levels, 2 fileNo and 4 maxTempFiles
-Got 1 levels, 2 fileNo and 2 m./bin/sh: 1: sonLib_cigarTest: not found
-E.axTempFiles
-Got 3 levels, 2 fileNo and 8 maxTempFiles
-Got 2 levels, 5 fileNo and 25 maxTempFiles
 Got 1 levels, 5 fileNo and 5 maxTempFiles
 Got 3 levels, 5 fileNo and 125 maxTempFiles
-Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 1 levels, 3 fileNo and 3 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
 Got 3 levels, 1 fileNo and 1 maxTempFiles
-Got 1 levels, 1 fileNo and 1 maxTempFiles
-Got 2 levels, 4 fileNo and 16 maxTempFiles
-Got 2 levels, 2 fileNo and 4 maxTempFiles
-Got 3 levels, 3 fileNo and 27 maxTempFiles
-Got 1 levels, 1 fileNo and 1 maxTempFiles
-Got 3 levels, 5 fileNo and 125 maxTempFiles
-Got 2 levels, 4 fileNo and 16 maxTempFiles
 Got 1 levels, 2 fileNo and 2 maxTempFiles
-Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 3 levels, 4 fileNo and 64 maxTempFiles
 Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 2 levels, 5 fileNo and 25 maxTempFiles
 Got 3 levels, 5 fileNo and 125 maxTempFiles
-Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 1 fileNo and 1 maxTempFiles
+Got 1 levels, 2 fileNo and 2 maxTempFiles
 
 ((human:0.001000,baboon:0.001000):0.001000,chimp:0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
 ((human,baboon),chimp); dups 1 1 losses 3 3
@@ -502,9 +457,7 @@ Got 2 levels, 1 fileNo and 1 maxTempFiles
 (cow,(cat,dog)); dups 0 0 losses 0 0
 ((cow:0.001000,dog:0.001000):0.001000,(dog:0.001000,cow:0.001000):0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
 ((cow,dog),(dog,cow)); dups 1 1 losses 2 2
-((cow:0.001000,(cow:0.001000,cow:0.001000):0.001000):0.001000,(dog:0.001000,cat:0.001000):0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
-((cow,(cow,cow)),(dog,cat)); dups 2 2 losses 0 0
-((cow:0.001000,(cow:0.001000,cow:0.001000):0.001000):0.001000,(dog:0.001000,((cat:0.001000,cat:0.001000):0.001000,cat:0.001000):0.001000):0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0......./bin/sh: 1: sonLib_kvDatabaseTest: not found
+((cow:0.001000,(cow:0.001000,cow:0.001000):0.001000):0.001000,(dog:0.001000,cat:0.001000):0.001000):0.001000; ((((human:0......../bin/sh: 1: sonLib_kvDatabaseTest: not found
 E/bin/sh: 1: sonLibTests: not found
 E
 ======================================================================
@@ -516,7 +469,7 @@ Traceback (most recent call last):
     system(command)
   File "/opt/sonLib/bioio.py", line 185, in system
     raise RuntimeError("Command: %s exited with non-zero status %i" % (command, sts))
-RuntimeError: Command: sonLib_fastaCTest /tmp/tmpuw6xw4 /tmp/tmpdxRz2p exited with non-zero status 127
+RuntimeError: Command: sonLib_fastaCTest /tmp/tmpBfSgZ7 /tmp/tmpWIUXV4 exited with non-zero status 127
 
 ======================================================================
 ERROR: testCigarReadWrite (cigarsTest.TestCase)
@@ -527,7 +480,7 @@ Traceback (most recent call last):
     system(command)
   File "/opt/sonLib/bioio.py", line 185, in system
     raise RuntimeError("Command: %s exited with non-zero status %i" % (command, sts))
-RuntimeError: Command: sonLib_cigarTest /tmp/tmppbJPr7 True exited with non-zero status 127
+RuntimeError: Command: sonLib_cigarTest /tmp/tmpMM_dQP False exited with non-zero status 127
 
 ======================================================================
 ERROR: testSonLibKVTokyoCabinet (kvdbTest.TestCase)
@@ -551,23 +504,25 @@ Traceback (most recent call last):
 RuntimeError: Command: sonLibTests CRITICAL exited with non-zero status 127
 
 ----------------------------------------------------------------------
-Ran 19 tests in 0.208s
+Ran 19 tests in 0.255s
 
 FAILED (errors=4)
-.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+((cow,(cow,cow)),(dog,cat)); dups 2 2 losses 0 0
+((cow:0.001000,(cow:0.001000,cow:0.001000):0.001000):0.001000,(dog:0.001000,((cat:0.001000,cat:0.001000):0.001000,cat:0.001000):0.001000):0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
 ((cow,(cow,cow)),(dog,((cat,cat),cat))); dups 4 4 losses 0 0
 rootedGeneTree ((human,chimp),baboon); 0 0 (baboon,(human,chimp));
 rootedGeneTree ((human,chimp),baboon); 0 0 ((human,chimp),baboon);
 rootedGeneTree ((((human,chimp),baboon),(mouse,rat)),((dog,cat),cow)); 0 0 (((dog,cat),cow),(((human,chimp),baboon),(mouse,rat)));
 rootedGeneTree ((((human,chimp),baboon),(mouse,rat)),((dog,cat),cow)); 0 0 ((((human,chimp),baboon),(mouse,rat)),((dog,cat),cow));
 rootedGeneTree ((((human,(chimp,chimp)),baboon),(mouse,rat)),((dog,cat),cow)); 1 0 (((dog,cat),cow),(((human,(chimp,chimp)),baboon),(mouse,rat)));
-before (((0:0.451274,1:0.495088):0.572942,(2:0.320906,3:0.001630):0.239228):0.596860,(4:0.629662,(5:0.538223,6:0.724140):0.058870):0.062262):0.922097; (((0:0.451274,1:0.495088):0.572942,(2:0.320906,3:0.001630):0.239228):0.596860,(4:0.629662,(5:0.538223,6:0.724140):0.058870):0.062262):0.922097;
-test 0 (((0:0.451274,1:0.495088):0.572942,(2:0.320906,3:0.001630):0.239228):0.596860,(4:0.629662,(5:0.538223,6:0.724140):0.058870):0.062262):0.922097; (((0:0.451274,1:0.495088):0.572942,(2:0.320906,3:0.001630):0.239228):0.596860,(4:0.629662,(5:0.538223,6:0.724140):0.058870):0.062262):0.922097; (((0:0.451274,1:0.495088):0.572942,(2:0.320906,3:0.001630):0.239228):0.596860,(4:0.629662,(5:0.538223,6:0.724140):0.058870):0.062262):0.922097;
-test 0 (0:0.046506,(1:0.096151,(2:0.404525,3:0.517811):0.108157):0.737837):0.724121; 0:0.046506; (1:0.096151,(2:0.404525,3:0.517811):0.108157):0.784343;
-{'1': 2, '0': 1, '3': 6, '2': 4}
-{(1, 2): 5, (6, 4): 5, (5, 4): 6, (4, 6): 5, (1, 5): 2, (5, 6): 4, (2, 1): 5, (4, 5): 6, (5, 1): 2, (2, 5): 1, (5, 2): 1, (1, 1): 1, (6, 5): 4}
-{('1', '0'): 0.8804951380373507, ('0', '3'): 1.4103122068945433, ('2', '3'): 0.92233643256072, ('0', '2'): 1.2970259789621028, ('2', '1'): 0.6088334353548743, ('2', '0'): 1.2970259789621028, ('3', '0'): 1.4103122068945433, ('0', '1'): 0.8804951380373507, ('3', '1'): 0.7221196632873149, ('3', '2'): 0.92233643256072, ('1', '2'): 0.6088334353548743, ('1', '3'): 0.7221196632873149}
-{('2', '3'): 0.922336, ('2', '1'): 0.6088330000000001, ('3', '1'): 0.7221190000000001, ('3', '2'): 0.922336, ('1', '2'): 0.6088330000000001, ('1', '3'): 0.7221190000000001}
+before ((0:0.756803,1:0.127953):0.399816,((2:0.547609,3:0.503526):0.199980,(4:0.201744,5:0.588713):0.630620):0.206852):0.294612; ((0:0.756803,1:0.127953):0.399816,((2:0.547609,3:0.503526):0.199980,(4:0.201744,5:0.588713):0.630620):0.206852):0.294612;
+test 0 ((0:0.756803,1:0.127953):0.399816,((2:0.547609,3:0.503526):0.199980,(4:0.201744,5:0.588713):0.630620):0.206852):0.294612; ((0:0.756803,1:0.127953):0.399816,((2:0.547609,3:0.503526):0.199980,(4:0.201744,5:0.588713):0.630620):0.206852):0.294612; ((0:0.756803,1:0.127953):0.399816,((2:0.547609,3:0.503526):0.199980,(4:0.201744,5:0.588713):0.630620):0.206852):0.294612;
+test 0 (0:0.409600,1:0.762824):0.029850; 1:0.762824; 0:1.172424;
+{'1': 1, '0': 1}
+{(1, 1): 1}
+{('1', '0'): 1.1724236282620744, ('0', '1'): 1.1724236282620744}
+{}
 Makefile:24: recipe for target 'test' failed
 make: *** [test] Error 4
 + true
@@ -902,10 +857,26 @@ Running test case test_getSequenceMatrix_0
 OK (12 tests)
 
 testMemory (__main__.SharedMafLibraryTest)
-sharedMaf.h should be memory clean. ... ok
+sharedMaf.h should be memory clean. ... Running test case test_de_malloc
+Running test case test_newMafLineFromString
+Running test case test_readBlock
+Running test case test_readBlock2
+Running test case test_lineNumbers
+Running test case test_readWriteMaf
+Running test case test_newMafBlockFromString_0
+Running test case test_flipBlockStrand_0
+Running test case test_flipBlockStrand_1
+Running test case test_copySpeciesName_0
+Running test case test_copyChromosomeName_0
+Running test case test_getSequenceMatrix_0
+............
+
+OK (12 tests)
+
+ok
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.000s
+Ran 1 test in 0.425s
 
 OK
 make[1]: Leaving directory '/opt/mafTools/lib'
@@ -1007,7 +978,7 @@ test_seedTesting (__main__.randomSeedTests)
 mafComparator should have replicable runs via the --seed command ... ok
 
 ----------------------------------------------------------------------
-Ran 18 tests in 0.351s
+Ran 18 tests in 34.583s
 
 OK
 make[1]: Leaving directory '/opt/mafTools/mafComparator'
@@ -1060,7 +1031,7 @@ testMemory_3 (__main__.TransitiveClosureTest)
 mafTransitiveClosure should be memory clean. ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.006s
+Ran 5 tests in 3.066s
 
 OK
 make[1]: Leaving directory '/opt/mafTools/mafTransitiveClosure'
@@ -1131,7 +1102,7 @@ testMemory1 (__main__.FastaStitchTest)
 If valgrind is installed on the system, check for memory related errors (1). ... ok
 
 ----------------------------------------------------------------------
-Ran 3 tests in 0.008s
+Ran 3 tests in 1.781s
 
 OK
 make[1]: Leaving directory '/opt/mafTools/mafToFastaStitcher'
@@ -1219,7 +1190,7 @@ Traceback (most recent call last):
 TypeError: 'float' object cannot be interpreted as an index
 
 ----------------------------------------------------------------------
-Ran 7 tests in 0.060s
+Ran 7 tests in 0.504s
 
 FAILED (errors=2)
 Makefile:60: recipe for target 'test' failed
