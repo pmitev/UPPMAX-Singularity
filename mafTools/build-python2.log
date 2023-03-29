@@ -1,0 +1,1235 @@
+Build target 'mafTools.sif' already exists and will be deleted during the build process. Do you want to continue? [N/y] INFO:    Starting build...
+Getting image source signatures
+Copying blob sha256:4acc342562b4e8e55affdfcd7df103b073d3dcb38f0e2725d34ce34bd0bba0da
+Copying blob sha256:4a9f2207c812b2530bc06352aa57cf50244726c52db6ff775ca9f9a76d6ea880
+Copying blob sha256:d95a2fdc8b3d1140238f9ea09e64cff45e839a31e5e5d25309af9fa7f0c331eb
+Copying blob sha256:7568c21980bd8003ca9d23a218302c6386aac91e069cc0c0be6bedf45476f056
+Copying blob sha256:760eb225f9e8869867711c15319e22ffa8def84a53c980ee038dea7106bd7242
+Copying blob sha256:6fe350d2b14088b19ffff7a1c6683f0949fb0161e6ab87011a24e21e5d7fed4e
+Copying blob sha256:a7903e427e3f726eac0b29bc9fcdcad526df65471bd55ccf72927eecebb9088d
+Copying blob sha256:44360edd3f0294b28cbe66d5597d139d7e7def5a299e64243978e0aa94f35854
+Copying blob sha256:d7721ae168a32d157b0de245a836d686157e7169e63741d51951b38198a7a4b2
+Copying config sha256:780653c666431ee78832699c653611d4542fefaf101994981ebb19f3fc0145aa
+Writing manifest to image destination
+Storing signatures
+2023/03/29 11:50:11  info unpack layer: sha256:7568c21980bd8003ca9d23a218302c6386aac91e069cc0c0be6bedf45476f056
+2023/03/29 11:50:12  info unpack layer: sha256:4a9f2207c812b2530bc06352aa57cf50244726c52db6ff775ca9f9a76d6ea880
+2023/03/29 11:50:12  info unpack layer: sha256:6fe350d2b14088b19ffff7a1c6683f0949fb0161e6ab87011a24e21e5d7fed4e
+2023/03/29 11:50:12  info unpack layer: sha256:d95a2fdc8b3d1140238f9ea09e64cff45e839a31e5e5d25309af9fa7f0c331eb
+2023/03/29 11:50:13  info unpack layer: sha256:760eb225f9e8869867711c15319e22ffa8def84a53c980ee038dea7106bd7242
+2023/03/29 11:50:16  info unpack layer: sha256:4acc342562b4e8e55affdfcd7df103b073d3dcb38f0e2725d34ce34bd0bba0da
+2023/03/29 11:50:16  info unpack layer: sha256:a7903e427e3f726eac0b29bc9fcdcad526df65471bd55ccf72927eecebb9088d
+2023/03/29 11:50:17  info unpack layer: sha256:44360edd3f0294b28cbe66d5597d139d7e7def5a299e64243978e0aa94f35854
+2023/03/29 11:50:17  info unpack layer: sha256:d7721ae168a32d157b0de245a836d686157e7169e63741d51951b38198a7a4b2
+INFO:    Running post scriptlet
++ export DEBIAN_FRONTEND=noninteractive
++ export LC_ALL=C
++ mkdir -p /tmp/apt-stretch
++ echo Dir::Cache /tmp/apt-stretch;
++ apt-get update
+Ign:1 http://deb.debian.org/debian stretch InRelease
+Get:2 http://security.debian.org/debian-security stretch/updates InRelease [59.1 kB]
+Get:3 http://deb.debian.org/debian stretch-updates InRelease [93.6 kB]
+Get:4 http://deb.debian.org/debian stretch Release [118 kB]
+Get:5 http://deb.debian.org/debian stretch Release.gpg [3177 B]
+Get:6 http://security.debian.org/debian-security stretch/updates/main amd64 Packages [782 kB]
+Get:7 http://deb.debian.org/debian stretch/main amd64 Packages [7080 kB]
+Fetched 8135 kB in 0s (8279 kB/s)
+Reading package lists...
++ apt-get -y --no-install-recommends install --fix-missing wget curl git build-essential libz-dev python-dev python-pip cython
+Reading package lists...
+Building dependency tree...
+Reading state information...
+wget is already the newest version (1.18-5+deb9u3).
+The following additional packages will be installed:
+  libcurl3 libcurl4-openssl-dev libpython-dev libpython2.7 libpython2.7-dev
+  libpython2.7-minimal libpython2.7-stdlib python-pip-whl python2.7
+  python2.7-dev python2.7-minimal zlib1g
+Suggested packages:
+  cython-doc gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-el
+  git-email git-gui gitk gitweb git-arch git-cvs git-mediawiki git-svn
+  libcurl4-doc libcurl3-dbg libidn11-dev libldap2-dev librtmp-dev
+  libssh2-1-dev libssl1.0-dev | libssl-dev python2.7-doc binfmt-support
+Recommended packages:
+  less rsync python-all-dev python-setuptools python-wheel
+The following NEW packages will be installed:
+  build-essential cython libpython-dev libpython2.7 libpython2.7-dev
+  python-dev python-pip python-pip-whl python2.7-dev
+The following packages will be upgraded:
+  curl git libcurl3 libcurl4-openssl-dev libpython2.7-minimal
+  libpython2.7-stdlib python2.7 python2.7-minimal zlib1g zlib1g-dev
+debconf: delaying package configuration, since apt-utils is not installed
+10 upgraded, 9 newly installed, 0 to remove and 149 not upgraded.
+Need to get 0 B/42.4 MB of archives.
+After this operation, 56.3 MB of additional disk space will be used.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 30535 files and directories currently installed.)
+Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-5+deb9u1_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-5+deb9u1) over (1:1.2.8.dfsg-5) ...
+Preparing to unpack .../zlib1g_1%3a1.2.8.dfsg-5+deb9u1_amd64.deb ...
+Unpacking zlib1g:amd64 (1:1.2.8.dfsg-5+deb9u1) over (1:1.2.8.dfsg-5) ...
+Setting up zlib1g:amd64 (1:1.2.8.dfsg-5+deb9u1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 30535 files and directories currently installed.)
+Preparing to unpack .../00-git_1%3a2.11.0-3+deb9u7_amd64.deb ...
+Unpacking git (1:2.11.0-3+deb9u7) over (1:2.11.0-3+deb9u6) ...
+Preparing to unpack .../01-python2.7_2.7.13-2+deb9u6_amd64.deb ...
+Unpacking python2.7 (2.7.13-2+deb9u6) over (2.7.13-2+deb9u3) ...
+Preparing to unpack .../02-libpython2.7-stdlib_2.7.13-2+deb9u6_amd64.deb ...
+Unpacking libpython2.7-stdlib:amd64 (2.7.13-2+deb9u6) over (2.7.13-2+deb9u3) ...
+Preparing to unpack .../03-python2.7-minimal_2.7.13-2+deb9u6_amd64.deb ...
+Unpacking python2.7-minimal (2.7.13-2+deb9u6) over (2.7.13-2+deb9u3) ...
+Preparing to unpack .../04-libpython2.7-minimal_2.7.13-2+deb9u6_amd64.deb ...
+Unpacking libpython2.7-minimal:amd64 (2.7.13-2+deb9u6) over (2.7.13-2+deb9u3) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../05-build-essential_12.3_amd64.deb ...
+Unpacking build-essential (12.3) ...
+Preparing to unpack .../06-libcurl4-openssl-dev_7.52.1-5+deb9u16_amd64.deb ...
+Unpacking libcurl4-openssl-dev:amd64 (7.52.1-5+deb9u16) over (7.52.1-5+deb9u10) ...
+Preparing to unpack .../07-curl_7.52.1-5+deb9u16_amd64.deb ...
+Unpacking curl (7.52.1-5+deb9u16) over (7.52.1-5+deb9u10) ...
+Preparing to unpack .../08-libcurl3_7.52.1-5+deb9u16_amd64.deb ...
+Unpacking libcurl3:amd64 (7.52.1-5+deb9u16) over (7.52.1-5+deb9u10) ...
+Selecting previously unselected package cython.
+Preparing to unpack .../09-cython_0.25.2-1_amd64.deb ...
+Unpacking cython (0.25.2-1) ...
+Selecting previously unselected package libpython2.7:amd64.
+Preparing to unpack .../10-libpython2.7_2.7.13-2+deb9u6_amd64.deb ...
+Unpacking libpython2.7:amd64 (2.7.13-2+deb9u6) ...
+Selecting previously unselected package libpython2.7-dev:amd64.
+Preparing to unpack .../11-libpython2.7-dev_2.7.13-2+deb9u6_amd64.deb ...
+Unpacking libpython2.7-dev:amd64 (2.7.13-2+deb9u6) ...
+Selecting previously unselected package libpython-dev:amd64.
+Preparing to unpack .../12-libpython-dev_2.7.13-2_amd64.deb ...
+Unpacking libpython-dev:amd64 (2.7.13-2) ...
+Selecting previously unselected package python2.7-dev.
+Preparing to unpack .../13-python2.7-dev_2.7.13-2+deb9u6_amd64.deb ...
+Unpacking python2.7-dev (2.7.13-2+deb9u6) ...
+Selecting previously unselected package python-dev.
+Preparing to unpack .../14-python-dev_2.7.13-2_amd64.deb ...
+Unpacking python-dev (2.7.13-2) ...
+Selecting previously unselected package python-pip-whl.
+Preparing to unpack .../15-python-pip-whl_9.0.1-2+deb9u2_all.deb ...
+Unpacking python-pip-whl (9.0.1-2+deb9u2) ...
+Selecting previously unselected package python-pip.
+Preparing to unpack .../16-python-pip_9.0.1-2+deb9u2_all.deb ...
+Unpacking python-pip (9.0.1-2+deb9u2) ...
+Setting up python-pip-whl (9.0.1-2+deb9u2) ...
+Processing triggers for mime-support (3.60) ...
+Setting up build-essential (12.3) ...
+Setting up libcurl3:amd64 (7.52.1-5+deb9u16) ...
+Setting up cython (0.25.2-1) ...
+Processing triggers for libc-bin (2.24-11+deb9u4) ...
+Setting up libpython2.7-minimal:amd64 (2.7.13-2+deb9u6) ...
+Setting up python-pip (9.0.1-2+deb9u2) ...
+Setting up libcurl4-openssl-dev:amd64 (7.52.1-5+deb9u16) ...
+Setting up git (1:2.11.0-3+deb9u7) ...
+Setting up libpython2.7-stdlib:amd64 (2.7.13-2+deb9u6) ...
+Setting up python2.7-minimal (2.7.13-2+deb9u6) ...
+Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-5+deb9u1) ...
+Setting up curl (7.52.1-5+deb9u16) ...
+Setting up python2.7 (2.7.13-2+deb9u6) ...
+Setting up libpython2.7:amd64 (2.7.13-2+deb9u6) ...
+Setting up libpython2.7-dev:amd64 (2.7.13-2+deb9u6) ...
+Setting up python2.7-dev (2.7.13-2+deb9u6) ...
+Setting up libpython-dev:amd64 (2.7.13-2) ...
+Setting up python-dev (2.7.13-2) ...
+Processing triggers for libc-bin (2.24-11+deb9u4) ...
++ pip install -U --no-cache scipy
+DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+Collecting scipy
+  Downloading scipy-1.2.3-cp27-cp27mu-manylinux1_x86_64.whl (24.8 MB)
+Collecting numpy>=1.8.2
+  Downloading numpy-1.16.6-cp27-cp27mu-manylinux1_x86_64.whl (17.0 MB)
+Installing collected packages: numpy, scipy
+Successfully installed numpy-1.16.6 scipy-1.2.3
+WARNING: You are using pip version 20.0.2; however, version 20.3.4 is available.
+You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
++ cd /opt
++ git clone --recursive https://github.com/benedictpaten/sonLib/
+Cloning into 'sonLib'...
++ git clone --recursive https://github.com/benedictpaten/pinchesAndCacti
+Cloning into 'pinchesAndCacti'...
++ git clone --recursive https://github.com/dentearl/mafTools/
+Cloning into 'mafTools'...
++ cd sonLib
++ export PYTHONPATH=:/opt
++ make
+cd externalTools && make all
+make[1]: Entering directory '/opt/sonLib/externalTools'
+cd cutest && make all
+make[2]: Entering directory '/opt/sonLib/externalTools/cutest'
+gcc -std=c99   -O3 -g -Wall --pedantic -funroll-loops -DNDEBUG  -c CuTest.c
+ar rc cuTest.a *.o
+ranlib cuTest.a
+rm -f *.o
+mv cuTest.a ../../lib/
+cp CuTest.h ../../lib/
+make[2]: Leaving directory '/opt/sonLib/externalTools/cutest'
+cd quicktree_1.1 && make all CC="gcc -std=c99"
+make[2]: Entering directory '/opt/sonLib/externalTools/quicktree_1.1'
+gcc -std=c99 -c -I./include -O3 -Wall  -o ./obj/align.o ./src/align.c
+gcc -std=c99 -c -I./include -O3 -Wall  -o ./obj/cluster.o ./src/cluster.c
+gcc -std=c99 -c -I./include -O3 -Wall  -o ./obj/distancemat.o ./src/distancemat.c
+gcc -std=c99 -c -I./include -O3 -Wall  -o ./obj/options.o ./src/options.c
+gcc -std=c99 -c -I./include -O3 -Wall  -o ./obj/util.o ./src/util.c
+gcc -std=c99 -c -I./include -O3 -Wall  -o ./obj/sequence.o ./src/sequence.c
+gcc -std=c99 -c -I./include -O3 -Wall  -o ./obj/quicktree.o ./src/quicktree.c
+gcc -std=c99 -c -I./include -O3 -Wall  -o ./obj/buildtree.o ./src/buildtree.c
+gcc -std=c99 -c -I./include -O3 -Wall  -o ./obj/tree.o ./src/tree.c
+gcc -std=c99  -o bin/quicktree ./obj/align.o ./obj/cluster.o ./obj/distancemat.o ./obj/options.o ./obj/util.o ./obj/sequence.o ./obj/quicktree.o ./obj/buildtree.o ./obj/tree.o -lm
+make[2]: Leaving directory '/opt/sonLib/externalTools/quicktree_1.1'
+make[1]: Leaving directory '/opt/sonLib/externalTools'
+cd C && make all
+make[1]: Entering directory '/opt/sonLib/C'
+cp inc/sonLibCompression.h ../lib/sonLibCompression.h.tmp
+mv ../lib/sonLibCompression.h.tmp ../lib/sonLibCompression.h
+cp inc/stGraph.h ../lib/stGraph.h.tmp
+mv ../lib/stGraph.h.tmp ../lib/stGraph.h
+cp inc/stUnionFind.h ../lib/stUnionFind.h.tmp
+mv ../lib/stUnionFind.h.tmp ../lib/stUnionFind.h
+cp inc/fastCMaths.h ../lib/fastCMaths.h.tmp
+mv ../lib/fastCMaths.h.tmp ../lib/fastCMaths.h
+cp inc/hashTablePrivateC.h ../lib/hashTablePrivateC.h.tmp
+mv ../lib/hashTablePrivateC.h.tmp ../lib/hashTablePrivateC.h
+cp inc/hashTableC_itr.h ../lib/hashTableC_itr.h.tmp
+mv ../lib/hashTableC_itr.h.tmp ../lib/hashTableC_itr.h
+cp inc/sonLibKVDatabase.h ../lib/sonLibKVDatabase.h.tmp
+mv ../lib/sonLibKVDatabase.h.tmp ../lib/sonLibKVDatabase.h
+cp inc/stPhylogeny.h ../lib/stPhylogeny.h.tmp
+mv ../lib/stPhylogeny.h.tmp ../lib/stPhylogeny.h
+cp inc/stJson.h ../lib/stJson.h.tmp
+mv ../lib/stJson.h.tmp ../lib/stJson.h
+cp inc/sonLibTreap.h ../lib/sonLibTreap.h.tmp
+mv ../lib/sonLibTreap.h.tmp ../lib/sonLibTreap.h
+cp inc/bioioC.h ../lib/bioioC.h.tmp
+mv ../lib/bioioC.h.tmp ../lib/bioioC.h
+cp inc/stThreadPool.h ../lib/stThreadPool.h.tmp
+mv ../lib/stThreadPool.h.tmp ../lib/stThreadPool.h
+cp inc/pairwiseAlignment.h ../lib/pairwiseAlignment.h.tmp
+mv ../lib/pairwiseAlignment.h.tmp ../lib/pairwiseAlignment.h
+cp inc/sonLibTree.h ../lib/sonLibTree.h.tmp
+mv ../lib/sonLibTree.h.tmp ../lib/sonLibTree.h
+cp inc/sonLibFile.h ../lib/sonLibFile.h.tmp
+mv ../lib/sonLibFile.h.tmp ../lib/sonLibFile.h
+cp inc/commonC.h ../lib/commonC.h.tmp
+mv ../lib/commonC.h.tmp ../lib/commonC.h
+cp inc/sonLibEulerTour.h ../lib/sonLibEulerTour.h.tmp
+mv ../lib/sonLibEulerTour.h.tmp ../lib/sonLibEulerTour.h
+cp inc/sonLibExcept.h ../lib/sonLibExcept.h.tmp
+mv ../lib/sonLibExcept.h.tmp ../lib/sonLibExcept.h
+cp inc/sonLibAlign.h ../lib/sonLibAlign.h.tmp
+mv ../lib/sonLibAlign.h.tmp ../lib/sonLibAlign.h
+cp inc/sonLibTypes.h ../lib/sonLibTypes.h.tmp
+mv ../lib/sonLibTypes.h.tmp ../lib/sonLibTypes.h
+cp inc/sonLibSet.h ../lib/sonLibSet.h.tmp
+mv ../lib/sonLibSet.h.tmp ../lib/sonLibSet.h
+cp inc/sonLibTuples.h ../lib/sonLibTuples.h.tmp
+mv ../lib/sonLibTuples.h.tmp ../lib/sonLibTuples.h
+cp inc/sort_r.h ../lib/sort_r.h.tmp
+mv ../lib/sort_r.h.tmp ../lib/sort_r.h
+cp inc/jsmn.h ../lib/jsmn.h.tmp
+mv ../lib/jsmn.h.tmp ../lib/jsmn.h
+cp inc/sonLibNaiveConnectivity.h ../lib/sonLibNaiveConnectivity.h.tmp
+mv ../lib/sonLibNaiveConnectivity.h.tmp ../lib/sonLibNaiveConnectivity.h
+cp inc/sonLibMath.h ../lib/sonLibMath.h.tmp
+mv ../lib/sonLibMath.h.tmp ../lib/sonLibMath.h
+cp inc/sonLibConnectivity.h ../lib/sonLibConnectivity.h.tmp
+mv ../lib/sonLibConnectivity.h.tmp ../lib/sonLibConnectivity.h
+cp inc/sonLibCache.h ../lib/sonLibCache.h.tmp
+mv ../lib/sonLibCache.h.tmp ../lib/sonLibCache.h
+cp inc/avl.h ../lib/avl.h.tmp
+mv ../lib/avl.h.tmp ../lib/avl.h
+cp inc/sonLibList.h ../lib/sonLibList.h.tmp
+mv ../lib/sonLibList.h.tmp ../lib/sonLibList.h
+cp inc/sonLibHash.h ../lib/sonLibHash.h.tmp
+mv ../lib/sonLibHash.h.tmp ../lib/sonLibHash.h
+cp inc/sonLibCommon.h ../lib/sonLibCommon.h.tmp
+mv ../lib/sonLibCommon.h.tmp ../lib/sonLibCommon.h
+cp inc/stPosetAlignment.h ../lib/stPosetAlignment.h.tmp
+mv ../lib/stPosetAlignment.h.tmp ../lib/stPosetAlignment.h
+cp inc/sonLibRandom.h ../lib/sonLibRandom.h.tmp
+mv ../lib/sonLibRandom.h.tmp ../lib/sonLibRandom.h
+cp inc/sonLibSortedSet.h ../lib/sonLibSortedSet.h.tmp
+mv ../lib/sonLibSortedSet.h.tmp ../lib/sonLibSortedSet.h
+cp inc/stSpimapLayer.h ../lib/stSpimapLayer.h.tmp
+mv ../lib/stSpimapLayer.h.tmp ../lib/stSpimapLayer.h
+cp inc/hashTableC.h ../lib/hashTableC.h.tmp
+mv ../lib/hashTableC.h.tmp ../lib/hashTableC.h
+cp inc/stMatrix.h ../lib/stMatrix.h.tmp
+mv ../lib/stMatrix.h.tmp ../lib/stMatrix.h
+cp inc/sonLib.h ../lib/sonLib.h.tmp
+mv ../lib/sonLib.h.tmp ../lib/sonLib.h
+cp inc/stSafeC.h ../lib/stSafeC.h.tmp
+mv ../lib/stSafeC.h.tmp ../lib/stSafeC.h
+cp inc/sonLibKVDatabaseConf.h ../lib/sonLibKVDatabaseConf.h.tmp
+mv ../lib/sonLibKVDatabaseConf.h.tmp ../lib/sonLibKVDatabaseConf.h
+cp inc/sonLibString.h ../lib/sonLibString.h.tmp
+mv ../lib/sonLibString.h.tmp ../lib/sonLibString.h
+gcc -std=c99  -O3 -g -Wall --pedantic -funroll-loops -DNDEBUG       -I../externalTools/quicktree_1.1/include/  -I inc -I ../lib/  -c impl/*.c
+impl/sonLibList.c: In function 'st_list_sortP':
+impl/sonLibList.c:258:13: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+     return ((int (*)(const void *, const void *))fn)(*((char **)a), *((char **)b));
+             ^
+impl/sonLibList.c: In function 'stList_sort':
+impl/sonLibList.c:262:76: warning: ISO C forbids conversion of function pointer to object pointer type [-Wpedantic]
+     sort_r(list->list, stList_length(list), sizeof(void *), st_list_sortP, (void *)cmpFn);
+                                                                            ^
+impl/sonLibList.c: In function 'st_list_sort2P':
+impl/sonLibList.c:267:56: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+     int (*cmpFn)(const void *, const void *, void *) = (int (*)(const void *, const void *, void *))(((void **)extra)[0]);
+                                                        ^
+impl/sonLibList.c: In function 'stList_sort2':
+impl/sonLibList.c:273:24: warning: ISO C forbids conversion of function pointer to object pointer type [-Wpedantic]
+     void *extra[2] = { (void *)cmpFn, (void *)extraArg };
+                        ^
+g++ -std=gnu++98  -O3 -g -Wall -funroll-loops -DNDEBUG  -I inc -I ../lib/ -c impl/*.cpp
+ar rc sonLib.a *.o ../externalTools/quicktree_1.1/obj/buildtree.o ../externalTools/quicktree_1.1/obj/cluster.o ../externalTools/quicktree_1.1/obj/distancemat.o ../externalTools/quicktree_1.1/obj/options.o ../externalTools/quicktree_1.1/obj/sequence.o ../externalTools/quicktree_1.1/obj/tree.o ../externalTools/quicktree_1.1/obj/util.o
+ranlib sonLib.a 
+rm *.o
+mv sonLib.a ../lib/
+gcc -std=c99   -O3 -g -Wall --pedantic -funroll-loops -DNDEBUG       -I../externalTools/quicktree_1.1/include/  -I inc -I ../lib -o ../bin/sonLibTests.tmp tests/allTests.c tests/sonLib*.c tests/st* ../lib/sonLib.a ../lib/cuTest.a   -lz -lm  -lm -lstdc++ -lpthread
+mv ../bin/sonLibTests.tmp ../bin/sonLibTests
+gcc -std=c99   -O3 -g -Wall --pedantic -funroll-loops -DNDEBUG       -I../externalTools/quicktree_1.1/include/  -I inc -I ../lib -I tests -o ../bin/sonLib_kvDatabaseTest.tmp tests/kvDatabaseTest.c tests/kvDatabaseTestCommon.c ../lib/sonLib.a ../lib/cuTest.a   -lz -lm  -lm
+mv ../bin/sonLib_kvDatabaseTest.tmp ../bin/sonLib_kvDatabaseTest
+gcc -std=c99   -O3 -g -Wall --pedantic -funroll-loops -DNDEBUG       -I../externalTools/quicktree_1.1/include/  -I inc -I ../lib -o ../bin/sonLib_cigarTest.tmp tests/cigarsTest.c ../lib/sonLib.a -lm
+mv ../bin/sonLib_cigarTest.tmp ../bin/sonLib_cigarTest
+gcc -std=c99   -O3 -g -Wall --pedantic -funroll-loops -DNDEBUG       -I../externalTools/quicktree_1.1/include/  -I inc -I ../lib -o ../bin/sonLib_fastaCTest.tmp tests/fastaCTest.c ../lib/sonLib.a -lm
+mv ../bin/sonLib_fastaCTest.tmp ../bin/sonLib_fastaCTest
+make[1]: Leaving directory '/opt/sonLib/C'
+cp sonLib_daemonize.py ./bin/sonLib_daemonize.py
+chmod +x ./bin/sonLib_daemonize.py
++ make test
+cd externalTools && make all
+make[1]: Entering directory '/opt/sonLib/externalTools'
+cd cutest && make all
+make[2]: Entering directory '/opt/sonLib/externalTools/cutest'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/opt/sonLib/externalTools/cutest'
+cd quicktree_1.1 && make all CC="gcc -std=c99"
+make[2]: Entering directory '/opt/sonLib/externalTools/quicktree_1.1'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/opt/sonLib/externalTools/quicktree_1.1'
+make[1]: Leaving directory '/opt/sonLib/externalTools'
+cd C && make all
+make[1]: Entering directory '/opt/sonLib/C'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/sonLib/C'
+cp sonLib_daemonize.py ./bin/sonLib_daemonize.py
+chmod +x ./bin/sonLib_daemonize.py
+PYTHONPATH=.. PATH=../../bin:$PATH python allTests.py --testLength=SHORT --logLevel=CRITICAL
+.cigar: two 9199 10172 + two 5393 4915 - -947.000000 X 26 0.863992 X 13 0.898829 Z 44 0.488257 Y 78 0.190667 Y 67 0.747898 X 62 0.822764 Y 1 0.931860 X 44 0.409729 Y 28 0.872536 Y 93 0.982281 X 2 0.386430 Z 82 0.405230 Z 37 0.984292 Y 21 0.405438 Z 68 0.223014 Y 32 0.464913 Y 3 0.579600 Z 69 0.928860 Z 37 0.907057 Z 70 0.049250 Z 9 0.099976 Z 25 0.408417 Z 69 0.099921 Z 56 0.176974 Z 76 0.587139 Z 57 0.796755 Z 54 0.359637 Z 8 0.279180 Z 7 0.014490 Z 53 0.989550 Y 6 0.364584 Z 5 0.122808 Y 2 0.384128
+cigar: two 9199 10172 + two 5393 4915 - -947.000000 X 26 0.863992 X 13 0.898829 Z 44 0.488257 Y 78 0.190667 Y 67 0.747898 X 62 0.822764 Y 1 0.931860 X 44 0.409729 Y 28 0.872536 Y 93 0.982281 X 2 0.386430 Z 82 0.405230 Z 37 0.984292 Y 21 0.405438 Z 68 0.223014 Y 32 0.464913 Y 3 0.579600 Z 69 0.928860 Z 37 0.907057 Z 70 0.049250 Z 9 0.099976 Z 25 0.408417 Z 69 0.099921 Z 56 0.176974 Z 76 0.587139 Z 57 0.796755 Z 54 0.359637 Z 8 0.279180 Z 7 0.014490 Z 53 0.989550 Y 6 0.364584 Z 5 0.122808 Y 2 0.384128
+cigar: two 6581 5864 - two 7022 6262 - 310.000000 X 69 0.664911 Z 98 0.675665 Z 81 0.634383 Y 92 0.837335 Z 29 0.931459 Y 26 0.813489 Y 33 0.514215 Z 58 0.258383 X 42 0.279652 Y 54 0.581292 Y 54 0.706799 Y 69 0.909243 Z 59 0.438617 X 78 0.406135 Z 48 0.830229 Z 18 0.576723 X 9 0.473724 X 30 0.877748 Z 5 0.289351 Z 41 0.184280 Y 6 0.898810 Y 91 0.242946 Y 54 0.968583 X 50 0.373596 X 2 0.792513 Y 1 0.342281
+cigar: two 6581 5864 - two 7022 6262 - 310.000000 X 69 0.664911 Z 98 0.675665 Z 81 0.634383 Y 92 0.837335 Z 29 0.931459 Y 26 0.813489 Y 33 0.514215 Z 58 0.258383 X 42 0.279652 Y 54 0.581292 Y 54 0.706799 Y 69 0.909243 Z 59 0.438617 X 78 0.406135 Z 48 0.830229 Z 18 0.576723 X 9 0.473724 X 30 0.877748 Z 5 0.289351 Z 41 0.184280 Y 6 0.898810 Y 91 0.242946 Y 54 0.968583 X 50 0.373596 X 2 0.792513 Y 1 0.342281
+cigar: two 271 895 + one 4465 5382 + 473.000000 X 58 0.772361 X 56 0.658612 X 75 0.107577 X 97 0.541589 Z 13 0.200193 Y 92 0.521669 Z 6 0.000522 Z 88 0.108688 Z 86 0.587343 Z 31 0.319508 Z 98 0.153060 Y 89 0.737421 Y 28 0.873898 Y 11 0.539535 Y 53 0.235848 Y 67 0.510963 Y 47 0.794255 Y 30 0.223369 Y 30 0.578197 Z 6 0.227053 Y 2 0.405846 Y 45 0.527069 Y 51 0.306348 Y 81 0.268249 X 3 0.606960 Z 4 0.966839 Z 2 0.252867 Y 2 0.096639 Z 1 0.229378
+cigar: two 271 895 + one 4465 5382 + 473.000000 X 58 0.772361 X 56 0.658612 X 75 0.107577 X 97 0.541589 Z 13 0.200193 Y 92 0.521669 Z 6 0.000522 Z 88 0.108688 Z 86 0.587343 Z 31 0.319508 Z 98 0.153060 Y 89 0.737421 Y 28 0.873898 Y 11 0.539535 Y 53 0.235848 Y 67 0.510963 Y 47 0.794255 Y 30 0.223369 Y 30 0.578197 Z 6 0.227053 Y 2 0.405846 Y 45 0.527069 Y 51 0.306348 Y 81 0.268249 X 3 0.606960 Z 4 0.966839 Z 2 0.252867 Y 2 0.096639 Z 1 0.229378
+cigar: four 6230 6161 - four 6881 7854 + -28.000000 Y 93 0.899025 X 66 0.548718 Y 11 0.094870 Y 26 0.192685 Y 87 0.869069 Y 72 0.950350 Y 49 0.660824 Y 17 0.294198 Y 60 0.537249 Y 84 0.086334 Y 29 0.727266 Y 62 0.578899 Y 90 0.636548 X 2 0.096070 Y 67 0.410959 Y 89 0.082086 Y 11 0.487109 Y 32 0.954819 Y 25 0.971213 X 1 0.666974
+cigar: four 6230 6161 - four 6881 7854 + -28.000000 Y 93 0.899025 X 66 0.548718 Y 11 0.094870 Y 26 0.192685 Y 87 0.869069 Y 72 0.950350 Y 49 0.660824 Y 17 0.294198 Y 60 0.537249 Y 84 0.086334 Y 29 0.727266 Y 62 0.578899 Y 90 0.636548 X 2 0.096070 Y 67 0.410959 Y 89 0.082086 Y 11 0.487109 Y 32 0.954819 Y 25 0.971213 X 1 0.666974
+>0C	9C C	0C9A   CA  9A	C	9
+CTNGTACGGAGGACACCCGCNGTCAAATGGACTCTAACATCTTTNGTTGACTCTGCGGTACGATTGCGTGACCCCCAGCTGTTGNATGTGACAACAGAGG
+CNATTGTAGAGATGGGNCTGAAGCTAGGCTAAGAGAGCCTCTAGTCTCTAATGCAAGGNCCGGTAGCCTACGATGATCGGGACCTTCAATCCCCTNGGGG
+AGCTACATGATGTTATGACATGAGGTGCATCCCCCAANACGACGTATAAACTTAGAAATGTNAANNCATTCATGCGNGTTCCCCGCCCGCACGGAAGTTC
+ACGTATTNCTNCTTCATTGTCTCCAG
+>0	 0CAAC	C AA9	A0			99	9A9	9A	0AC9A9C	0A	CCCAC99AA0 A
+GTCTC
+>9 CC A090C	CC09CA0C0 C9 9 A	 	A	 C	0A 	 90990    A  C9A  0A9C000AC	
+CNTCACGGCTGATACAACGCCGTTCTGAGCGACTCAATTGTAGGTCTCCCGGACCTCNGGTGCCATNGCGCGGGTNGAGATNCAGGTTATNCGTTCNTGT
+CGGGGAGACATTCAAGCGAATGCGCNTCATCTCATTTGGCTGTTCCGCGACNTGNCTTCTTCGTGCTGGACTAATCCGTCTAGGNGCTTCATGCCCGGTC
+GACCGNGTANATCGCNCCACAGAATAA./bin/sh: 1: sonLib_fastaCTest: not found
+EGGCCTTGGGTGATGGCGGGNAAAACTAATGTTGAGCCCCGCCATCTCTTAATAGTCTTANTATTCGCTAACTA
+CAGGATATGACCCCATCCGTTGCTTTGCGCAGTTCCCGGTGGGTTCGANCCATNTCAGAGCATAACACTTNCGNGACGCTGTTCNATTNGGCCGGGCAGC
+ATNAGAATAANTACNTTCACACAACANAAGGTAGTCCACTTGGTACATGNTTCCCT
+>A0 9  A
+CGGTCATGCCCTGTGCTCGCCAGAGGATAGATGGCAGAAGTCAGANNNGAATGGGGAAGTGAACTNAGTTGATTGTTATGATGGGGCATAACCTCAGGCA
+ACTNGACCGCTACGCCTTGTCACGTATGCCCCACTGGGGCCTACCTANATATGGAGGCCGGTAAACTACGCTGTGGAGGTCAGTCCTATAGCACATATAG
+AACATCGTATATGCGGCCCTCACACTCGGCCGCGTGATGCACTNTTGGCAGGTATTAGCCACACACGCCCACACGNCTNACCACTTCGTTAGGCAGCGCT
+CGCCGATTCGNATCTCTAANCACACATGTGAAGAAGAGTTCCNAGGTGAGGCGACCCCATATCCCTGGAAATCCCGGCCGATGAATGGCCGAACTTCTAA
+CGCTTNAAAGNGCCTCTGATTCGACGNCACCTAGGGTGCCTAATTCTATCCANAGGTCGGAANGTAGACGTTGTGTCCCAGCGGTTACGCATGAG
+>C		C	999C	00 90 CAAA  A9 A9	9AC	0 99	 C0 9C9C9 AC09	0CA00A090AC	0099C	0A	
+TGAAGGCAGTGGTGTCAGACAAGTATGCGATTANCCGGTTTCCAATAACATCCCGTTCACTTCTCGATTGCCGTGGGCTGGCGATACATNGTTGTNCTGT
+CCACGCTNTAAGTTTGGCTCTTTCGCNCTTGNCTGATCTCGACATCAGNNCGCGGGTTCTTCTTAGAANCTCATGCCNAAAAATGATGCGGACAAGTTCA
+CCTAGCCNGACNTTTGTACCGACGCACTACCNAGACGAGNATTGTCTCAGCAACGAGCT
+>A	CA	CA	0A0	 9	ACC 	 09AA0		C9	A0C99C0 		C99A	9	A	0CA9	CA90A0C	09AA9A			99	A0CCC9	  00CA	9
+GNACTCNCTAGGCGATNAATTAGTGCGCGACGCACTGGCTCGCAGGCTGGTACCGCGCAGAATGAANGGGCCCGGATAAGGACNCTGGGTGTAACCTGTN
+CTGGTTTCTGGCCCCGNAGACACCTCTNGGCTCCTTCCGGGTNATGGNGTCATCCGCGACCAGCTGTTCCGTAGCACNGTGTGTATTCTGTATCAGGATA
+ATGCCTTTGCCAAAAAGGTTGGAAGAGATAGTNTCGTTNTAAGTCTGCTCGCGGTTTTTNCCCGTTCTCCGTGCCGTTTATTACNATATCCTGCNATCNA
+ATGTCTNAAACTNGCAATTTACTCAGNTTNGAGTCCCCGCCC
+>		9C9	C 	C CA 9CC  	A 9AC00A	CA	AA9	A	
+GGANGTACGGCGACTTGACCGCGATGACTCTCGATGCCTAATGCTNCGGGACAGTAATCNTTGAGGNATAATTGCATATAAAATGCACAGCTTCATATTA
+AGTCCTTACGAATNGTGTGTCGGATTAANAACGCCTCCAGTNAGTCACGTCTAATTTTAGTGAAGTGGTAACAAAATTTCCAGA
+sonLib_fastaCTest /tmp/tmpuw6xw4 /tmp/tmpdxRz2p
+@	 A 0A0 AC C  AA0 CC A9C90C0CA0  	0	CA0 9  9 AAC90A 0A09A		AA  0	099	09CCC0	9A  	0	AA 0  AAA90		 0
+CTGTCTACGGCCCATTTTAGTTGCGAGCCCGTGTGGTTTGAANAGAGATATTAAAANTTGAGCTGCGATGGAGGGTCTGTNGNGCNAGGANCTATAATAGTAGGAAGCAGCCTAATCTGGTNACTCAACCAATAGTTAAGCACCCGTGACAATAGTCTGGGGCCCGCA
++
+D/>n;Zr>(RB(DF3rx3k)Uw3w;FE(E)][*TS379'VN=p1e|>:6iNH9jE[U&qR13V;Bsv=,DUs*n4BFEOR]2U"?A:LalBka()dWku>:Ut^0]9N!jIs#Iz0_>"$<boDD*3U6ZNTej-~|~=<zgQ:&#6UQ"ne'wH;W9plU1$yr>oR
+@	999A	AAC AC AA0	AA0C9 	   090C	 C0	0A09	0AAA CA		A			99	AA	0C	A
+AGCCCNTGTAGCCTTTGCCCGCGGTATTTCGCACCTACCGGTGAGTACGNCTGACGGCTTNTGNCGACCTTGACCCTACAGCGGCCTAGATCATTCACTGTACCCNCAGGTGTTTTAGGATTNGTGGTCAGAGCTGGAGTAGTTCGNAATCGTCCCCGAGGGTCGGGATGACGCTCCGAATCCGAGCACAACTCAGGNGGGACAACAACTGGGAGATCGGACCCGNAACGATCNTCCGACTAAAANCTGTAA
++
+&S8{&ybCG#/a-U*[#xhp#b7K-4gpUHZMNk,-kfO}jAnW=%QBN,*3g*Dv.a%"h0d~[C>5]BzfEUH.4&C1ol48Tif&TV"`R,eL/~\j`Yb#>\Ir..Xar7x)0GwF$70w9LnJx<eRQ%P9l(*?>,E:;"X^v:/U~-Z*HU7I~<DQC+]Loj4aI$xu^_t(EfXR5C}4w9+Lv6)4g*ZV!WT;(_fHTMpLzEvEj81e'%J^6wi[]u}"As"Fj>+x%=?|iX6b5+Kw
+@ A	CAACC 09CA	C	0 90AA99C A	 CC0CCA 	 C0	C	C9 AA C9	 A0C0	C	C AA	90			9	CA0AC C9	 	 9C0C	 C
+TCTATTGCACGAGCGTTATTGNTCAAGGGGCCGTGTAACTTGGGCCGTNGAGATCTACCTCCGGGCAAGGGGGCGCTTNACCTACGGCGGGGTNTTTACCNT
++
+13HKayQ5k24@jY"]q0&`L*iG\89n[*KUPWy@j\ew#QS]%Ym(+Ib6uBt#LdAy(:yT7?;IOzxP"T~B`',)iFH(A++7ntYN$%6C1mYVx-
+@9		0C0C9999
+AGCCTGTCCGGCACCGTAAGTGTGTCATTGAGCATCGGACATGTTAGCAGACATNCTGTCCATAACTTCATCGTCGCATGCTANTCCGCAGACTATTATATGGAGTCGCAAGCCATCATCNGTTACGTCGTATGTCTCTCCTCCAAAAACCTCCATGTCCATAAAATCNGCTATNCTGGCACTCAGGTTGTATTGCCTTATGCCGGGGTACCCACANAGAGCAGTGGCTGGACTTTATGGCTGGTCGTTNGAAACTNTAATAGTGCTTTGGNGNATTTTCCTAAAGACCCCGCTAAGTGAGCAGCTACAGGCCATTCGTGGCGATGCGCAGCAATTGGCGCACACTCGAAGTGATCCCCTATAGAAACTATCAACTCGACNGTGTTGGCAGNCTTACAAAATAGAGACGCATGCAGCGATCGATACCTATGGTCCCAGCTTGTCNTACTTACGGTNNCGCCTGGGGGATTCT
++
+;FB0h}XG)gU^RW_#T1$gUvYlNX1s;5mZ+<3dC@VWl/,qaYr`R6Lf#wucM3"cFN<LLfbQ|Tq"~ItObQON^qZr{fdVgTOIEla]v=ypm\(2lLh7369QmE\zAv/h[cm/nnQ'~XF?#!hsW!Y7zu!YamBU<;tmvpd"=K8x4yzRpi$~lx}&-H,D-;r5gg7e&0?d|=7{(dtLW4{HvJ{k.`;<r(#Hxo8q,^rb9uN7-SJ`j.w`m)WhHd,+&85(^y-^U%nB?Ui-T!FbYNy"~+)jZ.,wu'ACj.P+&I%/LBb3L/h6Vva3}Mve]uf6,J_vMieNNa4iK[YYE(DU.@i4fj*L[rEbbG?+ch2<$&^fvK^\Z:$l7cfkia7iWbn1%wKK_6n2EEfiT2Xr?n>.O9i&K$@f\p/uz-UQ5%rktr#:\>W2J'c:[=)j"5XN/DL'DDOr9w3ft$-mv&\P$%`W)}>NBtDi~pHoTp0]N-BO
+@	9	 	99C	 CC	909AA9C99A9A09AA.... AC 		 0	A9C	C0	C	CA	 A90 	0A9
+NCGTTNGTGACGCGTAGGGTTTTACTGAACGCNTACCTGTCAGTGAAGTTAATGCCTGANTGGGGTCTTGGGAAAGGGNACATTAGTGTTCGTNTANACTTCGGANGACACACGATCCTTTCAAAACGCNGATACCTCTTTCTGGAGNTGTAGACGTCAGGCCTCATGAGTACACGCTCTTCCCG
++
+w}>k2J?b.;;S|{IcIl/8@i"S#2u|%CEg-K,zce>:=gWN*jM6%ad{g1w.WnBIkSC_6\-H<K8`C8Jj;cu"fSb&.xY3:bc/"YG2N#1te%,mphctqi:2F_#yp8[wBVhM/<GY2~x7pc:jqjC;xw{Gi!("`J{jyKZo7=j1d^A$#_N(@%WcqUm/hC6VX;L&J
+@A09 A AC		CC  99 AC0 9 A0C0
+GCATAGTATCTGCAANATNTGTCCAAGAGCAGATTTGAGGCATNCACCGTTTNTAGACGTAATCAGTCGGTCAC
++
+Lo(->F-<1$a4UWg|T&O:9aq^**KKb=Fdw;h]4?nadJR'z6aH'+EZZ@4i(`:Ld!Mn@_?Z,;^RA*
+((human,baboon),chimp); ((human,baboon),chimp);
+Got 1 levels, 2 fileNo and 2 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 1 levels, 4 fileNo and 4 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 1 levels, 4 fileNo and 4 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 3 levels, 1 fileNo and 1 maxTempFiles
+Got 1 levels, 1 fileNo and 1 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 1 levels, 5 fileNo and 5 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 1 levels, 3 fileNo and 3 maxTempFiles
+Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 1 levels, 3 fileNo and 3 maxTempFiles
+Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 1 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 4 fileNo and 64 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 3 levels, 1 fileNo and 1 maxTempFiles
+Got 1 levels, 2 fileNo and 2 maxTempFiles
+Got 1 levels, 3 fileNo and 3 maxTempFiles
+Got 3 levels, 1 fileNo and 1 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 1 levels, 2 fileNo and 2 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 1 levels, 2 fileNo and 2 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 1 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 1 levels, 1 fileNo and 1 maxTempFiles
+Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 1 levels, 5 fileNo and 5 maxTempFiles
+Got 1 levels, 3 fileNo and 3 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 1 levels, 4 fileNo and 4 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 1 levels, 3 fileNo and 3 maxTempFiles
+Got 1 levels, 4 fileNo and 4 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 1 levels, 4 fileNo and 4 maxTempFiles
+Got 2 levels, 5 fileNo and 25 maxTempFiles
+Got 2 levels, 5 fileNo and 25 maxTempFiles
+Got 1 levels, 2 fileNo and 2 maxTempFiles
+Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 1 levels, 3 fileNo and 3 maxTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 1 levels, 4 fileNo and 4 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 2 levels, 5 fileNo and 25 maxTempFiles
+Got 3 levels, 4 fileNo and 64 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 1 levels, 3 fileNo and 3 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 1 levels, 2 fileNo and 2 m./bin/sh: 1: sonLib_cigarTest: not found
+E.axTempFiles
+Got 3 levels, 2 fileNo and 8 maxTempFiles
+Got 2 levels, 5 fileNo and 25 maxTempFiles
+Got 1 levels, 5 fileNo and 5 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 2 levels, 3 fileNo and 9 maxTempFiles
+Got 3 levels, 1 fileNo and 1 maxTempFiles
+Got 1 levels, 1 fileNo and 1 maxTempFiles
+Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 2 levels, 2 fileNo and 4 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 1 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 2 levels, 4 fileNo and 16 maxTempFiles
+Got 1 levels, 2 fileNo and 2 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+Got 3 levels, 3 fileNo and 27 maxTempFiles
+Got 3 levels, 5 fileNo and 125 maxTempFiles
+Got 2 levels, 1 fileNo and 1 maxTempFiles
+
+((human:0.001000,baboon:0.001000):0.001000,chimp:0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+((human,baboon),chimp); dups 1 1 losses 3 3
+((human:0.001000,chimp:0.001000):0.001000,baboon:0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+((human,chimp),baboon); dups 0 0 losses 0 0
+((human:0.001000,(human:0.001000,chimp:0.001000):0.001000):0.001000,baboon:0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+((human,(human, chimp)),baboon); dups 1 1 losses 1 1
+((human:0.001000,(human:0.001000,chimp:0.001000):0.001000):0.001000,(chimp:0.001000,baboon:0.001000):0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+((human,(human, chimp)),(chimp, baboon)); dups 2 2 losses 3 3
+(dog:0.001000,cat:0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+(dog,cat); dups 0 0 losses 0 0
+((dog:0.001000,cat:0.001000):0.001000,cow:0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+((dog,cat), cow); dups 0 0 losses 0 0
+(cow:0.001000,(dog:0.001000,cat:0.001000):0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+(cow,(dog,cat)); dups 0 0 losses 0 0
+(cow:0.001000,(cat:0.001000,dog:0.001000):0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+(cow,(cat,dog)); dups 0 0 losses 0 0
+((cow:0.001000,dog:0.001000):0.001000,(dog:0.001000,cow:0.001000):0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+((cow,dog),(dog,cow)); dups 1 1 losses 2 2
+((cow:0.001000,(cow:0.001000,cow:0.001000):0.001000):0.001000,(dog:0.001000,cat:0.001000):0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+((cow,(cow,cow)),(dog,cat)); dups 2 2 losses 0 0
+((cow:0.001000,(cow:0.001000,cow:0.001000):0.001000):0.001000,(dog:0.001000,((cat:0.001000,cat:0.001000):0.001000,cat:0.001000):0.001000):0.001000):0.001000; ((((human:0.006969,chimp:0.009727):0......./bin/sh: 1: sonLib_kvDatabaseTest: not found
+E/bin/sh: 1: sonLibTests: not found
+E
+======================================================================
+ERROR: testFastaReadWriteC (bioioTest.TestCase)
+Tests consistency with C version of this function.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/sonLib/bioioTest.py", line 185, in testFastaReadWriteC
+    system(command)
+  File "/opt/sonLib/bioio.py", line 185, in system
+    raise RuntimeError("Command: %s exited with non-zero status %i" % (command, sts))
+RuntimeError: Command: sonLib_fastaCTest /tmp/tmpuw6xw4 /tmp/tmpdxRz2p exited with non-zero status 127
+
+======================================================================
+ERROR: testCigarReadWrite (cigarsTest.TestCase)
+Tests the C code for reading and writing cigars against the python parser for cigars.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/sonLib/cigarsTest.py", line 57, in testCigarReadWrite
+    system(command)
+  File "/opt/sonLib/bioio.py", line 185, in system
+    raise RuntimeError("Command: %s exited with non-zero status %i" % (command, sts))
+RuntimeError: Command: sonLib_cigarTest /tmp/tmppbJPr7 True exited with non-zero status 127
+
+======================================================================
+ERROR: testSonLibKVTokyoCabinet (kvdbTest.TestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/sonLib/kvdbTest.py", line 18, in testSonLibKVTokyoCabinet
+    system("sonLib_kvDatabaseTest --type=tokyocabinet")
+  File "/opt/sonLib/bioio.py", line 185, in system
+    raise RuntimeError("Command: %s exited with non-zero status %i" % (command, sts))
+RuntimeError: Command: sonLib_kvDatabaseTest --type=tokyocabinet exited with non-zero status 127
+
+======================================================================
+ERROR: testSonLibCTests (__main__.TestCase)
+Run m,ost the sonLib CuTests, fail if any of them fail.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "allTests.py", line 30, in testSonLibCTests
+    system("sonLibTests %s" % getLogLevelString())
+  File "/opt/sonLib/bioio.py", line 185, in system
+    raise RuntimeError("Command: %s exited with non-zero status %i" % (command, sts))
+RuntimeError: Command: sonLibTests CRITICAL exited with non-zero status 127
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.208s
+
+FAILED (errors=4)
+.025291,baboon:0.044568):0.108727,(rat:0.081244,mouse:0.072818):0.260327):0.023260,(cow:0.164728,(cat:0.109852,dog:0.107805):0.049576):0.048788):0.749525;
+((cow,(cow,cow)),(dog,((cat,cat),cat))); dups 4 4 losses 0 0
+rootedGeneTree ((human,chimp),baboon); 0 0 (baboon,(human,chimp));
+rootedGeneTree ((human,chimp),baboon); 0 0 ((human,chimp),baboon);
+rootedGeneTree ((((human,chimp),baboon),(mouse,rat)),((dog,cat),cow)); 0 0 (((dog,cat),cow),(((human,chimp),baboon),(mouse,rat)));
+rootedGeneTree ((((human,chimp),baboon),(mouse,rat)),((dog,cat),cow)); 0 0 ((((human,chimp),baboon),(mouse,rat)),((dog,cat),cow));
+rootedGeneTree ((((human,(chimp,chimp)),baboon),(mouse,rat)),((dog,cat),cow)); 1 0 (((dog,cat),cow),(((human,(chimp,chimp)),baboon),(mouse,rat)));
+before (((0:0.451274,1:0.495088):0.572942,(2:0.320906,3:0.001630):0.239228):0.596860,(4:0.629662,(5:0.538223,6:0.724140):0.058870):0.062262):0.922097; (((0:0.451274,1:0.495088):0.572942,(2:0.320906,3:0.001630):0.239228):0.596860,(4:0.629662,(5:0.538223,6:0.724140):0.058870):0.062262):0.922097;
+test 0 (((0:0.451274,1:0.495088):0.572942,(2:0.320906,3:0.001630):0.239228):0.596860,(4:0.629662,(5:0.538223,6:0.724140):0.058870):0.062262):0.922097; (((0:0.451274,1:0.495088):0.572942,(2:0.320906,3:0.001630):0.239228):0.596860,(4:0.629662,(5:0.538223,6:0.724140):0.058870):0.062262):0.922097; (((0:0.451274,1:0.495088):0.572942,(2:0.320906,3:0.001630):0.239228):0.596860,(4:0.629662,(5:0.538223,6:0.724140):0.058870):0.062262):0.922097;
+test 0 (0:0.046506,(1:0.096151,(2:0.404525,3:0.517811):0.108157):0.737837):0.724121; 0:0.046506; (1:0.096151,(2:0.404525,3:0.517811):0.108157):0.784343;
+{'1': 2, '0': 1, '3': 6, '2': 4}
+{(1, 2): 5, (6, 4): 5, (5, 4): 6, (4, 6): 5, (1, 5): 2, (5, 6): 4, (2, 1): 5, (4, 5): 6, (5, 1): 2, (2, 5): 1, (5, 2): 1, (1, 1): 1, (6, 5): 4}
+{('1', '0'): 0.8804951380373507, ('0', '3'): 1.4103122068945433, ('2', '3'): 0.92233643256072, ('0', '2'): 1.2970259789621028, ('2', '1'): 0.6088334353548743, ('2', '0'): 1.2970259789621028, ('3', '0'): 1.4103122068945433, ('0', '1'): 0.8804951380373507, ('3', '1'): 0.7221196632873149, ('3', '2'): 0.92233643256072, ('1', '2'): 0.6088334353548743, ('1', '3'): 0.7221196632873149}
+{('2', '3'): 0.922336, ('2', '1'): 0.6088330000000001, ('3', '1'): 0.7221190000000001, ('3', '2'): 0.922336, ('1', '2'): 0.6088330000000001, ('1', '3'): 0.7221190000000001}
+Makefile:24: recipe for target 'test' failed
+make: *** [test] Error 4
++ true
++ cd ../pinchesAndCacti
++ make
+cd externalTools && make all
+make[1]: Entering directory '/opt/pinchesAndCacti/externalTools'
+cd threeEdgeConnected && make all
+make[2]: Entering directory '/opt/pinchesAndCacti/externalTools/threeEdgeConnected'
+gcc -std=c99   -O3 -g -Wall --pedantic -funroll-loops -DNDEBUG  -I ../..//../sonLib/lib/ -c impl/*.c
+ar rc 3EdgeConnected.a *.o
+ranlib 3EdgeConnected.a 
+rm *.o
+mv 3EdgeConnected.a ../..//../sonLib/lib/
+cp inc/*.h ../..//../sonLib/lib/
+gcc -std=c99   -O3 -g -Wall --pedantic -funroll-loops -DNDEBUG   -I inc -I../..//../sonLib/lib -o ../..//../sonLib/bin/3EdgeTests tests/*.c ../..//../sonLib/lib/3EdgeConnected.a ../..//../sonLib/lib/sonLib.a ../..//../sonLib/lib/cuTest.a   -lz -lm
+make[2]: Leaving directory '/opt/pinchesAndCacti/externalTools/threeEdgeConnected'
+make[1]: Leaving directory '/opt/pinchesAndCacti/externalTools'
+gcc -std=c99  -O3 -g -Wall --pedantic -funroll-loops -DNDEBUG   -I inc -I .//../sonLib/lib/ -c impl/*.c
+ar rc stPinchesAndCacti.a *.o
+ranlib stPinchesAndCacti.a 
+rm *.o
+mv stPinchesAndCacti.a .//../sonLib/lib/
+cp inc/*.h .//../sonLib/lib/
+gcc -std=c99  -O3 -g -Wall --pedantic -funroll-loops -DNDEBUG    -I inc -I impl -I.//../sonLib/lib -o .//../sonLib/bin/stPinchesAndCactiTests tests/*.c impl/*.c .//../sonLib/lib/sonLib.a .//../sonLib/lib/cuTest.a   -lz -lm  .//../sonLib/lib/3EdgeConnected.a
++ make test
+cd externalTools && make all
+make[1]: Entering directory '/opt/pinchesAndCacti/externalTools'
+cd threeEdgeConnected && make all
+make[2]: Entering directory '/opt/pinchesAndCacti/externalTools/threeEdgeConnected'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/opt/pinchesAndCacti/externalTools/threeEdgeConnected'
+make[1]: Leaving directory '/opt/pinchesAndCacti/externalTools'
+gcc -std=c99  -O3 -g -Wall --pedantic -funroll-loops -DNDEBUG   -I inc -I .//../sonLib/lib/ -c impl/*.c
+ar rc stPinchesAndCacti.a *.o
+ranlib stPinchesAndCacti.a 
+rm *.o
+mv stPinchesAndCacti.a .//../sonLib/lib/
+cp inc/*.h .//../sonLib/lib/
+gcc -std=c99  -O3 -g -Wall --pedantic -funroll-loops -DNDEBUG    -I inc -I impl -I.//../sonLib/lib -o .//../sonLib/bin/stPinchesAndCactiTests tests/*.c impl/*.c .//../sonLib/lib/sonLib.a .//../sonLib/lib/cuTest.a   -lz -lm  .//../sonLib/lib/3EdgeConnected.a
+.//../sonLib/bin/stPinchesAndCactiTests
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Empty graph, no telomeres to select
+Running test case testStPinchThreadSet
+Running test case testStPinchThreadAndSegment
+Running test case testStPinchBlock_NoSplits
+Running test case testStPinchBlock_Splits
+Running test case testStPinchThread_pinch
+Running test case testStPinchThread_pinch_randomTests
+Running test case testStPinchThread_filterPinch_randomTests
+Running test case testStPinchThreadSet_getAdjacencyComponents
+Running test case testStPinchThreadSet_getAdjacencyComponents_randomTests
+Running test case testStPinchThreadSet_joinTrivialBoundaries_randomTests
+Running test case testStPinchThreadSet_getThreadComponents
+Running test case testStPinchThreadSet_trimAlignments_randomTests
+Running test case testStPinchInterval
+Running test case testStPinchThreadSet_getLabelIntervals
+Running test case testStPinchThreadSet_getLabelIntervals_randomTests
+Running test case testStPinchEnd_hasSelfLoopWithRespectToOtherBlock_randomTests
+Running test case testStPinchEnd_getSubSequenceLengthsConnectingEnds_randomTests
+Running test case testStCactusNode
+Running test case testStCactusEdgeEnd
+Running test case testStCactusGraph
+Running test case testStCactusGraph_unmarkAndMarkCycles
+Running test case testStCactusGraph_collapseBridges
+Running test case testStCactusGraph_breakChainsByEndsNotInChains
+Running test case testStCactusGraph_randomTest
+Running test case testStCactusGraph_getComponents
+Running test case testStCactusGraph_getBridgeGraphs
+Running test case testStCactusGraph_tinySnarlTest
+Running test case testStCactusGraph_unreachableSnarlTest
+Running test case testStCactusGraph_adjacentSnarlTest
+Running test case testStCactusGraph_randomSnarlTest
+..............................
+
+OK (30 tests)
+
++ cd ../mafTools
++ make
+cd lib && make all
+make[1]: Entering directory '/opt/mafTools/lib'
+gcc -O3 -c -std=c99 -O3 -Wextra -Wall -Werror -pedantic -I ../external/ -I ../inc/ common.c -o common.o.tmp
+mv common.o.tmp common.o
+gcc -O3 -c -std=c99 -O3 -Wextra -Wall -Werror -pedantic -I ../external/ -I ../inc/ sharedMaf.c -o sharedMaf.o.tmp -lm
+mv sharedMaf.o.tmp sharedMaf.o
+gcc -c -std=c99 -O3 -Wextra -Wall -Werror -pedantic -I ../external/ -I ../inc/ ../external/CuTest.c
+ar rc CuTest.a CuTest.o
+ranlib CuTest.a
+rm -f CuTest.o
+mv CuTest.a ../external/CuTest.a
+make[1]: Leaving directory '/opt/mafTools/lib'
+cd mafComparator && make all
+make[1]: Entering directory '/opt/mafTools/mafComparator'
+gcc -std=c99 -Wno-unused-but-set-variable -c src/comparatorRandom.c -o src/comparatorRandom.o.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external 
+mv src/comparatorRandom.o.tmp src/comparatorRandom.o
+gcc -std=c99 -Wno-unused-but-set-variable -c src/comparatorAPI.c -o src/comparatorAPI.o.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external 
+mv src/comparatorAPI.o.tmp src/comparatorAPI.o
+cc    -c -o src/buildVersion.o src/buildVersion.c
+gcc -std=c99 -Wno-unused-but-set-variable -o ../bin/mafComparator.tmp src/mafComparator.c src/cString.c ../lib/sharedMaf.o ../external/CuTest.a ../lib/common.o src/comparatorRandom.o src/comparatorAPI.o ../../sonLib/lib/sonLib.a src/buildVersion.o -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -lm
+mv ../bin/mafComparator.tmp ../bin/mafComparator
+gcc -std=c99 -Wno-unused-but-set-variable -o ../bin/mafPairCounter.tmp src/mafPairCounter.c src/cString.c ../lib/sharedMaf.o ../external/CuTest.a ../lib/common.o src/comparatorRandom.o src/comparatorAPI.o ../../sonLib/lib/sonLib.a src/buildVersion.o -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -lm
+mv ../bin/mafPairCounter.tmp ../bin/mafPairCounter
+rm src/comparatorRandom.o src/buildVersion.o src/comparatorAPI.o
+make[1]: Leaving directory '/opt/mafTools/mafComparator'
+cd mafTransitiveClosure && make all
+make[1]: Entering directory '/opt/mafTools/mafTransitiveClosure'
+gcc -std=c99 -Wno-unused-but-set-variable -c src/test.mafTransitiveClosure.c -o src/test.mafTransitiveClosure.o.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external 
+mv src/test.mafTransitiveClosure.o.tmp src/test.mafTransitiveClosure.o
+cc    -c -o src/buildVersion.o src/buildVersion.c
+mkdir -p ../bin/
+gcc -std=c99 -Wno-unused-but-set-variable src/mafTransitiveClosure.c src/allTests.c ../lib/common.o ../lib/sharedMaf.o ../../sonLib/lib/stPinchesAndCacti.a  ../../sonLib/lib/sonLib.a ../external/CuTest.a src/test.mafTransitiveClosure.o src/buildVersion.o -o ../bin/mafTransitiveClosure.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -lm
+mv ../bin/mafTransitiveClosure.tmp ../bin/mafTransitiveClosure
+make[1]: Leaving directory '/opt/mafTools/mafTransitiveClosure'
+cd mafStats && make all
+make[1]: Entering directory '/opt/mafTools/mafStats'
+gcc -std=c99 -Wno-unused-but-set-variable -c src/test.mafStats.c -o src/test.mafStats.o.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external 
+mv src/test.mafStats.o.tmp src/test.mafStats.o
+cc    -c -o src/buildVersion.o src/buildVersion.c
+mkdir -p ../bin/
+gcc -std=c99 -Wno-unused-but-set-variable src/mafStats.c ../lib/common.o ../lib/sharedMaf.o ../external/CuTest.a src/test.mafStats.o ../../sonLib/lib/sonLib.a src/buildVersion.o -o ../bin/mafStats.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -lm
+mv ../bin/mafStats.tmp ../bin/mafStats
+make[1]: Leaving directory '/opt/mafTools/mafStats'
+cd mafToFastaStitcher && make all
+make[1]: Entering directory '/opt/mafTools/mafToFastaStitcher'
+gcc -std=c99 -Wno-unused-but-set-variable -c src/mafToFastaStitcherAPI.c -o src/mafToFastaStitcherAPI.o.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -lm
+mv src/mafToFastaStitcherAPI.o.tmp src/mafToFastaStitcherAPI.o
+cc    -c -o src/buildVersion.o src/buildVersion.c
+mkdir -p ../bin/
+gcc -std=c99 -Wno-unused-but-set-variable src/mafToFastaStitcher.c ../lib/common.o ../lib/sharedMaf.o ../external/CuTest.a src/mafToFastaStitcherAPI.o ../../sonLib/lib/sonLib.a src/buildVersion.o -o ../bin/mafToFastaStitcher.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -lm
+mv ../bin/mafToFastaStitcher.tmp ../bin/mafToFastaStitcher
+make[1]: Leaving directory '/opt/mafTools/mafToFastaStitcher'
+cd mafPairCoverage && make all
+make[1]: Entering directory '/opt/mafTools/mafPairCoverage'
+gcc -std=c99 -Wno-unused-but-set-variable -c src/mafPairCoverageAPI.c -o src/mafPairCoverageAPI.o.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external 
+mv src/mafPairCoverageAPI.o.tmp src/mafPairCoverageAPI.o
+cc    -c -o src/buildVersion.o src/buildVersion.c
+mkdir -p ../bin/
+gcc -std=c99 -Wno-unused-but-set-variable src/mafPairCoverage.c ../lib/common.o ../lib/sharedMaf.o ../external/CuTest.a src/mafPairCoverageAPI.o ../../sonLib/lib/sonLib.a src/buildVersion.o -o ../bin/mafPairCoverage.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -lm
+mv ../bin/mafPairCoverage.tmp ../bin/mafPairCoverage
+make[1]: Leaving directory '/opt/mafTools/mafPairCoverage'
+cd mafCoverage && make all
+make[1]: Entering directory '/opt/mafTools/mafCoverage'
+gcc -std=c99 -Wno-unused-but-set-variable -c src/mafCoverageAPI.c -o src/mafCoverageAPI.o.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external 
+mv src/mafCoverageAPI.o.tmp src/mafCoverageAPI.o
+cc    -c -o src/buildVersion.o src/buildVersion.c
+mkdir -p ../bin/
+gcc -std=c99 -Wno-unused-but-set-variable src/mafCoverage.c ../lib/common.o ../lib/sharedMaf.o ../external/CuTest.a src/mafCoverageAPI.o ../../sonLib/lib/sonLib.a src/buildVersion.o -o ../bin/mafCoverage.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -lm
+mv ../bin/mafCoverage.tmp ../bin/mafCoverage
+make[1]: Leaving directory '/opt/mafTools/mafCoverage'
+cd mafValidator && make all
+make[1]: Entering directory '/opt/mafTools/mafValidator'
+cp src/mafValidator.py ../bin/mafValidator.py.tmp
+chmod +x ../bin/mafValidator.py.tmp
+mv ../bin/mafValidator.py.tmp ../bin/mafValidator.py
+make[1]: Leaving directory '/opt/mafTools/mafValidator'
+cd mafPositionFinder && make all
+make[1]: Entering directory '/opt/mafTools/mafPositionFinder'
+cc    -c -o src/buildVersion.o src/buildVersion.c
+mkdir -p ../bin/
+gcc -std=c99 -Wno-unused-but-set-variable -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -O3 src/mafPositionFinder.c ../lib/common.o ../lib/sharedMaf.o ../external/CuTest.a src/buildVersion.o -o ../bin/mafPositionFinder.tmp -lm
+mv ../bin/mafPositionFinder.tmp ../bin/mafPositionFinder
+make[1]: Leaving directory '/opt/mafTools/mafPositionFinder'
+cd mafExtractor && make all
+make[1]: Entering directory '/opt/mafTools/mafExtractor'
+gcc -std=c99 -Wno-unused-but-set-variable -O3 -c -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  src/mafExtractorAPI.c -o src/mafExtractorAPI.o.tmp
+mv src/mafExtractorAPI.o.tmp src/mafExtractorAPI.o
+cc    -c -o src/buildVersion.o src/buildVersion.c
+mkdir -p ../bin/
+gcc -std=c99 -Wno-unused-but-set-variable -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -O3 src/mafExtractor.c ../lib/common.o ../lib/sharedMaf.o ../external/CuTest.a src/mafExtractorAPI.o src/buildVersion.o -o ../bin/mafExtractor.tmp -lm
+mv ../bin/mafExtractor.tmp ../bin/mafExtractor
+make[1]: Leaving directory '/opt/mafTools/mafExtractor'
+cd mafSorter && make all
+make[1]: Entering directory '/opt/mafTools/mafSorter'
+cc    -c -o src/buildVersion.o src/buildVersion.c
+mkdir -p ../bin/
+gcc -std=c99 -Wno-unused-but-set-variable -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -O3 src/mafSorter.c ../lib/common.o ../lib/sharedMaf.o ../external/CuTest.a src/buildVersion.o -o ../bin/mafSorter.tmp -lm
+mv ../bin/mafSorter.tmp ../bin/mafSorter
+make[1]: Leaving directory '/opt/mafTools/mafSorter'
+cd mafDuplicateFilter && make all
+make[1]: Entering directory '/opt/mafTools/mafDuplicateFilter'
+cc    -c -o src/buildVersion.o src/buildVersion.c
+mkdir -p ../bin/
+gcc -std=c99 -Wno-unused-but-set-variable -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -O3 src/mafDuplicateFilter.c ../lib/common.o ../lib/sharedMaf.o ../external/CuTest.a src/buildVersion.o -o ../bin/mafDuplicateFilter.tmp -lm
+mv ../bin/mafDuplicateFilter.tmp ../bin/mafDuplicateFilter
+make[1]: Leaving directory '/opt/mafTools/mafDuplicateFilter'
+cd mafFilter && make all
+make[1]: Entering directory '/opt/mafTools/mafFilter'
+cc    -c -o src/buildVersion.o src/buildVersion.c
+mkdir -p ../bin/
+gcc -std=c99 -Wno-unused-but-set-variable -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -O3 src/mafFilter.c ../lib/common.o ../lib/sharedMaf.o ../external/CuTest.a src/buildVersion.o -o ../bin/mafFilter.tmp -lm
+mv ../bin/mafFilter.tmp ../bin/mafFilter
+make[1]: Leaving directory '/opt/mafTools/mafFilter'
+cd mafStrander && make all
+make[1]: Entering directory '/opt/mafTools/mafStrander'
+cc    -c -o src/buildVersion.o src/buildVersion.c
+mkdir -p ../bin/
+gcc -std=c99 -Wno-unused-but-set-variable -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -O3 src/mafStrander.c ../lib/common.o ../lib/sharedMaf.o ../external/CuTest.a src/buildVersion.o -o ../bin/mafStrander.tmp -lm
+mv ../bin/mafStrander.tmp ../bin/mafStrander
+make[1]: Leaving directory '/opt/mafTools/mafStrander'
+cd mafRowOrderer && make all
+make[1]: Entering directory '/opt/mafTools/mafRowOrderer'
+cc    -c -o src/buildVersion.o src/buildVersion.c
+mkdir -p ../bin/
+gcc -std=c99 -Wno-unused-but-set-variable -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -O3 src/mafRowOrderer.c ../lib/common.o ../lib/sharedMaf.o ../external/CuTest.a src/buildVersion.o -o ../bin/mafRowOrderer.tmp -lm
+mv ../bin/mafRowOrderer.tmp ../bin/mafRowOrderer
+make[1]: Leaving directory '/opt/mafTools/mafRowOrderer'
++ make
+cd lib && make all
+make[1]: Entering directory '/opt/mafTools/lib'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/lib'
+cd mafComparator && make all
+make[1]: Entering directory '/opt/mafTools/mafComparator'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafComparator'
+cd mafTransitiveClosure && make all
+make[1]: Entering directory '/opt/mafTools/mafTransitiveClosure'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafTransitiveClosure'
+cd mafStats && make all
+make[1]: Entering directory '/opt/mafTools/mafStats'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafStats'
+cd mafToFastaStitcher && make all
+make[1]: Entering directory '/opt/mafTools/mafToFastaStitcher'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafToFastaStitcher'
+cd mafPairCoverage && make all
+make[1]: Entering directory '/opt/mafTools/mafPairCoverage'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafPairCoverage'
+cd mafCoverage && make all
+make[1]: Entering directory '/opt/mafTools/mafCoverage'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafCoverage'
+cd mafValidator && make all
+make[1]: Entering directory '/opt/mafTools/mafValidator'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafValidator'
+cd mafPositionFinder && make all
+make[1]: Entering directory '/opt/mafTools/mafPositionFinder'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafPositionFinder'
+cd mafExtractor && make all
+make[1]: Entering directory '/opt/mafTools/mafExtractor'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafExtractor'
+cd mafSorter && make all
+make[1]: Entering directory '/opt/mafTools/mafSorter'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafSorter'
+cd mafDuplicateFilter && make all
+make[1]: Entering directory '/opt/mafTools/mafDuplicateFilter'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafDuplicateFilter'
+cd mafFilter && make all
+make[1]: Entering directory '/opt/mafTools/mafFilter'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafFilter'
+cd mafStrander && make all
+make[1]: Entering directory '/opt/mafTools/mafStrander'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafStrander'
+cd mafRowOrderer && make all
+make[1]: Entering directory '/opt/mafTools/mafRowOrderer'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/opt/mafTools/mafRowOrderer'
++ make test
+cd lib && make test
+make[1]: Entering directory '/opt/mafTools/lib'
+mkdir -p test/
+gcc -g -O0 -c -std=c99 -O3 -Wextra -Wall -Werror -pedantic -I ../external/ -I ../inc/ sharedMaf.c -o test/sharedMaf.o.tmp -lm
+mv test/sharedMaf.o.tmp test/sharedMaf.o
+mkdir -p test/
+gcc -g -O0 -c -std=c99 -O3 -Wextra -Wall -Werror -pedantic -I ../external/ -I ../inc/ common.c -o common.tmp -lm
+mv common.tmp test/common.o
+mkdir -p test
+gcc -g -O0 -std=c99 -O3 -Wextra -Wall -Werror -pedantic -I ../external/ -I ../inc/ allTests.c test.sharedMaf.c test/sharedMaf.o test/common.o ../external/CuTest.a -o allTests.tmp -lm
+mv allTests.tmp allTests
+./allTests && python2.7 test.sharedMaf.py --verbose && rm -rf ./allTests ./test ./test_tmp
+Running test case test_de_malloc
+Running test case test_newMafLineFromString
+Running test case test_readBlock
+Running test case test_readBlock2
+Running test case test_lineNumbers
+Running test case test_readWriteMaf
+Running test case test_newMafBlockFromString_0
+Running test case test_flipBlockStrand_0
+Running test case test_flipBlockStrand_1
+Running test case test_copySpeciesName_0
+Running test case test_copyChromosomeName_0
+Running test case test_getSequenceMatrix_0
+............
+
+OK (12 tests)
+
+testMemory (__main__.SharedMafLibraryTest)
+sharedMaf.h should be memory clean. ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+make[1]: Leaving directory '/opt/mafTools/lib'
+cd mafComparator && make test
+make[1]: Entering directory '/opt/mafTools/mafComparator'
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c ../lib/sharedMaf.c -o test/sharedMaf.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/sharedMaf.o.tmp test/sharedMaf.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c ../lib/common.c -o test/common.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/common.o.tmp test/common.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c src/comparatorRandom.c -o test/comparatorRandom.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/comparatorRandom.o.tmp test/comparatorRandom.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c src/comparatorAPI.c -o test/comparatorAPI.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/comparatorAPI.o.tmp test/comparatorAPI.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c src/buildVersion.c -o test/buildVersion.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/buildVersion.o.tmp test/buildVersion.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c src/test.comparatorAPI.c -o test/test.comparatorAPI.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/test.comparatorAPI.o.tmp test/test.comparatorAPI.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c src/test.comparatorRandom.c -o test/test.comparatorRandom.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/test.comparatorRandom.o.tmp test/test.comparatorRandom.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable src/allTests.c src/cString.c test/sharedMaf.o ../external/CuTest.a test/common.o test/comparatorRandom.o test/comparatorAPI.o ../../sonLib/lib/sonLib.a test/buildVersion.o test/test.comparatorAPI.o test/test.comparatorRandom.o -o test/allTests.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/allTests.tmp test/allTests
+gcc -std=c99 -Wno-unused-but-set-variable -o test/mafComparator.tmp src/mafComparator.c src/cString.c test/sharedMaf.o ../external/CuTest.a test/common.o test/comparatorRandom.o test/comparatorAPI.o ../../sonLib/lib/sonLib.a test/buildVersion.o src/test.comparatorRandom.h src/test.comparatorAPI.h src/buildVersion.h src/comparatorRandom.h src/comparatorAPI.h src/cString.h -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/mafComparator.tmp test/mafComparator
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable src/testRand.c src/cString.c test/sharedMaf.o ../external/CuTest.a test/common.o test/comparatorRandom.o test/comparatorAPI.o ../../sonLib/lib/sonLib.a test/buildVersion.o -o test/testRand.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/testRand.tmp test/testRand
+./test/allTests && python2.7 src/test.mafComparator.py --verbose  && rm -rf ./test/ && rmdir ./tempTestDir
+Running test case test_mappingMatrixToArray_0
+Running test case test_mappingArrayToMatrix_0
+Running test case test_mappingRoundTrip_0
+Running test case test_pairCounting_0
+Running test case test_chooseTwoValues_0
+Running test case test_pairSortComparison_0
+Running test case test_median_0
+Running test case test_sampleVariance_0
+Running test case test_rbinom_zero_0
+Running test case test_rbinom_zero_1
+Running test case test_rbinom_one_0
+Running test case test_rbinom_one_1
+Running test case test_rbinom_one_2
+Running test case test_rbinom_one_3
+Running test case test_rbinom_one_4
+Running test case test_rbinom_ranges_0
+Running test case test_rbinom_ranges_1
+Running test case test_rbinom_ranges_2
+Running test case test_rbinom_ranges_3
+Running test case test_rbinom_ranges_4
+Running test case test_rbinom_clt_0
+Running test case test_rbinom_clt_1
+Running test case test_rbinom_distribution_0
+Running test case test_rbinom_distribution_1
+Running test case test_rbinom_distribution_2
+Running test case test_rbinom_distribution_3
+..........................
+
+OK (26 tests)
+
+test_bedParsing (__main__.BedParsingTest)
+mafComparator should parse a bed file and use the intervals for testing ... ok
+test_memory_0 (__main__.BedParsingTest)
+mafComparator should be memory clean for bed parsing examples ... ok
+test_knownValues (__main__.KnownValuesTest)
+mafComparator should return correct results for hand-calculable problems ... ok
+test_memory_2 (__main__.KnownValuesTest)
+mafComparator should be memory clean for known values ... ok
+test_legitSequences (__main__.LegitSequencesTest)
+--legitSequences options should produce expected and known output for given inputs ... ok
+test_legitSequencesFail (__main__.LegitSequencesTest)
+--legitSequences options should fail when sequence length numbers differ from input files ... ok
+test_memoryTest_5 (__main__.LegitSequencesTest) ... ok
+test_memory_3 (__main__.NearTests)
+mafComparator should be memory clean for known values using --near option ... ok
+test_near (__main__.NearTests)
+mafComparator should return correct results for hand-calculable problems that use the --near option ... ok
+test_nearSimple (__main__.NearTests)
+mafComparator should return correct results for hand-calculable problems that use the --near=0 option ... ok
+test_memoryTest_6 (__main__.NumberOfPairsTest) ... ok
+test_numberOfPairs (__main__.NumberOfPairsTest)
+--numberOfPairs options should produce expected and known output for given inputs ... ok
+test_numberOfPairsFail (__main__.NumberOfPairsTest)
+--numberOfPairs options should fail for bad input values ... ok
+test_memoryTest_4 (__main__.WigglePairsTest)
+--wigglePairs options should be memory clean ... ok
+test_wigglePairs (__main__.WigglePairsTest)
+--wigglePairs options should produce expected and known output for given inputs ... ok
+test_validXmlOutput_ (__main__.XmlOutputValidation)
+xml output file should be valid xml. ... ok
+test_memory_1 (__main__.randomSeedTests)
+mafComparator should be memory clean for seed testing examples ... ok
+test_seedTesting (__main__.randomSeedTests)
+mafComparator should have replicable runs via the --seed command ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.351s
+
+OK
+make[1]: Leaving directory '/opt/mafTools/mafComparator'
+cd mafTransitiveClosure && make test
+make[1]: Entering directory '/opt/mafTools/mafTransitiveClosure'
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c ../lib/sharedMaf.c -o test/sharedMaf.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external
+mv test/sharedMaf.o.tmp test/sharedMaf.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c ../lib/common.c -o test/common.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external
+mv test/common.o.tmp test/common.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c src/buildVersion.c -o test/buildVersion.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external
+mv test/buildVersion.o.tmp test/buildVersion.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable src/mafTransitiveClosure.c src/allTests.c test/sharedMaf.o test/common.o ../../sonLib/lib/stPinchesAndCacti.a  ../../sonLib/lib/sonLib.a ../external/CuTest.a src/test.mafTransitiveClosure.o test/buildVersion.o -o test/mafTransitiveClosure.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/mafTransitiveClosure.tmp test/mafTransitiveClosure
+test/mafTransitiveClosure --test && python2.7 src/test.mafTransitiveClosure.py --verbose && rm -rf ./test/ && rmdir ./tempTestDir
+
+Running test case test_reverseComplement
+Running test case test_rowAlignmentBlockComparisonOrdering_0
+Running test case test_rowAlignmentBlockComparisonOrdering_1
+Running test case test_rowAlignmentBlockComparisonOrdering_2
+Running test case test_rowAlignmentBlockComparisonOrdering_3
+Running test case test_matrixAlignmentBlockComparisonOrdering_0
+Running test case test_matrixAlignmentBlockComparisonOrdering_1
+Running test case test_matrixAlignmentBlockComparisonOrdering_2
+Running test case test_matrixAlignmentBlockComparisonOrdering_3
+Running test case test_matrixAlignmentBlockComparisonOrdering_4
+Running test case test_addSequenceValuesToMtcSeq_0
+Running test case test_localSeqCoords_0
+Running test case test_localSeqCoordsToGlobalPositiveCoords_0
+Running test case test_localSeqCoordsToGlobalPositiveStartCoords_0
+Running test case test_coordinateTransforms_0
+Running test case test_coordinateTransforms_1
+Running test case test_mafBlockGapSorting_0
+.................
+
+OK (17 tests)
+
+testKnownInOut_1 (__main__.TransitiveClosureTest)
+mafTransitiveClosure should compute the transitive closure of a maf built by pairwise alignment to a reference sequence. ... ok
+testKnownInOut_2 (__main__.TransitiveClosureTest)
+mafTransitiveClosure should compute the transitive closure of a maf built by pairwise alignment to a reference sequence, testing the --sort option. ... ok
+testMemory_1 (__main__.TransitiveClosureTest)
+mafTransitiveClosure should be memory clean. ... ok
+testMemory_2 (__main__.TransitiveClosureTest)
+the CuTest tests should be memory clean. ... ok
+testMemory_3 (__main__.TransitiveClosureTest)
+mafTransitiveClosure should be memory clean. ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.006s
+
+OK
+make[1]: Leaving directory '/opt/mafTools/mafTransitiveClosure'
+cd mafStats && make test
+make[1]: Entering directory '/opt/mafTools/mafStats'
+apple
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c ../lib/sharedMaf.c -o test/sharedMaf.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/sharedMaf.o.tmp test/sharedMaf.o
+apple
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c ../lib/common.c -o test/common.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/common.o.tmp test/common.o
+orange
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c src/buildVersion.c -o test/buildVersion.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external
+mv test/buildVersion.o.tmp test/buildVersion.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable src/allTests.c test/sharedMaf.o test/common.o ../external/CuTest.a src/test.mafStats.o ../../sonLib/lib/sonLib.a test/buildVersion.o -o test/allTests.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/allTests.tmp test/allTests
+test/allTests && rm -rf ./test/
+make[1]: Leaving directory '/opt/mafTools/mafStats'
+cd mafToFastaStitcher && make test
+make[1]: Entering directory '/opt/mafTools/mafToFastaStitcher'
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c ../lib/sharedMaf.c -o test/sharedMaf.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external
+mv test/sharedMaf.o.tmp test/sharedMaf.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c ../lib/common.c -o test/common.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external
+mv test/common.o.tmp test/common.o
+gcc -std=c99 -Wno-unused-but-set-variable -c src/mafToFastaStitcherAPI.c -o test/mafToFastaStitcherAPI.o.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external  -lm
+mv test/mafToFastaStitcherAPI.o.tmp test/mafToFastaStitcherAPI.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c src/buildVersion.c -o test/buildVersion.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external
+mv test/buildVersion.o.tmp test/buildVersion.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c src/test.mafToFastaStitcherAPI.c -o test/test.mafToFastaStitcherAPI.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external
+mv test/test.mafToFastaStitcherAPI.o.tmp test/test.mafToFastaStitcherAPI.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable src/allTests.c test/sharedMaf.o test/common.o ../external/CuTest.a test/mafToFastaStitcherAPI.o ../../sonLib/lib/sonLib.a test/buildVersion.o test/test.mafToFastaStitcherAPI.o -o test/allTests.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/allTests.tmp test/allTests
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable src/mafToFastaStitcher.c test/sharedMaf.o test/common.o ../external/CuTest.a test/mafToFastaStitcherAPI.o ../../sonLib/lib/sonLib.a test/buildVersion.o -o test/mafToFastaStitcher.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/mafToFastaStitcher.tmp test/mafToFastaStitcher
+./test/allTests && python2.7 src/test.mafToFastaStitcher.py --verbose && rm -rf ./test/ && rmdir ./tempTestDir
+Running test case test_readingFasta_0
+Running test case test_newBlockHashFromBlock_0
+Running test case test_addMafLineToRow_0
+Running test case test_addMafLineToRow_1
+Running test case test_penalize_0
+Running test case test_interstitial_0
+Running test case test_addBlockToHash_0
+Running test case test_addBlockToHash_1
+Running test case test_addBlockToHash_2
+Running test case test_addBlockToHash_3
+Running test case test_addBlockToHash_4
+Running test case test_addBlockToHash_5
+Running test case test_addBlockToHash_6
+.............
+
+OK (13 tests)
+
+testAllTests (__main__.CuTest)
+If valgrind is installed on the system, check for memory related errors in CuTests ... ok
+testFastaStitch (__main__.FastaStitchTest)
+mafToFastaStitcher should produce known output for a given known input ... ok
+testMemory1 (__main__.FastaStitchTest)
+If valgrind is installed on the system, check for memory related errors (1). ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.008s
+
+OK
+make[1]: Leaving directory '/opt/mafTools/mafToFastaStitcher'
+cd mafPairCoverage && make test
+make[1]: Entering directory '/opt/mafTools/mafPairCoverage'
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c ../lib/sharedMaf.c -o test/sharedMaf.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external
+mv test/sharedMaf.o.tmp test/sharedMaf.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c ../lib/common.c -o test/common.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external
+mv test/common.o.tmp test/common.o
+gcc -std=c99 -Wno-unused-but-set-variable -c src/mafPairCoverageAPI.c -o test/mafPairCoverageAPI.o.tmp -O3 -Wall -Werror --pedantic -funroll-loops -DNDEBUG -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -I ../../sonLib/lib -I ../inc -I ../external 
+mv test/mafPairCoverageAPI.o.tmp test/mafPairCoverageAPI.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c src/buildVersion.c -o test/buildVersion.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external
+mv test/buildVersion.o.tmp test/buildVersion.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable -c src/test.mafPairCoverageAPI.c -o test/test.mafPairCoverageAPI.o.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external
+mv test/test.mafPairCoverageAPI.o.tmp test/test.mafPairCoverageAPI.o
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable src/allTests.c test/sharedMaf.o test/common.o ../external/CuTest.a test/mafPairCoverageAPI.o ../../sonLib/lib/sonLib.a test/buildVersion.o test/test.mafPairCoverageAPI.o -o test/allTests.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/allTests.tmp test/allTests
+mkdir -p test/
+gcc -std=c99 -Wno-unused-but-set-variable src/mafPairCoverage.c test/sharedMaf.o test/common.o ../external/CuTest.a test/mafPairCoverageAPI.o ../../sonLib/lib/sonLib.a test/buildVersion.o -o test/mafPairCoverage.tmp -O0 -g -Wall -Werror --pedantic -I ../../sonLib/lib -I ../inc -I ../external -lm
+mv test/mafPairCoverage.tmp test/mafPairCoverage
+./test/allTests && python2.7 src/test.mafPairCoverage.py --verbose && rm -rf ./test/ && rmdir ./tempTestDir
+Running test case test_is_wild_0
+Running test case test_searchMatched_0
+Running test case test_compareLines_0
+Running test case test_compareLines_1
+Running test case test_intervalCheck_0
+Running test case test_compareLines_region_0
+Running test case test_binning_0
+Running test case test_binning_1
+Running test case test_binning_2
+Running test case test_binning_3
+Running test case test_binning_4
+Running test case test_binning_5
+Running test case test_binning_6
+Running test case test_binning_7
+Running test case test_binning_8
+Running test case test_binning_9
+Running test case test_binning_10
+Running test case test_binning_11
+Running test case test_binning_12
+...................
+
+OK (19 tests)
+
+testCoverageBed_0 (__main__.CoverageTest)
+mafPairCoverage should be able to get the correct output given bed-based region intervals ... ok
+testCoverageBinning_0 (__main__.CoverageTest)
+mafPairCoverage should output bin values that accurately reflect the coverage between sequences. ... ok
+testCoverageBinning_1 (__main__.CoverageTest)
+mafPairCoverage should output bin values that accurately reflect the coverage between sequences. ... ERROR
+testCoverageBinning_2 (__main__.CoverageTest)
+mafPairCoverage should output bin values that accurately reflect the coverage between sequences, TEST A HUGE NUMBER OF BINS. ... ERROR
+testCoverage_0 (__main__.CoverageTest)
+mafPairCoverage should output numbers that accurately reflect the coverage between sequences. ... ok
+testCoverage_1 (__main__.CoverageTest)
+mafPairCoverage should output numbers that accurately reflect the coverage between sequences. ... ok
+test_CuTestMemory (__main__.CuTestMemory)
+If valgrind is installed on the system, check for memory related errors in CuTests. ... ok
+
+======================================================================
+ERROR: testCoverageBinning_1 (__main__.CoverageTest)
+mafPairCoverage should output bin values that accurately reflect the coverage between sequences.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "src/test.mafPairCoverage.py", line 431, in testCoverageBinning_1
+    compressList(true_array, 2)))
+  File "src/test.mafPairCoverage.py", line 238, in compressList
+    b_list = np.zeros(math.ceil(len(a_list) / float(bin_length)))
+TypeError: 'float' object cannot be interpreted as an index
+
+======================================================================
+ERROR: testCoverageBinning_2 (__main__.CoverageTest)
+mafPairCoverage should output bin values that accurately reflect the coverage between sequences, TEST A HUGE NUMBER OF BINS.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "src/test.mafPairCoverage.py", line 473, in testCoverageBinning_2
+    compressList(true_array, j)))
+  File "src/test.mafPairCoverage.py", line 238, in compressList
+    b_list = np.zeros(math.ceil(len(a_list) / float(bin_length)))
+TypeError: 'float' object cannot be interpreted as an index
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.060s
+
+FAILED (errors=2)
+Makefile:60: recipe for target 'test' failed
+make[1]: *** [test] Error 1
+make[1]: Leaving directory '/opt/mafTools/mafPairCoverage'
+Makefile:57: recipe for target 'mafPairCoverage.test' failed
+make: *** [mafPairCoverage.test] Error 2
++ true
++ rm /etc/apt/apt.conf.d/singularity-cache.conf
+INFO:    Adding environment to container
+INFO:    Adding runscript
+INFO:    Creating SIF file...
+INFO:    Build complete: mafTools.sif
