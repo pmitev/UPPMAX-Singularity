@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: ubuntu:18.04
+
+%post
+  export DEBIAN_FRONTEND=noninteractive
+  export LC_ALL=C
+
+  mkdir -p /tmp/apt-18
+  echo "Dir::Cache "/tmp/apt-18";" > /etc/apt/apt.conf.d/singularity-cache.conf
+
+  apt-get update && \
+  apt-get -y install --fix-missing wget git gawk p4vasp
+
+  # Clean
+  rm /etc/apt/apt.conf.d/singularity-cache.conf
+
+%runscript
+  p4v "$@"
