@@ -17,6 +17,7 @@ From: python:2.7.18-stretch
 
   
   apt-get update && \
+  apt-get -y dist-upgrade && \
   apt-get -y --no-install-recommends install --fix-missing \
         wget curl git build-essential libz-dev valgrind \
         python-dev python-pip cython 
