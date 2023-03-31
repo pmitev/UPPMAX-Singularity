@@ -1,4 +1,13 @@
-To cretae soft links pointing to the container run
+# mafTools
+https://github.com/dentearl/mafTools
+
+## Build
+
+```bash
+sudo singularity build mafTools.sif mafTools-python2.def |& tee build.log
+```
+
+## Cretae soft links pointing to the container
 
 ```bash
 for i in $(singularity exec mafTools.sif ls -1 /opt/mafTools/bin); do  ln -s mafTools.sif $i; done
@@ -13,8 +22,11 @@ echo $(singularity exec mafTools.sif ls -1 /opt/mafTools/bin) | xargs -n 1 ln -s
 or
 
 ```bash
-$ parallel --dry-run ln -s mafTools.sif {} ::: $(singularity exec mafTools.sif ls -1 /opt/mafTools/bin)
+# remove --dry-run to really run 
+parallel --dry-run ln -s mafTools.sif {} ::: $(singularity exec mafTools.sif ls -1 /opt/mafTools/bin)
+```
 
+```
 ln -s mafTools.sif mafComparator
 ln -s mafTools.sif mafCoverage
 ln -s mafTools.sif mafDuplicateFilter
