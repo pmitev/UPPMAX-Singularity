@@ -1,0 +1,20 @@
+Bootstrap:  docker
+From: ubuntu:22.04
+
+%setup
+  mkdir -p ${SINGULARITY_ROOTFS}/opt/mpi-test
+
+%files
+  mpi-test.c /opt/mpi-test/
+  openmpi-4.1.2.tar.bz2 /installs/
+
+%post
+  apt-get update && apt-get install -y build-essential mpi-default-dev lsof slurm-client \
+    && rm -rf /var/lib/apt/lists/*
+  
+  cd /opt/mpi-test && mpicc -o mpi-test mpi-test.c
+
+%runscript
+  /bin/bash
+
+
