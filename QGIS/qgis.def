@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: archlinux
+
+%post
+  pacman -Syu --noconfirm qgis openexr libwebp \
+    mariadb-libs libjxl arrow poppler libheif cfitsio openjpeg2 podofo \
+    python-pip python-requests python-jinja python-pygments \
+    python-owslib python-lxml
+
+
+
+%runscript
+#!/bin/sh
+  if command -v $SINGULARITY_NAME > /dev/null 2> /dev/null; then
+    exec $SINGULARITY_NAME "$@"
+  else
+    echo "# ERROR !!! Command $SINGULARITY_NAME not found in the container"
+  fi
