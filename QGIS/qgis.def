@@ -3,7 +3,7 @@ From: archlinux
 
 %post
   pacman -Syu --noconfirm qgis openexr libwebp \
-    mariadb-libs libjxl arrow poppler libheif cfitsio openjpeg2 podofo \
+    mariadb-libs libjxl arrow poppler libheif cfitsio openjpeg2 podofo-0.9 \
     python-pip python-requests python-jinja python-pygments \
     python-owslib python-lxml
 
