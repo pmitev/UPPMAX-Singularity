@@ -35,12 +35,6 @@ From: ubuntu:22.04
   python3 -m pip install --no-cache-dir --upgrade pip setuptools wheel
   python3 -m pip install --no-cache-dir --upgrade macs3
 
-  mkdir /installs && cd /installs
-
-
-#cat << EOF > /tmp/myfile
-#EOF
-  
   # Patch for old kernels
   #strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5 
 
