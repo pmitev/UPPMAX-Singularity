@@ -23,6 +23,7 @@ From: condaforge/mambaforge
   cd RIMA_pipeline
   echo "    - markdown==3.3.7"  >> static/environment/GCP/rna.yml
   echo "    - requests==2.27.1" >> static/environment/GCP/rna.yml
+  echo "    - Cython"           >> static/environment/GCP/rna.yml
   bash ./RIMA_environment.sh -p GCP
 
   conda env list
