@@ -3,24 +3,20 @@
 
 SIMG=BioTools-ubuntu.sif
 read -r -d '' PACKAGES << EOL
- samtools salmon bowtie2 picard samblaster fastqc qcumber bedtools \
- bwa bcftools bowtie2 snap-aligner trim-galore wham-align minimap2\
+ samtools salmon bowtie2 picard samblaster fastqc qcumber bedtools 
+ bwa bcftools bowtie2 snap-aligner trim-galore wham-align minimap2 
  anfo samclip
 EOL
 
 mkdir -p bin
 
-for ip in $PACKAGES
-do
+for ip in $PACKAGES; do
 
   bins=$(singularity exec ${SIMG} dpkg -L $ip  | grep /bin/)
-
-  for i in $bins
-  do
+  for i in $bins; do
     echo $i
     ln -sf ../${SIMG} bin/${i##*/}
   done
-
 done
 
 ln -sf ../${SIMG} bin/STAR
