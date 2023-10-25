@@ -16,11 +16,49 @@ From: ubuntu:22.04
 
   apt-get update && apt-get -y dist-upgrade && \
   apt-get install -y git wget build-essential cmake gfortran vim gawk\
-          zlib1g-dev xxd \
-          samtools salmon bowtie2 picard samblaster fastqc qcumber bedtools \
-          bwa bcftools snap-aligner trim-galore wham-align minimap2 \
-          anfo samclip \
-          python3-venv python3-pip python3-deeptools
+    python3-venv python3-pip python3-deeptools \
+    zlib1g-dev xxd \
+    abyss \
+    anfo \
+    augustus \
+    bcftools \
+    beast2-mcmc \
+    bedtools \
+    bowtie2 \
+    busco \
+    bwa \
+    canu \
+    cd-hit \
+    exonerate \
+    fasta3 \
+    fastqc \
+    gffread \
+    hmmer \
+    igv \
+    infernal \
+    jellyfish \
+    mafft \
+    minimap2 \
+    mrbayes \
+    pbbamtools \
+    picard \
+    pilon \
+    pplacer \
+    qcumber \
+    quicktree \
+    ray \
+    salmon \
+    samblaster \
+    samclip \
+    samtools \
+    snap-aligner \
+    snpeff \
+    spades \
+    trim-galore \
+    trinityrnaseq \
+    velvet \
+    wham-align \
+    xxd
 
   # Download
   export TMPD=/tmp/downloads
