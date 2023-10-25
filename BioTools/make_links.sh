@@ -3,47 +3,47 @@
 
 SIMG=BioTools-ubuntu.sif
 read -r -d '' PACKAGES << EOL
-    python3-deeptools \
-    abyss \
-    anfo \
-    augustus \
-    bcftools \
-    beast2-mcmc \
-    bedtools \
-    bowtie2 \
-    busco \
-    bwa \
-    canu \
-    cd-hit \
-    exonerate \
-    fasta3 \
-    fastqc \
-    gffread \
-    hmmer \
-    igv \
-    infernal \
-    jellyfish \
-    mafft \
-    minimap2 \
-    mrbayes \
-    pbbamtools \
-    picard \
-    pilon \
-    pplacer \
-    qcumber \
-    quicktree \
-    ray \
-    salmon \
-    samblaster \
-    samclip \
-    samtools \
-    snap-aligner \
-    snpeff \
-    spades \
-    trim-galore \
-    trinityrnaseq \
-    velvet \
-    wham-align \
+    python3-deeptools 
+    abyss 
+    anfo 
+    augustus 
+    bcftools 
+    beast2-mcmc 
+    bedtools 
+    bowtie2 
+    busco 
+    bwa 
+    canu 
+    cd-hit 
+    exonerate 
+    fasta3 
+    fastqc 
+    gffread 
+    hmmer 
+    igv 
+    infernal 
+    jellyfish 
+    mafft 
+    minimap2 
+    mrbayes 
+    pbbamtools 
+    picard 
+    pilon 
+    pplacer 
+    qcumber 
+    quicktree 
+    ray 
+    salmon 
+    samblaster 
+    samclip 
+    samtools 
+    snap-aligner 
+    snpeff 
+    spades 
+    trim-galore 
+    trinityrnaseq 
+    velvet 
+    wham-align 
 EOL
 
 mkdir -p bin
