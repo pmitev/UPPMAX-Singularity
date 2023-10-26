@@ -21,6 +21,7 @@ From: ubuntu:22.04
     abyss \
     anfo \
     augustus \
+    bbmap \
     bcftools \
     beast2-mcmc \
     bedtools \
@@ -29,6 +30,7 @@ From: ubuntu:22.04
     bwa \
     canu \
     cd-hit \
+    cutadapt \
     exonerate \
     fasta3 \
     fastqc \
@@ -40,11 +42,14 @@ From: ubuntu:22.04
     mafft \
     minimap2 \
     mrbayes \
+    paml \
     pbbamtools \
+    phast \
     picard \
     pilon \
     pplacer \
     qcumber \
+    qiime \
     quicktree \
     ray \
     salmon \
@@ -54,9 +59,12 @@ From: ubuntu:22.04
     snap-aligner \
     snpeff \
     spades \
+    stacks \
+    tophat-recondition \
     trim-galore \
     trinityrnaseq \
     velvet \
+    vienna-rna \
     wham-align \
     xxd
 

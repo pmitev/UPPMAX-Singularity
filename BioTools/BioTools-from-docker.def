@@ -1,0 +1,22 @@
+Bootstrap: docker-daemon
+From: bio:latest
+
+%environment
+  export LC_ALL=C
+  export PYTHONNOUSERSITE=True
+
+%files
+  make_links.sh /opt/
+  package-versions.sh /opt/
+
+%post
+  chmod +x /opt/make_links.sh /opt/package-versions.sh
+  apt list $aptPACKAGES | awk '{gsub("/jammy|,now|jammy-updates|amd64|\\[installed\\]|all","",$0); print}'| column -t
+
+%runscript
+#!/bin/sh
+  if command -v $SINGULARITY_NAME > /dev/null 2> /dev/null; then
+    exec $SINGULARITY_NAME "$@"
+  else
+    echo "# ERROR !!! Command $SINGULARITY_NAME not found in the container"
+  fi
