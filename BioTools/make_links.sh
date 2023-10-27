@@ -14,8 +14,8 @@ else
   done
 done
 
-ln -sf ../${SIMG} bin/STAR
-ln -sf ../${SIMG} bin/STARlong
-ln -sf ../${SIMG} bin/macs3 
+ln -sf ../${SINGULARITY_NAME} bin/STAR
+ln -sf ../${SINGULARITY_NAME} bin/STARlong
+ln -sf ../${SINGULARITY_NAME} bin/macs3 
 
 fi
