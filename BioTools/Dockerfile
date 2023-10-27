@@ -30,6 +30,7 @@ ENV aptPACKAGES="python3-deeptools \
     mafft \
     minimap2 \
     mrbayes \
+    ncbi-blast+ \
     paml \
     pbbamtools \
     phast \

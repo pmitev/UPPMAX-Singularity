@@ -1,8 +1,9 @@
 # Buiding the container via docker
 
-```bash
 ## Build the docker
+```bash
 docker build -t bio .
+```
 
 ## Convert/build the Singularity container
 ```bash
