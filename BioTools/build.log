@@ -1,31 +1,35 @@
-INFO:    Starting build...
-2023/10/25 20:30:09  info unpack layer: sha256:aece8493d3972efa43bfd4ee3cdba659c0f787f8f59c82fb3e48c87cbb22a12e
+Build target 'BioTools-ubuntu.sif' already exists and will be deleted during the build process. Do you want to continue? [y/N] INFO:    Starting build...
+2023/10/28 08:10:16  info unpack layer: sha256:aece8493d3972efa43bfd4ee3cdba659c0f787f8f59c82fb3e48c87cbb22a12e
+INFO:    Copying make_links.sh to /opt/
+INFO:    Copying package-versions.sh to /opt/
 INFO:    Running post scriptlet
 + export LC_ALL=C
 + export PYTHONNOUSERSITE=True
 + export DEBIAN_FRONTEND=noninteractive
++ export aptPACKAGES=python3-deeptools     abyss     anfo     augustus     bbmap     bcftools     beast2-mcmc     bedtools     bowtie2     busco     bwa     canu     cd-hit     cutadapt     exonerate     fasta3     fastqc     gffread     hmmer     igv     infernal     jellyfish     mafft     minimap2     mrbayes     ncbi-blast+     paml     pbbamtools     phast     picard     pilon     pplacer     qcumber     qiime     quicktree     ray     salmon     samblaster     samclip     samtools     snap-aligner     snpeff     spades     stacks     tophat-recondition     trim-galore     trinityrnaseq     velvet     vienna-rna     wham-align     
++ echo export aptPACKAGES="python3-deeptools abyss anfo augustus bbmap bcftools beast2-mcmc bedtools bowtie2 busco bwa canu cd-hit cutadapt exonerate fasta3 fastqc gffread hmmer igv infernal jellyfish mafft minimap2 mrbayes ncbi-blast+ paml pbbamtools phast picard pilon pplacer qcumber qiime quicktree ray salmon samblaster samclip samtools snap-aligner snpeff spades stacks tophat-recondition trim-galore trinityrnaseq velvet vienna-rna wham-align "
 + mkdir -p /tmp/apt22
 + echo Dir::Cache /tmp/apt22;
 + apt-get update
 Get:1 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
-Get:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-Get:3 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
-Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [109 kB]
-Get:5 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
-Get:6 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Get:4 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1009 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [109 kB]
+Get:6 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
 Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
-Get:8 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1009 kB]
-Get:9 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
-Get:10 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [49.8 kB]
-Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1398 kB]
-Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [1330 kB]
-Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1274 kB]
-Get:14 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [32.6 kB]
-Get:15 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [78.3 kB]
-Get:16 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [1305 kB]
-Get:17 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [44.0 kB]
-Get:18 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1131 kB]
-Fetched 28.0 MB in 2s (15.1 MB/s)
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [1305 kB]
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [44.0 kB]
+Get:10 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1131 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [1330 kB]
+Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1274 kB]
+Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [49.8 kB]
+Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1400 kB]
+Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [32.6 kB]
+Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [78.3 kB]
+Fetched 28.0 MB in 1s (20.4 MB/s)
 Reading package lists...
 + apt-get -y dist-upgrade
 Reading package lists...
@@ -33,17 +37,28 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  libssl3
-debconf: delaying package configuration, since apt-utils is not installed
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0 B/1901 kB of archives.
+  libssl3 libsystemd0 libudev1
+3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 396 kB/2297 kB of archives.
 After this operation, 4096 B of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libsystemd0 amd64 249.11-0ubuntu3.11 [318 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libudev1 amd64 249.11-0ubuntu3.11 [78.0 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 396 kB in 1s (468 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4395 files and directories currently installed.)
+Preparing to unpack .../libsystemd0_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking libsystemd0:amd64 (249.11-0ubuntu3.11) over (249.11-0ubuntu3.10) ...
+Setting up libsystemd0:amd64 (249.11-0ubuntu3.11) ...
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4395 files and directories currently installed.)
 Preparing to unpack .../libssl3_3.0.2-0ubuntu1.12_amd64.deb ...
 Unpacking libssl3:amd64 (3.0.2-0ubuntu1.12) over (3.0.2-0ubuntu1.10) ...
 Setting up libssl3:amd64 (3.0.2-0ubuntu1.12) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4395 files and directories currently installed.)
+Preparing to unpack .../libudev1_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking libudev1:amd64 (249.11-0ubuntu3.11) over (249.11-0ubuntu3.10) ...
+Setting up libudev1:amd64 (249.11-0ubuntu3.11) ...
 Processing triggers for libc-bin (2.35-0ubuntu3.4) ...
-+ apt-get install -y git wget build-essential cmake gfortran vim gawk python3-venv python3-pip python3-deeptools zlib1g-dev xxd abyss anfo augustus bbmap bcftools beast2-mcmc bedtools bowtie2 busco bwa canu cd-hit cutadapt exonerate fasta3 fastqc gffread hmmer igv infernal jellyfish mafft minimap2 mrbayes paml pbbamtools phast picard pilon pplacer qcumber qiime quicktree ray salmon samblaster samclip samtools snap-aligner snpeff spades stacks tophat-recondition trim-galore trinityrnaseq velvet vienna-rna wham-align xxd
++ apt-get install -y git wget build-essential cmake gfortran vim gawk python3-venv python3-pip zlib1g-dev xxd python3-deeptools abyss anfo augustus bbmap bcftools beast2-mcmc bedtools bowtie2 busco bwa canu cd-hit cutadapt exonerate fasta3 fastqc gffread hmmer igv infernal jellyfish mafft minimap2 mrbayes ncbi-blast+ paml pbbamtools phast picard pilon pplacer qcumber qiime quicktree ray salmon samblaster samclip samtools snap-aligner snpeff spades stacks tophat-recondition trim-galore trinityrnaseq velvet vienna-rna wham-align
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -248,21 +263,21 @@ The following additional packages will be installed:
   llvm-11-runtime llvm-11-tools lto-disabled-list lynx lynx-common mailcap
   make manpages manpages-dev med-config media-types menu mesa-opencl-icd
   mesa-va-drivers mesa-vdpau-drivers mhap mime-support mpi-default-bin
-  mysql-common ncbi-blast+ ncbi-data netbase netpbm networkd-dispatcher
-  node-commander node-d3 node-d3-array node-d3-axis node-d3-brush
-  node-d3-chord node-d3-collection node-d3-color node-d3-contour
-  node-d3-dispatch node-d3-drag node-d3-dsv node-d3-ease node-d3-fetch
-  node-d3-force node-d3-format node-d3-geo node-d3-hierarchy
-  node-d3-interpolate node-d3-path node-d3-polygon node-d3-quadtree
-  node-d3-queue node-d3-random node-d3-scale node-d3-scale-chromatic
-  node-d3-selection node-d3-shape node-d3-time node-d3-time-format
-  node-d3-timer node-d3-transition node-d3-voronoi node-d3-zoom
-  node-highlight.js node-html5shiv node-iconv-lite node-jed node-natural-sort
-  node-normalize.css node-rw node-safe-buffer node-thenby nodejs nodejs-doc
-  numba-doc ocl-icd-libopencl1 openjdk-11-jre openjdk-11-jre-headless
-  openmpi-bin openmpi-common openssh-client openssl pandoc pandoc-data parafly
-  patch perl perl-modules-5.34 perl-openssl-defaults picard-tools pigz
-  pinentry-curses pkg-config poppler-data proj-bin proj-data publicsuffix
+  mysql-common ncbi-data netbase netpbm networkd-dispatcher node-commander
+  node-d3 node-d3-array node-d3-axis node-d3-brush node-d3-chord
+  node-d3-collection node-d3-color node-d3-contour node-d3-dispatch
+  node-d3-drag node-d3-dsv node-d3-ease node-d3-fetch node-d3-force
+  node-d3-format node-d3-geo node-d3-hierarchy node-d3-interpolate
+  node-d3-path node-d3-polygon node-d3-quadtree node-d3-queue node-d3-random
+  node-d3-scale node-d3-scale-chromatic node-d3-selection node-d3-shape
+  node-d3-time node-d3-time-format node-d3-timer node-d3-transition
+  node-d3-voronoi node-d3-zoom node-highlight.js node-html5shiv
+  node-iconv-lite node-jed node-natural-sort node-normalize.css node-rw
+  node-safe-buffer node-thenby nodejs nodejs-doc numba-doc ocl-icd-libopencl1
+  openjdk-11-jre openjdk-11-jre-headless openmpi-bin openmpi-common
+  openssh-client openssl pandoc pandoc-data parafly patch perl
+  perl-modules-5.34 perl-openssl-defaults picard-tools pigz pinentry-curses
+  pkg-config poppler-data proj-bin proj-data publicsuffix
   python-babel-localedata python-biopython-doc python-matplotlib-data
   python-odf-doc python-odf-tools python-tables-data python3 python3-adal
   python3-aiohttp python3-aiosignal python3-alabaster python3-appdirs
@@ -964,148 +979,15 @@ The following NEW packages will be installed:
   wget wham-align x11-common x11-utils x11-xserver-utils xauth xdg-user-dirs
   xdg-utils xkb-data xml-core xxd xz-utils zip zlib1g-dev
 0 upgraded, 1773 newly installed, 0 to remove and 0 not upgraded.
-Need to get 50.9 MB/1922 MB of archives.
+Need to get 4958 kB/1922 MB of archives.
 After this operation, 6610 MB of additional disk space will be used.
-Get:1 http://security.ubuntu.com/ubuntu jammy-security/main amd64 xxd amd64 2:8.2.3995-1ubuntu2.13 [54.5 kB]
-Get:2 http://security.ubuntu.com/ubuntu jammy-security/main amd64 vim-common all 2:8.2.3995-1ubuntu2.13 [81.5 kB]
-Get:3 http://security.ubuntu.com/ubuntu jammy-security/main amd64 vim-runtime all 2:8.2.3995-1ubuntu2.13 [6834 kB]
-Get:4 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libmpj-java all 0.44+dfsg-4 [443 kB]
-Get:5 http://security.ubuntu.com/ubuntu jammy-security/main amd64 vim amd64 2:8.2.3995-1ubuntu2.13 [1734 kB]
-Get:6 http://archive.ubuntu.com/ubuntu jammy/universe amd64 bbmap all 38.95+dfsg-1 [8507 kB]
-Get:7 http://archive.ubuntu.com/ubuntu jammy/universe amd64 cython3 amd64 0.29.28-1ubuntu3 [1336 kB]
-Get:8 http://archive.ubuntu.com/ubuntu jammy/universe amd64 jupyter-core all 4.9.1-1 [4388 B]
-Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 jupyter-nbextension-jupyter-js-widgets all 6.0.0-9 [479 kB]
-Get:10 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-argon2 amd64 21.1.0-1 [21.8 kB]
-Get:11 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-backcall all 0.2.0-2 [11.0 kB]
-Get:12 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-parso all 0.8.1-1 [64.5 kB]
-Get:13 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-jedi all 0.18.0-1 [615 kB]
-Get:14 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-matplotlib-inline all 0.1.3-1 [8070 B]
-Get:15 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-ptyprocess all 0.7.0-3 [15.4 kB]
-Get:16 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-pexpect all 4.8.0-2ubuntu1 [46.7 kB]
-Get:17 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-pickleshare all 0.7.5-5 [7570 B]
-Get:18 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-prompt-toolkit all 3.0.28-1 [251 kB]
-Get:19 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-ipython all 7.31.1-1 [534 kB]
-Get:20 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-entrypoints all 0.4-1 [7112 B]
-Get:21 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-nest-asyncio all 1.5.4-1 [6256 B]
-Get:22 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-tornado amd64 6.1.0-3build1 [287 kB]
-Get:23 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-zmq amd64 22.3.0-1build1 [283 kB]
-Get:24 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-jupyter-client all 7.1.2-1 [87.2 kB]
-Get:25 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-ipykernel all 6.7.0-1 [85.5 kB]
-Get:26 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-bleach all 4.1.0-1 [40.7 kB]
-Get:27 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-jupyterlab-pygments all 0.1.2-8 [5006 B]
-Get:28 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-nbclient all 0.5.6-2 [52.2 kB]
-Get:29 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-pandocfilters all 1.5.0-1 [24.0 kB]
-Get:30 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-testpath all 0.5.0+dfsg-1 [9900 B]
-Get:31 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-nbconvert all 6.4.0-1 [183 kB]
-Get:32 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-prometheus-client all 0.9.0-1 [39.6 kB]
-Get:33 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-send2trash all 1.8.1~b0-1 [15.6 kB]
-Get:34 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-terminado all 0.13.1-1 [13.1 kB]
-Get:35 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-backbone all 1.4.0~dfsg+~1.4.5-2 [182 kB]
-Get:36 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-bootstrap-tour all 0.12.0+dfsg-3 [21.3 kB]
-Get:37 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-codemirror all 5.65.0+~cs5.83.9-1 [757 kB]
-Get:38 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-es6-promise all 4.2.8-9 [15.9 kB]
-Get:39 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-jed all 1.1.1-3 [15.1 kB]
-Get:40 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-jed all 1.1.1-3 [2590 B]
-Get:41 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-marked all 4.0.12+ds+~4.0.1-2ubuntu2 [34.6 kB]
-Get:42 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libjs-moment all 2.29.1+ds-3ubuntu0.2 [146 kB]
-Get:43 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-requirejs all 2.3.6+ds-1 [196 kB]
-Get:44 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-requirejs-text all 2.0.12-1.1 [9056 B]
-Get:45 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-text-encoding all 0.7.0-4 [145 kB]
-Get:46 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-jquery-typeahead all 2.11.0+dfsg1-3 [48.9 kB]
-Get:47 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-xterm all 3.8.1+~cs0.9.0-1 [8768 B]
-Get:48 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 python3-notebook all 6.4.8-1ubuntu0.1 [1485 kB]
-Get:49 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 jupyter-notebook all 6.4.8-1ubuntu0.1 [10.4 kB]
-Get:50 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libcarp-clan-perl all 6.08-1 [13.4 kB]
-Get:51 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libbit-vector-perl amd64 7.4-1build8 [144 kB]
-Get:52 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libdate-calc-perl all 6.4-1.1 [183 kB]
-Get:53 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libdate-calc-xs-perl amd64 6.4-1build7 [51.8 kB]
-Get:54 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdate-manip-perl all 6.86-1 [946 kB]
-Get:55 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdbi-perl amd64 1.643-3build3 [741 kB]
-Get:56 http://archive.ubuntu.com/ubuntu jammy/universe amd64 liblzf1 amd64 3.6-3 [7444 B]
-Get:57 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libncbi6 amd64 6.1.20170106+dfsg1-9 [3992 kB]
-Get:58 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libole-storage-lite-perl all 0.20-1 [21.9 kB]
-Get:59 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libparse-recdescent-perl all 1.967015+dfsg-2 [145 kB]
-Get:60 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libspreadsheet-writeexcel-perl all 2.40-1.1 [523 kB]
-Get:61 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-array all 3.1.1+~cs5.0.5-1 [44.5 kB]
-Get:62 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-axis all 1.0.12-3 [10.2 kB]
-Get:63 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-dispatch all 1.0.6-2 [7896 B]
-Get:64 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-selection all 1.4.0-7 [31.8 kB]
-Get:65 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-drag all 1.2.5-2 [13.9 kB]
-Get:66 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-color all 1.2.8-2 [15.1 kB]
-Get:67 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-interpolate all 1.4.0-2 [18.5 kB]
-Get:68 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-ease all 1.0.5-3 [9972 B]
-Get:69 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-timer all 1.0.10-1 [8652 B]
-Get:70 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-transition all 1.3.2-3 [22.2 kB]
-Get:71 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-brush all 1.1.5-2 [177 kB]
-Get:72 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-path all 1.0.9-2 [8256 B]
-Get:73 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-chord all 1.0.6-4 [10.3 kB]
-Get:74 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-collection all 1.0.7-3 [11.8 kB]
-Get:75 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-contour all 1.3.2-5 [14.3 kB]
-Get:76 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-safe-buffer all 5.2.1+~cs2.1.2-2 [15.7 kB]
-Get:77 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-iconv-lite all 0.6.3-2 [167 kB]
-Get:78 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-queue all 3.0.7-12 [10.1 kB]
-Get:79 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-rw all 1.3.3-5 [7570 B]
-Get:80 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-commander all 9.0.0-2 [48.0 kB]
-Get:81 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-dsv all 1.1.1-5 [14.5 kB]
-Get:82 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-fetch all 1.2.0-2 [7658 B]
-Get:83 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-quadtree all 1.0.7-2 [13.1 kB]
-Get:84 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-force all 1.2.1-3 [363 kB]
-Get:85 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-d3-format all 1:1.4.1-5.1 [17.9 kB]
-Get:86 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-format all 1:1.4.1-5.1 [7584 B]
-Get:87 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-geo all 1.11.9-4 [53.6 kB]
-Get:88 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-hierarchy all 1.1.8-4 [29.9 kB]
-Get:89 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-polygon all 1.0.5-3 [7432 B]
-Get:90 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-random all 1.1.2-3 [7224 B]
-Get:91 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-time all 1.0.11-4 [14.6 kB]
-Get:92 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-time-format all 2.1.3-5 [20.0 kB]
-Get:93 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-scale all 2.2.2-4 [32.8 kB]
-Get:94 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-scale-chromatic all 1.5.0-3 [21.5 kB]
-Get:95 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-shape all 1.3.7-3 [42.0 kB]
-Get:96 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-voronoi all 1.1.4-3 [17.2 kB]
-Get:97 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3-zoom all 1.8.3-2 [20.2 kB]
-Get:98 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-d3 all 5.16.0-4 [171 kB]
-Get:99 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-natural-sort all 1.0.0-4 [4204 B]
-Get:100 http://archive.ubuntu.com/ubuntu jammy/universe amd64 node-thenby all 1.3.4+git20200720.0fd165a+ds-3 [4806 B]
-Get:101 http://archive.ubuntu.com/ubuntu jammy/universe amd64 phast amd64 1.6+dfsg-3 [2710 kB]
-Get:102 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-future all 0.18.2-5ubuntu0.1 [344 kB]
-Get:103 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-bibtexparser all 1.1.0+ds-3 [30.0 kB]
-Get:104 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-h5py-serial amd64 3.6.0-2build1 [872 kB]
-Get:105 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-h5py all 3.6.0-2build1 [4740 B]
-Get:106 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-biom-format amd64 2.1.10-3ubuntu1 [125 kB]
-Get:107 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-dill all 0.3.4-1 [61.5 kB]
-Get:108 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-hdmedians amd64 0.14.2-4build1 [111 kB]
-Get:109 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-widgetsnbextension all 6.0.0-9 [4626 B]
-Get:110 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-ipywidgets all 6.0.0-9 [30.8 kB]
-Get:111 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-natsort all 8.0.2-1 [35.3 kB]
-Get:112 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-nose all 1.3.7-8 [117 kB]
-Get:113 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-patsy all 0.5.2-2 [175 kB]
-Get:114 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-seaborn all 0.11.2-3 [220 kB]
-Get:115 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-sklearn-lib amd64 0.23.2-5ubuntu6 [2058 kB]
-Get:116 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-threadpoolctl all 3.1.0-1 [21.3 kB]
-Get:117 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-sklearn all 0.23.2-5ubuntu6 [1829 kB]
-Get:118 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-skbio amd64 0.5.6-6build1 [645 kB]
-Get:119 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-tzlocal all 2.1-1 [16.3 kB]
-Get:120 http://archive.ubuntu.com/ubuntu jammy/universe amd64 qiime all 2021.8.0-2 [154 kB]
-Get:121 http://archive.ubuntu.com/ubuntu jammy/main amd64 libyajl2 amd64 2.1.0-3build2 [20.6 kB]
-Get:122 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-ijson amd64 3.1.4-1build1 [34.5 kB]
-Get:123 http://archive.ubuntu.com/ubuntu jammy/universe amd64 q2-types all 2021.8.0-1 [76.0 kB]
-Get:124 http://archive.ubuntu.com/ubuntu jammy/universe amd64 q2-cutadapt amd64 2021.8.0-1 [2299 kB]
-Get:125 http://archive.ubuntu.com/ubuntu jammy/universe amd64 q2templates all 2021.8.0+ds-1 [12.0 kB]
-Get:126 http://archive.ubuntu.com/ubuntu jammy/universe amd64 q2-demux all 2021.8.0+dfsg-1 [105 kB]
-Get:127 http://archive.ubuntu.com/ubuntu jammy/universe amd64 vsearch amd64 2.21.1-1 [380 kB]
-Get:128 http://archive.ubuntu.com/ubuntu jammy/universe amd64 q2-taxa all 2021.8.0+dfsg-1 [46.9 kB]
-Get:129 http://archive.ubuntu.com/ubuntu jammy/universe amd64 q2-quality-control all 2021.8.0-1 [251 kB]
-Get:130 http://archive.ubuntu.com/ubuntu jammy/universe amd64 q2-feature-table all 2021.8.0+dfsg-1 [191 kB]
-Get:131 http://archive.ubuntu.com/ubuntu jammy/universe amd64 q2-feature-classifier all 2021.8.0-1 [120 kB]
-Get:132 http://archive.ubuntu.com/ubuntu jammy/universe amd64 q2-metadata amd64 2021.8.0-1 [12.6 kB]
-Get:133 http://archive.ubuntu.com/ubuntu jammy/universe amd64 q2-quality-filter all 2021.8.0-1 [22.6 kB]
-Get:134 http://archive.ubuntu.com/ubuntu jammy/universe amd64 readseq amd64 1-14 [55.5 kB]
-Get:135 http://archive.ubuntu.com/ubuntu jammy/universe amd64 stacks amd64 2.60+dfsg-1 [996 kB]
-Get:136 http://archive.ubuntu.com/ubuntu jammy/universe amd64 tophat-recondition all 1.4-3 [9648 B]
-Get:137 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 vienna-rna amd64 2.4.17+dfsg-2build2 [2469 kB]
-Get:138 http://archive.ubuntu.com/ubuntu jammy/universe amd64 paml amd64 4.9j+dfsg-3 [689 kB]
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 systemd amd64 249.11-0ubuntu3.11 [4581 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 systemd-sysv amd64 249.11-0ubuntu3.11 [10.5 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnss-systemd amd64 249.11-0ubuntu3.11 [133 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpam-systemd amd64 249.11-0ubuntu3.11 [203 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 systemd-timesyncd amd64 249.11-0ubuntu3.11 [31.2 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 50.9 MB in 10s (5314 kB/s)
+Fetched 4958 kB in 0s (11.1 MB/s)
 Selecting previously unselected package liblocale-gettext-perl.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4395 files and directories currently installed.)
 Preparing to unpack .../liblocale-gettext-perl_1.07-4build3_amd64.deb ...
@@ -1198,8 +1080,8 @@ Selecting previously unselected package libkmod2:amd64.
 Preparing to unpack .../7-libkmod2_29-1ubuntu1_amd64.deb ...
 Unpacking libkmod2:amd64 (29-1ubuntu1) ...
 Selecting previously unselected package systemd.
-Preparing to unpack .../8-systemd_249.11-0ubuntu3.10_amd64.deb ...
-Unpacking systemd (249.11-0ubuntu3.10) ...
+Preparing to unpack .../8-systemd_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking systemd (249.11-0ubuntu3.11) ...
 Setting up libapparmor1:amd64 (3.0.4-2ubuntu2.2) ...
 Setting up libargon2-1:amd64 (0~20171227-0.3) ...
 Setting up libdevmapper1.02.1:amd64 (2:1.02.175-2.1ubuntu4) ...
@@ -1207,7 +1089,7 @@ Setting up libjson-c5:amd64 (0.15-3~ubuntu1.22.04.2) ...
 Setting up libcryptsetup12:amd64 (2:2.4.3-1ubuntu1.1) ...
 Setting up libip4tc2:amd64 (1.8.7-1ubuntu5.1) ...
 Setting up libkmod2:amd64 (29-1ubuntu1) ...
-Setting up systemd (249.11-0ubuntu3.10) ...
+Setting up systemd (249.11-0ubuntu3.11) ...
 Created symlink /etc/systemd/system/getty.target.wants/getty@tty1.service -> /lib/systemd/system/getty@.service.
 Created symlink /etc/systemd/system/multi-user.target.wants/remote-fs.target -> /lib/systemd/system/remote-fs.target.
 Created symlink /etc/systemd/system/dbus-org.freedesktop.resolve1.service -> /lib/systemd/system/systemd-resolved.service.
@@ -1217,8 +1099,8 @@ Created symlink /etc/systemd/system/sysinit.target.wants/systemd-pstore.service 
 Initializing machine ID from random generator.
 Selecting previously unselected package systemd-sysv.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7995 files and directories currently installed.)
-Preparing to unpack .../systemd-sysv_249.11-0ubuntu3.10_amd64.deb ...
-Unpacking systemd-sysv (249.11-0ubuntu3.10) ...
+Preparing to unpack .../systemd-sysv_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking systemd-sysv (249.11-0ubuntu3.11) ...
 Selecting previously unselected package fonts-droid-fallback.
 Preparing to unpack .../fonts-droid-fallback_1%3a6.0.1r16-1.1build1_all.deb ...
 Unpacking fonts-droid-fallback (1:6.0.1r16-1.1build1) ...
@@ -1637,14 +1519,14 @@ Selecting previously unselected package libglib2.0-data.
 Preparing to unpack .../0132-libglib2.0-data_2.72.4-0ubuntu2.2_all.deb ...
 Unpacking libglib2.0-data (2.72.4-0ubuntu2.2) ...
 Selecting previously unselected package libnss-systemd:amd64.
-Preparing to unpack .../0133-libnss-systemd_249.11-0ubuntu3.10_amd64.deb ...
-Unpacking libnss-systemd:amd64 (249.11-0ubuntu3.10) ...
+Preparing to unpack .../0133-libnss-systemd_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking libnss-systemd:amd64 (249.11-0ubuntu3.11) ...
 Selecting previously unselected package libpam-cap:amd64.
 Preparing to unpack .../0134-libpam-cap_1%3a2.44-1ubuntu0.22.04.1_amd64.deb ...
 Unpacking libpam-cap:amd64 (1:2.44-1ubuntu0.22.04.1) ...
 Selecting previously unselected package libpam-systemd:amd64.
-Preparing to unpack .../0135-libpam-systemd_249.11-0ubuntu3.10_amd64.deb ...
-Unpacking libpam-systemd:amd64 (249.11-0ubuntu3.10) ...
+Preparing to unpack .../0135-libpam-systemd_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking libpam-systemd:amd64 (249.11-0ubuntu3.11) ...
 Selecting previously unselected package libpopt0:amd64.
 Preparing to unpack .../0136-libpopt0_1.18-3build1_amd64.deb ...
 Unpacking libpopt0:amd64 (1.18-3build1) ...
@@ -1673,8 +1555,8 @@ Selecting previously unselected package python3-yaml.
 Preparing to unpack .../0144-python3-yaml_5.4.1-1ubuntu1_amd64.deb ...
 Unpacking python3-yaml (5.4.1-1ubuntu1) ...
 Selecting previously unselected package systemd-timesyncd.
-Preparing to unpack .../0145-systemd-timesyncd_249.11-0ubuntu3.10_amd64.deb ...
-Unpacking systemd-timesyncd (249.11-0ubuntu3.10) ...
+Preparing to unpack .../0145-systemd-timesyncd_249.11-0ubuntu3.11_amd64.deb ...
+Unpacking systemd-timesyncd (249.11-0ubuntu3.11) ...
 Selecting previously unselected package tzdata.
 Preparing to unpack .../0146-tzdata_2023c-0ubuntu0.22.04.2_all.deb ...
 Unpacking tzdata (2023c-0ubuntu0.22.04.2) ...
@@ -6493,7 +6375,7 @@ update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.c
 Setting up quicktree (2.5-5) ...
 Setting up libclc-15-dev (1:15.0.7-0ubuntu0.22.04.3) ...
 Setting up librabbitmq4:amd64 (0.10.0-1ubuntu2) ...
-Setting up systemd-sysv (249.11-0ubuntu3.10) ...
+Setting up systemd-sysv (249.11-0ubuntu3.11) ...
 Setting up libmysqlclient21:amd64 (8.0.34-0ubuntu0.22.04.1) ...
 Setting up libxau6:amd64 (1:1.0.9-1build5) ...
 Setting up imagemagick-6-common (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ...
@@ -6604,7 +6486,7 @@ Setting up linux-libc-dev:amd64 (5.15.0-87.97) ...
 Setting up libctf-nobfd0:amd64 (2.38-4ubuntu2.3) ...
 Setting up liblog4j1.2-java (1.2.17-11) ...
 Setting up libgsl27:amd64 (2.7.1+dfsg-3) ...
-Setting up libnss-systemd:amd64 (249.11-0ubuntu3.10) ...
+Setting up libnss-systemd:amd64 (249.11-0ubuntu3.11) ...
 First installation detected...
 Checking NSS setup...
 Setting up scala-library (2.11.12-5) ...
@@ -6669,8 +6551,8 @@ Setting up wham-align (0.1.5-8) ...
 Setting up tzdata (2023c-0ubuntu0.22.04.2) ...
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Wed Oct 25 18:34:18 UTC 2023.
-Universal Time is now:  Wed Oct 25 18:34:18 UTC 2023.
+Local time is now:      Sat Oct 28 06:14:21 UTC 2023.
+Universal Time is now:  Sat Oct 28 06:14:21 UTC 2023.
 Run 'dpkg-reconfigure tzdata' if you wish to change it.
 
 Setting up libcap2-bin (1:2.44-1ubuntu0.22.04.1) ...
@@ -6774,7 +6656,7 @@ Setting up libhwloc15:amd64 (2.7.0-2ubuntu1) ...
 Setting up libxml-commons-resolver1.1-java (1.2-11) ...
 Setting up libpcre32-3:amd64 (2:8.39-13ubuntu0.22.04.1) ...
 Setting up libmpc3:amd64 (1.2.1-2build1) ...
-Setting up systemd-timesyncd (249.11-0ubuntu3.10) ...
+Setting up systemd-timesyncd (249.11-0ubuntu3.11) ...
 Created symlink /etc/systemd/system/dbus-org.freedesktop.timesync1.service -> /lib/systemd/system/systemd-timesyncd.service.
 Created symlink /etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service -> /lib/systemd/system/systemd-timesyncd.service.
 Setting up libevent-core-2.1-7:amd64 (2.1.12-stable-1build3) ...
@@ -6873,7 +6755,7 @@ Setting up gpgconf (2.2.27-3ubuntu2.1) ...
 Setting up libpsm2-2 (11.2.185-1) ...
 Setting up libopentest4j-java (1.2.0-3) ...
 Setting up openmpi-common (4.1.2-2ubuntu1) ...
-Setting up libpam-systemd:amd64 (249.11-0ubuntu3.10) ...
+Setting up libpam-systemd:amd64 (249.11-0ubuntu3.11) ...
 Setting up libmd4c0:amd64 (0.4.8-1) ...
 Setting up libjackson2-core-java (2.13.0-2) ...
 Setting up libc6-i386 (2.35-0ubuntu3.4) ...
@@ -8577,264 +8459,264 @@ Processing triggers for libgdk-pixbuf-2.0-0:amd64 (2.42.8+dfsg-1ubuntu0.2) ...
 + mkdir -p /tmp/downloads
 + cd /opt
 + wget -P /tmp/downloads -c https://github.com/alexdobin/STAR/archive/2.7.11a.tar.gz
---2023-10-25 18:36:50--  https://github.com/alexdobin/STAR/archive/2.7.11a.tar.gz
-Resolving github.com (github.com)... 140.82.121.3
-Connecting to github.com (github.com)|140.82.121.3|:443... connected.
+--2023-10-28 06:16:57--  https://github.com/alexdobin/STAR/archive/2.7.11a.tar.gz
+Resolving github.com (github.com)... 140.82.121.4
+Connecting to github.com (github.com)|140.82.121.4|:443... connected.
 HTTP request sent, awaiting response... 302 Found
 Location: https://codeload.github.com/alexdobin/STAR/tar.gz/refs/tags/2.7.11a [following]
---2023-10-25 18:36:50--  https://codeload.github.com/alexdobin/STAR/tar.gz/refs/tags/2.7.11a
+--2023-10-28 06:16:57--  https://codeload.github.com/alexdobin/STAR/tar.gz/refs/tags/2.7.11a
 Resolving codeload.github.com (codeload.github.com)... 140.82.121.9
 Connecting to codeload.github.com (codeload.github.com)|140.82.121.9|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: unspecified [application/x-gzip]
 Saving to: '/tmp/downloads/2.7.11a.tar.gz'
 
-     0K .......... .......... .......... .......... ..........  987K
-    50K .......... .......... .......... .......... .......... 1.92M
-   100K .......... .......... .......... .......... .......... 1.94M
-   150K .......... .......... .......... .......... .......... 63.4M
-   200K .......... .......... .......... .......... .......... 69.3M
-   250K .......... .......... .......... .......... .......... 84.2M
-   300K .......... .......... .......... .......... .......... 2.05M
-   350K .......... .......... .......... .......... ..........  102M
-   400K .......... .......... .......... .......... .......... 88.8M
-   450K .......... .......... .......... .......... ..........  953K
-   500K .......... .......... .......... .......... ..........  109M
-   550K .......... .......... .......... .......... ..........  117M
-   600K .......... .......... .......... .......... .......... 94.9M
-   650K .......... .......... .......... .......... .......... 92.8M
-   700K .......... .......... .......... .......... ..........  138M
-   750K .......... .......... .......... .......... ..........  514M
-   800K .......... .......... .......... .......... ..........  511M
-   850K .......... .......... .......... .......... ..........  423M
-   900K .......... .......... .......... .......... ..........  401M
-   950K .......... .......... .......... .......... ..........  423M
-  1000K .......... .......... .......... .......... ..........  393M
-  1050K .......... .......... .......... .......... ..........  407M
-  1100K .......... .......... .......... .......... ..........  367M
-  1150K .......... .......... .......... .......... .......... 2.63M
-  1200K .......... .......... .......... .......... .......... 24.1M
-  1250K .......... .......... .......... .......... ..........  180M
-  1300K .......... .......... .......... .......... .......... 2.66M
-  1350K .......... .......... .......... .......... .......... 7.98M
-  1400K .......... .......... .......... .......... .......... 5.83M
-  1450K .......... .......... .......... .......... .......... 8.50M
-  1500K .......... .......... .......... .......... .......... 8.94M
-  1550K .......... .......... .......... .......... .......... 6.35M
-  1600K .......... .......... .......... .......... .......... 7.44M
-  1650K .......... .......... .......... .......... .......... 8.94M
-  1700K .......... .......... .......... .......... .......... 10.3M
-  1750K .......... .......... .......... .......... .......... 4.55M
-  1800K .......... .......... .......... .......... .......... 9.77M
-  1850K .......... .......... .......... .......... .......... 11.5M
-  1900K .......... .......... .......... .......... .......... 8.47M
-  1950K .......... .......... .......... .......... .......... 5.17M
-  2000K .......... .......... .......... .......... .......... 10.2M
-  2050K .......... .......... .......... .......... .......... 23.2M
-  2100K .......... .......... .......... .......... .......... 5.73M
-  2150K .......... .......... .......... .......... .......... 6.40M
-  2200K .......... .......... .......... .......... .......... 19.4M
-  2250K .......... .......... .......... .......... .......... 5.16M
-  2300K .......... .......... .......... .......... .......... 7.00M
-  2350K .......... .......... .......... .......... .......... 7.75M
-  2400K .......... .......... .......... .......... .......... 10.2M
-  2450K .......... .......... .......... .......... .......... 6.62M
-  2500K .......... .......... .......... .......... .......... 7.44M
-  2550K .......... .......... .......... .......... .......... 5.63M
-  2600K .......... .......... .......... .......... .......... 17.4M
-  2650K .......... .......... .......... .......... .......... 3.43M
-  2700K .......... .......... .......... .......... .......... 5.88M
-  2750K .......... .......... .......... .......... .......... 5.16M
-  2800K .......... .......... .......... .......... .......... 9.79M
-  2850K .......... .......... .......... .......... .......... 7.16M
-  2900K .......... .......... .......... .......... .......... 9.21M
-  2950K .......... .......... .......... .......... .......... 8.16M
-  3000K .......... .......... .......... .......... .......... 7.70M
-  3050K .......... .......... .......... .......... .......... 14.9M
-  3100K .......... .......... .......... .......... .......... 5.32M
-  3150K .......... .......... .......... .......... .......... 6.63M
-  3200K .......... .......... .......... .......... .......... 5.48M
-  3250K .......... .......... .......... .......... .......... 9.27M
-  3300K .......... .......... .......... .......... .......... 10.1M
-  3350K .......... .......... .......... .......... .......... 9.54M
+     0K .......... .......... .......... .......... ..........  988K
+    50K .......... .......... .......... .......... .......... 1.93M
+   100K .......... .......... .......... .......... .......... 1.92M
+   150K .......... .......... .......... .......... .......... 86.4M
+   200K .......... .......... .......... .......... ..........  102M
+   250K .......... .......... .......... .......... .......... 2.00M
+   300K .......... .......... .......... .......... .......... 57.6M
+   350K .......... .......... .......... .......... .......... 65.8M
+   400K .......... .......... .......... .......... .......... 57.9M
+   450K .......... .......... .......... .......... .......... 1.02M
+   500K .......... .......... .......... .......... .......... 59.5M
+   550K .......... .......... .......... .......... .......... 73.0M
+   600K .......... .......... .......... .......... .......... 95.5M
+   650K .......... .......... .......... .......... .......... 30.2M
+   700K .......... .......... .......... .......... ..........  420M
+   750K .......... .......... .......... .......... .......... 2.29M
+   800K .......... .......... .......... .......... .......... 79.0M
+   850K .......... .......... .......... .......... .......... 94.0M
+   900K .......... .......... .......... .......... .......... 99.2M
+   950K .......... .......... .......... .......... ..........  120M
+  1000K .......... .......... .......... .......... ..........  268M
+  1050K .......... .......... .......... .......... .......... 2.00M
+  1100K .......... .......... .......... .......... .......... 44.5M
+  1150K .......... .......... .......... .......... .......... 70.0M
+  1200K .......... .......... .......... .......... .......... 75.3M
+  1250K .......... .......... .......... .......... .......... 75.7M
+  1300K .......... .......... .......... .......... .......... 79.8M
+  1350K .......... .......... .......... .......... ..........  102M
+  1400K .......... .......... .......... .......... .......... 46.8M
+  1450K .......... .......... .......... .......... .......... 2.56M
+  1500K .......... .......... .......... .......... .......... 90.4M
+  1550K .......... .......... .......... .......... .......... 74.3M
+  1600K .......... .......... .......... .......... .......... 30.9M
+  1650K .......... .......... .......... .......... .......... 2.23M
+  1700K .......... .......... .......... .......... .......... 67.1M
+  1750K .......... .......... .......... .......... ..........  140M
+  1800K .......... .......... .......... .......... .......... 30.8M
+  1850K .......... .......... .......... .......... .......... 12.6M
+  1900K .......... .......... .......... .......... .......... 2.55M
+  1950K .......... .......... .......... .......... .......... 86.5M
+  2000K .......... .......... .......... .......... .......... 62.7M
+  2050K .......... .......... .......... .......... .......... 34.1M
+  2100K .......... .......... .......... .......... .......... 2.18M
+  2150K .......... .......... .......... .......... .......... 74.7M
+  2200K .......... .......... .......... .......... .......... 81.0M
+  2250K .......... .......... .......... .......... .......... 37.2M
+  2300K .......... .......... .......... .......... .......... 14.9M
+  2350K .......... .......... .......... .......... .......... 2.52M
+  2400K .......... .......... .......... .......... .......... 87.3M
+  2450K .......... .......... .......... .......... .......... 74.9M
+  2500K .......... .......... .......... .......... .......... 11.7M
+  2550K .......... .......... .......... .......... .......... 2.49M
+  2600K .......... .......... .......... .......... .......... 78.1M
+  2650K .......... .......... .......... .......... .......... 81.4M
+  2700K .......... .......... .......... .......... .......... 37.2M
+  2750K .......... .......... .......... .......... .......... 4.64M
+  2800K .......... .......... .......... .......... .......... 3.88M
+  2850K .......... .......... .......... .......... .......... 83.8M
+  2900K .......... .......... .......... .......... .......... 13.9M
+  2950K .......... .......... .......... .......... .......... 10.9M
+  3000K .......... .......... .......... .......... .......... 2.94M
+  3050K .......... .......... .......... .......... .......... 77.2M
+  3100K .......... .......... .......... .......... .......... 16.6M
+  3150K .......... .......... .......... .......... .......... 6.78M
+  3200K .......... .......... .......... .......... .......... 5.68M
+  3250K .......... .......... .......... .......... .......... 7.61M
+  3300K .......... .......... .......... .......... .......... 13.1M
+  3350K .......... .......... .......... .......... .......... 10.6M
   3400K .......... .......... .......... .......... .......... 11.1M
-  3450K .......... .......... .......... .......... .......... 8.33M
-  3500K .......... .......... .......... .......... .......... 9.45M
-  3550K .......... .......... .......... .......... .......... 6.05M
-  3600K .......... .......... .......... .......... .......... 7.76M
-  3650K .......... .......... .......... .......... .......... 6.40M
-  3700K .......... .......... .......... .......... .......... 4.77M
-  3750K .......... .......... .......... .......... .......... 18.4M
-  3800K .......... .......... .......... .......... .......... 10.9M
-  3850K .......... .......... .......... .......... .......... 13.9M
-  3900K .......... .......... .......... .......... .......... 6.56M
-  3950K .......... .......... .......... .......... .......... 6.81M
-  4000K .......... .......... .......... .......... .......... 6.46M
-  4050K .......... .......... .......... .......... .......... 16.2M
-  4100K .......... .......... .......... .......... .......... 10.6M
-  4150K .......... .......... .......... .......... .......... 7.27M
-  4200K .......... .......... .......... .......... .......... 9.97M
-  4250K .......... .......... .......... .......... .......... 8.13M
-  4300K .......... .......... .......... .......... .......... 15.9M
-  4350K .......... .......... .......... .......... .......... 6.04M
-  4400K .......... .......... .......... .......... .......... 10.1M
-  4450K .......... .......... .......... .......... .......... 8.43M
-  4500K .......... .......... .......... .......... .......... 4.44M
-  4550K .......... .......... .......... .......... .......... 7.77M
-  4600K .......... .......... .......... .......... .......... 8.22M
-  4650K .......... .......... .......... .......... .......... 6.15M
-  4700K .......... .......... .......... .......... .......... 25.0M
-  4750K .......... .......... .......... .......... .......... 4.45M
-  4800K .......... .......... .......... .......... .......... 4.84M
-  4850K .......... .......... .......... .......... .......... 16.6M
-  4900K .......... .......... .......... .......... .......... 7.84M
-  4950K .......... .......... .......... .......... .......... 8.33M
-  5000K .......... .......... .......... .......... .......... 7.01M
-  5050K .......... .......... .......... .......... .......... 5.15M
-  5100K .......... .......... .......... .......... .......... 9.64M
-  5150K .......... .......... .......... .......... .......... 5.74M
-  5200K .......... .......... .......... .......... .......... 4.72M
-  5250K .......... .......... .......... .......... .......... 5.10M
-  5300K .......... .......... .......... .......... .......... 7.95M
-  5350K .......... .......... .......... .......... .......... 10.4M
-  5400K .......... .......... .......... .......... .......... 6.98M
-  5450K .......... .......... .......... .......... .......... 9.95M
-  5500K .......... .......... .......... .......... .......... 6.88M
-  5550K .......... .......... .......... .......... .......... 8.86M
-  5600K .......... .......... .......... .......... .......... 6.92M
-  5650K .......... .......... .......... .......... .......... 7.13M
-  5700K .......... .......... .......... .......... .......... 8.91M
-  5750K .......... .......... .......... .......... .......... 5.53M
-  5800K .......... .......... .......... .......... .......... 8.94M
-  5850K .......... .......... .......... .......... .......... 11.0M
-  5900K .......... .......... .......... .......... .......... 8.02M
-  5950K .......... .......... .......... .......... .......... 5.36M
-  6000K .......... .......... .......... .......... .......... 10.0M
-  6050K .......... .......... .......... .......... .......... 10.8M
-  6100K .......... .......... .......... .......... .......... 8.14M
-  6150K .......... .......... .......... .......... .......... 12.1M
-  6200K .......... .......... .......... .......... .......... 7.43M
-  6250K .......... .......... .......... .......... .......... 11.7M
-  6300K .......... .......... .......... .......... .......... 7.20M
-  6350K .......... .......... .......... .......... .......... 5.72M
-  6400K .......... .......... .......... .......... .......... 9.23M
-  6450K .......... .......... .......... .......... .......... 10.9M
-  6500K .......... .......... .......... .......... .......... 10.4M
-  6550K .......... .......... .......... .......... .......... 9.26M
-  6600K .......... .......... .......... .......... .......... 8.25M
-  6650K .......... .......... .......... .......... .......... 10.1M
-  6700K .......... .......... .......... .......... .......... 5.47M
-  6750K .......... .......... .......... .......... .......... 11.4M
-  6800K .......... .......... .......... .......... .......... 11.0M
-  6850K .......... .......... .......... .......... .......... 6.97M
-  6900K .......... .......... .......... .......... .......... 11.0M
-  6950K .......... .......... .......... .......... .......... 9.47M
-  7000K .......... .......... .......... .......... .......... 8.85M
-  7050K .......... .......... .......... .......... .......... 6.71M
-  7100K .......... .......... .......... .......... .......... 7.36M
-  7150K .......... .......... .......... .......... .......... 6.04M
-  7200K .......... .......... .......... .......... .......... 5.66M
-  7250K .......... .......... .......... .......... .......... 7.72M
-  7300K .......... .......... .......... .......... .......... 8.03M
-  7350K .......... .......... .......... .......... .......... 9.85M
-  7400K .......... .......... .......... .......... .......... 8.53M
-  7450K .......... .......... .......... .......... .......... 3.40M
-  7500K .......... .......... .......... .......... .......... 11.3M
-  7550K .......... .......... .......... .......... .......... 11.7M
-  7600K .......... .......... .......... .......... .......... 7.40M
-  7650K .......... .......... .......... .......... .......... 6.84M
-  7700K .......... .......... .......... .......... .......... 6.34M
-  7750K .......... .......... .......... .......... .......... 6.29M
-  7800K .......... .......... .......... .......... .......... 8.59M
-  7850K .......... .......... .......... .......... .......... 5.33M
-  7900K .......... .......... .......... .......... .......... 4.02M
-  7950K .......... .......... .......... .......... .......... 2.26M
-  8000K .......... .......... .......... .......... .......... 4.20M
-  8050K .......... .......... .......... .......... .......... 50.9M
-  8100K .......... .......... .......... .......... .......... 7.11M
-  8150K .......... .......... .......... .......... .......... 7.66M
-  8200K .......... .......... .......... .......... .......... 14.7M
-  8250K .......... .......... .......... .......... .......... 6.37M
-  8300K .......... .......... .......... .......... .......... 6.86M
-  8350K .......... .......... .......... .......... .......... 7.41M
-  8400K .......... .......... .......... .......... .......... 7.14M
-  8450K .......... .......... .......... .......... .......... 13.5M
-  8500K .......... .......... .......... .......... .......... 6.93M
-  8550K .......... .......... .......... .......... .......... 8.31M
-  8600K .......... .......... .......... .......... .......... 5.86M
+  3450K .......... .......... .......... .......... .......... 3.73M
+  3500K .......... .......... .......... .......... .......... 66.4M
+  3550K .......... .......... .......... .......... .......... 8.47M
+  3600K .......... .......... .......... .......... .......... 16.6M
+  3650K .......... .......... .......... .......... .......... 4.64M
+  3700K .......... .......... .......... .......... .......... 8.99M
+  3750K .......... .......... .......... .......... .......... 17.4M
+  3800K .......... .......... .......... .......... .......... 8.39M
+  3850K .......... .......... .......... .......... .......... 9.69M
+  3900K .......... .......... .......... .......... .......... 4.19M
+  3950K .......... .......... .......... .......... ..........  173M
+  4000K .......... .......... .......... .......... .......... 6.34M
+  4050K .......... .......... .......... .......... .......... 15.7M
+  4100K .......... .......... .......... .......... .......... 5.74M
+  4150K .......... .......... .......... .......... .......... 8.88M
+  4200K .......... .......... .......... .......... .......... 18.9M
+  4250K .......... .......... .......... .......... .......... 8.37M
+  4300K .......... .......... .......... .......... .......... 9.97M
+  4350K .......... .......... .......... .......... .......... 4.26M
+  4400K .......... .......... .......... .......... .......... 25.0M
+  4450K .......... .......... .......... .......... .......... 9.89M
+  4500K .......... .......... .......... .......... .......... 6.08M
+  4550K .......... .......... .......... .......... .......... 7.91M
+  4600K .......... .......... .......... .......... .......... 7.72M
+  4650K .......... .......... .......... .......... .......... 8.86M
+  4700K .......... .......... .......... .......... .......... 12.3M
+  4750K .......... .......... .......... .......... .......... 5.38M
+  4800K .......... .......... .......... .......... .......... 4.06M
+  4850K .......... .......... .......... .......... .......... 18.1M
+  4900K .......... .......... .......... .......... .......... 7.69M
+  4950K .......... .......... .......... .......... .......... 8.09M
+  5000K .......... .......... .......... .......... .......... 7.33M
+  5050K .......... .......... .......... .......... .......... 7.10M
+  5100K .......... .......... .......... .......... .......... 6.61M
+  5150K .......... .......... .......... .......... .......... 5.85M
+  5200K .......... .......... .......... .......... .......... 4.79M
+  5250K .......... .......... .......... .......... .......... 4.83M
+  5300K .......... .......... .......... .......... .......... 10.4M
+  5350K .......... .......... .......... .......... .......... 9.82M
+  5400K .......... .......... .......... .......... .......... 7.78M
+  5450K .......... .......... .......... .......... .......... 5.55M
+  5500K .......... .......... .......... .......... .......... 27.8M
+  5550K .......... .......... .......... .......... .......... 6.78M
+  5600K .......... .......... .......... .......... .......... 6.69M
+  5650K .......... .......... .......... .......... .......... 7.11M
+  5700K .......... .......... .......... .......... .......... 10.9M
+  5750K .......... .......... .......... .......... .......... 5.40M
+  5800K .......... .......... .......... .......... .......... 8.79M
+  5850K .......... .......... .......... .......... .......... 8.91M
+  5900K .......... .......... .......... .......... .......... 9.87M
+  5950K .......... .......... .......... .......... .......... 5.50M
+  6000K .......... .......... .......... .......... .......... 7.78M
+  6050K .......... .......... .......... .......... .......... 16.4M
+  6100K .......... .......... .......... .......... .......... 7.45M
+  6150K .......... .......... .......... .......... .......... 9.40M
+  6200K .......... .......... .......... .......... .......... 10.0M
+  6250K .......... .......... .......... .......... .......... 8.13M
+  6300K .......... .......... .......... .......... .......... 10.7M
+  6350K .......... .......... .......... .......... .......... 5.53M
+  6400K .......... .......... .......... .......... .......... 9.71M
+  6450K .......... .......... .......... .......... .......... 11.3M
+  6500K .......... .......... .......... .......... .......... 9.66M
+  6550K .......... .......... .......... .......... .......... 7.74M
+  6600K .......... .......... .......... .......... .......... 9.21M
+  6650K .......... .......... .......... .......... .......... 10.5M
+  6700K .......... .......... .......... .......... .......... 5.23M
+  6750K .......... .......... .......... .......... .......... 12.3M
+  6800K .......... .......... .......... .......... .......... 7.70M
+  6850K .......... .......... .......... .......... .......... 9.36M
+  6900K .......... .......... .......... .......... .......... 10.7M
+  6950K .......... .......... .......... .......... .......... 8.85M
+  7000K .......... .......... .......... .......... .......... 12.7M
+  7050K .......... .......... .......... .......... .......... 6.15M
+  7100K .......... .......... .......... .......... .......... 11.1M
+  7150K .......... .......... .......... .......... .......... 5.54M
+  7200K .......... .......... .......... .......... .......... 5.88M
+  7250K .......... .......... .......... .......... .......... 8.19M
+  7300K .......... .......... .......... .......... .......... 8.15M
+  7350K .......... .......... .......... .......... .......... 9.67M
+  7400K .......... .......... .......... .......... .......... 8.74M
+  7450K .......... .......... .......... .......... .......... 5.58M
+  7500K .......... .......... .......... .......... .......... 8.44M
+  7550K .......... .......... .......... .......... .......... 6.66M
+  7600K .......... .......... .......... .......... .......... 6.92M
+  7650K .......... .......... .......... .......... .......... 7.06M
+  7700K .......... .......... .......... .......... .......... 7.22M
+  7750K .......... .......... .......... .......... .......... 6.50M
+  7800K .......... .......... .......... .......... .......... 8.29M
+  7850K .......... .......... .......... .......... .......... 4.91M
+  7900K .......... .......... .......... .......... .......... 4.06M
+  7950K .......... .......... .......... .......... .......... 2.23M
+  8000K .......... .......... .......... .......... .......... 7.51M
+  8050K .......... .......... .......... .......... .......... 9.03M
+  8100K .......... .......... .......... .......... .......... 7.51M
+  8150K .......... .......... .......... .......... .......... 7.70M
+  8200K .......... .......... .......... .......... .......... 15.9M
+  8250K .......... .......... .......... .......... .......... 7.04M
+  8300K .......... .......... .......... .......... .......... 9.08M
+  8350K .......... .......... .......... .......... .......... 5.41M
+  8400K .......... .......... .......... .......... .......... 6.36M
+  8450K .......... .......... .......... .......... .......... 15.7M
+  8500K .......... .......... .......... .......... .......... 6.86M
+  8550K .......... .......... .......... .......... .......... 8.21M
+  8600K .......... .......... .......... .......... .......... 6.12M
   8650K .......... .......... .......... .......... .......... 10.7M
-  8700K .......... .......... .......... .......... .......... 11.1M
-  8750K .......... .......... .......... .......... .......... 9.72M
-  8800K .......... .......... .......... .......... .......... 8.40M
-  8850K .......... .......... .......... .......... .......... 7.55M
-  8900K .......... .......... .......... .......... .......... 7.43M
-  8950K .......... .......... .......... .......... .......... 5.67M
-  9000K .......... .......... .......... .......... .......... 7.56M
-  9050K .......... .......... .......... .......... .......... 18.7M
-  9100K .......... .......... .......... .......... .......... 4.88M
-  9150K .......... .......... .......... .......... .......... 4.36M
-  9200K .......... .......... .......... .......... .......... 8.19M
-  9250K .......... .......... .......... .......... .......... 5.45M
-  9300K .......... .......... .......... .......... .......... 50.6M
-  9350K .......... .......... .......... .......... .......... 8.96M
-  9400K .......... .......... .......... .......... .......... 4.81M
-  9450K .......... .......... .......... .......... .......... 7.93M
-  9500K .......... .......... .......... .......... .......... 5.02M
-  9550K .......... .......... .......... .......... .......... 2.02M
-  9600K .......... .......... .......... .......... .......... 7.69M
-  9650K .......... .......... .......... .......... .......... 9.72M
-  9700K .......... .......... .......... .......... .......... 5.49M
-  9750K .......... .......... .......... .......... .......... 5.37M
-  9800K .......... .......... .......... .......... .......... 9.52M
-  9850K .......... .......... .......... .......... .......... 9.14M
-  9900K .......... .......... .......... .......... .......... 28.1M
-  9950K .......... .......... .......... .......... .......... 4.48M
- 10000K .......... .......... .......... .......... .......... 14.2M
- 10050K .......... .......... .......... .......... .......... 4.56M
- 10100K .......... .......... .......... .......... .......... 8.55M
- 10150K .......... .......... .......... .......... .......... 11.7M
- 10200K .......... .......... .......... .......... .......... 9.48M
- 10250K .......... .......... .......... .......... .......... 11.3M
- 10300K .......... .......... .......... .......... .......... 11.6M
- 10350K .......... .......... .......... .......... .......... 9.07M
- 10400K .......... .......... .......... .......... .......... 6.28M
- 10450K .......... .......... .......... .......... .......... 9.85M
- 10500K .......... .......... .......... .......... .......... 8.28M
- 10550K .......... .......... .......... .......... .......... 5.89M
- 10600K .......... .......... .......... .......... .......... 7.69M
- 10650K .......... .......... .......... .......... .......... 8.94M
- 10700K .......... .......... .......... .......... .......... 5.85M
- 10750K .......... .......... .......... .......... .......... 4.48M
- 10800K .......... .......... .......... .......... .......... 6.38M
- 10850K .......... .......... .......... .......... .......... 11.0M
- 10900K .......... .......... .......... .......... .......... 12.9M
- 10950K .......... .......... .......... .......... .......... 7.97M
- 11000K .......... .......... .......... .......... .......... 5.65M
- 11050K .......... .......... .......... .......... .......... 5.96M
- 11100K .......... .......... .......... .......... .......... 5.52M
- 11150K .......... .......... .......... .......... .......... 8.31M
- 11200K .......... .......... .......... .......... .......... 43.7M
- 11250K .......... .......... .......... .......... .......... 38.4M
- 11300K .......... .......... .......... .......... .......... 6.27M
- 11350K .......... .......... .......... .......... .......... 5.62M
- 11400K .......... .......... .......... .......... .......... 8.00M
- 11450K .......... .......... .......... .......... .......... 32.2M
- 11500K .......... .......... .......... .......... .......... 35.7M
- 11550K .......... .......... .......... .......... .......... 7.60M
- 11600K .......... .......... .......... .......... .......... 5.13M
- 11650K .......... .......... .......... .......... .......... 8.15M
- 11700K .......... .......... .......... .......... .......... 31.1M
- 11750K .......... .......... .......... .......... .......... 11.7M
- 11800K .......... .......... .......... .......... .......... 6.75M
- 11850K .......... .......... .......... .......... .......... 6.95M
- 11900K .......... .......... .......... .......... .......... 6.03M
- 11950K .......... .......... .......... .......... .......... 7.23M
- 12000K .......... .......... .......... .......... .......... 5.13M
- 12050K .......... .......... .......... .......... .......... 5.99M
- 12100K .......... .......... .......... .......... .......... 25.9M
- 12150K .......... .......... .                                6.60M=1.6s
+  8700K .......... .......... .......... .......... .......... 10.2M
+  8750K .......... .......... .......... .......... .......... 6.33M
+  8800K .......... .......... .......... .......... .......... 12.7M
+  8850K .......... .......... .......... .......... .......... 10.2M
+  8900K .......... .......... .......... .......... .......... 7.34M
+  8950K .......... .......... .......... .......... .......... 5.63M
+  9000K .......... .......... .......... .......... .......... 7.54M
+  9050K .......... .......... .......... .......... .......... 21.6M
+  9100K .......... .......... .......... .......... .......... 4.87M
+  9150K .......... .......... .......... .......... .......... 4.64M
+  9200K .......... .......... .......... .......... .......... 7.63M
+  9250K .......... .......... .......... .......... .......... 15.1M
+  9300K .......... .......... .......... .......... .......... 8.94M
+  9350K .......... .......... .......... .......... .......... 5.78M
+  9400K .......... .......... .......... .......... .......... 5.44M
+  9450K .......... .......... .......... .......... .......... 10.6M
+  9500K .......... .......... .......... .......... .......... 5.22M
+  9550K .......... .......... .......... .......... .......... 2.03M
+  9600K .......... .......... .......... .......... .......... 7.78M
+  9650K .......... .......... .......... .......... .......... 8.90M
+  9700K .......... .......... .......... .......... .......... 7.57M
+  9750K .......... .......... .......... .......... .......... 8.68M
+  9800K .......... .......... .......... .......... .......... 4.78M
+  9850K .......... .......... .......... .......... .......... 9.34M
+  9900K .......... .......... .......... .......... .......... 63.0M
+  9950K .......... .......... .......... .......... .......... 4.04M
+ 10000K .......... .......... .......... .......... .......... 19.6M
+ 10050K .......... .......... .......... .......... .......... 4.46M
+ 10100K .......... .......... .......... .......... .......... 8.79M
+ 10150K .......... .......... .......... .......... .......... 8.31M
+ 10200K .......... .......... .......... .......... .......... 17.4M
+ 10250K .......... .......... .......... .......... .......... 8.22M
+ 10300K .......... .......... .......... .......... .......... 9.69M
+ 10350K .......... .......... .......... .......... .......... 8.53M
+ 10400K .......... .......... .......... .......... .......... 8.54M
+ 10450K .......... .......... .......... .......... .......... 3.46M
+ 10500K .......... .......... .......... .......... .......... 51.1M
+ 10550K .......... .......... .......... .......... .......... 15.1M
+ 10600K .......... .......... .......... .......... .......... 8.62M
+ 10650K .......... .......... .......... .......... .......... 8.87M
+ 10700K .......... .......... .......... .......... .......... 4.92M
+ 10750K .......... .......... .......... .......... .......... 5.41M
+ 10800K .......... .......... .......... .......... .......... 6.24M
+ 10850K .......... .......... .......... .......... .......... 12.1M
+ 10900K .......... .......... .......... .......... .......... 13.9M
+ 10950K .......... .......... .......... .......... .......... 5.85M
+ 11000K .......... .......... .......... .......... .......... 7.81M
+ 11050K .......... .......... .......... .......... .......... 5.69M
+ 11100K .......... .......... .......... .......... .......... 5.68M
+ 11150K .......... .......... .......... .......... .......... 9.99M
+ 11200K .......... .......... .......... .......... .......... 23.3M
+ 11250K .......... .......... .......... .......... .......... 18.2M
+ 11300K .......... .......... .......... .......... .......... 5.18M
+ 11350K .......... .......... .......... .......... .......... 5.96M
+ 11400K .......... .......... .......... .......... .......... 17.0M
+ 11450K .......... .......... .......... .......... .......... 22.0M
+ 11500K .......... .......... .......... .......... .......... 20.7M
+ 11550K .......... .......... .......... .......... .......... 5.04M
+ 11600K .......... .......... .......... .......... .......... 6.04M
+ 11650K .......... .......... .......... .......... .......... 29.4M
+ 11700K .......... .......... .......... .......... .......... 15.4M
+ 11750K .......... .......... .......... .......... .......... 17.8M
+ 11800K .......... .......... .......... .......... .......... 4.96M
+ 11850K .......... .......... .......... .......... .......... 8.14M
+ 11900K .......... .......... .......... .......... .......... 7.39M
+ 11950K .......... .......... .......... .......... .......... 4.26M
+ 12000K .......... .......... .......... .......... .......... 11.8M
+ 12050K .......... .......... .......... .......... .......... 6.45M
+ 12100K .......... .......... .......... .......... .......... 20.3M
+ 12150K .......... .......... .                                13.5M=1.6s
 
-2023-10-25 18:36:52 (7.26 MB/s) - '/tmp/downloads/2.7.11a.tar.gz' saved [12463429]
+2023-10-28 06:16:59 (7.49 MB/s) - '/tmp/downloads/2.7.11a.tar.gz' saved [12463429]
 
 + tar -xzf /tmp/downloads/2.7.11a.tar.gz
 + cd STAR-2.7.11a/source
@@ -8915,7 +8797,6 @@ cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/cram_samtools.o cram/cram_samtools.
 cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/cram_stats.o cram/cram_stats.c
 cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/files.o cram/files.c
 cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/mFILE.o cram/mFILE.c
-cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/md5.o cram/md5.c
 cram/cram_io.c: In function 'cram_populate_ref':
 cram/cram_io.c:1529:34: warning: '.tmp_' directive writing 5 bytes into a region of size between 1 and 4096 [-Wformat-overflow=]
  1529 |             sprintf(path_tmp, "%s.tmp_%d", path, /*getpid(),*/ i);
@@ -8932,6 +8813,7 @@ In file included from /usr/include/stdio.h:894,
       |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    40 |                                   __va_arg_pack ());
       |                                   ~~~~~~~~~~~~~~~~~
+cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/md5.o cram/md5.c
 cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/open_trace_file.o cram/open_trace_file.c
 cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/pooled_alloc.o cram/pooled_alloc.c
 cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/sam_header.o cram/sam_header.c
@@ -8944,21 +8826,6 @@ cram/sam_header.c: In function 'sam_hdr_vadd':
 cram/sam_header.c:449:16: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
   449 |         assert(p->next = t);
       |                ^
-cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/string_alloc.o cram/string_alloc.c
-In file included from /usr/include/string.h:535,
-                 from cram/string_alloc.c:39:
-In function 'strncpy',
-    inlined from 'string_ndup' at cram/string_alloc.c:149:5,
-    inlined from 'string_dup' at cram/string_alloc.c:141:12:
-/usr/include/x86_64-linux-gnu/bits/string_fortified.h:95:10: warning: '__builtin_strncpy' output truncated before terminating nul copying as many bytes from a string as its length [-Wstringop-truncation]
-   95 |   return __builtin___strncpy_chk (__dest, __src, __len,
-      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   96 |                                   __glibc_objsize (__dest));
-      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~
-cram/string_alloc.c: In function 'string_dup':
-cram/string_alloc.c:141:12: note: length computed here
-  141 |     return string_ndup(a_str, instr, strlen(instr));
-      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In file included from /usr/include/string.h:535,
                  from cram/cram_io.c:55:
 In function 'strncpy',
@@ -8977,8 +8844,7 @@ In function 'strncpy',
       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    96 |                                   __glibc_objsize (__dest));
       |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~
-cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/thread_pool.o cram/thread_pool.c
-cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/vlen.o cram/vlen.c
+cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/string_alloc.o cram/string_alloc.c
 In function 'strncpy',
     inlined from 'cram_dopen' at cram/cram_io.c:3291:2:
 /usr/include/x86_64-linux-gnu/bits/string_fortified.h:95:10: warning: '__builtin_strncpy' specified bound 20 equals destination size [-Wstringop-truncation]
@@ -8986,6 +8852,22 @@ In function 'strncpy',
       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    96 |                                   __glibc_objsize (__dest));
       |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~
+cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/thread_pool.o cram/thread_pool.c
+In file included from /usr/include/string.h:535,
+                 from cram/string_alloc.c:39:
+In function 'strncpy',
+    inlined from 'string_ndup' at cram/string_alloc.c:149:5,
+    inlined from 'string_dup' at cram/string_alloc.c:141:12:
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:95:10: warning: '__builtin_strncpy' output truncated before terminating nul copying as many bytes from a string as its length [-Wstringop-truncation]
+   95 |   return __builtin___strncpy_chk (__dest, __src, __len,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   96 |                                   __glibc_objsize (__dest));
+      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~
+cram/string_alloc.c: In function 'string_dup':
+cram/string_alloc.c:141:12: note: length computed here
+  141 |     return string_ndup(a_str, instr, strlen(instr));
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc -g -Wall -O2  -I. -DSAMTOOLS=1 -c -o cram/vlen.o cram/vlen.c
 cram/vlen.c: In function 'vflen':
 cram/vlen.c:121:9: warning: variable 'i' set but not used [-Wunused-but-set-variable]
   121 |     int i;
@@ -9002,51 +8884,52 @@ make[1]: Leaving directory '/opt/STAR-2.7.11a/source/htslib'
 echo BAMbinSortByCoordinate.cpp BAMbinSortUnmapped.cpp BAMfunctions.cpp BAMoutput.cpp Chain.cpp ChimericAlign.cpp ChimericAlign_chimericBAMoutput.cpp ChimericAlign_chimericJunctionOutput.cpp ChimericAlign_chimericStitching.cpp ChimericDetection.cpp ChimericDetection_chimericDetectionMult.cpp ChimericSegment.cpp ClipCR4.cpp ClipMate_clip.cpp ClipMate_clipChunk.cpp ClipMate_initialize.cpp ErrorWarning.cpp GTF.cpp GTF_superTranscript.cpp GTF_transcriptGeneSJ.cpp Genome.cpp Genome_genomeGenerate.cpp Genome_genomeLoad.cpp Genome_genomeOutLoad.cpp Genome_insertSequences.cpp Genome_transformGenome.cpp GlobalVariables.cpp InOutStreams.cpp OutSJ.cpp PackedArray.cpp Parameters.cpp ParametersChimeric_initialize.cpp ParametersClip_initialize.cpp ParametersGenome.cpp ParametersSolo.cpp Parameters_closeReadsFiles.cpp Parameters_openReadsFiles.cpp Parameters_readFilesInit.cpp Parameters_readSAMheader.cpp Parameters_samAttributes.cpp Quantifications.cpp ReadAlign.cpp ReadAlignChunk.cpp ReadAlignChunk_mapChunk.cpp ReadAlignChunk_processChunks.cpp ReadAlign_CIGAR.cpp ReadAlign_alignBAM.cpp ReadAlign_assignAlignToWindow.cpp ReadAlign_calcCIGAR.cpp ReadAlign_chimericDetection.cpp ReadAlign_chimericDetectionOld.cpp ReadAlign_chimericDetectionOldOutput.cpp ReadAlign_chimericDetectionPEmerged.cpp ReadAlign_createExtendWindowsWithAlign.cpp ReadAlign_mapOneRead.cpp ReadAlign_mapOneReadSpliceGraph.cpp ReadAlign_mappedFilter.cpp ReadAlign_maxMappableLength2strands.cpp ReadAlign_multMapSelect.cpp ReadAlign_oneRead.cpp ReadAlign_outputAlignments.cpp ReadAlign_outputSpliceGraphSAM.cpp ReadAlign_outputTranscriptCIGARp.cpp ReadAlign_outputTranscriptSAM.cpp ReadAlign_outputTranscriptSJ.cpp ReadAlign_outputVariation.cpp ReadAlign_peOverlapMergeMap.cpp ReadAlign_quantTranscriptome.cpp ReadAlign_stitchPieces.cpp ReadAlign_stitchWindowSeeds.cpp ReadAlign_storeAligns.cpp ReadAlign_transformGenome.cpp ReadAlign_waspMap.cpp STAR.cpp SequenceFuns.cpp SharedMemory.cpp Solo.cpp SoloBarcode.cpp SoloBarcode_extractBarcode.cpp SoloFeature.cpp SoloFeature_addBAMtags.cpp SoloFeature_cellFiltering.cpp SoloFeature_collapseUMI_Graph.cpp SoloFeature_collapseUMIall.cpp SoloFeature_countCBgeneUMI.cpp SoloFeature_countSmartSeq.cpp SoloFeature_countVelocyto.cpp SoloFeature_emptyDrops_CR.cpp SoloFeature_loadRawMatrix.cpp SoloFeature_outputResults.cpp SoloFeature_processRecords.cpp SoloFeature_quantTranscript.cpp SoloFeature_redistributeReadsByCB.cpp SoloFeature_statsOutput.cpp SoloFeature_sumThreads.cpp SoloRead.cpp SoloReadBarcode.cpp SoloReadBarcode_getCBandUMI.cpp SoloReadFeature.cpp SoloReadFeature_inputRecords.cpp SoloReadFeature_record.cpp SoloRead_record.cpp SpliceGraph.cpp SpliceGraph_findSuperTr.cpp SpliceGraph_swScoreSpliced.cpp SpliceGraph_swTraceBack.cpp Stats.cpp SuffixArrayFuns.cpp SuperTranscriptome.cpp ThreadControl.cpp TimeFunctions.cpp Transcript.cpp Transcript_alignScore.cpp Transcript_convertGenomeCigar.cpp Transcript_generateCigarP.cpp Transcript_transformGenome.cpp Transcript_variationAdjust.cpp Transcript_variationOutput.cpp Transcriptome.cpp Transcriptome_alignExonOverlap.cpp Transcriptome_classifyAlign.cpp Transcriptome_geneCountsAddAlign.cpp Transcriptome_geneFullAlignOverlap.cpp Transcriptome_geneFullAlignOverlap_ExonOverIntron.cpp Transcriptome_quantAlign.cpp Variation.cpp bamRemoveDuplicates.cpp bamSortByCoordinate.cpp binarySearch2.cpp blocksOverlap.cpp extendAlign.cpp funCompareUintAndSuffixes.cpp funCompareUintAndSuffixesMemcmp.cpp funPrimaryAlignMark.cpp genomeParametersWrite.cpp genomeSAindex.cpp genomeScanFastaFiles.cpp insertSeqSA.cpp mapThreadsSpawn.cpp outputSJ.cpp readLoad.cpp samHeaders.cpp serviceFuns.cpp signalFromBAM.cpp sjAlignSplit.cpp sjdbBuildIndex.cpp sjdbInsertJunctions.cpp sjdbLoadFromFiles.cpp sjdbLoadFromStream.cpp sjdbPrepare.cpp soloInputFeatureUMI.cpp stitchAlignToTranscript.cpp stitchGapIndel.cpp stitchWindowAligns.cpp streamFuns.cpp stringSubstituteAll.cpp sysRemoveDir.cpp systemFunctions.cpp twoPassRunPass1.cpp bam_cat.c
 BAMbinSortByCoordinate.cpp BAMbinSortUnmapped.cpp BAMfunctions.cpp BAMoutput.cpp Chain.cpp ChimericAlign.cpp ChimericAlign_chimericBAMoutput.cpp ChimericAlign_chimericJunctionOutput.cpp ChimericAlign_chimericStitching.cpp ChimericDetection.cpp ChimericDetection_chimericDetectionMult.cpp ChimericSegment.cpp ClipCR4.cpp ClipMate_clip.cpp ClipMate_clipChunk.cpp ClipMate_initialize.cpp ErrorWarning.cpp GTF.cpp GTF_superTranscript.cpp GTF_transcriptGeneSJ.cpp Genome.cpp Genome_genomeGenerate.cpp Genome_genomeLoad.cpp Genome_genomeOutLoad.cpp Genome_insertSequences.cpp Genome_transformGenome.cpp GlobalVariables.cpp InOutStreams.cpp OutSJ.cpp PackedArray.cpp Parameters.cpp ParametersChimeric_initialize.cpp ParametersClip_initialize.cpp ParametersGenome.cpp ParametersSolo.cpp Parameters_closeReadsFiles.cpp Parameters_openReadsFiles.cpp Parameters_readFilesInit.cpp Parameters_readSAMheader.cpp Parameters_samAttributes.cpp Quantifications.cpp ReadAlign.cpp ReadAlignChunk.cpp ReadAlignChunk_mapChunk.cpp ReadAlignChunk_processChunks.cpp ReadAlign_CIGAR.cpp ReadAlign_alignBAM.cpp ReadAlign_assignAlignToWindow.cpp ReadAlign_calcCIGAR.cpp ReadAlign_chimericDetection.cpp ReadAlign_chimericDetectionOld.cpp ReadAlign_chimericDetectionOldOutput.cpp ReadAlign_chimericDetectionPEmerged.cpp ReadAlign_createExtendWindowsWithAlign.cpp ReadAlign_mapOneRead.cpp ReadAlign_mapOneReadSpliceGraph.cpp ReadAlign_mappedFilter.cpp ReadAlign_maxMappableLength2strands.cpp ReadAlign_multMapSelect.cpp ReadAlign_oneRead.cpp ReadAlign_outputAlignments.cpp ReadAlign_outputSpliceGraphSAM.cpp ReadAlign_outputTranscriptCIGARp.cpp ReadAlign_outputTranscriptSAM.cpp ReadAlign_outputTranscriptSJ.cpp ReadAlign_outputVariation.cpp ReadAlign_peOverlapMergeMap.cpp ReadAlign_quantTranscriptome.cpp ReadAlign_stitchPieces.cpp ReadAlign_stitchWindowSeeds.cpp ReadAlign_storeAligns.cpp ReadAlign_transformGenome.cpp ReadAlign_waspMap.cpp STAR.cpp SequenceFuns.cpp SharedMemory.cpp Solo.cpp SoloBarcode.cpp SoloBarcode_extractBarcode.cpp SoloFeature.cpp SoloFeature_addBAMtags.cpp SoloFeature_cellFiltering.cpp SoloFeature_collapseUMI_Graph.cpp SoloFeature_collapseUMIall.cpp SoloFeature_countCBgeneUMI.cpp SoloFeature_countSmartSeq.cpp SoloFeature_countVelocyto.cpp SoloFeature_emptyDrops_CR.cpp SoloFeature_loadRawMatrix.cpp SoloFeature_outputResults.cpp SoloFeature_processRecords.cpp SoloFeature_quantTranscript.cpp SoloFeature_redistributeReadsByCB.cpp SoloFeature_statsOutput.cpp SoloFeature_sumThreads.cpp SoloRead.cpp SoloReadBarcode.cpp SoloReadBarcode_getCBandUMI.cpp SoloReadFeature.cpp SoloReadFeature_inputRecords.cpp SoloReadFeature_record.cpp SoloRead_record.cpp SpliceGraph.cpp SpliceGraph_findSuperTr.cpp SpliceGraph_swScoreSpliced.cpp SpliceGraph_swTraceBack.cpp Stats.cpp SuffixArrayFuns.cpp SuperTranscriptome.cpp ThreadControl.cpp TimeFunctions.cpp Transcript.cpp Transcript_alignScore.cpp Transcript_convertGenomeCigar.cpp Transcript_generateCigarP.cpp Transcript_transformGenome.cpp Transcript_variationAdjust.cpp Transcript_variationOutput.cpp Transcriptome.cpp Transcriptome_alignExonOverlap.cpp Transcriptome_classifyAlign.cpp Transcriptome_geneCountsAddAlign.cpp Transcriptome_geneFullAlignOverlap.cpp Transcriptome_geneFullAlignOverlap_ExonOverIntron.cpp Transcriptome_quantAlign.cpp Variation.cpp bamRemoveDuplicates.cpp bamSortByCoordinate.cpp binarySearch2.cpp blocksOverlap.cpp extendAlign.cpp funCompareUintAndSuffixes.cpp funCompareUintAndSuffixesMemcmp.cpp funPrimaryAlignMark.cpp genomeParametersWrite.cpp genomeSAindex.cpp genomeScanFastaFiles.cpp insertSeqSA.cpp mapThreadsSpawn.cpp outputSJ.cpp readLoad.cpp samHeaders.cpp serviceFuns.cpp signalFromBAM.cpp sjAlignSplit.cpp sjdbBuildIndex.cpp sjdbInsertJunctions.cpp sjdbLoadFromFiles.cpp sjdbLoadFromStream.cpp sjdbPrepare.cpp soloInputFeatureUMI.cpp stitchAlignToTranscript.cpp stitchGapIndel.cpp stitchWindowAligns.cpp streamFuns.cpp stringSubstituteAll.cpp sysRemoveDir.cpp systemFunctions.cpp twoPassRunPass1.cpp bam_cat.c
 'rm' -f ./Depend.list
-g++ -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:36:52+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -MM BAMbinSortByCoordinate.cpp BAMbinSortUnmapped.cpp BAMfunctions.cpp BAMoutput.cpp Chain.cpp ChimericAlign.cpp ChimericAlign_chimericBAMoutput.cpp ChimericAlign_chimericJunctionOutput.cpp ChimericAlign_chimericStitching.cpp ChimericDetection.cpp ChimericDetection_chimericDetectionMult.cpp ChimericSegment.cpp ClipCR4.cpp ClipMate_clip.cpp ClipMate_clipChunk.cpp ClipMate_initialize.cpp ErrorWarning.cpp GTF.cpp GTF_superTranscript.cpp GTF_transcriptGeneSJ.cpp Genome.cpp Genome_genomeGenerate.cpp Genome_genomeLoad.cpp Genome_genomeOutLoad.cpp Genome_insertSequences.cpp Genome_transformGenome.cpp GlobalVariables.cpp InOutStreams.cpp OutSJ.cpp PackedArray.cpp Parameters.cpp ParametersChimeric_initialize.cpp ParametersClip_initialize.cpp ParametersGenome.cpp ParametersSolo.cpp Parameters_closeReadsFiles.cpp Parameters_openReadsFiles.cpp Parameters_readFilesInit.cpp Parameters_readSAMheader.cpp Parameters_samAttributes.cpp Quantifications.cpp ReadAlign.cpp ReadAlignChunk.cpp ReadAlignChunk_mapChunk.cpp ReadAlignChunk_processChunks.cpp ReadAlign_CIGAR.cpp ReadAlign_alignBAM.cpp ReadAlign_assignAlignToWindow.cpp ReadAlign_calcCIGAR.cpp ReadAlign_chimericDetection.cpp ReadAlign_chimericDetectionOld.cpp ReadAlign_chimericDetectionOldOutput.cpp ReadAlign_chimericDetectionPEmerged.cpp ReadAlign_createExtendWindowsWithAlign.cpp ReadAlign_mapOneRead.cpp ReadAlign_mapOneReadSpliceGraph.cpp ReadAlign_mappedFilter.cpp ReadAlign_maxMappableLength2strands.cpp ReadAlign_multMapSelect.cpp ReadAlign_oneRead.cpp ReadAlign_outputAlignments.cpp ReadAlign_outputSpliceGraphSAM.cpp ReadAlign_outputTranscriptCIGARp.cpp ReadAlign_outputTranscriptSAM.cpp ReadAlign_outputTranscriptSJ.cpp ReadAlign_outputVariation.cpp ReadAlign_peOverlapMergeMap.cpp ReadAlign_quantTranscriptome.cpp ReadAlign_stitchPieces.cpp ReadAlign_stitchWindowSeeds.cpp ReadAlign_storeAligns.cpp ReadAlign_transformGenome.cpp ReadAlign_waspMap.cpp STAR.cpp SequenceFuns.cpp SharedMemory.cpp Solo.cpp SoloBarcode.cpp SoloBarcode_extractBarcode.cpp SoloFeature.cpp SoloFeature_addBAMtags.cpp SoloFeature_cellFiltering.cpp SoloFeature_collapseUMI_Graph.cpp SoloFeature_collapseUMIall.cpp SoloFeature_countCBgeneUMI.cpp SoloFeature_countSmartSeq.cpp SoloFeature_countVelocyto.cpp SoloFeature_emptyDrops_CR.cpp SoloFeature_loadRawMatrix.cpp SoloFeature_outputResults.cpp SoloFeature_processRecords.cpp SoloFeature_quantTranscript.cpp SoloFeature_redistributeReadsByCB.cpp SoloFeature_statsOutput.cpp SoloFeature_sumThreads.cpp SoloRead.cpp SoloReadBarcode.cpp SoloReadBarcode_getCBandUMI.cpp SoloReadFeature.cpp SoloReadFeature_inputRecords.cpp SoloReadFeature_record.cpp SoloRead_record.cpp SpliceGraph.cpp SpliceGraph_findSuperTr.cpp SpliceGraph_swScoreSpliced.cpp SpliceGraph_swTraceBack.cpp Stats.cpp SuffixArrayFuns.cpp SuperTranscriptome.cpp ThreadControl.cpp TimeFunctions.cpp Transcript.cpp Transcript_alignScore.cpp Transcript_convertGenomeCigar.cpp Transcript_generateCigarP.cpp Transcript_transformGenome.cpp Transcript_variationAdjust.cpp Transcript_variationOutput.cpp Transcriptome.cpp Transcriptome_alignExonOverlap.cpp Transcriptome_classifyAlign.cpp Transcriptome_geneCountsAddAlign.cpp Transcriptome_geneFullAlignOverlap.cpp Transcriptome_geneFullAlignOverlap_ExonOverIntron.cpp Transcriptome_quantAlign.cpp Variation.cpp bamRemoveDuplicates.cpp bamSortByCoordinate.cpp binarySearch2.cpp blocksOverlap.cpp extendAlign.cpp funCompareUintAndSuffixes.cpp funCompareUintAndSuffixesMemcmp.cpp funPrimaryAlignMark.cpp genomeParametersWrite.cpp genomeSAindex.cpp genomeScanFastaFiles.cpp insertSeqSA.cpp mapThreadsSpawn.cpp outputSJ.cpp readLoad.cpp samHeaders.cpp serviceFuns.cpp signalFromBAM.cpp sjAlignSplit.cpp sjdbBuildIndex.cpp sjdbInsertJunctions.cpp sjdbLoadFromFiles.cpp sjdbLoadFromStream.cpp sjdbPrepare.cpp soloInputFeatureUMI.cpp stitchAlignToTranscript.cpp stitchGapIndel.cpp stitchWindowAligns.cpp streamFuns.cpp stringSubstituteAll.cpp sysRemoveDir.cpp systemFunctions.cpp twoPassRunPass1.cpp bam_cat.c parametersDefault.xxd htslib >> Depend.list
+g++ -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:16:59+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -MM BAMbinSortByCoordinate.cpp BAMbinSortUnmapped.cpp BAMfunctions.cpp BAMoutput.cpp Chain.cpp ChimericAlign.cpp ChimericAlign_chimericBAMoutput.cpp ChimericAlign_chimericJunctionOutput.cpp ChimericAlign_chimericStitching.cpp ChimericDetection.cpp ChimericDetection_chimericDetectionMult.cpp ChimericSegment.cpp ClipCR4.cpp ClipMate_clip.cpp ClipMate_clipChunk.cpp ClipMate_initialize.cpp ErrorWarning.cpp GTF.cpp GTF_superTranscript.cpp GTF_transcriptGeneSJ.cpp Genome.cpp Genome_genomeGenerate.cpp Genome_genomeLoad.cpp Genome_genomeOutLoad.cpp Genome_insertSequences.cpp Genome_transformGenome.cpp GlobalVariables.cpp InOutStreams.cpp OutSJ.cpp PackedArray.cpp Parameters.cpp ParametersChimeric_initialize.cpp ParametersClip_initialize.cpp ParametersGenome.cpp ParametersSolo.cpp Parameters_closeReadsFiles.cpp Parameters_openReadsFiles.cpp Parameters_readFilesInit.cpp Parameters_readSAMheader.cpp Parameters_samAttributes.cpp Quantifications.cpp ReadAlign.cpp ReadAlignChunk.cpp ReadAlignChunk_mapChunk.cpp ReadAlignChunk_processChunks.cpp ReadAlign_CIGAR.cpp ReadAlign_alignBAM.cpp ReadAlign_assignAlignToWindow.cpp ReadAlign_calcCIGAR.cpp ReadAlign_chimericDetection.cpp ReadAlign_chimericDetectionOld.cpp ReadAlign_chimericDetectionOldOutput.cpp ReadAlign_chimericDetectionPEmerged.cpp ReadAlign_createExtendWindowsWithAlign.cpp ReadAlign_mapOneRead.cpp ReadAlign_mapOneReadSpliceGraph.cpp ReadAlign_mappedFilter.cpp ReadAlign_maxMappableLength2strands.cpp ReadAlign_multMapSelect.cpp ReadAlign_oneRead.cpp ReadAlign_outputAlignments.cpp ReadAlign_outputSpliceGraphSAM.cpp ReadAlign_outputTranscriptCIGARp.cpp ReadAlign_outputTranscriptSAM.cpp ReadAlign_outputTranscriptSJ.cpp ReadAlign_outputVariation.cpp ReadAlign_peOverlapMergeMap.cpp ReadAlign_quantTranscriptome.cpp ReadAlign_stitchPieces.cpp ReadAlign_stitchWindowSeeds.cpp ReadAlign_storeAligns.cpp ReadAlign_transformGenome.cpp ReadAlign_waspMap.cpp STAR.cpp SequenceFuns.cpp SharedMemory.cpp Solo.cpp SoloBarcode.cpp SoloBarcode_extractBarcode.cpp SoloFeature.cpp SoloFeature_addBAMtags.cpp SoloFeature_cellFiltering.cpp SoloFeature_collapseUMI_Graph.cpp SoloFeature_collapseUMIall.cpp SoloFeature_countCBgeneUMI.cpp SoloFeature_countSmartSeq.cpp SoloFeature_countVelocyto.cpp SoloFeature_emptyDrops_CR.cpp SoloFeature_loadRawMatrix.cpp SoloFeature_outputResults.cpp SoloFeature_processRecords.cpp SoloFeature_quantTranscript.cpp SoloFeature_redistributeReadsByCB.cpp SoloFeature_statsOutput.cpp SoloFeature_sumThreads.cpp SoloRead.cpp SoloReadBarcode.cpp SoloReadBarcode_getCBandUMI.cpp SoloReadFeature.cpp SoloReadFeature_inputRecords.cpp SoloReadFeature_record.cpp SoloRead_record.cpp SpliceGraph.cpp SpliceGraph_findSuperTr.cpp SpliceGraph_swScoreSpliced.cpp SpliceGraph_swTraceBack.cpp Stats.cpp SuffixArrayFuns.cpp SuperTranscriptome.cpp ThreadControl.cpp TimeFunctions.cpp Transcript.cpp Transcript_alignScore.cpp Transcript_convertGenomeCigar.cpp Transcript_generateCigarP.cpp Transcript_transformGenome.cpp Transcript_variationAdjust.cpp Transcript_variationOutput.cpp Transcriptome.cpp Transcriptome_alignExonOverlap.cpp Transcriptome_classifyAlign.cpp Transcriptome_geneCountsAddAlign.cpp Transcriptome_geneFullAlignOverlap.cpp Transcriptome_geneFullAlignOverlap_ExonOverIntron.cpp Transcriptome_quantAlign.cpp Variation.cpp bamRemoveDuplicates.cpp bamSortByCoordinate.cpp binarySearch2.cpp blocksOverlap.cpp extendAlign.cpp funCompareUintAndSuffixes.cpp funCompareUintAndSuffixesMemcmp.cpp funPrimaryAlignMark.cpp genomeParametersWrite.cpp genomeSAindex.cpp genomeScanFastaFiles.cpp insertSeqSA.cpp mapThreadsSpawn.cpp outputSJ.cpp readLoad.cpp samHeaders.cpp serviceFuns.cpp signalFromBAM.cpp sjAlignSplit.cpp sjdbBuildIndex.cpp sjdbInsertJunctions.cpp sjdbLoadFromFiles.cpp sjdbLoadFromStream.cpp sjdbPrepare.cpp soloInputFeatureUMI.cpp stitchAlignToTranscript.cpp stitchGapIndel.cpp stitchWindowAligns.cpp streamFuns.cpp stringSubstituteAll.cpp sysRemoveDir.cpp systemFunctions.cpp twoPassRunPass1.cpp bam_cat.c parametersDefault.xxd htslib >> Depend.list
 g++: warning: parametersDefault.xxd: linker input file unused because linking not done
 g++: warning: htslib: linker input file unused because linking not done
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra systemFunctions.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra funPrimaryAlignMark.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_collapseUMI_Graph.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_collapseUMIall.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ParametersClip_initialize.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ClipMate_clip.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ClipCR4.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra systemFunctions.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra funPrimaryAlignMark.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_collapseUMI_Graph.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_collapseUMIall.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ParametersClip_initialize.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ClipMate_clip.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ClipCR4.cpp
 cd opal && \
-g++ -c -I./ -std=c++11   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra  -mavx2 opal.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ClipMate_clipChunk.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ClipMate_initialize.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_loadRawMatrix.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_emptyDrops_CR.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra soloInputFeatureUMI.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_countSmartSeq.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_redistributeReadsByCB.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_quantTranscript.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_sumThreads.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_countVelocyto.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_countCBgeneUMI.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcriptome_classifyAlign.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcriptome_geneFullAlignOverlap_ExonOverIntron.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_cellFiltering.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_statsOutput.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra bamSortByCoordinate.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloBarcode.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ParametersSolo.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloRead.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloRead_record.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloReadBarcode.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloReadBarcode_getCBandUMI.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloBarcode_extractBarcode.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloReadFeature.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloReadFeature_record.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloReadFeature_inputRecords.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Solo.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_outputResults.cpp
+g++ -c -I./ -std=c++11   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra  -mavx2 opal.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ClipMate_clipChunk.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ClipMate_initialize.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_loadRawMatrix.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_emptyDrops_CR.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra soloInputFeatureUMI.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_countSmartSeq.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_redistributeReadsByCB.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_quantTranscript.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_sumThreads.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_countVelocyto.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_countCBgeneUMI.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcriptome_classifyAlign.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcriptome_geneFullAlignOverlap_ExonOverIntron.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_cellFiltering.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_statsOutput.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra bamSortByCoordinate.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloBarcode.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ParametersSolo.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloRead.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloRead_record.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloReadBarcode.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloReadBarcode_getCBandUMI.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloBarcode_extractBarcode.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloReadFeature.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloReadFeature_record.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloReadFeature_inputRecords.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Solo.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_outputResults.cpp
 SoloReadFeature_inputRecords.cpp: In member function 'void SoloReadFeature::inputRecords(unsigned int**, unsigned int, std::vector<unsigned int>&, std::vector<readInfoStruct>&, SoloReadFlagClass&, std::vector<unsigned int>&, std::vector<unsigned int>&)':
 SoloReadFeature_inputRecords.cpp:21:12: warning: unused variable 'nReadsIn' [-Wunused-variable]
    21 |     uint64 nReadsIn = 0;
       |            ^~~~~~~~
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_processRecords.cpp
 In file included from SoloFeature.cpp:1:
 SoloFeature.h: In constructor 'SoloFeature::SoloFeature(Parameters&, ReadAlignChunk**, Transcriptome&, int, SoloReadBarcode*, SoloFeature**)':
 SoloFeature.h:36:17: warning: 'SoloFeature::featureType' will be initialized after [-Wreorder]
@@ -9058,132 +8941,131 @@ SoloFeature.h:24:19: warning:   'SoloFeature** SoloFeature::soloFeatAll' [-Wreor
 SoloFeature.cpp:4:1: warning:   when initialized here [-Wreorder]
     4 | SoloFeature::SoloFeature(Parameters &Pin, ReadAlignChunk **RAchunk, Transcriptome &inTrans, int32 feTy, SoloReadBarcode *readBarSumIn, SoloFeature **soloFeatAll)
       | ^~~~~~~~~~~
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_processRecords.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_addBAMtags.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SoloFeature_addBAMtags.cpp
 SoloFeature_outputResults.cpp: In member function 'void SoloFeature::outputResults(bool, std::string)':
 SoloFeature_outputResults.cpp:51:23: warning: ignoring return value of 'char* getcwd(char*, size_t)' declared with attribute 'warn_unused_result' [-Wunused-result]
    51 |                 getcwd(cwd,4096);
       |                 ~~~~~~^~~~~~~~~~
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_transformGenome.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Genome_transformGenome.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcript_convertGenomeCigar.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra twoPassRunPass1.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra samHeaders.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Genome_genomeLoad.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Genome_genomeOutLoad.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcript_transformGenome.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_outputSpliceGraphSAM.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_mapOneReadSpliceGraph.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SpliceGraph.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SpliceGraph_swScoreSpliced.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SpliceGraph_swTraceBack.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SpliceGraph_findSuperTr.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sjAlignSplit.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra GTF.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra GTF_transcriptGeneSJ.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra GTF_superTranscript.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SuperTranscriptome.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_outputAlignments.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra STAR.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SharedMemory.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra PackedArray.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SuffixArrayFuns.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Parameters.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Parameters_samAttributes.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra InOutStreams.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SequenceFuns.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Genome.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ParametersGenome.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Stats.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcript.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcript_alignScore.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcript_generateCigarP.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Chain.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcript_variationAdjust.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Variation.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_waspMap.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_storeAligns.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_stitchPieces.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_multMapSelect.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_mapOneRead.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra readLoad.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlignChunk.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlignChunk_processChunks.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlignChunk_mapChunk.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra OutSJ.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra outputSJ.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra blocksOverlap.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ThreadControl.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sysRemoveDir.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_maxMappableLength2strands.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra binarySearch2.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_outputTranscriptSAM.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_outputTranscriptSJ.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_outputTranscriptCIGARp.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_createExtendWindowsWithAlign.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_assignAlignToWindow.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_oneRead.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_stitchWindowSeeds.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_peOverlapMergeMap.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_mappedFilter.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_transformGenome.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Genome_transformGenome.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcript_convertGenomeCigar.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra twoPassRunPass1.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra samHeaders.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Genome_genomeLoad.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Genome_genomeOutLoad.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcript_transformGenome.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_outputSpliceGraphSAM.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_mapOneReadSpliceGraph.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SpliceGraph.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SpliceGraph_swScoreSpliced.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SpliceGraph_swTraceBack.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SpliceGraph_findSuperTr.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sjAlignSplit.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra GTF.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra GTF_transcriptGeneSJ.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra GTF_superTranscript.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SuperTranscriptome.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_outputAlignments.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra STAR.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SharedMemory.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra PackedArray.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SuffixArrayFuns.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Parameters.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Parameters_samAttributes.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra InOutStreams.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra SequenceFuns.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Genome.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ParametersGenome.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Stats.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcript.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcript_alignScore.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcript_generateCigarP.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Chain.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcript_variationAdjust.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Variation.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_waspMap.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_storeAligns.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_stitchPieces.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_multMapSelect.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_mapOneRead.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra readLoad.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlignChunk.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlignChunk_processChunks.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlignChunk_mapChunk.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra OutSJ.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra outputSJ.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra blocksOverlap.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ThreadControl.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sysRemoveDir.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_maxMappableLength2strands.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra binarySearch2.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_outputTranscriptSAM.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_outputTranscriptSJ.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_outputTranscriptCIGARp.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_createExtendWindowsWithAlign.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_assignAlignToWindow.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_oneRead.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_stitchWindowSeeds.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_peOverlapMergeMap.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_mappedFilter.cpp
 ReadAlign_oneRead.cpp: In member function 'int ReadAlign::oneRead()':
 ReadAlign_oneRead.cpp:23:21: warning: '*readStatus[0]' may be used uninitialized [-Wmaybe-uninitialized]
    23 |     if (readStatus[0]==-1) {//finished with the stream
       |         ~~~~~~~~~~~~^
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ParametersChimeric_initialize.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_chimericDetection.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_chimericDetectionOld.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_chimericDetectionOldOutput.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ChimericDetection.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ChimericDetection_chimericDetectionMult.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_chimericDetectionPEmerged.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra stitchWindowAligns.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra extendAlign.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra stitchAlignToTranscript.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ChimericAlign_chimericJunctionOutput.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ChimericAlign_chimericBAMoutput.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ChimericAlign_chimericStitching.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Genome_genomeGenerate.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra genomeParametersWrite.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra genomeScanFastaFiles.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra genomeSAindex.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Genome_insertSequences.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra insertSeqSA.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra funCompareUintAndSuffixes.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra funCompareUintAndSuffixesMemcmp.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra TimeFunctions.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ErrorWarning.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra streamFuns.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra stringSubstituteAll.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcriptome.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcriptome_quantAlign.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcriptome_geneFullAlignOverlap.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_quantTranscriptome.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Quantifications.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcriptome_geneCountsAddAlign.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sjdbLoadFromFiles.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sjdbLoadFromStream.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sjdbPrepare.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sjdbBuildIndex.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sjdbInsertJunctions.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra mapThreadsSpawn.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Parameters_readFilesInit.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Parameters_readSAMheader.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ParametersChimeric_initialize.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_chimericDetection.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_chimericDetectionOld.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_chimericDetectionOldOutput.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ChimericDetection.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ChimericDetection_chimericDetectionMult.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_chimericDetectionPEmerged.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra stitchWindowAligns.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra extendAlign.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra stitchAlignToTranscript.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ChimericAlign_chimericJunctionOutput.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ChimericAlign_chimericBAMoutput.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ChimericAlign_chimericStitching.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Genome_genomeGenerate.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra genomeParametersWrite.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra genomeScanFastaFiles.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra genomeSAindex.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Genome_insertSequences.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra insertSeqSA.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra funCompareUintAndSuffixes.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra funCompareUintAndSuffixesMemcmp.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra TimeFunctions.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ErrorWarning.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra streamFuns.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra stringSubstituteAll.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcriptome.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcriptome_quantAlign.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcriptome_geneFullAlignOverlap.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_quantTranscriptome.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Quantifications.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Transcriptome_geneCountsAddAlign.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sjdbLoadFromFiles.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sjdbLoadFromStream.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sjdbPrepare.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sjdbBuildIndex.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra sjdbInsertJunctions.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra mapThreadsSpawn.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Parameters_readFilesInit.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra Parameters_readSAMheader.cpp
 g++ -c  -pipe -Wall -Wextra -O3 bam_cat.c
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra serviceFuns.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra BAMoutput.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra serviceFuns.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra BAMoutput.cpp
 Parameters_readSAMheader.cpp: In member function 'void Parameters::readSAMheader(std::string, std::vector<std::__cxx11::basic_string<char> >)':
 Parameters_readSAMheader.cpp:32:15: warning: ignoring return value of 'int system(const char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
    32 |         system(com1.c_str());
       |         ~~~~~~^~~~~~~~~~~~~~
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra BAMfunctions.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_alignBAM.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra BAMbinSortByCoordinate.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra signalFromBAM.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra bamRemoveDuplicates.cpp
-g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra BAMbinSortUnmapped.cpp
-g++ -o STAR  -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-25T18:37:00+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra systemFunctions.o funPrimaryAlignMark.o SoloFeature_collapseUMI_Graph.o SoloFeature_collapseUMIall.o ParametersClip_initialize.o ClipMate_clip.o ClipCR4.o opal/opal.o ClipMate_clipChunk.o ClipMate_initialize.o SoloFeature_loadRawMatrix.o SoloFeature_emptyDrops_CR.o soloInputFeatureUMI.o SoloFeature_countSmartSeq.o SoloFeature_redistributeReadsByCB.o SoloFeature_quantTranscript.o SoloFeature_sumThreads.o SoloFeature_countVelocyto.o SoloFeature_countCBgeneUMI.o Transcriptome_classifyAlign.o Transcriptome_geneFullAlignOverlap_ExonOverIntron.o Transcriptome_alignExonOverlap.cpp SoloFeature_cellFiltering.o SoloFeature_statsOutput.o bamSortByCoordinate.o SoloBarcode.o ParametersSolo.o SoloRead.o SoloRead_record.o SoloReadBarcode.o SoloReadBarcode_getCBandUMI.o SoloBarcode_extractBarcode.o SoloReadFeature.o SoloReadFeature_record.o SoloReadFeature_inputRecords.o Solo.o SoloFeature.o SoloFeature_outputResults.o SoloFeature_processRecords.o SoloFeature_addBAMtags.o ReadAlign_transformGenome.o Genome_transformGenome.o Transcript_convertGenomeCigar.o twoPassRunPass1.o samHeaders.o Genome_genomeLoad.o Genome_genomeOutLoad.o Transcript_transformGenome.o ReadAlign_outputSpliceGraphSAM.o ReadAlign_mapOneReadSpliceGraph.o SpliceGraph.o SpliceGraph_swScoreSpliced.o SpliceGraph_swTraceBack.o SpliceGraph_findSuperTr.o sjAlignSplit.o GTF.o GTF_transcriptGeneSJ.o GTF_superTranscript.o SuperTranscriptome.o ReadAlign_outputAlignments.o ReadAlign.o STAR.o SharedMemory.o PackedArray.o SuffixArrayFuns.o Parameters.o Parameters_samAttributes.o InOutStreams.o SequenceFuns.o Genome.o ParametersGenome.o Stats.o Transcript.o Transcript_alignScore.o Transcript_generateCigarP.o Chain.o Transcript_variationAdjust.o Variation.o ReadAlign_waspMap.o ReadAlign_storeAligns.o ReadAlign_stitchPieces.o ReadAlign_multMapSelect.o ReadAlign_mapOneRead.o readLoad.o ReadAlignChunk.o ReadAlignChunk_processChunks.o ReadAlignChunk_mapChunk.o OutSJ.o outputSJ.o blocksOverlap.o ThreadControl.o sysRemoveDir.o ReadAlign_maxMappableLength2strands.o binarySearch2.o ReadAlign_outputTranscriptSAM.o ReadAlign_outputTranscriptSJ.o ReadAlign_outputTranscriptCIGARp.o ReadAlign_calcCIGAR.cpp ReadAlign_createExtendWindowsWithAlign.o ReadAlign_assignAlignToWindow.o ReadAlign_oneRead.o ReadAlign_stitchWindowSeeds.o ReadAlign_peOverlapMergeMap.o ReadAlign_mappedFilter.o ParametersChimeric_initialize.o ReadAlign_chimericDetection.o ReadAlign_chimericDetectionOld.o ReadAlign_chimericDetectionOldOutput.o ChimericDetection.o ChimericDetection_chimericDetectionMult.o ReadAlign_chimericDetectionPEmerged.o stitchWindowAligns.o extendAlign.o stitchAlignToTranscript.o ChimericSegment.cpp ChimericAlign.cpp ChimericAlign_chimericJunctionOutput.o ChimericAlign_chimericBAMoutput.o ChimericAlign_chimericStitching.o Genome_genomeGenerate.o genomeParametersWrite.o genomeScanFastaFiles.o genomeSAindex.o Genome_insertSequences.o insertSeqSA.o funCompareUintAndSuffixes.o funCompareUintAndSuffixesMemcmp.o TimeFunctions.o ErrorWarning.o streamFuns.o stringSubstituteAll.o Transcriptome.o Transcriptome_quantAlign.o Transcriptome_geneFullAlignOverlap.o ReadAlign_quantTranscriptome.o Quantifications.o Transcriptome_geneCountsAddAlign.o sjdbLoadFromFiles.o sjdbLoadFromStream.o sjdbPrepare.o sjdbBuildIndex.o sjdbInsertJunctions.o mapThreadsSpawn.o Parameters_readFilesInit.o Parameters_openReadsFiles.cpp Parameters_closeReadsFiles.cpp Parameters_readSAMheader.o bam_cat.o serviceFuns.o GlobalVariables.cpp BAMoutput.o BAMfunctions.o ReadAlign_alignBAM.o BAMbinSortByCoordinate.o signalFromBAM.o bamRemoveDuplicates.o BAMbinSortUnmapped.o  -pthread -Lhtslib -Bstatic -lhts -Bdynamic -lz 
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra BAMfunctions.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra ReadAlign_alignBAM.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra BAMbinSortByCoordinate.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra signalFromBAM.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra bamRemoveDuplicates.cpp
+g++ -c   -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra BAMbinSortUnmapped.cpp
+g++ -o STAR  -O3 -std=c++11 -fopenmp -D'COMPILATION_TIME_PLACE="2023-10-28T06:17:08+00:00 :/opt/STAR-2.7.11a/source"' -D'GIT_BRANCH_COMMIT_DIFF=""' -pipe -Wall -Wextra systemFunctions.o funPrimaryAlignMark.o SoloFeature_collapseUMI_Graph.o SoloFeature_collapseUMIall.o ParametersClip_initialize.o ClipMate_clip.o ClipCR4.o opal/opal.o ClipMate_clipChunk.o ClipMate_initialize.o SoloFeature_loadRawMatrix.o SoloFeature_emptyDrops_CR.o soloInputFeatureUMI.o SoloFeature_countSmartSeq.o SoloFeature_redistributeReadsByCB.o SoloFeature_quantTranscript.o SoloFeature_sumThreads.o SoloFeature_countVelocyto.o SoloFeature_countCBgeneUMI.o Transcriptome_classifyAlign.o Transcriptome_geneFullAlignOverlap_ExonOverIntron.o Transcriptome_alignExonOverlap.cpp SoloFeature_cellFiltering.o SoloFeature_statsOutput.o bamSortByCoordinate.o SoloBarcode.o ParametersSolo.o SoloRead.o SoloRead_record.o SoloReadBarcode.o SoloReadBarcode_getCBandUMI.o SoloBarcode_extractBarcode.o SoloReadFeature.o SoloReadFeature_record.o SoloReadFeature_inputRecords.o Solo.o SoloFeature.o SoloFeature_outputResults.o SoloFeature_processRecords.o SoloFeature_addBAMtags.o ReadAlign_transformGenome.o Genome_transformGenome.o Transcript_convertGenomeCigar.o twoPassRunPass1.o samHeaders.o Genome_genomeLoad.o Genome_genomeOutLoad.o Transcript_transformGenome.o ReadAlign_outputSpliceGraphSAM.o ReadAlign_mapOneReadSpliceGraph.o SpliceGraph.o SpliceGraph_swScoreSpliced.o SpliceGraph_swTraceBack.o SpliceGraph_findSuperTr.o sjAlignSplit.o GTF.o GTF_transcriptGeneSJ.o GTF_superTranscript.o SuperTranscriptome.o ReadAlign_outputAlignments.o ReadAlign.o STAR.o SharedMemory.o PackedArray.o SuffixArrayFuns.o Parameters.o Parameters_samAttributes.o InOutStreams.o SequenceFuns.o Genome.o ParametersGenome.o Stats.o Transcript.o Transcript_alignScore.o Transcript_generateCigarP.o Chain.o Transcript_variationAdjust.o Variation.o ReadAlign_waspMap.o ReadAlign_storeAligns.o ReadAlign_stitchPieces.o ReadAlign_multMapSelect.o ReadAlign_mapOneRead.o readLoad.o ReadAlignChunk.o ReadAlignChunk_processChunks.o ReadAlignChunk_mapChunk.o OutSJ.o outputSJ.o blocksOverlap.o ThreadControl.o sysRemoveDir.o ReadAlign_maxMappableLength2strands.o binarySearch2.o ReadAlign_outputTranscriptSAM.o ReadAlign_outputTranscriptSJ.o ReadAlign_outputTranscriptCIGARp.o ReadAlign_calcCIGAR.cpp ReadAlign_createExtendWindowsWithAlign.o ReadAlign_assignAlignToWindow.o ReadAlign_oneRead.o ReadAlign_stitchWindowSeeds.o ReadAlign_peOverlapMergeMap.o ReadAlign_mappedFilter.o ParametersChimeric_initialize.o ReadAlign_chimericDetection.o ReadAlign_chimericDetectionOld.o ReadAlign_chimericDetectionOldOutput.o ChimericDetection.o ChimericDetection_chimericDetectionMult.o ReadAlign_chimericDetectionPEmerged.o stitchWindowAligns.o extendAlign.o stitchAlignToTranscript.o ChimericSegment.cpp ChimericAlign.cpp ChimericAlign_chimericJunctionOutput.o ChimericAlign_chimericBAMoutput.o ChimericAlign_chimericStitching.o Genome_genomeGenerate.o genomeParametersWrite.o genomeScanFastaFiles.o genomeSAindex.o Genome_insertSequences.o insertSeqSA.o funCompareUintAndSuffixes.o funCompareUintAndSuffixesMemcmp.o TimeFunctions.o ErrorWarning.o streamFuns.o stringSubstituteAll.o Transcriptome.o Transcriptome_quantAlign.o Transcriptome_geneFullAlignOverlap.o ReadAlign_quantTranscriptome.o Quantifications.o Transcriptome_geneCountsAddAlign.o sjdbLoadFromFiles.o sjdbLoadFromStream.o sjdbPrepare.o sjdbBuildIndex.o sjdbInsertJunctions.o mapThreadsSpawn.o Parameters_readFilesInit.o Parameters_openReadsFiles.cpp Parameters_closeReadsFiles.cpp Parameters_readSAMheader.o bam_cat.o serviceFuns.o GlobalVariables.cpp BAMoutput.o BAMfunctions.o ReadAlign_alignBAM.o BAMbinSortByCoordinate.o signalFromBAM.o bamRemoveDuplicates.o BAMbinSortUnmapped.o  -pthread -Lhtslib -Bstatic -lhts -Bdynamic -lz 
 Parameters_openReadsFiles.cpp: In member function 'void Parameters::openReadsFiles()':
 Parameters_openReadsFiles.cpp:25:20: warning: variable 'imate' might be clobbered by 'longjmp' or 'vfork' [-Wclobbered]
    25 |          for (uint imate=0;imate<readFilesNames.size();imate++) {//open readIn files
@@ -9192,15 +9074,15 @@ Parameters_openReadsFiles.cpp:25:20: warning: variable 'imate' might be clobbere
 Requirement already satisfied: pip in /usr/lib/python3/dist-packages (22.0.2)
 Collecting pip
   Downloading pip-23.3.1-py3-none-any.whl (2.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 23.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 29.9 MB/s eta 0:00:00
 Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (59.6.0)
 Collecting setuptools
   Downloading setuptools-68.2.2-py3-none-any.whl (807 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 KB 60.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 KB 77.9 MB/s eta 0:00:00
 Requirement already satisfied: wheel in /usr/lib/python3/dist-packages (0.37.1)
 Collecting wheel
   Downloading wheel-0.41.2-py3-none-any.whl (64 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.8/64.8 KB 320.0 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.8/64.8 KB 394.5 MB/s eta 0:00:00
 Installing collected packages: wheel, setuptools, pip
   Attempting uninstall: wheel
     Found existing installation: wheel 0.37.1
@@ -9219,7 +9101,7 @@ WARNING: Running pip as the 'root' user can result in broken permissions and con
 + python3 -m pip install --no-cache-dir --upgrade macs3
 Collecting macs3
   Downloading MACS3-3.0.0b3.tar.gz (648 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 649.0/649.0 kB 18.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 649.0/649.0 kB 12.1 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status 'done'
   Getting requirements to build wheel: started
@@ -9229,10 +9111,10 @@ Collecting macs3
 Requirement already satisfied: numpy>=1.19 in /usr/lib/python3/dist-packages (from macs3) (1.21.5)
 Collecting hmmlearn>=0.3 (from macs3)
   Downloading hmmlearn-0.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (160 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.4/160.4 kB 378.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.4/160.4 kB 41.6 MB/s eta 0:00:00
 Collecting cykhash<3.0,>=2.0 (from macs3)
   Downloading cykhash-2.0.1.tar.gz (44 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.9/44.9 kB 320.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.9/44.9 kB 342.7 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status 'done'
   Getting requirements to build wheel: started
@@ -9246,16 +9128,74 @@ Building wheels for collected packages: macs3, cykhash
   Building wheel for macs3 (pyproject.toml): started
   Building wheel for macs3 (pyproject.toml): still running...
   Building wheel for macs3 (pyproject.toml): finished with status 'done'
-  Created wheel for macs3: filename=MACS3-3.0.0b3-cp310-cp310-linux_x86_64.whl size=2685233 sha256=21b59632803f5045ad0fec395ea264c2dd845d41f41f1e2c409585ec7758bc83
-  Stored in directory: /tmp/pip-ephem-wheel-cache-78wyr6u_/wheels/17/a7/73/6f53d093f7f7d8f2ca5de0a0df3f4e9969de1c209aa0ed3f4d
+  Created wheel for macs3: filename=MACS3-3.0.0b3-cp310-cp310-linux_x86_64.whl size=2685233 sha256=035543523838a69dbc39df4d19cba7ba9deba9428c221e8fba2b7c6d6ade4298
+  Stored in directory: /tmp/pip-ephem-wheel-cache-rzbjxta8/wheels/17/a7/73/6f53d093f7f7d8f2ca5de0a0df3f4e9969de1c209aa0ed3f4d
   Building wheel for cykhash (pyproject.toml): started
   Building wheel for cykhash (pyproject.toml): finished with status 'done'
-  Created wheel for cykhash: filename=cykhash-2.0.1-cp310-cp310-linux_x86_64.whl size=3369494 sha256=ac8bd96c20d699c0864ba0d0098a1e90660048c4cb9ba9c9b303cca226541786
-  Stored in directory: /tmp/pip-ephem-wheel-cache-78wyr6u_/wheels/ed/de/7a/4386df8e70276a0d2ec5e990db76b6c89889dc41cd627e1c14
+  Created wheel for cykhash: filename=cykhash-2.0.1-cp310-cp310-linux_x86_64.whl size=3369503 sha256=61d2da50271c83d4acc35846843b8d58f495587cb1e4130b7cef69bc046119cc
+  Stored in directory: /tmp/pip-ephem-wheel-cache-rzbjxta8/wheels/ed/de/7a/4386df8e70276a0d2ec5e990db76b6c89889dc41cd627e1c14
 Successfully built macs3 cykhash
 Installing collected packages: cykhash, hmmlearn, macs3
 Successfully installed cykhash-2.0.1 hmmlearn-0.3.0 macs3-3.0.0b3
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ chmod +x /opt/make_links.sh /opt/package-versions.sh
++ apt list python3-deeptools abyss anfo augustus bbmap bcftools beast2-mcmc bedtools bowtie2 busco bwa canu cd-hit cutadapt exonerate fasta3 fastqc gffread hmmer igv infernal jellyfish mafft minimap2 mrbayes ncbi-blast+ paml pbbamtools phast picard pilon pplacer qcumber qiime quicktree ray salmon samblaster samclip samtools snap-aligner snpeff spades stacks tophat-recondition trim-galore trinityrnaseq velvet vienna-rna wham-align
++ awk {gsub("/jammy|,now|jammy-updates|amd64|\\[installed\\]|all","",$0); print}
++ column -t
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Listing...          
+abyss               2.3.1-1
+anfo                0.98-9
+augustus            3.4.0+dfsg2-3build1
+bbmap               38.95+dfsg-1
+bcftools            1.13-1
+beast2-mcmc         2.6.6+dfsg-2
+bedtools-updates    2.30.0+dfsg-2ubuntu0.1
+bowtie2             2.4.4-1
+busco               5.2.2-2
+bwa                 0.7.17-6
+canu                2.0+dfsg-2
+cd-hit              4.8.1-4
+cutadapt            3.5-1build1
+exonerate           2.4.0-5
+fasta3              36.3.8h.2020-02-11-4
+fastqc              0.11.9+dfsg-5
+gffread             0.12.7-2build1
+hmmer               3.3.2+dfsg-1
+igv                 2.12.0+dfsg-1
+infernal            1.1.4-1
+jellyfish           2.3.0-12ubuntu2
+mafft               7.490-1
+minimap2            2.24+dfsg-2
+mrbayes             3.2.7a-5
+ncbi-blast+         2.12.0+ds-3build1
+paml                4.9j+dfsg-3
+pbbamtools          2.0.0+dfsg-2
+phast               1.6+dfsg-3
+picard              2.7.3-1
+pilon               1.24-1
+pplacer             1.1~alpha19-6
+python3-deeptools   3.5.1-1
+qcumber             2.3.0-2
+qiime               2021.8.0-2
+quicktree           2.5-5
+ray                 2.3.1-7build1
+salmon              1.4.0+ds1-1build1
+samblaster          0.1.26-3
+samclip             0.4.0-3
+samtools            1.13-4
+snap-aligner        1.0.0+dfsg-3
+snpeff              5.1+dfsg-2
+spades              3.13.1+dfsg-2ubuntu1
+stacks              2.60+dfsg-1
+tophat-recondition  1.4-3
+trim-galore         0.6.7-1
+trinityrnaseq       2.13.2+dfsg-3
+velvet              1.2.10+dfsg1-7
+vienna-rna          2.4.17+dfsg-2build2
+wham-align          0.1.5-8
 INFO:    Adding environment to container
 INFO:    Adding runscript
 INFO:    Creating SIF file...
