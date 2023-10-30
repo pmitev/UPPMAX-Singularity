@@ -1,14 +1,5 @@
 # Buiding the container via docker
 
-## Build the docker
-```bash
-docker build -t bio .
-```
-
-## Convert/build the Singularity container
-```bash
-sudo singularity build BioTools-from-docker.sif BioTools-from-docker.def
-```
 
 ## Create links for the installed tools
 ```bash
@@ -17,10 +8,22 @@ sudo singularity build BioTools-from-docker.sif BioTools-from-docker.def
 cd folder
 
 # Run the script
-singularity exec BioTools-from-docker.sif /opt/make_links.sh
+singularity exec BioTools-debian.sif /opt/make_links.sh
 ```
 
 ## Check tool versions
 ```bash
-singularity exec BioTools-from-docker.sif /opt/package-versions.sh
+singularity exec BioTools-debian.sif /opt/package-versions.sh
+```
+
+
+
+## Build the docker
+```bash
+docker build -t bio .
+```
+
+## Convert/build the Singularity container
+```bash
+sudo singularity build BioTools-from-docker.sif BioTools-from-docker.def
 ```
