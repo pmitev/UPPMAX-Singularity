@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: staphb/shovill:1.1.0
+From: staphb/shovill:latest
 
 %environment
   export LC_ALL=C
