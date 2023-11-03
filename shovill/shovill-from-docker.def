@@ -1,0 +1,9 @@
+Bootstrap: docker
+From: staphb/shovill:1.1.0
+
+%environment
+  export LC_ALL=C
+  export PYTHONNOUSERSITE=True
+
+%runscript
+  shovill "$@"
