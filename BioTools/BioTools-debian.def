@@ -22,23 +22,31 @@ From: debian:latest
     bcftools \
     beast2-mcmc \
     bedtools \
+    bioperl \
     bowtie2 \
     busco \
     bwa \
     canu \
     cd-hit \
     cutadapt \
+    delly \
     exonerate \
     fasta3 \
+    fastp \
     fastqc \
     gffread \
     hmmer \
     igv \
     infernal \
     jellyfish \
+    kallisto \
+    kraken \
+    kraken2 \
+    macs \
     mafft \
     minimap2 \
     mrbayes \
+    multiqc \
     ncbi-blast+ \
     paml \
     pbbamtools \
@@ -56,10 +64,15 @@ From: debian:latest
     snap-aligner \
     snpeff \
     spades \
+    spaln \
     stacks \
+    stringtie \
     tophat-recondition \
+    trf \
     trim-galore \
     velvet \
+    vmatch \
+    vsearch \
     wham-align \
     "
 
