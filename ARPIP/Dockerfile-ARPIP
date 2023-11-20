@@ -1,0 +1,77 @@
+FROM ubuntu:20.04
+
+ENV LC_ALL=C
+ENV PYTHONNOUSERSITE=True
+ENV PATH=$PATH:/opt/STAR-2.7.11a/bin/Linux_x86_64_static
+
+ARG DEBIAN_FRONTEND=noninteractive
+ARG aptPACKAGES=" build-essential cmake git"
+
+COPY boost_1_79_0.tar.gz / 
+
+RUN apt-get update && apt-get -y dist-upgrade 
+RUN apt-get install -y git wget vim gawk \
+    $aptPACKAGES
+
+
+RUN mkdir -p /installs
+
+# bpp-core http://biopp.univ-montp2.fr/
+RUN cd /installs && \
+  git clone https://github.com/BioPP/bpp-core && \
+  cd bpp-core && \
+  git checkout tags/v2.4.1 -b v241 && \
+  mkdir build && \
+  cd build && \
+  cmake .. && \
+  make -j 16 install
+
+# bpp-seq http://biopp.univ-montp2.fr/
+RUN cd /installs && \
+  git clone https://github.com/BioPP/bpp-seq && \
+  cd bpp-seq && \
+  git checkout tags/v2.4.1 -b v241 && \
+  mkdir build && \
+  cd build && \
+  cmake .. && \
+  make -j 16 install
+
+
+# bpp-phyl http://biopp.univ-montp2.fr/
+RUN cd /installs && \
+  git clone https://github.com/BioPP/bpp-phyl && \
+  cd bpp-phyl && \
+  git checkout tags/v2.4.1 -b v241 && \
+  mkdir build && \
+  cd build && \
+  cmake  .. &&\
+  make -j 16 install
+
+# boost - C++ Libraries http://www.boost.org/
+RUN cd /installs && \
+  tar xvf /boost_1_79_0.tar.gz && \
+  cd boost_1_79_0 && \
+  ./bootstrap.sh --prefix=/usr/ && \
+  ./b2 && \
+  ./b2 install 
+
+# glog - Google Logging Library https://github.com/google/glog/
+RUN cd /installs && \
+  git clone -b v0.5.0 https://github.com/google/glog && \
+  cd glog && \
+  cmake -H. -Bbuild -G "Unix Makefiles" && \
+  cmake --build build --target install 
+
+# gtest - Google Test Library https://github.com/google/googletest/
+RUN cd /installs && git clone https://github.com/google/googletest.git -b release-1.11.0
+RUN cd /installs/googletest && \
+  mkdir build && cd build && cmake .. && make install
+
+RUN apt-get install -y zlib1g-dev
+
+# ARPIP
+RUN  cd /opt && \
+  git clone https://github.com/acg-team/bpp-arpip/ && \
+  cd bpp-arpip && \
+  cmake --target ARPIP -- -DCMAKE_BUILD_TYPE=Release-static CMakeLists.txt && \
+  make
