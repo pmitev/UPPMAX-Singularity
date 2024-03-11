@@ -1,0 +1,11 @@
+Bootstrap:  docker
+From: mcr.microsoft.com/dotnet/sdk:8.0
+
+
+%environment
+  export LC_ALL=C
+
+
+
+%runscript
+  dotnet "$@"
