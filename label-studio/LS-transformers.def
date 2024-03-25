@@ -1,0 +1,22 @@
+Bootstrap: docker
+From: jupyter/scipy-notebook
+
+%post
+  export PYTHONNOUSERSITE=True
+  export DEBIAN_FRONTEND=noninteractive
+  
+mkdir -p /tmp/pip-cache
+  
+  python3 -m pip install --cache-dir /tmp/pip-cache -U pip setuptools
+  
+# Label-Studio 
+  python3 -m pip install --cache-dir /tmp/pip-cache label-studio
+  
+  # Transformers
+  python3 -m pip install --cache-dir /tmp/pip-cache 'tensorflow[and-cuda]' 
+  python3 -m pip install --cache-dir /tmp/pip-cache 'transformers[torch]'
+  # fixes
+  python3 -m pip install --cache-dir /tmp/pip-cache sentencepiece lxml
+
+%runscript
+    exec jupyter notebook --ip 0.0.0.0 --port 8888 --no-browser --NotebookApp.token='' --NotebookApp.password=''
