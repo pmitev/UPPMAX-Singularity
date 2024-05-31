@@ -10,6 +10,10 @@ From: jupyter/scipy-notebook
   
   # fixes
   python3 -m pip install --cache-dir /tmp/pip-cache sentencepiece lxml
+  
+  # more modules
+  python3 -m pip install --cache-dir /tmp/pip-cache nltk spacy
+
 
 %runscript
     exec jupyter notebook --ip 0.0.0.0 --port 8888 --no-browser --NotebookApp.token='' --NotebookApp.password=''
