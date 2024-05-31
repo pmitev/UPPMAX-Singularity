@@ -368,11 +368,56 @@ Using cached marisa_trie-1.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x
 Installing collected packages: cymem, wasabi, typer, spacy-loggers, spacy-legacy, smart-open, pydantic-core, nltk, murmurhash, marisa-trie, cloudpathlib, catalogue, blis, annotated-types, srsly, pydantic, preshed, language-data, langcodes, confection, weasel, thinc, spacy
 Successfully installed annotated-types-0.7.0 blis-0.7.11 catalogue-2.0.10 cloudpathlib-0.16.0 confection-0.1.4 cymem-2.0.8 langcodes-3.4.0 language-data-1.2.0 marisa-trie-1.1.1 murmurhash-1.0.10 nltk-3.8.1 preshed-3.0.9 pydantic-2.7.2 pydantic-core-2.18.3 smart-open-6.4.0 spacy-3.7.4 spacy-legacy-3.0.12 spacy-loggers-1.0.5 srsly-2.4.8 thinc-8.2.3 typer-0.9.4 wasabi-1.1.2 weasel-0.3.4
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ python3 -m spacy download sv_core_news_sm
+WARNING: The directory '/home/jovyan/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Collecting sv-core-news-sm==3.7.0
+  Downloading https://github.com/explosion/spacy-models/releases/download/sv_core_news_sm-3.7.0/sv_core_news_sm-3.7.0-py3-none-any.whl (12.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 108.2 MB/s eta 0:00:00
+Requirement already satisfied: spacy<3.8.0,>=3.7.0 in /opt/conda/lib/python3.11/site-packages (from sv-core-news-sm==3.7.0) (3.7.4)
+Requirement already satisfied: spacy-legacy<3.1.0,>=3.0.11 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (3.0.12)
+Requirement already satisfied: spacy-loggers<2.0.0,>=1.0.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (1.0.5)
+Requirement already satisfied: murmurhash<1.1.0,>=0.28.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (1.0.10)
+Requirement already satisfied: cymem<2.1.0,>=2.0.2 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (2.0.8)
+Requirement already satisfied: preshed<3.1.0,>=3.0.2 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (3.0.9)
+Requirement already satisfied: thinc<8.3.0,>=8.2.2 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (8.2.3)
+Requirement already satisfied: wasabi<1.2.0,>=0.9.1 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (1.1.2)
+Requirement already satisfied: srsly<3.0.0,>=2.4.3 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (2.4.8)
+Requirement already satisfied: catalogue<2.1.0,>=2.0.6 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (2.0.10)
+Requirement already satisfied: weasel<0.4.0,>=0.1.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (0.3.4)
+Requirement already satisfied: typer<0.10.0,>=0.3.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (0.9.4)
+Requirement already satisfied: smart-open<7.0.0,>=5.2.1 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (6.4.0)
+Requirement already satisfied: tqdm<5.0.0,>=4.38.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (4.66.1)
+Requirement already satisfied: requests<3.0.0,>=2.13.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (2.31.0)
+Requirement already satisfied: pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (2.7.2)
+Requirement already satisfied: jinja2 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (3.1.2)
+Requirement already satisfied: setuptools in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (70.0.0)
+Requirement already satisfied: packaging>=20.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (23.2)
+Requirement already satisfied: langcodes<4.0.0,>=3.2.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (3.4.0)
+Requirement already satisfied: numpy>=1.19.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (1.24.4)
+Requirement already satisfied: language-data>=1.2 in /opt/conda/lib/python3.11/site-packages (from langcodes<4.0.0,>=3.2.0->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (1.2.0)
+Requirement already satisfied: annotated-types>=0.4.0 in /opt/conda/lib/python3.11/site-packages (from pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (0.7.0)
+Requirement already satisfied: pydantic-core==2.18.3 in /opt/conda/lib/python3.11/site-packages (from pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (2.18.3)
+Requirement already satisfied: typing-extensions>=4.6.1 in /opt/conda/lib/python3.11/site-packages (from pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (4.8.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /opt/conda/lib/python3.11/site-packages (from requests<3.0.0,>=2.13.0->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (3.3.0)
+Requirement already satisfied: idna<4,>=2.5 in /opt/conda/lib/python3.11/site-packages (from requests<3.0.0,>=2.13.0->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/conda/lib/python3.11/site-packages (from requests<3.0.0,>=2.13.0->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (2.0.7)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/conda/lib/python3.11/site-packages (from requests<3.0.0,>=2.13.0->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (2023.7.22)
+Requirement already satisfied: blis<0.8.0,>=0.7.8 in /opt/conda/lib/python3.11/site-packages (from thinc<8.3.0,>=8.2.2->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (0.7.11)
+Requirement already satisfied: confection<1.0.0,>=0.0.1 in /opt/conda/lib/python3.11/site-packages (from thinc<8.3.0,>=8.2.2->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (0.1.4)
+Requirement already satisfied: click<9.0.0,>=7.1.1 in /opt/conda/lib/python3.11/site-packages (from typer<0.10.0,>=0.3.0->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (8.1.7)
+Requirement already satisfied: cloudpathlib<0.17.0,>=0.7.0 in /opt/conda/lib/python3.11/site-packages (from weasel<0.4.0,>=0.1.0->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (0.16.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/conda/lib/python3.11/site-packages (from jinja2->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (2.1.3)
+Requirement already satisfied: marisa-trie>=0.7.7 in /opt/conda/lib/python3.11/site-packages (from language-data>=1.2->langcodes<4.0.0,>=3.2.0->spacy<3.8.0,>=3.7.0->sv-core-news-sm==3.7.0) (1.1.1)
+Installing collected packages: sv-core-news-sm
+Successfully installed sv-core-news-sm-3.7.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[38;5;2m✔ Download and installation successful[0m
+You can now load the package via spacy.load('sv_core_news_sm')
 + python3 -m spacy download sv_core_news_md
 WARNING: The directory '/home/jovyan/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
 Collecting sv-core-news-md==3.7.0
   Downloading https://github.com/explosion/spacy-models/releases/download/sv_core_news_md-3.7.0/sv_core_news_md-3.7.0-py3-none-any.whl (67.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.1/67.1 MB 112.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.1/67.1 MB 107.1 MB/s eta 0:00:00
 Requirement already satisfied: spacy<3.8.0,>=3.7.0 in /opt/conda/lib/python3.11/site-packages (from sv-core-news-md==3.7.0) (3.7.4)
 Requirement already satisfied: spacy-legacy<3.1.0,>=3.0.11 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-md==3.7.0) (3.0.12)
 Requirement already satisfied: spacy-loggers<2.0.0,>=1.0.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-md==3.7.0) (1.0.5)
@@ -413,6 +458,51 @@ Successfully installed sv-core-news-md-3.7.0
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
 [38;5;2m✔ Download and installation successful[0m
 You can now load the package via spacy.load('sv_core_news_md')
++ python3 -m spacy download sv_core_news_lg
+WARNING: The directory '/home/jovyan/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Collecting sv-core-news-lg==3.7.0
+  Downloading https://github.com/explosion/spacy-models/releases/download/sv_core_news_lg-3.7.0/sv_core_news_lg-3.7.0-py3-none-any.whl (228.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 228.9/228.9 MB 33.3 MB/s eta 0:00:00
+Requirement already satisfied: spacy<3.8.0,>=3.7.0 in /opt/conda/lib/python3.11/site-packages (from sv-core-news-lg==3.7.0) (3.7.4)
+Requirement already satisfied: spacy-legacy<3.1.0,>=3.0.11 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (3.0.12)
+Requirement already satisfied: spacy-loggers<2.0.0,>=1.0.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (1.0.5)
+Requirement already satisfied: murmurhash<1.1.0,>=0.28.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (1.0.10)
+Requirement already satisfied: cymem<2.1.0,>=2.0.2 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (2.0.8)
+Requirement already satisfied: preshed<3.1.0,>=3.0.2 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (3.0.9)
+Requirement already satisfied: thinc<8.3.0,>=8.2.2 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (8.2.3)
+Requirement already satisfied: wasabi<1.2.0,>=0.9.1 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (1.1.2)
+Requirement already satisfied: srsly<3.0.0,>=2.4.3 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (2.4.8)
+Requirement already satisfied: catalogue<2.1.0,>=2.0.6 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (2.0.10)
+Requirement already satisfied: weasel<0.4.0,>=0.1.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (0.3.4)
+Requirement already satisfied: typer<0.10.0,>=0.3.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (0.9.4)
+Requirement already satisfied: smart-open<7.0.0,>=5.2.1 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (6.4.0)
+Requirement already satisfied: tqdm<5.0.0,>=4.38.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (4.66.1)
+Requirement already satisfied: requests<3.0.0,>=2.13.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (2.31.0)
+Requirement already satisfied: pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (2.7.2)
+Requirement already satisfied: jinja2 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (3.1.2)
+Requirement already satisfied: setuptools in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (70.0.0)
+Requirement already satisfied: packaging>=20.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (23.2)
+Requirement already satisfied: langcodes<4.0.0,>=3.2.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (3.4.0)
+Requirement already satisfied: numpy>=1.19.0 in /opt/conda/lib/python3.11/site-packages (from spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (1.24.4)
+Requirement already satisfied: language-data>=1.2 in /opt/conda/lib/python3.11/site-packages (from langcodes<4.0.0,>=3.2.0->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (1.2.0)
+Requirement already satisfied: annotated-types>=0.4.0 in /opt/conda/lib/python3.11/site-packages (from pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (0.7.0)
+Requirement already satisfied: pydantic-core==2.18.3 in /opt/conda/lib/python3.11/site-packages (from pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (2.18.3)
+Requirement already satisfied: typing-extensions>=4.6.1 in /opt/conda/lib/python3.11/site-packages (from pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (4.8.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /opt/conda/lib/python3.11/site-packages (from requests<3.0.0,>=2.13.0->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (3.3.0)
+Requirement already satisfied: idna<4,>=2.5 in /opt/conda/lib/python3.11/site-packages (from requests<3.0.0,>=2.13.0->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/conda/lib/python3.11/site-packages (from requests<3.0.0,>=2.13.0->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (2.0.7)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/conda/lib/python3.11/site-packages (from requests<3.0.0,>=2.13.0->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (2023.7.22)
+Requirement already satisfied: blis<0.8.0,>=0.7.8 in /opt/conda/lib/python3.11/site-packages (from thinc<8.3.0,>=8.2.2->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (0.7.11)
+Requirement already satisfied: confection<1.0.0,>=0.0.1 in /opt/conda/lib/python3.11/site-packages (from thinc<8.3.0,>=8.2.2->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (0.1.4)
+Requirement already satisfied: click<9.0.0,>=7.1.1 in /opt/conda/lib/python3.11/site-packages (from typer<0.10.0,>=0.3.0->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (8.1.7)
+Requirement already satisfied: cloudpathlib<0.17.0,>=0.7.0 in /opt/conda/lib/python3.11/site-packages (from weasel<0.4.0,>=0.1.0->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (0.16.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/conda/lib/python3.11/site-packages (from jinja2->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (2.1.3)
+Requirement already satisfied: marisa-trie>=0.7.7 in /opt/conda/lib/python3.11/site-packages (from language-data>=1.2->langcodes<4.0.0,>=3.2.0->spacy<3.8.0,>=3.7.0->sv-core-news-lg==3.7.0) (1.1.1)
+Installing collected packages: sv-core-news-lg
+Successfully installed sv-core-news-lg-3.7.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[38;5;2m✔ Download and installation successful[0m
+You can now load the package via spacy.load('sv_core_news_lg')
 INFO:    Adding runscript
 INFO:    Creating SIF file...
 INFO:    Build complete: transformers-2024.05.31.sif
