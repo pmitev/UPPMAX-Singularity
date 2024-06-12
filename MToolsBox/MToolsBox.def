@@ -1,0 +1,58 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%files
+  gsnap_db_install.sh /opt/
+  #gmapdb /opt/MToolBox/
+  #genome_fasta /opt/MToolBox/
+
+%environment
+  export LC_ALL=C
+  export PYTHONNOUSERSITE=True
+
+  export samtoolsexe=/usr/bin/samtools
+  export muscleexe=/usr/bin/muscle
+  export gsnapexe=/usr/bin/gsnap
+  export fasta_path=/opt/MToolBox/genome_fasta/
+  export gsnapdb=/opt/MToolBox/gmapdb/
+  export samtools_version=1.13
+  export mtdb_fasta=chrRSRS.fa
+  export hg19_fasta=hg19RSRS.fa
+  export mtdb=chrRSRS
+  export humandb=hg19RSRS
+
+%post
+  export LC_ALL=C
+  export PYTHONNOUSERSITE=True
+  export DEBIAN_FRONTEND=noninteractive
+
+  # apt packages cached in /tmp
+  mkdir -p /tmp/apt22 &&  echo "Dir::Cache "/tmp/apt22";" > /etc/apt/apt.conf.d/singularity-cache.conf
+
+  apt-get update && apt-get -y dist-upgrade && \
+  apt-get install -y wget curl git python-all gmap zlib1g samtools muscle picard-tools 
+
+  ln -s /usr/bin/python2 /usr/bin/python
+
+  export TMPD=/tmp/downloads &&   mkdir -p $TMPD
+  mkdir -p /installs
+
+  # MToolsBox
+  cd /installs
+  wget -P $TMPD -c https://github.com/mitoNGS/MToolBox/archive/refs/tags/v.1.0.tar.gz -O $TMPD/MToolBox-v.1.0.tar.gz
+  tar xf $TMPD/MToolBox-v.1.0.tar.gz
+  cp -a MToolBox-v.1.0/MToolBox /opt
+  cd /opt/MToolBox
+  #/opt/gsnap_db_install.sh
+
+  # haplogrep3-3.2.1
+  mkdir -p /opt/haplogrep3 && cd /opt/haplogrep3
+  unzip /installs/haplogrep3-3.2.1-linux.zip
+
+%runscript
+#!/bin/sh
+  if command -v $SINGULARITY_NAME > /dev/null 2> /dev/null; then
+    exec $SINGULARITY_NAME "$@"
+  else
+    echo "# ERROR !!! Command $SINGULARITY_NAME not found in the container"
+  fi
