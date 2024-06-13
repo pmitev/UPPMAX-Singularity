@@ -9,6 +9,7 @@ From: ubuntu:22.04
 %environment
   export LC_ALL=C
   export PYTHONNOUSERSITE=True
+  export PATH=$PATH:/opt/MToolBox
 
   export samtoolsexe=/usr/bin/samtools
   export muscleexe=/usr/bin/muscle
@@ -45,9 +46,18 @@ From: ubuntu:22.04
   cd /opt/MToolBox
   #/opt/gsnap_db_install.sh
 
-  # haplogrep3-3.2.1
-  mkdir -p /opt/haplogrep3 && cd /opt/haplogrep3
-  unzip /installs/haplogrep3-3.2.1-linux.zip
+cat << EOF > /opt/MToolBox/setup.sh
+  export samtoolsexe=/usr/bin/samtools
+  export muscleexe=/usr/bin/muscle 
+  export gsnapexe=/usr/bin/gsnap   
+  export fasta_path=/opt/MToolBox/genome_fasta/
+  export gsnapdb=/opt/MToolBox/gmapdb/
+  export samtools_version=1.13     
+  mtdb_fasta=chrRSRS.fa     
+  hg19_fasta=hg19RSRS.fa    
+  mtdb=chrRSRS              
+  humandb=hg19RSRS
+EOF
 
 %runscript
 #!/bin/sh
