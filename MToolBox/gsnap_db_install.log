@@ -1,0 +1,971 @@
+genome_fasta already exists...
+Creating gmapdb...
+File ‘hg19RCRS.fa.gz’ already there; not retrieving.
+File ‘hg19RSRS.fa.gz’ already there; not retrieving.
+File ‘chrM.fa.gz’ already there; not retrieving.
+File ‘chrRSRS.fa.gz’ already there; not retrieving.
+Building gmap db using hg19RCRS.fa.gz...
+-j flag not specified, so building regional hash tables with default 6-mers
+Writing files under gmapdb
+Creating files in directory gmapdb/hg19RCRS
+Running "/usr/lib/gmap/fa_coords" -g       -o "gmapdb/hg19RCRS.coords" -f "gmapdb/hg19RCRS.sources"
+Opening gzipped file hg19RCRS.fa.gz
+  Contig chr10: concatenated at chromosome end: chr10:1..135534747 (length = 135534747 nt)
+  Contig chr11: concatenated at chromosome end: chr11:1..135006516 (length = 135006516 nt)
+  Processed short contigs (<1000000 nt): .
+  Contig chr12: concatenated at chromosome end: chr12:1..133851895 (length = 133851895 nt)
+  Contig chr13: concatenated at chromosome end: chr13:1..115169878 (length = 115169878 nt)
+  Contig chr14: concatenated at chromosome end: chr14:1..107349540 (length = 107349540 nt)
+  Contig chr15: concatenated at chromosome end: chr15:1..102531392 (length = 102531392 nt)
+  Contig chr16: concatenated at chromosome end: chr16:1..90354753 (length = 90354753 nt)
+  Contig chr17_ctg5_hap1: concatenated at chromosome end: chr17_ctg5_hap1:1..1680828 (length = 1680828 nt)
+  Contig chr17: concatenated at chromosome end: chr17:1..81195210 (length = 81195210 nt)
+  Processed short contigs (<1000000 nt): ....
+  Contig chr18: concatenated at chromosome end: chr18:1..78077248 (length = 78077248 nt)
+  Processed short contigs (<1000000 nt): .
+  Contig chr19: concatenated at chromosome end: chr19:1..59128983 (length = 59128983 nt)
+  Processed short contigs (<1000000 nt): ..
+  Contig chr1: concatenated at chromosome end: chr1:1..249250621 (length = 249250621 nt)
+  Processed short contigs (<1000000 nt): ..
+  Contig chr20: concatenated at chromosome end: chr20:1..63025520 (length = 63025520 nt)
+  Contig chr21: concatenated at chromosome end: chr21:1..48129895 (length = 48129895 nt)
+  Processed short contigs (<1000000 nt): .
+  Contig chr22: concatenated at chromosome end: chr22:1..51304566 (length = 51304566 nt)
+  Contig chr2: concatenated at chromosome end: chr2:1..243199373 (length = 243199373 nt)
+  Contig chr3: concatenated at chromosome end: chr3:1..198022430 (length = 198022430 nt)
+  Processed short contigs (<1000000 nt): .
+  Contig chr4: concatenated at chromosome end: chr4:1..191154276 (length = 191154276 nt)
+  Processed short contigs (<1000000 nt): ..
+  Contig chr5: concatenated at chromosome end: chr5:1..180915260 (length = 180915260 nt)
+  Contig chr6_apd_hap1: concatenated at chromosome end: chr6_apd_hap1:1..4622290 (length = 4622290 nt)
+  Contig chr6_cox_hap2: concatenated at chromosome end: chr6_cox_hap2:1..4795371 (length = 4795371 nt)
+  Contig chr6_dbb_hap3: concatenated at chromosome end: chr6_dbb_hap3:1..4610396 (length = 4610396 nt)
+  Contig chr6: concatenated at chromosome end: chr6:1..171115067 (length = 171115067 nt)
+  Contig chr6_mann_hap4: concatenated at chromosome end: chr6_mann_hap4:1..4683263 (length = 4683263 nt)
+  Contig chr6_mcf_hap5: concatenated at chromosome end: chr6_mcf_hap5:1..4833398 (length = 4833398 nt)
+  Contig chr6_qbl_hap6: concatenated at chromosome end: chr6_qbl_hap6:1..4611984 (length = 4611984 nt)
+  Contig chr6_ssto_hap7: concatenated at chromosome end: chr6_ssto_hap7:1..4928567 (length = 4928567 nt)
+  Contig chr7: concatenated at chromosome end: chr7:1..159138663 (length = 159138663 nt)
+  Processed short contigs (<1000000 nt): .
+  Contig chr8: concatenated at chromosome end: chr8:1..146364022 (length = 146364022 nt)
+  Processed short contigs (<1000000 nt): ..
+  Contig chr9: concatenated at chromosome end: chr9:1..141213431 (length = 141213431 nt)
+  Processed short contigs (<1000000 nt): ............................................
+  Contig chrX: concatenated at chromosome end: chrX:1..155270560 (length = 155270560 nt)
+  Contig chrY: concatenated at chromosome end: chrY:1..59373566 (length = 59373566 nt)
+
+============================================================
+Contig mapping information has been written to file gmapdb/hg19RCRS.coords.
+============================================================
+Running "/usr/lib/gmap/gmap_process"  -g -c "gmapdb/hg19RCRS.coords" -f "gmapdb/hg19RCRS.sources" | "/usr/lib/gmap/gmapindex"  -d hg19RCRS -D "gmapdb/hg19RCRS" -A -s numeric-alpha
+Reading coordinates from file gmapdb/hg19RCRS.coords
+Logging contig chr10 at chr10:1..135534747 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr11 at chr11:1..135006516 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr11_gl000202_random at chr11_gl000202_random:1..40103 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr12 at chr12:1..133851895 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr13 at chr13:1..115169878 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr14 at chr14:1..107349540 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr15 at chr15:1..102531392 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr16 at chr16:1..90354753 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr17_ctg5_hap1 at chr17_ctg5_hap1:1..1680828 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr17 at chr17:1..81195210 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr17_gl000203_random at chr17_gl000203_random:1..37498 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr17_gl000204_random at chr17_gl000204_random:1..81310 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr17_gl000205_random at chr17_gl000205_random:1..174588 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr17_gl000206_random at chr17_gl000206_random:1..41001 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr18 at chr18:1..78077248 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr18_gl000207_random at chr18_gl000207_random:1..4262 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr19 at chr19:1..59128983 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr19_gl000208_random at chr19_gl000208_random:1..92689 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr19_gl000209_random at chr19_gl000209_random:1..159169 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr1 at chr1:1..249250621 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr1_gl000191_random at chr1_gl000191_random:1..106433 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr1_gl000192_random at chr1_gl000192_random:1..547496 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr20 at chr20:1..63025520 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr21 at chr21:1..48129895 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr21_gl000210_random at chr21_gl000210_random:1..27682 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr22 at chr22:1..51304566 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr2 at chr2:1..243199373 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr3 at chr3:1..198022430 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr4_ctg9_hap1 at chr4_ctg9_hap1:1..590426 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr4 at chr4:1..191154276 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr4_gl000193_random at chr4_gl000193_random:1..189789 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr4_gl000194_random at chr4_gl000194_random:1..191469 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr5 at chr5:1..180915260 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr6_apd_hap1 at chr6_apd_hap1:1..4622290 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr6_cox_hap2 at chr6_cox_hap2:1..4795371 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr6_dbb_hap3 at chr6_dbb_hap3:1..4610396 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr6 at chr6:1..171115067 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr6_mann_hap4 at chr6_mann_hap4:1..4683263 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr6_mcf_hap5 at chr6_mcf_hap5:1..4833398 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr6_qbl_hap6 at chr6_qbl_hap6:1..4611984 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr6_ssto_hap7 at chr6_ssto_hap7:1..4928567 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr7 at chr7:1..159138663 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr7_gl000195_random at chr7_gl000195_random:1..182896 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr8 at chr8:1..146364022 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr8_gl000196_random at chr8_gl000196_random:1..38914 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr8_gl000197_random at chr8_gl000197_random:1..37175 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr9 at chr9:1..141213431 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr9_gl000198_random at chr9_gl000198_random:1..90085 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr9_gl000199_random at chr9_gl000199_random:1..169874 in genome hg19RCRS
+ => primary (linear) chromosome
+Logging contig chr9_gl000200_random at chr9_gl000200_random:1..187035 in genome hg19RCRS
+ => primary (linear) chromosome
+More than 50 contigs.  Will stop printing messages
+Total genomic length = 3137161262 bp
+Have a total of 93 chromosomes
+Writing chromosome file gmapdb/hg19RCRS/hg19RCRS.chromosome
+Chromosome chr1 has universal coordinates 1..249250621
+Chromosome chr1_gl000191_random has universal coordinates 249250622..249357054
+Chromosome chr1_gl000192_random has universal coordinates 249357055..249904550
+Chromosome chr2 has universal coordinates 249904551..493103923
+Chromosome chr3 has universal coordinates 493103924..691126353
+Chromosome chr4 has universal coordinates 691126354..882280629
+Chromosome chr4_ctg9_hap1 has universal coordinates 882280630..882871055
+Chromosome chr4_gl000193_random has universal coordinates 882871056..883060844
+Chromosome chr4_gl000194_random has universal coordinates 883060845..883252313
+Chromosome chr5 has universal coordinates 883252314..1064167573
+Chromosome chr6 has universal coordinates 1064167574..1235282640
+Chromosome chr6_apd_hap1 has universal coordinates 1235282641..1239904930
+Chromosome chr6_cox_hap2 has universal coordinates 1239904931..1244700301
+Chromosome chr6_dbb_hap3 has universal coordinates 1244700302..1249310697
+Chromosome chr6_mann_hap4 has universal coordinates 1249310698..1253993960
+Chromosome chr6_mcf_hap5 has universal coordinates 1253993961..1258827358
+Chromosome chr6_qbl_hap6 has universal coordinates 1258827359..1263439342
+Chromosome chr6_ssto_hap7 has universal coordinates 1263439343..1268367909
+Chromosome chr7 has universal coordinates 1268367910..1427506572
+Chromosome chr7_gl000195_random has universal coordinates 1427506573..1427689468
+Chromosome chr8 has universal coordinates 1427689469..1574053490
+Chromosome chr8_gl000196_random has universal coordinates 1574053491..1574092404
+Chromosome chr8_gl000197_random has universal coordinates 1574092405..1574129579
+Chromosome chr9 has universal coordinates 1574129580..1715343010
+Chromosome chr9_gl000198_random has universal coordinates 1715343011..1715433095
+Chromosome chr9_gl000199_random has universal coordinates 1715433096..1715602969
+Chromosome chr9_gl000200_random has universal coordinates 1715602970..1715790004
+Chromosome chr9_gl000201_random has universal coordinates 1715790005..1715826152
+Chromosome chr10 has universal coordinates 1715826153..1851360899
+Chromosome chr11 has universal coordinates 1851360900..1986367415
+Chromosome chr11_gl000202_random has universal coordinates 1986367416..1986407518
+Chromosome chr12 has universal coordinates 1986407519..2120259413
+Chromosome chr13 has universal coordinates 2120259414..2235429291
+Chromosome chr14 has universal coordinates 2235429292..2342778831
+Chromosome chr15 has universal coordinates 2342778832..2445310223
+Chromosome chr16 has universal coordinates 2445310224..2535664976
+Chromosome chr17 has universal coordinates 2535664977..2616860186
+Chromosome chr17_ctg5_hap1 has universal coordinates 2616860187..2618541014
+Chromosome chr17_gl000203_random has universal coordinates 2618541015..2618578512
+Chromosome chr17_gl000204_random has universal coordinates 2618578513..2618659822
+Chromosome chr17_gl000205_random has universal coordinates 2618659823..2618834410
+Chromosome chr17_gl000206_random has universal coordinates 2618834411..2618875411
+Chromosome chr18 has universal coordinates 2618875412..2696952659
+Chromosome chr18_gl000207_random has universal coordinates 2696952660..2696956921
+Chromosome chr19 has universal coordinates 2696956922..2756085904
+Chromosome chr19_gl000208_random has universal coordinates 2756085905..2756178593
+Chromosome chr19_gl000209_random has universal coordinates 2756178594..2756337762
+Chromosome chr20 has universal coordinates 2756337763..2819363282
+Chromosome chr21 has universal coordinates 2819363283..2867493177
+Chromosome chr21_gl000210_random has universal coordinates 2867493178..2867520859
+More than 50 contigs.  Will stop printing messages
+Writing chromosome IIT file gmapdb/hg19RCRS/hg19RCRS.chromosome.iit
+Writing IIT file header information...coordinates require 4 bytes each...done
+Processing null division/chromosome...sorting...writing...done (93 intervals)
+Writing IIT file footer information...done
+Writing IIT file header information...coordinates require 4 bytes each...done
+Processing null division/chromosome...sorting...writing...done (93 intervals)
+Writing IIT file footer information...done
+No alternate scaffolds observed
+Running "/usr/lib/gmap/gmap_process"  -g -c "gmapdb/hg19RCRS.coords" -f "gmapdb/hg19RCRS.sources" | "/usr/lib/gmap/gmapindex"  -d hg19RCRS -D "gmapdb/hg19RCRS" -G
+Genome length is 3137161262 nt
+Trying to allocate 294108872*4 bytes of memory...succeeded.  Building genome in memory.
+Reading coordinates from file gmapdb/hg19RCRS.coords
+Writing contig chr10 to universal coordinates 1715826153..1851360899
+Writing contig chr11 to universal coordinates 1851360900..1986367415
+Writing contig chr11_gl000202_random to universal coordinates 1986367416..1986407518
+Writing contig chr12 to universal coordinates 1986407519..2120259413
+Writing contig chr13 to universal coordinates 2120259414..2235429291
+Writing contig chr14 to universal coordinates 2235429292..2342778831
+Writing contig chr15 to universal coordinates 2342778832..2445310223
+Writing contig chr16 to universal coordinates 2445310224..2535664976
+Writing contig chr17_ctg5_hap1 to universal coordinates 2616860187..2618541014
+Writing contig chr17 to universal coordinates 2535664977..2616860186
+Writing contig chr17_gl000203_random to universal coordinates 2618541015..2618578512
+Writing contig chr17_gl000204_random to universal coordinates 2618578513..2618659822
+Writing contig chr17_gl000205_random to universal coordinates 2618659823..2618834410
+Writing contig chr17_gl000206_random to universal coordinates 2618834411..2618875411
+Writing contig chr18 to universal coordinates 2618875412..2696952659
+Writing contig chr18_gl000207_random to universal coordinates 2696952660..2696956921
+Writing contig chr19 to universal coordinates 2696956922..2756085904
+Writing contig chr19_gl000208_random to universal coordinates 2756085905..2756178593
+Writing contig chr19_gl000209_random to universal coordinates 2756178594..2756337762
+Writing contig chr1 to universal coordinates 1..249250621
+Writing contig chr1_gl000191_random to universal coordinates 249250622..249357054
+Writing contig chr1_gl000192_random to universal coordinates 249357055..249904550
+Writing contig chr20 to universal coordinates 2756337763..2819363282
+Writing contig chr21 to universal coordinates 2819363283..2867493177
+Writing contig chr21_gl000210_random to universal coordinates 2867493178..2867520859
+Writing contig chr22 to universal coordinates 2867520860..2918825425
+Writing contig chr2 to universal coordinates 249904551..493103923
+Writing contig chr3 to universal coordinates 493103924..691126353
+Writing contig chr4_ctg9_hap1 to universal coordinates 882280630..882871055
+Writing contig chr4 to universal coordinates 691126354..882280629
+Writing contig chr4_gl000193_random to universal coordinates 882871056..883060844
+Writing contig chr4_gl000194_random to universal coordinates 883060845..883252313
+Writing contig chr5 to universal coordinates 883252314..1064167573
+Writing contig chr6_apd_hap1 to universal coordinates 1235282641..1239904930
+Writing contig chr6_cox_hap2 to universal coordinates 1239904931..1244700301
+Writing contig chr6_dbb_hap3 to universal coordinates 1244700302..1249310697
+Writing contig chr6 to universal coordinates 1064167574..1235282640
+Writing contig chr6_mann_hap4 to universal coordinates 1249310698..1253993960
+Writing contig chr6_mcf_hap5 to universal coordinates 1253993961..1258827358
+Writing contig chr6_qbl_hap6 to universal coordinates 1258827359..1263439342
+Writing contig chr6_ssto_hap7 to universal coordinates 1263439343..1268367909
+Writing contig chr7 to universal coordinates 1268367910..1427506572
+Writing contig chr7_gl000195_random to universal coordinates 1427506573..1427689468
+Writing contig chr8 to universal coordinates 1427689469..1574053490
+Writing contig chr8_gl000196_random to universal coordinates 1574053491..1574092404
+Writing contig chr8_gl000197_random to universal coordinates 1574092405..1574129579
+Writing contig chr9 to universal coordinates 1574129580..1715343010
+Writing contig chr9_gl000198_random to universal coordinates 1715343011..1715433095
+Writing contig chr9_gl000199_random to universal coordinates 1715433096..1715602969
+More than 50 contigs.  Will stop printing messages
+A total of 0 non-ACGTNX characters were seen in the genome.
+Running cat "gmapdb/hg19RCRS/hg19RCRS.genomecomp" | "/usr/lib/gmap/gmapindex" -U > "gmapdb/hg19RCRS/hg19RCRS.genomebits128"
+Running cat "gmapdb/hg19RCRS/hg19RCRS.genomecomp" | "/usr/lib/gmap/gmapindex" -k 15 -q 3  -D "gmapdb/hg19RCRS" -d hg19RCRS -N
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 0
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 100,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 200,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 300,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 400,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 500,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 600,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 700,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 800,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 900,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 1,000,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 1,100,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 1,200,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 1,300,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 1,400,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 1,500,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 1,600,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 1,700,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 1,800,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 1,900,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 2,000,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 2,100,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 2,200,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 2,300,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 2,400,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 2,500,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 2,600,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 2,700,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 2,800,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 2,900,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 3,000,000,000
+Counting positions in genome hg19RCRS (15 bp every 3 bp), position 3,100,000,000
+Number of positions: 3137161262 => normal-sized genome
+Number of offsets: 965767838 => pages file not required
+Running "/usr/lib/gmap/gmapindex" -k 15 -q 3  -D "gmapdb/hg19RCRS" -d hg19RCRS -O "gmapdb/hg19RCRS/hg19RCRS.genomecomp"
+Offset compression types: bitpack64
+Allocating 16777216*1 bytes for packsizes
+Allocating 16777216*8 bytes for bitpacks
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 0
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 100,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 200,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 300,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 400,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 500,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 600,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 700,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 800,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 900,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,000,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,100,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,200,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,300,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,400,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,500,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,600,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,700,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,800,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,900,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,000,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,100,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,200,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,300,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,400,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,500,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,600,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,700,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,800,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,900,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 3,000,000,000
+Indexing offsets of oligomers in genome hg19RCRS (15 bp every 3 bp), position 3,100,000,000
+Writing 1073741825 offsets compressed via bitpack64...done
+Running "/usr/lib/gmap/gmapindex" -k 15 -q 3  -D "gmapdb/hg19RCRS" -d hg19RCRS -P "gmapdb/hg19RCRS/hg19RCRS.genomecomp"
+Looking for genome hg19RCRS in directory gmapdb/hg19RCRS
+Looking for index files in directory gmapdb/hg19RCRS
+  Pointers file is hg19RCRS.ref153offsets64meta
+  Offsets file is hg19RCRS.ref153offsets64strm
+  Positions file is hg19RCRS.ref153positions
+Expanding offsetsstrm into counters...done
+Allocating 470659920 bytes for counterstrm
+Trying to allocate 965767838*4 bytes of memory for positions...succeeded.  Building positions in memory.
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 0
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 100,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 200,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 300,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 400,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 500,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 600,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 700,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 800,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 900,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,000,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,100,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,200,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,300,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,400,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,500,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,600,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,700,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,800,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 1,900,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,000,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,100,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,200,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,300,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,400,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,500,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,600,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,700,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,800,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 2,900,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 3,000,000,000
+Indexing positions of oligomers in genome hg19RCRS (15 bp every 3 bp), position 3,100,000,000
+Writing 965767838 genomic positions to file gmapdb/hg19RCRS/hg19RCRS.ref153positions ...
+done
+Running "/usr/lib/gmap/gmapindex" -j 6  -D "gmapdb/hg19RCRS" -d hg19RCRS -Q "gmapdb/hg19RCRS/hg19RCRS.genomecomp"
+Writing regiondb
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 0
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 100,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 200,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 300,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 400,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 500,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 600,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 700,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 800,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 900,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 1,000,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 1,100,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 1,200,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 1,300,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 1,400,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 1,500,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 1,600,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 1,700,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 1,800,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 1,900,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 2,000,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 2,100,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 2,200,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 2,300,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 2,400,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 2,500,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 2,600,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 2,700,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 2,800,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 2,900,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 3,000,000,000
+Indexing offsets/positions of oligomers in genome hg19RCRS (6 bp every 1 bp), position 3,100,000,000
+Done
+Building gmap db using hg19RSRS.fa.gz...
+-j flag not specified, so building regional hash tables with default 6-mers
+Writing files under gmapdb
+Creating files in directory gmapdb/hg19RSRS
+Running "/usr/lib/gmap/fa_coords" -g       -o "gmapdb/hg19RSRS.coords" -f "gmapdb/hg19RSRS.sources"
+Opening gzipped file hg19RSRS.fa.gz
+  Contig chr1: concatenated at chromosome end: chr1:1..249250621 (length = 249250621 nt)
+  Contig chr10: concatenated at chromosome end: chr10:1..135534747 (length = 135534747 nt)
+  Contig chr11: concatenated at chromosome end: chr11:1..135006516 (length = 135006516 nt)
+  Processed short contigs (<1000000 nt): .
+  Contig chr12: concatenated at chromosome end: chr12:1..133851895 (length = 133851895 nt)
+  Contig chr13: concatenated at chromosome end: chr13:1..115169878 (length = 115169878 nt)
+  Contig chr14: concatenated at chromosome end: chr14:1..107349540 (length = 107349540 nt)
+  Contig chr15: concatenated at chromosome end: chr15:1..102531392 (length = 102531392 nt)
+  Contig chr16: concatenated at chromosome end: chr16:1..90354753 (length = 90354753 nt)
+  Contig chr17: concatenated at chromosome end: chr17:1..81195210 (length = 81195210 nt)
+  Contig chr17_ctg5_hap1: concatenated at chromosome end: chr17_ctg5_hap1:1..1680828 (length = 1680828 nt)
+  Processed short contigs (<1000000 nt): ....
+  Contig chr18: concatenated at chromosome end: chr18:1..78077248 (length = 78077248 nt)
+  Processed short contigs (<1000000 nt): .
+  Contig chr19: concatenated at chromosome end: chr19:1..59128983 (length = 59128983 nt)
+  Processed short contigs (<1000000 nt): ....
+  Contig chr2: concatenated at chromosome end: chr2:1..243199373 (length = 243199373 nt)
+  Contig chr20: concatenated at chromosome end: chr20:1..63025520 (length = 63025520 nt)
+  Contig chr21: concatenated at chromosome end: chr21:1..48129895 (length = 48129895 nt)
+  Processed short contigs (<1000000 nt): .
+  Contig chr22: concatenated at chromosome end: chr22:1..51304566 (length = 51304566 nt)
+  Contig chr3: concatenated at chromosome end: chr3:1..198022430 (length = 198022430 nt)
+  Contig chr4: concatenated at chromosome end: chr4:1..191154276 (length = 191154276 nt)
+  Processed short contigs (<1000000 nt): ...
+  Contig chr5: concatenated at chromosome end: chr5:1..180915260 (length = 180915260 nt)
+  Contig chr6: concatenated at chromosome end: chr6:1..171115067 (length = 171115067 nt)
+  Contig chr6_apd_hap1: concatenated at chromosome end: chr6_apd_hap1:1..4622290 (length = 4622290 nt)
+  Contig chr6_cox_hap2: concatenated at chromosome end: chr6_cox_hap2:1..4795371 (length = 4795371 nt)
+  Contig chr6_dbb_hap3: concatenated at chromosome end: chr6_dbb_hap3:1..4610396 (length = 4610396 nt)
+  Contig chr6_mann_hap4: concatenated at chromosome end: chr6_mann_hap4:1..4683263 (length = 4683263 nt)
+  Contig chr6_mcf_hap5: concatenated at chromosome end: chr6_mcf_hap5:1..4833398 (length = 4833398 nt)
+  Contig chr6_qbl_hap6: concatenated at chromosome end: chr6_qbl_hap6:1..4611984 (length = 4611984 nt)
+  Contig chr6_ssto_hap7: concatenated at chromosome end: chr6_ssto_hap7:1..4928567 (length = 4928567 nt)
+  Contig chr7: concatenated at chromosome end: chr7:1..159138663 (length = 159138663 nt)
+  Processed short contigs (<1000000 nt): .
+  Contig chr8: concatenated at chromosome end: chr8:1..146364022 (length = 146364022 nt)
+  Processed short contigs (<1000000 nt): ..
+  Contig chr9: concatenated at chromosome end: chr9:1..141213431 (length = 141213431 nt)
+  Processed short contigs (<1000000 nt): ............................................
+  Contig chrX: concatenated at chromosome end: chrX:1..155270560 (length = 155270560 nt)
+  Contig chrY: concatenated at chromosome end: chrY:1..59373566 (length = 59373566 nt)
+
+============================================================
+Contig mapping information has been written to file gmapdb/hg19RSRS.coords.
+============================================================
+Running "/usr/lib/gmap/gmap_process"  -g -c "gmapdb/hg19RSRS.coords" -f "gmapdb/hg19RSRS.sources" | "/usr/lib/gmap/gmapindex"  -d hg19RSRS -D "gmapdb/hg19RSRS" -A -s numeric-alpha
+Reading coordinates from file gmapdb/hg19RSRS.coords
+Logging contig chr1 at chr1:1..249250621 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr10 at chr10:1..135534747 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr11 at chr11:1..135006516 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr11_gl000202_random at chr11_gl000202_random:1..40103 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr12 at chr12:1..133851895 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr13 at chr13:1..115169878 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr14 at chr14:1..107349540 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr15 at chr15:1..102531392 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr16 at chr16:1..90354753 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr17 at chr17:1..81195210 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr17_ctg5_hap1 at chr17_ctg5_hap1:1..1680828 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr17_gl000203_random at chr17_gl000203_random:1..37498 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr17_gl000204_random at chr17_gl000204_random:1..81310 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr17_gl000205_random at chr17_gl000205_random:1..174588 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr17_gl000206_random at chr17_gl000206_random:1..41001 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr18 at chr18:1..78077248 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr18_gl000207_random at chr18_gl000207_random:1..4262 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr19 at chr19:1..59128983 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr19_gl000208_random at chr19_gl000208_random:1..92689 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr19_gl000209_random at chr19_gl000209_random:1..159169 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr1_gl000191_random at chr1_gl000191_random:1..106433 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr1_gl000192_random at chr1_gl000192_random:1..547496 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr2 at chr2:1..243199373 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr20 at chr20:1..63025520 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr21 at chr21:1..48129895 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr21_gl000210_random at chr21_gl000210_random:1..27682 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr22 at chr22:1..51304566 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr3 at chr3:1..198022430 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr4 at chr4:1..191154276 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr4_ctg9_hap1 at chr4_ctg9_hap1:1..590426 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr4_gl000193_random at chr4_gl000193_random:1..189789 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr4_gl000194_random at chr4_gl000194_random:1..191469 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr5 at chr5:1..180915260 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr6 at chr6:1..171115067 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr6_apd_hap1 at chr6_apd_hap1:1..4622290 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr6_cox_hap2 at chr6_cox_hap2:1..4795371 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr6_dbb_hap3 at chr6_dbb_hap3:1..4610396 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr6_mann_hap4 at chr6_mann_hap4:1..4683263 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr6_mcf_hap5 at chr6_mcf_hap5:1..4833398 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr6_qbl_hap6 at chr6_qbl_hap6:1..4611984 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr6_ssto_hap7 at chr6_ssto_hap7:1..4928567 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr7 at chr7:1..159138663 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr7_gl000195_random at chr7_gl000195_random:1..182896 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr8 at chr8:1..146364022 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr8_gl000196_random at chr8_gl000196_random:1..38914 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr8_gl000197_random at chr8_gl000197_random:1..37175 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr9 at chr9:1..141213431 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr9_gl000198_random at chr9_gl000198_random:1..90085 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr9_gl000199_random at chr9_gl000199_random:1..169874 in genome hg19RSRS
+ => primary (linear) chromosome
+Logging contig chr9_gl000200_random at chr9_gl000200_random:1..187035 in genome hg19RSRS
+ => primary (linear) chromosome
+More than 50 contigs.  Will stop printing messages
+Total genomic length = 3137161262 bp
+Have a total of 93 chromosomes
+Writing chromosome file gmapdb/hg19RSRS/hg19RSRS.chromosome
+Chromosome chr1 has universal coordinates 1..249250621
+Chromosome chr1_gl000191_random has universal coordinates 249250622..249357054
+Chromosome chr1_gl000192_random has universal coordinates 249357055..249904550
+Chromosome chr2 has universal coordinates 249904551..493103923
+Chromosome chr3 has universal coordinates 493103924..691126353
+Chromosome chr4 has universal coordinates 691126354..882280629
+Chromosome chr4_ctg9_hap1 has universal coordinates 882280630..882871055
+Chromosome chr4_gl000193_random has universal coordinates 882871056..883060844
+Chromosome chr4_gl000194_random has universal coordinates 883060845..883252313
+Chromosome chr5 has universal coordinates 883252314..1064167573
+Chromosome chr6 has universal coordinates 1064167574..1235282640
+Chromosome chr6_apd_hap1 has universal coordinates 1235282641..1239904930
+Chromosome chr6_cox_hap2 has universal coordinates 1239904931..1244700301
+Chromosome chr6_dbb_hap3 has universal coordinates 1244700302..1249310697
+Chromosome chr6_mann_hap4 has universal coordinates 1249310698..1253993960
+Chromosome chr6_mcf_hap5 has universal coordinates 1253993961..1258827358
+Chromosome chr6_qbl_hap6 has universal coordinates 1258827359..1263439342
+Chromosome chr6_ssto_hap7 has universal coordinates 1263439343..1268367909
+Chromosome chr7 has universal coordinates 1268367910..1427506572
+Chromosome chr7_gl000195_random has universal coordinates 1427506573..1427689468
+Chromosome chr8 has universal coordinates 1427689469..1574053490
+Chromosome chr8_gl000196_random has universal coordinates 1574053491..1574092404
+Chromosome chr8_gl000197_random has universal coordinates 1574092405..1574129579
+Chromosome chr9 has universal coordinates 1574129580..1715343010
+Chromosome chr9_gl000198_random has universal coordinates 1715343011..1715433095
+Chromosome chr9_gl000199_random has universal coordinates 1715433096..1715602969
+Chromosome chr9_gl000200_random has universal coordinates 1715602970..1715790004
+Chromosome chr9_gl000201_random has universal coordinates 1715790005..1715826152
+Chromosome chr10 has universal coordinates 1715826153..1851360899
+Chromosome chr11 has universal coordinates 1851360900..1986367415
+Chromosome chr11_gl000202_random has universal coordinates 1986367416..1986407518
+Chromosome chr12 has universal coordinates 1986407519..2120259413
+Chromosome chr13 has universal coordinates 2120259414..2235429291
+Chromosome chr14 has universal coordinates 2235429292..2342778831
+Chromosome chr15 has universal coordinates 2342778832..2445310223
+Chromosome chr16 has universal coordinates 2445310224..2535664976
+Chromosome chr17 has universal coordinates 2535664977..2616860186
+Chromosome chr17_ctg5_hap1 has universal coordinates 2616860187..2618541014
+Chromosome chr17_gl000203_random has universal coordinates 2618541015..2618578512
+Chromosome chr17_gl000204_random has universal coordinates 2618578513..2618659822
+Chromosome chr17_gl000205_random has universal coordinates 2618659823..2618834410
+Chromosome chr17_gl000206_random has universal coordinates 2618834411..2618875411
+Chromosome chr18 has universal coordinates 2618875412..2696952659
+Chromosome chr18_gl000207_random has universal coordinates 2696952660..2696956921
+Chromosome chr19 has universal coordinates 2696956922..2756085904
+Chromosome chr19_gl000208_random has universal coordinates 2756085905..2756178593
+Chromosome chr19_gl000209_random has universal coordinates 2756178594..2756337762
+Chromosome chr20 has universal coordinates 2756337763..2819363282
+Chromosome chr21 has universal coordinates 2819363283..2867493177
+Chromosome chr21_gl000210_random has universal coordinates 2867493178..2867520859
+More than 50 contigs.  Will stop printing messages
+Writing chromosome IIT file gmapdb/hg19RSRS/hg19RSRS.chromosome.iit
+Writing IIT file header information...coordinates require 4 bytes each...done
+Processing null division/chromosome...sorting...writing...done (93 intervals)
+Writing IIT file footer information...done
+Writing IIT file header information...coordinates require 4 bytes each...done
+Processing null division/chromosome...sorting...writing...done (93 intervals)
+Writing IIT file footer information...done
+No alternate scaffolds observed
+Running "/usr/lib/gmap/gmap_process"  -g -c "gmapdb/hg19RSRS.coords" -f "gmapdb/hg19RSRS.sources" | "/usr/lib/gmap/gmapindex"  -d hg19RSRS -D "gmapdb/hg19RSRS" -G
+Genome length is 3137161262 nt
+Trying to allocate 294108872*4 bytes of memory...succeeded.  Building genome in memory.
+Reading coordinates from file gmapdb/hg19RSRS.coords
+Writing contig chr1 to universal coordinates 1..249250621
+Writing contig chr10 to universal coordinates 1715826153..1851360899
+Writing contig chr11 to universal coordinates 1851360900..1986367415
+Writing contig chr11_gl000202_random to universal coordinates 1986367416..1986407518
+Writing contig chr12 to universal coordinates 1986407519..2120259413
+Writing contig chr13 to universal coordinates 2120259414..2235429291
+Writing contig chr14 to universal coordinates 2235429292..2342778831
+Writing contig chr15 to universal coordinates 2342778832..2445310223
+Writing contig chr16 to universal coordinates 2445310224..2535664976
+Writing contig chr17 to universal coordinates 2535664977..2616860186
+Writing contig chr17_ctg5_hap1 to universal coordinates 2616860187..2618541014
+Writing contig chr17_gl000203_random to universal coordinates 2618541015..2618578512
+Writing contig chr17_gl000204_random to universal coordinates 2618578513..2618659822
+Writing contig chr17_gl000205_random to universal coordinates 2618659823..2618834410
+Writing contig chr17_gl000206_random to universal coordinates 2618834411..2618875411
+Writing contig chr18 to universal coordinates 2618875412..2696952659
+Writing contig chr18_gl000207_random to universal coordinates 2696952660..2696956921
+Writing contig chr19 to universal coordinates 2696956922..2756085904
+Writing contig chr19_gl000208_random to universal coordinates 2756085905..2756178593
+Writing contig chr19_gl000209_random to universal coordinates 2756178594..2756337762
+Writing contig chr1_gl000191_random to universal coordinates 249250622..249357054
+Writing contig chr1_gl000192_random to universal coordinates 249357055..249904550
+Writing contig chr2 to universal coordinates 249904551..493103923
+Writing contig chr20 to universal coordinates 2756337763..2819363282
+Writing contig chr21 to universal coordinates 2819363283..2867493177
+Writing contig chr21_gl000210_random to universal coordinates 2867493178..2867520859
+Writing contig chr22 to universal coordinates 2867520860..2918825425
+Writing contig chr3 to universal coordinates 493103924..691126353
+Writing contig chr4 to universal coordinates 691126354..882280629
+Writing contig chr4_ctg9_hap1 to universal coordinates 882280630..882871055
+Writing contig chr4_gl000193_random to universal coordinates 882871056..883060844
+Writing contig chr4_gl000194_random to universal coordinates 883060845..883252313
+Writing contig chr5 to universal coordinates 883252314..1064167573
+Writing contig chr6 to universal coordinates 1064167574..1235282640
+Writing contig chr6_apd_hap1 to universal coordinates 1235282641..1239904930
+Writing contig chr6_cox_hap2 to universal coordinates 1239904931..1244700301
+Writing contig chr6_dbb_hap3 to universal coordinates 1244700302..1249310697
+Writing contig chr6_mann_hap4 to universal coordinates 1249310698..1253993960
+Writing contig chr6_mcf_hap5 to universal coordinates 1253993961..1258827358
+Writing contig chr6_qbl_hap6 to universal coordinates 1258827359..1263439342
+Writing contig chr6_ssto_hap7 to universal coordinates 1263439343..1268367909
+Writing contig chr7 to universal coordinates 1268367910..1427506572
+Writing contig chr7_gl000195_random to universal coordinates 1427506573..1427689468
+Writing contig chr8 to universal coordinates 1427689469..1574053490
+Writing contig chr8_gl000196_random to universal coordinates 1574053491..1574092404
+Writing contig chr8_gl000197_random to universal coordinates 1574092405..1574129579
+Writing contig chr9 to universal coordinates 1574129580..1715343010
+Writing contig chr9_gl000198_random to universal coordinates 1715343011..1715433095
+Writing contig chr9_gl000199_random to universal coordinates 1715433096..1715602969
+More than 50 contigs.  Will stop printing messages
+A total of 0 non-ACGTNX characters were seen in the genome.
+Running cat "gmapdb/hg19RSRS/hg19RSRS.genomecomp" | "/usr/lib/gmap/gmapindex" -U > "gmapdb/hg19RSRS/hg19RSRS.genomebits128"
+Running cat "gmapdb/hg19RSRS/hg19RSRS.genomecomp" | "/usr/lib/gmap/gmapindex" -k 15 -q 3  -D "gmapdb/hg19RSRS" -d hg19RSRS -N
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 0
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 100,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 200,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 300,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 400,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 500,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 600,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 700,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 800,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 900,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 1,000,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 1,100,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 1,200,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 1,300,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 1,400,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 1,500,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 1,600,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 1,700,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 1,800,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 1,900,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 2,000,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 2,100,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 2,200,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 2,300,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 2,400,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 2,500,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 2,600,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 2,700,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 2,800,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 2,900,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 3,000,000,000
+Counting positions in genome hg19RSRS (15 bp every 3 bp), position 3,100,000,000
+Number of positions: 3137161262 => normal-sized genome
+Number of offsets: 965767833 => pages file not required
+Running "/usr/lib/gmap/gmapindex" -k 15 -q 3  -D "gmapdb/hg19RSRS" -d hg19RSRS -O "gmapdb/hg19RSRS/hg19RSRS.genomecomp"
+Offset compression types: bitpack64
+Allocating 16777216*1 bytes for packsizes
+Allocating 16777216*8 bytes for bitpacks
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 0
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 100,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 200,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 300,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 400,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 500,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 600,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 700,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 800,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 900,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,000,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,100,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,200,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,300,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,400,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,500,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,600,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,700,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,800,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,900,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,000,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,100,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,200,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,300,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,400,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,500,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,600,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,700,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,800,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,900,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 3,000,000,000
+Indexing offsets of oligomers in genome hg19RSRS (15 bp every 3 bp), position 3,100,000,000
+Writing 1073741825 offsets compressed via bitpack64...done
+Running "/usr/lib/gmap/gmapindex" -k 15 -q 3  -D "gmapdb/hg19RSRS" -d hg19RSRS -P "gmapdb/hg19RSRS/hg19RSRS.genomecomp"
+Looking for genome hg19RSRS in directory gmapdb/hg19RSRS
+Looking for index files in directory gmapdb/hg19RSRS
+  Pointers file is hg19RSRS.ref153offsets64meta
+  Offsets file is hg19RSRS.ref153offsets64strm
+  Positions file is hg19RSRS.ref153positions
+Expanding offsetsstrm into counters...done
+Allocating 470659856 bytes for counterstrm
+Trying to allocate 965767833*4 bytes of memory for positions...succeeded.  Building positions in memory.
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 0
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 100,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 200,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 300,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 400,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 500,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 600,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 700,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 800,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 900,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,000,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,100,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,200,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,300,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,400,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,500,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,600,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,700,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,800,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 1,900,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,000,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,100,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,200,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,300,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,400,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,500,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,600,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,700,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,800,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 2,900,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 3,000,000,000
+Indexing positions of oligomers in genome hg19RSRS (15 bp every 3 bp), position 3,100,000,000
+Writing 965767833 genomic positions to file gmapdb/hg19RSRS/hg19RSRS.ref153positions ...
+done
+Running "/usr/lib/gmap/gmapindex" -j 6  -D "gmapdb/hg19RSRS" -d hg19RSRS -Q "gmapdb/hg19RSRS/hg19RSRS.genomecomp"
+Writing regiondb
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 0
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 100,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 200,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 300,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 400,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 500,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 600,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 700,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 800,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 900,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 1,000,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 1,100,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 1,200,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 1,300,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 1,400,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 1,500,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 1,600,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 1,700,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 1,800,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 1,900,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 2,000,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 2,100,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 2,200,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 2,300,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 2,400,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 2,500,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 2,600,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 2,700,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 2,800,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 2,900,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 3,000,000,000
+Indexing offsets/positions of oligomers in genome hg19RSRS (6 bp every 1 bp), position 3,100,000,000
+Done
+Building gmap db using chrM.fa.gz...
+-j flag not specified, so building regional hash tables with default 6-mers
+Writing files under gmapdb
+Creating files in directory gmapdb/chrM
+Running "/usr/lib/gmap/fa_coords" -g       -o "gmapdb/chrM.coords" -f "gmapdb/chrM.sources"
+Opening gzipped file chrM.fa.gz
+  Processed short contigs (<1000000 nt): .
+============================================================
+Contig mapping information has been written to file gmapdb/chrM.coords.
+============================================================
+Running "/usr/lib/gmap/gmap_process"  -g -c "gmapdb/chrM.coords" -f "gmapdb/chrM.sources" | "/usr/lib/gmap/gmapindex"  -d chrM -D "gmapdb/chrM" -A -s numeric-alpha
+Reading coordinates from file gmapdb/chrM.coords
+Logging contig chrM at chrM:1..16569 in genome chrM
+ => primary (linear) chromosome
+Total genomic length = 16569 bp
+Have a total of 1 chromosomes
+Writing chromosome file gmapdb/chrM/chrM.chromosome
+Chromosome chrM has universal coordinates 1..16569
+Writing chromosome IIT file gmapdb/chrM/chrM.chromosome.iit
+Writing IIT file header information...coordinates require 4 bytes each...done
+Processing null division/chromosome...sorting...writing...done (1 intervals)
+Writing IIT file footer information...done
+Writing IIT file header information...coordinates require 4 bytes each...done
+Processing null division/chromosome...sorting...writing...done (1 intervals)
+Writing IIT file footer information...done
+No alternate scaffolds observed
+Running "/usr/lib/gmap/gmap_process"  -g -c "gmapdb/chrM.coords" -f "gmapdb/chrM.sources" | "/usr/lib/gmap/gmapindex"  -d chrM -D "gmapdb/chrM" -G
+Genome length is 16569 nt
+Trying to allocate 1556*4 bytes of memory...succeeded.  Building genome in memory.
+Reading coordinates from file gmapdb/chrM.coords
+Writing contig chrM to universal coordinates 1..16569
+A total of 0 non-ACGTNX characters were seen in the genome.
+Running cat "gmapdb/chrM/chrM.genomecomp" | "/usr/lib/gmap/gmapindex" -U > "gmapdb/chrM/chrM.genomebits128"
+Running cat "gmapdb/chrM/chrM.genomecomp" | "/usr/lib/gmap/gmapindex" -k 15 -q 3  -D "gmapdb/chrM" -d chrM -N
+Counting positions in genome chrM (15 bp every 3 bp), position 0
+Number of positions: 16569 => normal-sized genome
+Number of offsets: 5514 => pages file not required
+Running "/usr/lib/gmap/gmapindex" -k 15 -q 3  -D "gmapdb/chrM" -d chrM -O "gmapdb/chrM/chrM.genomecomp"
+Offset compression types: bitpack64
+Allocating 16777216*1 bytes for packsizes
+Allocating 16777216*8 bytes for bitpacks
+Indexing offsets of oligomers in genome chrM (15 bp every 3 bp), position 0
+Writing 1073741825 offsets compressed via bitpack64...done
+Running "/usr/lib/gmap/gmapindex" -k 15 -q 3  -D "gmapdb/chrM" -d chrM -P "gmapdb/chrM/chrM.genomecomp"
+Looking for genome chrM in directory gmapdb/chrM
+Looking for index files in directory gmapdb/chrM
+  Pointers file is chrM.ref153offsets64meta
+  Offsets file is chrM.ref153offsets64strm
+  Positions file is chrM.ref153positions
+Expanding offsetsstrm into counters...done
+Allocating 88176 bytes for counterstrm
+Trying to allocate 5514*4 bytes of memory for positions...succeeded.  Building positions in memory.
+Indexing positions of oligomers in genome chrM (15 bp every 3 bp), position 0
+Writing 5514 genomic positions to file gmapdb/chrM/chrM.ref153positions ...
+done
+Running "/usr/lib/gmap/gmapindex" -j 6  -D "gmapdb/chrM" -d chrM -Q "gmapdb/chrM/chrM.genomecomp"
+Writing regiondb
+Indexing offsets/positions of oligomers in genome chrM (6 bp every 1 bp), position 0
+Done
+Building gmap db using chrRSRS.fa.gz...
+-j flag not specified, so building regional hash tables with default 6-mers
+Writing files under gmapdb
+Creating files in directory gmapdb/chrRSRS
+Running "/usr/lib/gmap/fa_coords" -g       -o "gmapdb/chrRSRS.coords" -f "gmapdb/chrRSRS.sources"
+Opening gzipped file chrRSRS.fa.gz
+  Processed short contigs (<1000000 nt): .
+============================================================
+Contig mapping information has been written to file gmapdb/chrRSRS.coords.
+============================================================
+Running "/usr/lib/gmap/gmap_process"  -g -c "gmapdb/chrRSRS.coords" -f "gmapdb/chrRSRS.sources" | "/usr/lib/gmap/gmapindex"  -d chrRSRS -D "gmapdb/chrRSRS" -A -s numeric-alpha
+Reading coordinates from file gmapdb/chrRSRS.coords
+Logging contig chrRSRS at chrRSRS:1..16569 in genome chrRSRS
+ => primary (linear) chromosome
+Total genomic length = 16569 bp
+Have a total of 1 chromosomes
+Writing chromosome file gmapdb/chrRSRS/chrRSRS.chromosome
+Chromosome chrRSRS has universal coordinates 1..16569
+Writing chromosome IIT file gmapdb/chrRSRS/chrRSRS.chromosome.iit
+Writing IIT file header information...coordinates require 4 bytes each...done
+Processing null division/chromosome...sorting...writing...done (1 intervals)
+Writing IIT file footer information...done
+Writing IIT file header information...coordinates require 4 bytes each...done
+Processing null division/chromosome...sorting...writing...done (1 intervals)
+Writing IIT file footer information...done
+No alternate scaffolds observed
+Running "/usr/lib/gmap/gmap_process"  -g -c "gmapdb/chrRSRS.coords" -f "gmapdb/chrRSRS.sources" | "/usr/lib/gmap/gmapindex"  -d chrRSRS -D "gmapdb/chrRSRS" -G
+Genome length is 16569 nt
+Trying to allocate 1556*4 bytes of memory...succeeded.  Building genome in memory.
+Reading coordinates from file gmapdb/chrRSRS.coords
+Writing contig chrRSRS to universal coordinates 1..16569
+A total of 0 non-ACGTNX characters were seen in the genome.
+Running cat "gmapdb/chrRSRS/chrRSRS.genomecomp" | "/usr/lib/gmap/gmapindex" -U > "gmapdb/chrRSRS/chrRSRS.genomebits128"
+Running cat "gmapdb/chrRSRS/chrRSRS.genomecomp" | "/usr/lib/gmap/gmapindex" -k 15 -q 3  -D "gmapdb/chrRSRS" -d chrRSRS -N
+Counting positions in genome chrRSRS (15 bp every 3 bp), position 0
+Number of positions: 16569 => normal-sized genome
+Number of offsets: 5509 => pages file not required
+Running "/usr/lib/gmap/gmapindex" -k 15 -q 3  -D "gmapdb/chrRSRS" -d chrRSRS -O "gmapdb/chrRSRS/chrRSRS.genomecomp"
+Offset compression types: bitpack64
+Allocating 16777216*1 bytes for packsizes
+Allocating 16777216*8 bytes for bitpacks
+Indexing offsets of oligomers in genome chrRSRS (15 bp every 3 bp), position 0
+Writing 1073741825 offsets compressed via bitpack64...done
+Running "/usr/lib/gmap/gmapindex" -k 15 -q 3  -D "gmapdb/chrRSRS" -d chrRSRS -P "gmapdb/chrRSRS/chrRSRS.genomecomp"
+Looking for genome chrRSRS in directory gmapdb/chrRSRS
+Looking for index files in directory gmapdb/chrRSRS
+  Pointers file is chrRSRS.ref153offsets64meta
+  Offsets file is chrRSRS.ref153offsets64strm
+  Positions file is chrRSRS.ref153positions
+Expanding offsetsstrm into counters...done
+Allocating 88112 bytes for counterstrm
+Trying to allocate 5509*4 bytes of memory for positions...succeeded.  Building positions in memory.
+Indexing positions of oligomers in genome chrRSRS (15 bp every 3 bp), position 0
+Writing 5509 genomic positions to file gmapdb/chrRSRS/chrRSRS.ref153positions ...
+done
+Running "/usr/lib/gmap/gmapindex" -j 6  -D "gmapdb/chrRSRS" -d chrRSRS -Q "gmapdb/chrRSRS/chrRSRS.genomecomp"
+Writing regiondb
+Indexing offsets/positions of oligomers in genome chrRSRS (6 bp every 1 bp), position 0
+Done
+Building gmap db... Done.

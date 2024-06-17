@@ -31,10 +31,12 @@ From: ubuntu:22.04
   mkdir -p /tmp/apt22 &&  echo "Dir::Cache "/tmp/apt22";" > /etc/apt/apt.conf.d/singularity-cache.conf
 
   apt-get update && apt-get -y dist-upgrade && \
-  apt-get install -y wget curl git python-all gmap zlib1g samtools muscle picard-tools openjdk-8-jdk
+  apt-get install -y wget curl git python-all python-pip gmap zlib1g samtools muscle picard-tools openjdk-8-jdk
   update-java-alternatives -s java-1.8.0-openjdk-amd64
 
   ln -s /usr/bin/python2 /usr/bin/python
+
+  python2 -m pip install pandas
 
   export TMPD=/tmp/downloads &&   mkdir -p $TMPD
   mkdir -p /installs
