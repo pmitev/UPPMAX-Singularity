@@ -47,7 +47,8 @@ From: ubuntu:22.04
   tar xf $TMPD/MToolBox-v.1.0.tar.gz
   cp -a MToolBox-v.1.0/MToolBox /opt
   cd /opt/MToolBox/ext_tools
-  wget https://github.com/mitoNGS/MToolBox/raw/dffb5ec017b27d52200d03d6aecf6502845a83a6/MToolBox/ext_tools/GenomeAnalysisTK.jar
+  #wget https://github.com/mitoNGS/MToolBox/raw/dffb5ec017b27d52200d03d6aecf6502845a83a6/MToolBox/ext_tools/GenomeAnalysisTK.jar
+  wget https://github.com/BioH4z/gatk3.8.0/raw/master/GenomeAnalysisTK.jar
   #/opt/gsnap_db_install.sh
 
 cat << EOF > /opt/MToolBox/setup.sh
