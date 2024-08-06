@@ -1,0 +1,83 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%files
+  MitoSAlt_1.1.1.zip /installs/
+  hisat2-2.2.0-Linux_x86_64.zip /installs/
+
+%environment
+  export LC_ALL=C
+  export PYTHONNOUSERSITE=True
+
+%post
+  export LC_ALL=C
+  export PYTHONNOUSERSITE=True
+  export DEBIAN_FRONTEND=noninteractive
+
+  # apt packages cached in /tmp
+  mkdir -p /tmp/apt22 &&  echo "Dir::Cache "/tmp/apt22";" > /etc/apt/apt.conf.d/singularity-cache.conf
+
+  apt-get update && apt-get -y dist-upgrade && \
+  apt-get install -y wget git build-essential cmake unzip r-base perl python-all
+
+  ln -s /usr/bin/python2 /usr/bin/python
+
+  cd /opt && unzip /installs/MitoSAlt_1.1.1.zip && cd MitoSAlt_1.1.1
+  sed -i 's/^HISAT2_URL.*/HISAT2_URL=https:\/\/cloud.biohpc.swmed.edu\/index.php\/s\/hisat2-210-Linux_x86_64\/download/' setup.sh
+  sed -i 's/^LAST_URL.*/LAST_URL=https:\/\/gitlab.com\/mcfrith\/last\/-\/archive\/1453\/last-1453.zip/' setup.sh
+  sed -i 's/^LAST_V.*/LAST_V=last-1453/' setup.sh
+  sed -i 's/^  bin\/last\/src\/lastdb/  bin\/last\/bin\/lastdb/' setup.sh
+  grep HISAT2_URL setup.sh
+cat << EOF | ./setup.sh
+yes
+6
+EOF
+
+
+  # Download
+  # export TMPD=/tmp/downloads &&   mkdir -p $TMPD
+  # wget -P $TMPD -c  ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/human_g1k_v37.fasta.gz
+  # gunzip -c $TMPD/human_g1k_v37.fasta.gz > human_g1k_v37.fasta || true
+
+
+  # pip cache in /tmp
+  # export PIP_CACHE_DIR=/tmp/pip-cache ;  mkdir -p $PIP_CACHE_DIR
+  # pip newer than 24.0
+  # python3 -m pip install --upgrade pip setuptools wheel
+  # pip older than 24.0
+  # python3 -m pip install --cache-dir $PIP_CACHE_DIR --upgrade pip setuptools wheel
+  # python3 -m pip install --no-cache-dir       --upgrade pip setuptools wheel
+
+
+  # Sourcing file when running/executing the container
+  # cp /usr/local/gromacs/bin/ACTRC.bash   /.singularity.d/env/99-ACTRC.sh
+
+#cat << EOF > /tmp/myfile
+#EOF
+
+# Install R packages
+#cat << EOF | R --slave
+#  myNcpus <- as.integer(Sys.getenv("NCPU"))
+#  if(is.na(myNcpus)) myNcpus <- 1
+#  myNcpus <- max(1, myNcpus - 1)  # leave one CPU free
+# 
+#  local({          
+#  r <- getOption("repos")
+#  r["CRAN"] <- "https://ftp.acc.umu.se/mirror/CRAN/"
+#  options(repos = r)
+#  })
+#  
+#  install.packages("eva",   ask=FALSE, Ncpus=myNcpus)
+#  install.packages("XICOR", ask=FALSE, Ncpus=myNcpus)
+#EOF
+  
+  # Patch for old kernels
+  # strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5 
+
+%runscript
+#!/bin/sh
+  if command -v $SINGULARITY_NAME > /dev/null 2> /dev/null; then
+    exec $SINGULARITY_NAME "$@"
+  else
+    echo "# ERROR !!! Command $SINGULARITY_NAME not found in the container"
+  fi
