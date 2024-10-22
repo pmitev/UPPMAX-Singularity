@@ -1,0 +1,19 @@
+BootStrap: docker
+From: mambaorg/micromamba:1.5.10-noble
+
+%files
+  basalt_env.yml /
+
+%environment
+  export PATH="$MAMBA_ROOT_PREFIX/bin:$PATH"
+
+%post
+  micromamba install -y -n base -f basalt_env.yml
+  micromamba env export --name base --explicit > environment.lock
+  echo ">> CONDA_LOCK_START"
+  cat environment.lock
+  echo "<< CONDA_LOCK_END"
+  micromamba clean -a -y
+
+%runscript
+  BASALT "$@"
