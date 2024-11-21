@@ -12,7 +12,7 @@ From: jupyter/scipy-notebook
   python3 -m pip install --cache-dir /tmp/pip-cache sentencepiece lxml
   
   # more modules
-  python3 -m pip install --cache-dir /tmp/pip-cache nltk spacy
+  python3 -m pip install --cache-dir /tmp/pip-cache nltk spacy[cuda12x]
   python3 -m spacy   download sv_core_news_sm
   python3 -m spacy   download sv_core_news_md
   python3 -m spacy   download sv_core_news_lg
