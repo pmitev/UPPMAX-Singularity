@@ -1,0 +1,51 @@
+Bootstrap: docker
+From: ubuntu:24.04
+
+%environment
+  export LC_ALL=C.UTF-8
+  export PYTHONNOUSERSITE=True
+  export SINGULARITY_SHELL=/bin/bash
+  set -- --init-file /opt/etc/bashrc
+
+%post
+  export LC_ALL=C.UTF-8
+  export PYTHONNOUSERSITE=True
+  export DEBIAN_FRONTEND=noninteractive
+  export CONDA_PKGS_DIRS=/tmp/CONDA_PKGS
+  mkdir -p $CONDA_PKGS_DIRS 
+
+  # apt packages cached in /tmp
+  mkdir -p /tmp/apt24 &&  echo "Dir::Cache "/tmp/apt24";" > /etc/apt/apt.conf.d/singularity-cache.conf
+
+  apt-get update && apt-get -y dist-upgrade && \
+  apt-get install -y libegl1 libxcb-cursor0 '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev libfontconfig1 libglib2.0-0 libdbus-1-3 libc6 python3-pip wget git
+
+  
+  # Download
+  export TMPD=/tmp/downloads &&   mkdir -p $TMPD
+  wget -P $TMPD -c https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+  sh $TMPD/Miniforge3-Linux-x86_64.sh -b -p /opt/miniforge3
+
+#  mamba create -n omnipose 'python==3.10.12' pytorch torchvision pytorch-cuda=11.8 -c pytorch -c nvidia
+#
+#/bin/bash <<EOF
+#  source /opt/conda/etc/profile.d/conda.sh
+#  conda activate omnipose
+#
+#  export PIP_CACHE_DIR=/tmp/pip-cache &&  mkdir -p \$PIP_CACHE_DIR && \
+#  python3 -m pip install --cache-dir \$PIP_CACHE_DIR git+https://github.com/kevinjohncutler/omnipose.git pyqt6
+#EOF
+
+  mkdir -p /opt/etc
+  echo "source /opt/miniforge3/etc/profile.d/conda.sh" >> /opt/etc/bashrc
+  echo "source /opt/miniforge3/etc/profile.d/mamba.sh" >> /opt/etc/bashrc
+
+%runscript
+#!/bin/sh
+  . /opt/conda/etc/profile.d/conda.sh
+  conda activate omnipose
+  if command -v $SINGULARITY_NAME > /dev/null 2> /dev/null; then
+    exec $SINGULARITY_NAME "$@"
+  else
+    echo "# ERROR !!! Command $SINGULARITY_NAME not found in the container"
+  fi
