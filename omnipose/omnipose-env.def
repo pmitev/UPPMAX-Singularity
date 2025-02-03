@@ -4,8 +4,16 @@ From: ubuntu:24.04
 %environment
   export LC_ALL=C.UTF-8
   export PYTHONNOUSERSITE=True
-  export SINGULARITY_SHELL=/bin/bash
-  set -- --init-file /opt/etc/bashrc
+  # https://github.com/apptainer/singularity/issues/5075#issuecomment-594391772
+  action="${0##*/}"
+  if [ "$action" = "shell" ]; then
+    if [ "${SINGULARITY_SHELL:-}" = "/bin/bash" ]; then
+      set -- --noprofile --init-file /.singularity_bash
+    elif test -z "${SINGULARITY_SHELL:-}"; then
+      export SINGULARITY_SHELL=/bin/bash
+      set -- --noprofile --init-file /.singularity_bash
+    fi
+  fi
 
 %post
   export LC_ALL=C.UTF-8
@@ -36,9 +44,8 @@ From: ubuntu:24.04
 #  python3 -m pip install --cache-dir \$PIP_CACHE_DIR git+https://github.com/kevinjohncutler/omnipose.git pyqt6
 #EOF
 
-  mkdir -p /opt/etc
-  echo "source /opt/miniforge3/etc/profile.d/conda.sh" >> /opt/etc/bashrc
-  echo "source /opt/miniforge3/etc/profile.d/mamba.sh" >> /opt/etc/bashrc
+  echo "source /opt/miniforge3/etc/profile.d/conda.sh" >> /.singularity_bash
+  echo "source /opt/miniforge3/etc/profile.d/mamba.sh" >> /.singularity_bash
 
 %runscript
 #!/bin/sh
