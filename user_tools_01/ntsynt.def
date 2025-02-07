@@ -1,0 +1,29 @@
+BootStrap: docker
+From: mambaorg/micromamba
+
+%environment
+  export PATH="$MAMBA_ROOT_PREFIX/bin:$PATH"
+  export PATH=$PATH:/opt/ntSynt-viz-1.0.0/bin
+
+%post
+  export PATH="$MAMBA_ROOT_PREFIX/bin:$PATH"
+
+  micromamba install -n base -c conda-forge -c bioconda ntsynt \
+          quicktree snakemake intervaltree r-base bioconductor-treeio \
+          r-ggpubr bioconductor-ggtree r-phytools r-dplyr r-argparse r-scales r-stringr
+
+  micromamba clean -a -y
+
+  R -e 'install.packages(c("gggenomes"), repos = "https://cran.r-project.org")'
+  
+  export TMPD=/tmp/downloads &&   mkdir -p $TMPD
+  wget -P $TMPD -c https://github.com/bcgsc/ntSynt-viz/releases/download/v1.0.0/ntSynt-viz-1.0.0.tar.gz
+  cd /opt && tar xvzf $TMPD/ntSynt-viz-1.0.0.tar.gz
+
+%runscript
+#!/bin/sh
+  if command -v $SINGULARITY_NAME > /dev/null 2> /dev/null; then
+    exec $SINGULARITY_NAME "$@"
+  else
+    echo "# ERROR !!! Command $SINGULARITY_NAME not found in the container"
+  fi
