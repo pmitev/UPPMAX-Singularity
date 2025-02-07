@@ -17,16 +17,24 @@ From: ubuntu:24.04
   apt-get update && apt-get -y dist-upgrade && \
   apt-get install -y git wget build-essential default-jdk r-base \
            zlib1g-dev libbz2-dev liblzma-dev libcurl4-gnutls-dev \
-           r-cran-argparse r-cran-ggplot2 r-cran-scales r-cran-viridis r-cran-cowplot
+           r-cran-argparse r-cran-ggplot2 r-cran-scales r-cran-viridis r-cran-cowplot \
+           samtools 
 
   mkdir -p /opt/src && mkdir -p /opt/tools
- 
+
+  # Juicer
+  export TMPD=/tmp/downloads &&   mkdir -p $TMPD
+  wget -P $TMPD -c  https://github.com/aidenlab/Juicebox/releases/download/v2.20.00/juicer_tools.2.20.00.jar
+  cp $TMPD/juicer_tools.2.20.00.jar /opt/tools/
+   
+  cd /opt/src && git clone https://github.com/c-zhou/yahs.git             && cd yahs       && make
   cd /opt/src && git clone https://github.com/wyp1125/MCScanX.git         && cd MCScanX    && make
   cd /opt/src && git clone https://github.com/thegenemyers/MERQURY.FK.git && cd MERQURY.FK && make 
   cd /opt/src && git clone https://github.com/thegenemyers/FASTK.git      && cd FASTK      && make
 
 
   cd /opt/tools 
+  find /opt/src/yahs       -maxdepth 1 -type f -executable -exec ln -s {} \;
   find /opt/src/MCScanX    -maxdepth 1 -type f -executable -exec ln -s {} \;
   find /opt/src/FASTK      -maxdepth 1 -type f -executable -exec ln -s {} \;
   find /opt/src/MERQURY.FK -maxdepth 1 -type f -executable -exec ln -s {} \;
