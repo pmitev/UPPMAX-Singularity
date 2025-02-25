@@ -14,8 +14,9 @@ From: ubuntu:24.04
   mkdir -p /tmp/apt22 &&  echo "Dir::Cache "/tmp/apt22";" > /etc/apt/apt.conf.d/singularity-cache.conf
 
   apt-get update && apt-get -y dist-upgrade && \
-  apt-get install -y curl rpm2cpio cpio
+  apt-get install -y curl rpm2cpio cpio jq
 
 %runscript
-  curl -s https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install-unprivileged.sh | \
-    bash -s - ./apptainer-unprv
+  LATESTv=$(curl -s https://api.github.com/repos/apptainer/apptainer/releases/latest | jq -r '.tag_name')
+
+  curl -s https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install-unprivileged.sh | bash -s - ./apptainer-${LATESTv}
