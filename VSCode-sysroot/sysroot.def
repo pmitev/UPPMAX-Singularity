@@ -4,7 +4,7 @@ From: ubuntu:latest
 %environment
   export LC_ALL=C.utf8
   export PYTHONNOUSERSITE=True
-  export PATH=$PATH:/crosstool-ng-1.26.0/out/bin
+  export PATH=$PATH:/crosstool-ng-1.27.0/out/bin
 
 %post
   export LC_ALL=C.utf8
@@ -22,13 +22,13 @@ From: ubuntu:latest
 
   # Download
   export TMPD=/tmp/downloads &&   mkdir -p $TMPD
-  wget -P $TMPD -c  http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.26.0.tar.bz2
+  wget -P $TMPD -c  http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.27.0.tar.bz2
 
 
   mkdir -p /installs
   cd /installs
-  tar -xjf $TMPD/crosstool-ng-1.26.0.tar.bz2
-  cd crosstool-ng-1.26.0 && ./configure --prefix=/crosstool-ng-1.26.0/out && make -j 8 && make install
+  tar -xjf $TMPD/crosstool-ng-1.27.0.tar.bz2
+  cd crosstool-ng-1.27.0 && ./configure --prefix=/crosstool-ng-1.27.0/out && make -j 8 && make install
 
   
 
