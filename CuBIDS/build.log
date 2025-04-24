@@ -1,0 +1,895 @@
+Build target 'cubids.sif' already exists and will be deleted during the build process. Do you want to continue? [y/N] INFO:    Starting build...
+INFO:    Fetching OCI image...
+INFO:    Extracting OCI image...
+INFO:    Inserting Singularity configuration...
+INFO:    Copying conda.yml to /scratch/conda.yml
+INFO:    Running post scriptlet
++ export LC_ALL=C.utf8
++ export PYTHONNOUSERSITE=True
++ export DEBIAN_FRONTEND=noninteractive
++ export PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ micromamba install -y -n base -f /scratch/conda.yml
+
+Transaction
+
+  Prefix: /opt/conda
+
+  Updating specs:
+
+   - conda-forge::python=3.12
+   - conda-forge::deno
+   - conda-forge::git
+   - pip
+
+
+  Package                  Version  Build               Channel          Size
+───────────────────────────────────────────────────────────────────────────────
+  Install:
+───────────────────────────────────────────────────────────────────────────────
+
+  + ld_impl_linux-64          2.43  h712a8e2_4          conda-forge     671kB
+  + _libgcc_mutex              0.1  conda_forge         conda-forge       3kB
+  + libgomp                 14.2.0  h767d61c_2          conda-forge     460kB
+  + _openmp_mutex              4.5  2_gnu               conda-forge      24kB
+  + libgcc                  14.2.0  h767d61c_2          conda-forge     848kB
+  + c-ares                  1.34.5  hb9d3cd8_0          conda-forge     207kB
+  + libiconv                  1.18  h4ce23a2_1          conda-forge     713kB
+  + libstdcxx               14.2.0  h8f9b012_2          conda-forge       4MB
+  + ncurses                    6.5  h2d0b736_3          conda-forge     892kB
+  + libzlib                  1.3.1  hb9d3cd8_2          conda-forge      61kB
+  + libgcc-ng               14.2.0  h69a702a_2          conda-forge      54kB
+  + libffi                   3.4.6  h2dba641_1          conda-forge      57kB
+  + liblzma                  5.8.1  hb9d3cd8_0          conda-forge     113kB
+  + libexpat                 2.7.0  h5888daf_0          conda-forge      74kB
+  + libstdcxx-ng            14.2.0  h4852527_2          conda-forge      54kB
+  + libedit           3.1.20250104  pl5321h7949ede_0    conda-forge     135kB
+  + readline                   8.2  h8c095d6_2          conda-forge     282kB
+  + zstd                     1.5.7  hb8e6e7a_2          conda-forge     568kB
+  + libsqlite               3.49.1  hee588c1_2          conda-forge     919kB
+  + deno                    2.2.11  h1a4f165_0          conda-forge      72MB
+  + libev                     4.33  hd590300_2          conda-forge     113kB
+  + keyutils                 1.6.1  h166bdaf_0          conda-forge     118kB
+  + tk                      8.6.13  noxft_h4845f30_101  conda-forge       3MB
+  + libxcrypt               4.4.36  hd590300_1          conda-forge     100kB
+  + bzip2                    1.0.8  h4bc722e_7          conda-forge     253kB
+  + libuuid                 2.38.1  h0b41bf4_0          conda-forge      34kB
+  + libnsl                   2.0.1  hd590300_0          conda-forge      33kB
+  + perl                    5.32.1  7_hd590300_perl5    conda-forge      13MB
+  + pcre2                    10.44  hba22ea6_2          conda-forge     952kB
+  + tzdata                   2025b  h78e105d_0          conda-forge     123kB
+  + ca-certificates      2025.1.31  hbd8a1cb_1          conda-forge     159kB
+  + openssl                  3.5.0  h7b32b05_0          conda-forge       3MB
+  + libssh2                 1.11.1  hf672d98_0          conda-forge     304kB
+  + libnghttp2              1.64.0  h161d5f1_0          conda-forge     648kB
+  + krb5                    1.21.3  h659f571_0          conda-forge       1MB
+  + python                 3.12.10  h9e4cc4f_0_cpython  conda-forge      31MB
+  + libcurl                 8.13.0  h332b0f4_0          conda-forge     438kB
+  + git                     2.49.0  pl5321h59d505e_0    conda-forge      11MB
+  + wheel                   0.45.1  pyhd8ed1ab_1        conda-forge      63kB
+  + setuptools              79.0.0  pyhff2d567_0        conda-forge     788kB
+  + pip                     25.0.1  pyh8b19718_0        conda-forge       1MB
+
+  Summary:
+
+  Install: 41 packages
+
+  Total download: 150MB
+
+───────────────────────────────────────────────────────────────────────────────
+
+
+
+Transaction starting
+
+Transaction finished
+
+To activate this environment, use:
+
+    micromamba activate base
+
+Or to execute a single command in this environment, use:
+
+    micromamba run -n base mycommand
+
+
+Installing pip packages: cubids
+Collecting cubids (from -r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading cubids-1.2.0-py3-none-any.whl.metadata (5.4 kB)
+Collecting datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5 (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading datalad-1.1.5-py3-none-any.whl.metadata (37 kB)
+Collecting numpy<=2.2.3 (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading numpy-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+Collecting pandas<=2.2.3 (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+Collecting pybids<=0.18.1 (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading pybids-0.18.1-py3-none-any.whl.metadata (8.0 kB)
+Collecting pyyaml (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting scikit-learn<=1.6.1 (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading scikit_learn-1.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
+Collecting tqdm (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting platformdirs (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
+Collecting chardet>=3.0.4 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading chardet-5.2.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting distro (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+Collecting iso8601 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading iso8601-2.1.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting humanize (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading humanize-4.12.2-py3-none-any.whl.metadata (7.8 kB)
+Collecting fasteners>=0.14 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading fasteners-0.19-py3-none-any.whl.metadata (4.9 kB)
+Collecting packaging (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting patool>=1.7 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading patool-4.0.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Collecting annexremote (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading annexremote-1.6.6-py3-none-any.whl.metadata (6.5 kB)
+Collecting looseversion (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading looseversion-1.3.0-py2.py3-none-any.whl.metadata (4.6 kB)
+Collecting boto3 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading boto3-1.38.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting keyring!=23.9.0,>=20.0 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading keyring-25.6.0-py3-none-any.whl.metadata (20 kB)
+Collecting keyrings.alt (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading keyrings.alt-5.0.2-py3-none-any.whl.metadata (3.6 kB)
+Collecting msgpack (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading msgpack-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.4 kB)
+Collecting requests>=1.2 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting python-gitlab (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading python_gitlab-5.6.0-py3-none-any.whl.metadata (8.5 kB)
+Collecting python-dateutil>=2.8.2 (from pandas<=2.2.3->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pytz>=2020.1 (from pandas<=2.2.3->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas<=2.2.3->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting scipy>=1.8 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading scipy-1.15.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+Collecting nibabel>=4.0 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading nibabel-5.3.2-py3-none-any.whl.metadata (9.1 kB)
+Collecting formulaic<0.6,>=0.2.4 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading formulaic-0.5.2-py3-none-any.whl.metadata (5.7 kB)
+Collecting sqlalchemy>=1.3.16 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading sqlalchemy-2.0.40-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.6 kB)
+Collecting bids-validator>=1.14.7 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading bids_validator-1.14.7.post0-py3-none-any.whl.metadata (39 kB)
+Collecting num2words>=0.5.5 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading num2words-0.5.14-py3-none-any.whl.metadata (13 kB)
+Collecting click>=8.0 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+Collecting universal_pathlib>=0.2.2 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading universal_pathlib-0.2.6-py3-none-any.whl.metadata (25 kB)
+Collecting joblib>=1.2.0 (from scikit-learn<=1.6.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading joblib-1.4.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn<=1.6.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting bidsschematools>=0.10 (from bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading bidsschematools-1.0.5-py3-none-any.whl.metadata (3.6 kB)
+Collecting astor>=0.8 (from formulaic<0.6,>=0.2.4->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading astor-0.8.1-py2.py3-none-any.whl.metadata (4.2 kB)
+Collecting interface-meta>=1.2.0 (from formulaic<0.6,>=0.2.4->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading interface_meta-1.3.0-py3-none-any.whl.metadata (6.7 kB)
+Collecting typing-extensions>=4.2.0 (from formulaic<0.6,>=0.2.4->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading typing_extensions-4.13.2-py3-none-any.whl.metadata (3.0 kB)
+Collecting wrapt>=1.0 (from formulaic<0.6,>=0.2.4->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB)
+Collecting SecretStorage>=3.2 (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading SecretStorage-3.3.3-py3-none-any.whl.metadata (4.0 kB)
+Collecting jeepney>=0.4.2 (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading jeepney-0.9.0-py3-none-any.whl.metadata (1.2 kB)
+Collecting jaraco.classes (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading jaraco.classes-3.4.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting jaraco.functools (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading jaraco.functools-4.1.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting jaraco.context (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading jaraco.context-6.0.1-py3-none-any.whl.metadata (4.1 kB)
+Collecting docopt>=0.6.2 (from num2words>=0.5.5->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading docopt-0.6.2.tar.gz (25 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas<=2.2.3->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting charset-normalizer<4,>=2 (from requests>=1.2->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+Collecting idna<4,>=2.5 (from requests>=1.2->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests>=1.2->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading urllib3-2.4.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests>=1.2->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
+Collecting greenlet>=1 (from sqlalchemy>=1.3.16->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading greenlet-3.2.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (4.1 kB)
+Collecting fsspec!=2024.3.1,>=2022.1.0 (from universal_pathlib>=0.2.2->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading fsspec-2025.3.2-py3-none-any.whl.metadata (11 kB)
+Collecting botocore<1.39.0,>=1.38.1 (from boto3->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading botocore-1.38.1-py3-none-any.whl.metadata (5.7 kB)
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading jmespath-1.0.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting s3transfer<0.13.0,>=0.12.0 (from boto3->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading s3transfer-0.12.0-py3-none-any.whl.metadata (1.7 kB)
+Collecting requests-toolbelt>=1.0.0 (from python-gitlab->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl.metadata (14 kB)
+Collecting jsonschema (from bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading jsonschema-4.23.0-py3-none-any.whl.metadata (7.9 kB)
+Collecting cryptography>=2.0 (from SecretStorage>=3.2->keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Collecting more-itertools (from jaraco.classes->keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading more_itertools-10.7.0-py3-none-any.whl.metadata (37 kB)
+Collecting cffi>=1.12 (from cryptography>=2.0->SecretStorage>=3.2->keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting attrs>=22.2.0 (from jsonschema->bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema->bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading jsonschema_specifications-2025.4.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema->bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading referencing-0.36.2-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.7.1 (from jsonschema->bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading rpds_py-0.24.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting pycparser (from cffi>=1.12->cryptography>=2.0->SecretStorage>=3.2->keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+  Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+Downloading cubids-1.2.0-py3-none-any.whl (177 kB)
+Downloading datalad-1.1.5-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 26.6 MB/s eta 0:00:00
+Downloading numpy-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 87.6 MB/s eta 0:00:00
+Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 92.6 MB/s eta 0:00:00
+Downloading pybids-0.18.1-py3-none-any.whl (212 kB)
+Downloading scikit_learn-1.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 92.1 MB/s eta 0:00:00
+Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 35.1 MB/s eta 0:00:00
+Downloading bids_validator-1.14.7.post0-py3-none-any.whl (23 kB)
+Downloading chardet-5.2.0-py3-none-any.whl (199 kB)
+Downloading click-8.1.8-py3-none-any.whl (98 kB)
+Downloading fasteners-0.19-py3-none-any.whl (18 kB)
+Downloading formulaic-0.5.2-py3-none-any.whl (77 kB)
+Downloading joblib-1.4.2-py3-none-any.whl (301 kB)
+Downloading keyring-25.6.0-py3-none-any.whl (39 kB)
+Downloading nibabel-5.3.2-py3-none-any.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 83.1 MB/s eta 0:00:00
+Downloading num2words-0.5.14-py3-none-any.whl (163 kB)
+Downloading packaging-25.0-py3-none-any.whl (66 kB)
+Downloading patool-4.0.0-py2.py3-none-any.whl (86 kB)
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+Downloading scipy-1.15.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 100.4 MB/s eta 0:00:00
+Downloading sqlalchemy-2.0.40-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 82.6 MB/s eta 0:00:00
+Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+Downloading universal_pathlib-0.2.6-py3-none-any.whl (50 kB)
+Downloading annexremote-1.6.6-py3-none-any.whl (25 kB)
+Downloading boto3-1.38.1-py3-none-any.whl (139 kB)
+Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+Downloading humanize-4.12.2-py3-none-any.whl (128 kB)
+Downloading iso8601-2.1.0-py3-none-any.whl (7.5 kB)
+Downloading keyrings.alt-5.0.2-py3-none-any.whl (17 kB)
+Downloading looseversion-1.3.0-py2.py3-none-any.whl (8.2 kB)
+Downloading msgpack-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (401 kB)
+Downloading platformdirs-4.3.7-py3-none-any.whl (18 kB)
+Downloading python_gitlab-5.6.0-py3-none-any.whl (148 kB)
+Downloading astor-0.8.1-py2.py3-none-any.whl (27 kB)
+Downloading bidsschematools-1.0.5-py3-none-any.whl (212 kB)
+Downloading botocore-1.38.1-py3-none-any.whl (13.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 93.1 MB/s eta 0:00:00
+Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
+Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (145 kB)
+Downloading fsspec-2025.3.2-py3-none-any.whl (194 kB)
+Downloading greenlet-3.2.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (603 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 603.8/603.8 kB 21.6 MB/s eta 0:00:00
+Downloading idna-3.10-py3-none-any.whl (70 kB)
+Downloading interface_meta-1.3.0-py3-none-any.whl (14 kB)
+Downloading jeepney-0.9.0-py3-none-any.whl (49 kB)
+Downloading jmespath-1.0.1-py3-none-any.whl (20 kB)
+Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+Downloading s3transfer-0.12.0-py3-none-any.whl (84 kB)
+Downloading SecretStorage-3.3.3-py3-none-any.whl (15 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+Downloading urllib3-2.4.0-py3-none-any.whl (128 kB)
+Downloading wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (89 kB)
+Downloading jaraco.classes-3.4.0-py3-none-any.whl (6.8 kB)
+Downloading jaraco.context-6.0.1-py3-none-any.whl (6.8 kB)
+Downloading jaraco.functools-4.1.0-py3-none-any.whl (10 kB)
+Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl (4.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 78.4 MB/s eta 0:00:00
+Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
+Downloading more_itertools-10.7.0-py3-none-any.whl (65 kB)
+Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+Downloading cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (479 kB)
+Downloading jsonschema_specifications-2025.4.1-py3-none-any.whl (18 kB)
+Downloading referencing-0.36.2-py3-none-any.whl (26 kB)
+Downloading rpds_py-0.24.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (393 kB)
+Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+Building wheels for collected packages: docopt
+  Building wheel for docopt (setup.py): started
+  Building wheel for docopt (setup.py): finished with status 'done'
+  Created wheel for docopt: filename=docopt-0.6.2-py2.py3-none-any.whl size=13780 sha256=50c00ca857ebfc404225a3c502e45f6602d2e62fe497c08d5976e770993bca06
+  Stored in directory: /root/.cache/pip/wheels/1a/bf/a1/4cee4f7678c68c5875ca89eaccf460593539805c3906722228
+Successfully built docopt
+Installing collected packages: pytz, looseversion, docopt, annexremote, wrapt, urllib3, tzdata, typing-extensions, tqdm, threadpoolctl, six, rpds-py, pyyaml, pycparser, platformdirs, patool, packaging, numpy, num2words, msgpack, more-itertools, joblib, jmespath, jeepney, jaraco.context, iso8601, interface-meta, idna, humanize, greenlet, fsspec, fasteners, distro, click, charset-normalizer, chardet, certifi, attrs, astor, universal_pathlib, sqlalchemy, scipy, requests, referencing, python-dateutil, nibabel, jaraco.functools, jaraco.classes, cffi, scikit-learn, requests-toolbelt, pandas, keyrings.alt, jsonschema-specifications, cryptography, botocore, SecretStorage, s3transfer, python-gitlab, jsonschema, formulaic, keyring, boto3, bidsschematools, datalad, bids-validator, pybids, cubids
+Successfully installed SecretStorage-3.3.3 annexremote-1.6.6 astor-0.8.1 attrs-25.3.0 bids-validator-1.14.7.post0 bidsschematools-1.0.5 boto3-1.38.1 botocore-1.38.1 certifi-2025.1.31 cffi-1.17.1 chardet-5.2.0 charset-normalizer-3.4.1 click-8.1.8 cryptography-44.0.2 cubids-1.2.0 datalad-1.1.5 distro-1.9.0 docopt-0.6.2 fasteners-0.19 formulaic-0.5.2 fsspec-2025.3.2 greenlet-3.2.1 humanize-4.12.2 idna-3.10 interface-meta-1.3.0 iso8601-2.1.0 jaraco.classes-3.4.0 jaraco.context-6.0.1 jaraco.functools-4.1.0 jeepney-0.9.0 jmespath-1.0.1 joblib-1.4.2 jsonschema-4.23.0 jsonschema-specifications-2025.4.1 keyring-25.6.0 keyrings.alt-5.0.2 looseversion-1.3.0 more-itertools-10.7.0 msgpack-1.1.0 nibabel-5.3.2 num2words-0.5.14 numpy-2.2.3 packaging-25.0 pandas-2.2.3 patool-4.0.0 platformdirs-4.3.7 pybids-0.18.1 pycparser-2.22 python-dateutil-2.9.0.post0 python-gitlab-5.6.0 pytz-2025.2 pyyaml-6.0.2 referencing-0.36.2 requests-2.32.3 requests-toolbelt-1.0.0 rpds-py-0.24.0 s3transfer-0.12.0 scikit-learn-1.6.1 scipy-1.15.2 six-1.17.0 sqlalchemy-2.0.40 threadpoolctl-3.6.0 tqdm-4.67.1 typing-extensions-4.13.2 tzdata-2025.2 universal_pathlib-0.2.6 urllib3-2.4.0 wrapt-1.17.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ micromamba install -y -n base conda-forge::procps-ng
+conda-forge/linux-64                                        Using cache
+conda-forge/noarch                                          Using cache
+
+Pinned packages:
+  - python 3.12.*
+
+
+Transaction
+
+  Prefix: /opt/conda
+
+  Updating specs:
+
+   - conda-forge::procps-ng
+
+
+  Package      Version  Build       Channel          Size
+───────────────────────────────────────────────────────────
+  Install:
+───────────────────────────────────────────────────────────
+
+  + procps-ng    4.0.4  haa1a288_0  conda-forge     551kB
+
+  Summary:
+
+  Install: 1 packages
+
+  Total download: 551kB
+
+───────────────────────────────────────────────────────────
+
+
+
+Transaction starting
+
+Transaction finished
+
+To activate this environment, use:
+
+    micromamba activate base
+
+Or to execute a single command in this environment, use:
+
+    micromamba run -n base mycommand
+
++ micromamba env export --name base --explicit
++ echo >> CONDA_LOCK_START
+>> CONDA_LOCK_START
++ cat environment.lock
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: linux-64
+@EXPLICIT
+https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2#d7c89558ba9fa0495403155b64376d81
+https://conda.anaconda.org/conda-forge/linux-64/libgomp-14.2.0-h767d61c_2.conda#06d02030237f4d5b3d9a7e7d348fe3c6
+https://conda.anaconda.org/conda-forge/linux-64/_openmp_mutex-4.5-2_gnu.tar.bz2#73aaf86a425cc6e73fcf236a5a46396d
+https://conda.anaconda.org/conda-forge/linux-64/libgcc-14.2.0-h767d61c_2.conda#ef504d1acbd74b7cc6849ef8af47dd03
+https://conda.anaconda.org/conda-forge/linux-64/libgcc-ng-14.2.0-h69a702a_2.conda#a2222a6ada71fb478682efe483ce0f92
+https://conda.anaconda.org/conda-forge/linux-64/bzip2-1.0.8-h4bc722e_7.conda#62ee74e96c5ebb0af99386de58cf9553
+https://conda.anaconda.org/conda-forge/linux-64/c-ares-1.34.5-hb9d3cd8_0.conda#f7f0d6cc2dc986d42ac2689ec88192be
+https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2025.1.31-hbd8a1cb_1.conda#e74273d9fc5ab633d613cde474b55157
+https://conda.anaconda.org/conda-forge/linux-64/libzlib-1.3.1-hb9d3cd8_2.conda#edb0dca6bc32e4f4789199455a1dbeb8
+https://conda.anaconda.org/conda-forge/linux-64/deno-2.2.11-h1a4f165_0.conda#3e86bcebc533864c7f3c88994d714083
+https://conda.anaconda.org/conda-forge/linux-64/keyutils-1.6.1-h166bdaf_0.tar.bz2#30186d27e2c9fa62b45fb1476b7200e3
+https://conda.anaconda.org/conda-forge/linux-64/ncurses-6.5-h2d0b736_3.conda#47e340acb35de30501a76c7c799c41d7
+https://conda.anaconda.org/conda-forge/linux-64/libedit-3.1.20250104-pl5321h7949ede_0.conda#c277e0a4d549b03ac1e9d6cbbe3d017b
+https://conda.anaconda.org/conda-forge/linux-64/libstdcxx-14.2.0-h8f9b012_2.conda#a78c856b6dc6bf4ea8daeb9beaaa3fb0
+https://conda.anaconda.org/conda-forge/linux-64/libstdcxx-ng-14.2.0-h4852527_2.conda#c75da67f045c2627f59e6fcb5f4e3a9b
+https://conda.anaconda.org/conda-forge/linux-64/openssl-3.5.0-h7b32b05_0.conda#bb539841f2a3fde210f387d00ed4bb9d
+https://conda.anaconda.org/conda-forge/linux-64/krb5-1.21.3-h659f571_0.conda#3f43953b7d3fb3aaa1d0d0723d91e368
+https://conda.anaconda.org/conda-forge/linux-64/libev-4.33-hd590300_2.conda#172bf1cd1ff8629f2b1179945ed45055
+https://conda.anaconda.org/conda-forge/linux-64/libnghttp2-1.64.0-h161d5f1_0.conda#19e57602824042dfd0446292ef90488b
+https://conda.anaconda.org/conda-forge/linux-64/libssh2-1.11.1-hf672d98_0.conda#be2de152d8073ef1c01b7728475f2fe7
+https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.7-hb8e6e7a_2.conda#6432cb5d4ac0046c3ac0a8a0f95842f9
+https://conda.anaconda.org/conda-forge/linux-64/libcurl-8.13.0-h332b0f4_0.conda#cbdc92ac0d93fe3c796e36ad65c7905c
+https://conda.anaconda.org/conda-forge/linux-64/libexpat-2.7.0-h5888daf_0.conda#db0bfbe7dd197b68ad5f30333bae6ce0
+https://conda.anaconda.org/conda-forge/linux-64/libiconv-1.18-h4ce23a2_1.conda#e796ff8ddc598affdf7c173d6145f087
+https://conda.anaconda.org/conda-forge/linux-64/pcre2-10.44-hba22ea6_2.conda#df359c09c41cd186fffb93a2d87aa6f5
+https://conda.anaconda.org/conda-forge/linux-64/libxcrypt-4.4.36-hd590300_1.conda#5aa797f8787fe7a17d1b0821485b5adc
+https://conda.anaconda.org/conda-forge/linux-64/perl-5.32.1-7_hd590300_perl5.conda#f2cfec9406850991f4e3d960cc9e3321
+https://conda.anaconda.org/conda-forge/linux-64/git-2.49.0-pl5321h59d505e_0.conda#757e04df008ac271bf9fcc3ee21d5ea8
+https://conda.anaconda.org/conda-forge/linux-64/ld_impl_linux-64-2.43-h712a8e2_4.conda#01f8d123c96816249efd255a31ad7712
+https://conda.anaconda.org/conda-forge/linux-64/libffi-3.4.6-h2dba641_1.conda#ede4673863426c0883c0063d853bbd85
+https://conda.anaconda.org/conda-forge/linux-64/liblzma-5.8.1-hb9d3cd8_0.conda#0e87378639676987af32fee53ba32258
+https://conda.anaconda.org/conda-forge/linux-64/libnsl-2.0.1-hd590300_0.conda#30fd6e37fe21f86f4bd26d6ee73eeec7
+https://conda.anaconda.org/conda-forge/linux-64/libsqlite-3.49.1-hee588c1_2.conda#962d6ac93c30b1dfc54c9cccafd1003e
+https://conda.anaconda.org/conda-forge/linux-64/libuuid-2.38.1-h0b41bf4_0.conda#40b61aab5c7ba9ff276c41cfffe6b80b
+https://conda.anaconda.org/conda-forge/linux-64/readline-8.2-h8c095d6_2.conda#283b96675859b20a825f8fa30f311446
+https://conda.anaconda.org/conda-forge/linux-64/tk-8.6.13-noxft_h4845f30_101.conda#d453b98d9c83e71da0741bb0ff4d76bc
+https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda#4222072737ccff51314b5ece9c7d6f5a
+https://conda.anaconda.org/conda-forge/linux-64/python-3.12.10-h9e4cc4f_0_cpython.conda#a41d26cd4d47092d683915d058380dec
+https://conda.anaconda.org/conda-forge/noarch/setuptools-79.0.0-pyhff2d567_0.conda#36c8697843eb7573fe3dde0e36193a06
+https://conda.anaconda.org/conda-forge/noarch/wheel-0.45.1-pyhd8ed1ab_1.conda#75cb7132eb58d97896e173ef12ac9986
+https://conda.anaconda.org/conda-forge/noarch/pip-25.0.1-pyh8b19718_0.conda#79b5c1440aedc5010f687048d9103628
+https://conda.anaconda.org/conda-forge/linux-64/procps-ng-4.0.4-haa1a288_0.conda#df1234784d50c2133419dc695dc65f99
++ echo << CONDA_LOCK_END
+<< CONDA_LOCK_END
++ micromamba clean -a -y
+Collect information..
+Cleaning index cache..
+Cleaning lock files..
+  Package file                                    Size
+────────────────────────────────────────────────────────
+  /opt/conda/pkgs
+────────────────────────────────────────────────────────
+
+  _libgcc_mutex-0.1-conda_forge.tar.bz2            3kB
+  _openmp_mutex-4.5-2_gnu.tar.bz2                 24kB
+  bzip2-1.0.8-h4bc722e_7.conda                   253kB
+  c-ares-1.34.5-hb9d3cd8_0.conda                 207kB
+  ca-certificates-2025.1.31-hbd8a1cb_1.conda     159kB
+  deno-2.2.11-h1a4f165_0.conda                    72MB
+  git-2.49.0-pl5321h59d505e_0.conda               11MB
+  keyutils-1.6.1-h166bdaf_0.tar.bz2              118kB
+  krb5-1.21.3-h659f571_0.conda                     1MB
+  ld_impl_linux-64-2.43-h712a8e2_4.conda         671kB
+  libcurl-8.13.0-h332b0f4_0.conda                438kB
+  libedit-3.1.20250104-pl5321h7949ede_0.conda    135kB
+  libev-4.33-hd590300_2.conda                    113kB
+  libexpat-2.7.0-h5888daf_0.conda                 74kB
+  libffi-3.4.6-h2dba641_1.conda                   57kB
+  libgcc-14.2.0-h767d61c_2.conda                 848kB
+  libgcc-ng-14.2.0-h69a702a_2.conda               54kB
+  libgomp-14.2.0-h767d61c_2.conda                460kB
+  libiconv-1.18-h4ce23a2_1.conda                 713kB
+  liblzma-5.8.1-hb9d3cd8_0.conda                 113kB
+  libnghttp2-1.64.0-h161d5f1_0.conda             648kB
+  libnsl-2.0.1-hd590300_0.conda                   33kB
+  libsqlite-3.49.1-hee588c1_2.conda              919kB
+  libssh2-1.11.1-hf672d98_0.conda                304kB
+  libstdcxx-14.2.0-h8f9b012_2.conda                4MB
+  libstdcxx-ng-14.2.0-h4852527_2.conda            54kB
+  libuuid-2.38.1-h0b41bf4_0.conda                 34kB
+  libxcrypt-4.4.36-hd590300_1.conda              100kB
+  libzlib-1.3.1-hb9d3cd8_2.conda                  61kB
+  ncurses-6.5-h2d0b736_3.conda                   892kB
+  openssl-3.5.0-h7b32b05_0.conda                   3MB
+  pcre2-10.44-hba22ea6_2.conda                   952kB
+  perl-5.32.1-7_hd590300_perl5.conda              13MB
+  pip-25.0.1-pyh8b19718_0.conda                    1MB
+  procps-ng-4.0.4-haa1a288_0.conda               551kB
+  python-3.12.10-h9e4cc4f_0_cpython.conda         31MB
+  readline-8.2-h8c095d6_2.conda                  282kB
+  setuptools-79.0.0-pyhff2d567_0.conda           788kB
+  tk-8.6.13-noxft_h4845f30_101.conda               3MB
+  tzdata-2025b-h78e105d_0.conda                  123kB
+  wheel-0.45.1-pyhd8ed1ab_1.conda                 63kB
+  zstd-1.5.7-hb8e6e7a_2.conda                    568kB
+
+  /root/.mamba/pkgs
+────────────────────────────────────────────────────────
+
+
+  
+────────────────────────────────────────────────────────
+
+  Total size:                                    151MB
+Cleaning tarballs..
+Cleaning packages..
++ mkdir -p /installs
++ cd /installs
++ deno compile -ERWN -o bids-validator jsr:@bids/validator
+Download https://jsr.io/@bids/validator/meta.json
+Download https://jsr.io/@bids/validator/2.0.5_meta.json
+Download https://jsr.io/@bids/validator/2.0.5/src/.git-meta.json
+Download https://jsr.io/@bids/validator/2.0.5/deno.json
+Download https://jsr.io/@std/fmt/meta.json
+Download https://jsr.io/@std/path/meta.json
+Download https://jsr.io/@std/log/meta.json
+Download https://jsr.io/@effigies/cliffy-command/meta.json
+Download https://jsr.io/@bids/schema/meta.json
+Download https://jsr.io/@effigies/cliffy-table/meta.json
+Download https://jsr.io/@std/yaml/meta.json
+Download https://registry.npmjs.org/ignore
+Download https://registry.npmjs.org/ajv
+Download https://registry.npmjs.org/hed-validator
+Download https://jsr.io/@std/streams/meta.json
+Download https://jsr.io/@libs/xml/meta.json
+Download https://registry.npmjs.org/@bids%2fnifti-reader-js
+Download https://jsr.io/@std/fmt/1.0.6_meta.json
+Download https://jsr.io/@std/path/1.0.8_meta.json
+Download https://jsr.io/@std/log/0.224.14_meta.json
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8_meta.json
+Download https://jsr.io/@bids/schema/1.0.4_meta.json
+Download https://jsr.io/@effigies/cliffy-table/1.0.0-dev.5_meta.json
+Download https://jsr.io/@std/yaml/1.0.6_meta.json
+Download https://jsr.io/@std/streams/1.0.9_meta.json
+Download https://jsr.io/@libs/xml/6.0.4_meta.json
+Download https://jsr.io/@bids/schema/1.0.4/schema.json
+Download https://jsr.io/@bids/schema/1.0.4/citation/schema.json
+Download https://jsr.io/@std/io/meta.json
+Download https://jsr.io/@std/fs/meta.json
+Download https://jsr.io/@cliffy/flags/meta.json
+Download https://jsr.io/@cliffy/internal/meta.json
+Download https://jsr.io/@std/bytes/meta.json
+Download https://jsr.io/@std/text/meta.json
+Download https://jsr.io/@std/io/0.225.2_meta.json
+Download https://jsr.io/@std/fs/1.0.17_meta.json
+Download https://jsr.io/@cliffy/flags/1.0.0-rc.7_meta.json
+Download https://jsr.io/@cliffy/internal/1.0.0-rc.7_meta.json
+Download https://jsr.io/@std/bytes/1.0.5_meta.json
+Download https://jsr.io/@std/text/1.0.13_meta.json
+Download https://jsr.io/@bids/validator/2.0.5/src/bids-validator.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/main.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/setup/options.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/files/deno.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/files/browser.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/files/ignore.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/validators/bids.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/utils/output.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/utils/logger.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/types/validation-result.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/version.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/types/issues.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/types/filetree.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/setup/requestPermissions.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/files/streams.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/files/filetree.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/types/check.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/files/json.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/types/schema.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/schema/applyRules.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/schema/walk.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/setup/loadSchema.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/summary/summary.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/validators/filenameIdentify.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/validators/filenameValidate.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/issues/datasetIssues.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/validators/internal/emptyFile.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/validators/internal/unusedFile.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/schema/context.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/validators/hed.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/validators/citation.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/schema/expressionLanguage.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/utils/memoize.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/validators/json.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/schema/tables.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/files/tsv.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/utils/objectPathHandler.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/summary/collectSubjectMetadata.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/schema/modalities.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/issues/list.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/types/columns.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/schema/entities.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/files/inheritance.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/files/gzip.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/files/tiff.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/files/nifti.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/schema/associations.ts
+Download https://jsr.io/@bids/validator/2.0.5/src/files/dwi.ts
+Download https://jsr.io/@std/fmt/1.0.6/colors.ts
+Download https://jsr.io/@std/path/1.0.8/mod.ts
+Download https://jsr.io/@std/log/0.224.14/mod.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/mod.ts
+Download https://jsr.io/@bids/schema/1.0.4/mod.ts
+Download https://jsr.io/@std/path/1.0.8/posix/mod.ts
+Download https://jsr.io/@effigies/cliffy-table/1.0.0-dev.5/mod.ts
+Download https://jsr.io/@std/fmt/1.0.6/bytes.ts
+Download https://jsr.io/@bids/schema/1.0.4/context.ts
+Download https://jsr.io/@bids/schema/1.0.4/citation/mod.ts
+Download https://jsr.io/@std/yaml/1.0.6/mod.ts
+Download https://jsr.io/@std/streams/1.0.9/mod.ts
+Download https://jsr.io/@libs/xml/6.0.4/mod.ts
+Download https://jsr.io/@std/path/1.0.8/basename.ts
+Download https://jsr.io/@std/path/1.0.8/constants.ts
+Download https://jsr.io/@std/path/1.0.8/dirname.ts
+Download https://jsr.io/@std/path/1.0.8/extname.ts
+Download https://jsr.io/@std/path/1.0.8/format.ts
+Download https://jsr.io/@std/path/1.0.8/from_file_url.ts
+Download https://jsr.io/@std/path/1.0.8/is_absolute.ts
+Download https://jsr.io/@std/path/1.0.8/join.ts
+Download https://jsr.io/@std/path/1.0.8/normalize.ts
+Download https://jsr.io/@std/path/1.0.8/parse.ts
+Download https://jsr.io/@std/path/1.0.8/relative.ts
+Download https://jsr.io/@std/path/1.0.8/resolve.ts
+Download https://jsr.io/@std/path/1.0.8/to_file_url.ts
+Download https://jsr.io/@std/path/1.0.8/to_namespaced_path.ts
+Download https://jsr.io/@std/path/1.0.8/common.ts
+Download https://jsr.io/@std/path/1.0.8/types.ts
+Download https://jsr.io/@std/path/1.0.8/glob_to_regexp.ts
+Download https://jsr.io/@std/path/1.0.8/is_glob.ts
+Download https://jsr.io/@std/path/1.0.8/join_globs.ts
+Download https://jsr.io/@std/path/1.0.8/normalize_glob.ts
+Download https://jsr.io/@std/log/0.224.14/base_handler.ts
+Download https://jsr.io/@std/log/0.224.14/console_handler.ts
+Download https://jsr.io/@std/log/0.224.14/file_handler.ts
+Download https://jsr.io/@std/log/0.224.14/rotating_file_handler.ts
+Download https://jsr.io/@std/log/0.224.14/levels.ts
+Download https://jsr.io/@std/log/0.224.14/logger.ts
+Download https://jsr.io/@std/log/0.224.14/formatters.ts
+Download https://jsr.io/@std/log/0.224.14/critical.ts
+Download https://jsr.io/@std/log/0.224.14/debug.ts
+Download https://jsr.io/@std/log/0.224.14/error.ts
+Download https://jsr.io/@std/log/0.224.14/get_logger.ts
+Download https://jsr.io/@std/log/0.224.14/info.ts
+Download https://jsr.io/@std/log/0.224.14/setup.ts
+Download https://jsr.io/@std/log/0.224.14/warn.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/types.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/command.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/types/action_list.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/types/boolean.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/types/child_command.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/types/command.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/types/enum.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/types/file.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/types/integer.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/types/number.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/types/string.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/type.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/_errors.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/deprecated.ts
+Download https://jsr.io/@bids/schema/1.0.4/metaschema.ts
+Download https://jsr.io/@std/path/1.0.8/posix/basename.ts
+Download https://jsr.io/@std/path/1.0.8/posix/constants.ts
+Download https://jsr.io/@std/path/1.0.8/posix/dirname.ts
+Download https://jsr.io/@std/path/1.0.8/posix/extname.ts
+Download https://jsr.io/@std/path/1.0.8/posix/format.ts
+Download https://jsr.io/@std/path/1.0.8/posix/from_file_url.ts
+Download https://jsr.io/@std/path/1.0.8/posix/is_absolute.ts
+Download https://jsr.io/@std/path/1.0.8/posix/join.ts
+Download https://jsr.io/@std/path/1.0.8/posix/normalize.ts
+Download https://jsr.io/@std/path/1.0.8/posix/parse.ts
+Download https://jsr.io/@std/path/1.0.8/posix/relative.ts
+Download https://jsr.io/@std/path/1.0.8/posix/resolve.ts
+Download https://jsr.io/@std/path/1.0.8/posix/to_file_url.ts
+Download https://jsr.io/@std/path/1.0.8/posix/to_namespaced_path.ts
+Download https://jsr.io/@std/path/1.0.8/posix/common.ts
+Download https://jsr.io/@std/path/1.0.8/posix/glob_to_regexp.ts
+Download https://jsr.io/@std/path/1.0.8/posix/is_glob.ts
+Download https://jsr.io/@std/path/1.0.8/posix/join_globs.ts
+Download https://jsr.io/@std/path/1.0.8/posix/normalize_glob.ts
+Download https://jsr.io/@effigies/cliffy-table/1.0.0-dev.5/border.ts
+Download https://jsr.io/@effigies/cliffy-table/1.0.0-dev.5/cell.ts
+Download https://jsr.io/@effigies/cliffy-table/1.0.0-dev.5/column.ts
+Download https://jsr.io/@effigies/cliffy-table/1.0.0-dev.5/consume_words.ts
+Download https://jsr.io/@effigies/cliffy-table/1.0.0-dev.5/row.ts
+Download https://jsr.io/@effigies/cliffy-table/1.0.0-dev.5/table.ts
+Download https://jsr.io/@std/yaml/1.0.6/parse.ts
+Download https://jsr.io/@std/yaml/1.0.6/stringify.ts
+Download https://jsr.io/@std/streams/1.0.9/buffer.ts
+Download https://jsr.io/@std/streams/1.0.9/byte_slice_stream.ts
+Download https://jsr.io/@std/streams/1.0.9/concat_readable_streams.ts
+Download https://jsr.io/@std/streams/1.0.9/delimiter_stream.ts
+Download https://jsr.io/@std/streams/1.0.9/early_zip_readable_streams.ts
+Download https://jsr.io/@std/streams/1.0.9/limited_bytes_transform_stream.ts
+Download https://jsr.io/@std/streams/1.0.9/limited_transform_stream.ts
+Download https://jsr.io/@std/streams/1.0.9/merge_readable_streams.ts
+Download https://jsr.io/@std/streams/1.0.9/text_delimiter_stream.ts
+Download https://jsr.io/@std/streams/1.0.9/text_line_stream.ts
+Download https://jsr.io/@std/streams/1.0.9/to_array_buffer.ts
+Download https://jsr.io/@std/streams/1.0.9/to_blob.ts
+Download https://jsr.io/@std/streams/1.0.9/to_json.ts
+Download https://jsr.io/@std/streams/1.0.9/to_text.ts
+Download https://jsr.io/@std/streams/1.0.9/to_transform_stream.ts
+Download https://jsr.io/@std/streams/1.0.9/zip_readable_streams.ts
+Download https://jsr.io/@libs/xml/6.0.4/parse.ts
+Download https://jsr.io/@libs/xml/6.0.4/stringify.ts
+Download https://jsr.io/@libs/xml/6.0.4/_types.ts
+Download https://jsr.io/@std/path/1.0.8/_os.ts
+Download https://jsr.io/@std/path/1.0.8/windows/basename.ts
+Download https://jsr.io/@std/path/1.0.8/windows/dirname.ts
+Download https://jsr.io/@std/path/1.0.8/windows/extname.ts
+Download https://jsr.io/@std/path/1.0.8/windows/format.ts
+Download https://jsr.io/@std/path/1.0.8/windows/from_file_url.ts
+Download https://jsr.io/@std/path/1.0.8/windows/is_absolute.ts
+Download https://jsr.io/@std/path/1.0.8/windows/join.ts
+Download https://jsr.io/@std/path/1.0.8/windows/normalize.ts
+Download https://jsr.io/@std/path/1.0.8/windows/parse.ts
+Download https://jsr.io/@std/path/1.0.8/windows/relative.ts
+Download https://jsr.io/@std/path/1.0.8/windows/resolve.ts
+Download https://jsr.io/@std/path/1.0.8/windows/to_file_url.ts
+Download https://jsr.io/@std/path/1.0.8/windows/to_namespaced_path.ts
+Download https://jsr.io/@std/path/1.0.8/_common/common.ts
+Download https://jsr.io/@std/path/1.0.8/_common/glob_to_reg_exp.ts
+Download https://jsr.io/@std/path/1.0.8/windows/glob_to_regexp.ts
+Download https://jsr.io/@std/path/1.0.8/windows/join_globs.ts
+Download https://jsr.io/@std/path/1.0.8/windows/normalize_glob.ts
+Download https://jsr.io/@std/log/0.224.14/_file_handler_symbols.ts
+Download https://jsr.io/@std/log/0.224.14/_state.ts
+Download https://jsr.io/@std/log/0.224.14/_config.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/_argument_types.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/help/_help_generator.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/_type_utils.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/_utils.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/upgrade/_check_version.ts
+Download https://jsr.io/@std/path/1.0.8/_common/basename.ts
+Download https://jsr.io/@std/path/1.0.8/_common/strip_trailing_separators.ts
+Download https://jsr.io/@std/path/1.0.8/posix/_util.ts
+Download https://jsr.io/@std/path/1.0.8/_common/dirname.ts
+Download https://jsr.io/@std/path/1.0.8/_common/constants.ts
+Download https://jsr.io/@std/path/1.0.8/_common/assert_path.ts
+Download https://jsr.io/@std/path/1.0.8/_common/format.ts
+Download https://jsr.io/@std/path/1.0.8/_common/from_file_url.ts
+Download https://jsr.io/@std/path/1.0.8/_common/normalize.ts
+Download https://jsr.io/@std/path/1.0.8/_common/normalize_string.ts
+Download https://jsr.io/@std/path/1.0.8/_common/relative.ts
+Download https://jsr.io/@std/path/1.0.8/_common/to_file_url.ts
+Download https://jsr.io/@effigies/cliffy-table/1.0.0-dev.5/_utils.ts
+Download https://jsr.io/@effigies/cliffy-table/1.0.0-dev.5/_layout.ts
+Download https://jsr.io/@std/yaml/1.0.6/_chars.ts
+Download https://jsr.io/@std/yaml/1.0.6/_loader_state.ts
+Download https://jsr.io/@std/yaml/1.0.6/_schema.ts
+Download https://jsr.io/@std/yaml/1.0.6/_dumper_state.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type.ts
+Download https://jsr.io/@std/streams/1.0.9/_common.ts
+Download https://jsr.io/@libs/xml/6.0.4/wasm_xml_parser/wasm_xml_parser.js
+Download https://jsr.io/@std/path/1.0.8/windows/_util.ts
+Download https://jsr.io/@std/path/1.0.8/windows/constants.ts
+Download https://jsr.io/@effigies/cliffy-command/1.0.0-dev.8/_spread.ts
+Download https://jsr.io/@effigies/cliffy-table/1.0.0-dev.5/unicode_width.ts
+Download https://jsr.io/@std/yaml/1.0.6/_utils.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/binary.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/bool.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/float.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/int.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/map.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/merge.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/nil.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/omap.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/pairs.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/regexp.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/seq.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/set.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/str.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/timestamp.ts
+Download https://jsr.io/@std/yaml/1.0.6/_type/undefined.ts
+Download https://jsr.io/@std/io/0.225.2/write_all.ts
+Download https://jsr.io/@std/fs/1.0.17/exists.ts
+Download https://jsr.io/@cliffy/flags/1.0.0-rc.7/mod.ts
+Download https://jsr.io/@cliffy/internal/1.0.0-rc.7/runtime/exit.ts
+Download https://jsr.io/@cliffy/internal/1.0.0-rc.7/runtime/get_args.ts
+Download https://jsr.io/@cliffy/internal/1.0.0-rc.7/runtime/get_env.ts
+Download https://jsr.io/@std/bytes/1.0.5/copy.ts
+Download https://jsr.io/@std/bytes/1.0.5/concat.ts
+Download https://jsr.io/@cliffy/internal/1.0.0-rc.7/runtime/inspect.ts
+Download https://jsr.io/@std/text/1.0.13/closest_string.ts
+Download https://jsr.io/@std/io/0.225.2/types.ts
+Download https://jsr.io/@cliffy/flags/1.0.0-rc.7/flags.ts
+Download https://jsr.io/@cliffy/flags/1.0.0-rc.7/types.ts
+Download https://jsr.io/@cliffy/flags/1.0.0-rc.7/types/boolean.ts
+Download https://jsr.io/@cliffy/flags/1.0.0-rc.7/types/integer.ts
+Download https://jsr.io/@cliffy/flags/1.0.0-rc.7/types/number.ts
+Download https://jsr.io/@cliffy/flags/1.0.0-rc.7/types/string.ts
+Download https://jsr.io/@cliffy/flags/1.0.0-rc.7/deprecated.ts
+Download https://jsr.io/@cliffy/flags/1.0.0-rc.7/_errors.ts
+Download https://jsr.io/@std/bytes/1.0.5/_types.ts
+Download https://jsr.io/@std/text/1.0.13/levenshtein_distance.ts
+Download https://jsr.io/@cliffy/flags/1.0.0-rc.7/_utils.ts
+Download https://jsr.io/@cliffy/flags/1.0.0-rc.7/_validate_flags.ts
+Download https://registry.npmjs.org/fast-deep-equal
+Download https://registry.npmjs.org/fast-uri
+Download https://registry.npmjs.org/json-schema-traverse
+Download https://registry.npmjs.org/require-from-string
+Download https://registry.npmjs.org/buffer
+Download https://registry.npmjs.org/core-js-pure
+Download https://registry.npmjs.org/cross-fetch
+Download https://registry.npmjs.org/date-and-time
+Download https://registry.npmjs.org/date-fns
+Download https://registry.npmjs.org/events
+Download https://registry.npmjs.org/lodash
+Download https://registry.npmjs.org/path
+Download https://registry.npmjs.org/pluralize
+Download https://registry.npmjs.org/semver
+Download https://registry.npmjs.org/string_decoder
+Download https://registry.npmjs.org/unicode-name
+Download https://registry.npmjs.org/xml2js
+Download https://registry.npmjs.org/fflate
+Download https://registry.npmjs.org/base64-js
+Download https://registry.npmjs.org/ieee754
+Download https://registry.npmjs.org/node-fetch
+Download https://registry.npmjs.org/process
+Download https://registry.npmjs.org/util
+Download https://registry.npmjs.org/safe-buffer
+Download https://registry.npmjs.org/sax
+Download https://registry.npmjs.org/xmlbuilder
+Download https://registry.npmjs.org/encoding
+Download https://registry.npmjs.org/whatwg-url
+Download https://registry.npmjs.org/inherits
+Download https://registry.npmjs.org/tr46
+Download https://registry.npmjs.org/webidl-conversions
+Download https://registry.npmjs.org/ajv/-/ajv-8.17.1.tgz
+Download https://registry.npmjs.org/ignore/-/ignore-7.0.3.tgz
+Download https://registry.npmjs.org/@bids/nifti-reader-js/-/nifti-reader-js-0.6.9.tgz
+Download https://registry.npmjs.org/hed-validator/-/hed-validator-4.0.1.tgz
+Download https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz
+Download https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz
+Download https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz
+Download https://registry.npmjs.org/fast-uri/-/fast-uri-3.0.6.tgz
+Download https://registry.npmjs.org/fflate/-/fflate-0.8.2.tgz
+Download https://registry.npmjs.org/unicode-name/-/unicode-name-1.0.4.tgz
+Download https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz
+Download https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.41.0.tgz
+Download https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz
+Download https://registry.npmjs.org/events/-/events-3.3.0.tgz
+Download https://registry.npmjs.org/cross-fetch/-/cross-fetch-4.1.0.tgz
+Download https://registry.npmjs.org/date-and-time/-/date-and-time-3.6.0.tgz
+Download https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz
+Download https://registry.npmjs.org/path/-/path-0.12.7.tgz
+Download https://registry.npmjs.org/semver/-/semver-7.7.1.tgz
+Download https://registry.npmjs.org/date-fns/-/date-fns-4.1.0.tgz
+Download https://registry.npmjs.org/xml2js/-/xml2js-0.6.2.tgz
+Download https://registry.npmjs.org/pluralize/-/pluralize-8.0.0.tgz
+Download https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz
+Download https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz
+Download https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz
+Download https://registry.npmjs.org/node-fetch/-/node-fetch-2.7.0.tgz
+Download https://registry.npmjs.org/process/-/process-0.11.10.tgz
+Download https://registry.npmjs.org/util/-/util-0.10.4.tgz
+Download https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-11.0.1.tgz
+Download https://registry.npmjs.org/sax/-/sax-1.4.1.tgz
+Download https://registry.npmjs.org/whatwg-url/-/whatwg-url-5.0.0.tgz
+Download https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz
+Download https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz
+Download https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-3.0.1.tgz
+Warning The following packages contained npm lifecycle scripts (preinstall/install/postinstall) that were not executed:
+┠─ npm:core-js-pure@3.41.0
+┃
+┠─ This may cause the packages to not work correctly.
+┠─ Lifecycle scripts are only supported when using a `node_modules` directory.
+┠─ Enable it in your deno config file:
+┖─ "nodeModulesDir": "auto"
+Check jsr:@bids/validator
+Compile jsr:@bids/validator to bids-validator
+Download https://dl.deno.land/release/v2.2.11/denort-x86_64-unknown-linux-gnu.zip
+
+Embedded Files
+
+bids-validator
+└─┬ .deno_compile_node_modules (68.43MB - 67.34MB unique)
+  └─┬ localhost (68.43MB - 67.34MB unique)
+    ├── @bids/nifti-reader-js/* (414.63KB - 414.56KB unique)
+    ├── ajv/8.17.1/* (1.02MB - 1008.01KB unique)
+    ├── base64-js/1.5.1/* (9.84KB - 9.81KB unique)
+    ├── buffer/6.0.3/* (89.77KB - 89.76KB unique)
+    ├── core-js-pure/3.41.0/* (1.12MB - 1.07MB unique)
+    ├── cross-fetch/4.1.0/* (92.08KB - 91.95KB unique)
+    ├── date-and-time/3.6.0/* (433.86KB - 324.31KB unique)
+    ├── date-fns/4.1.0/* (21.62MB - 20.94MB unique)
+    ├── events/3.3.0/* (82.33KB - 82.07KB unique)
+    ├── fast-deep-equal/3.1.3/* (13.11KB - 12.89KB unique)
+    ├── fast-uri/3.0.6/* (108.68KB - 108.53KB unique)
+    ├── fflate/0.8.2/* (758.34KB - 557.79KB unique)
+    ├── hed-validator/4.0.1/* (35.48MB - 35.48MB unique)
+    ├── ieee754/1.2.1/* (7.1KB - 7.09KB unique)
+    ├── ignore/7.0.3/* (62.1KB - 62.06KB unique)
+    ├── inherits/2.0.3/* (4.12KB - 4.09KB unique)
+    ├── json-schema-traverse/1.0.0/* (22.7KB - 21.59KB unique)
+    ├── lodash/4.17.21/* (1.36MB - 1.35MB unique)
+    ├── node-fetch/2.7.0/* (158.98KB - 158.97KB unique)
+    ├── path/0.12.7/* (18.94KB - 18.92KB unique)
+    ├── pluralize/8.0.0/* (17.64KB - 17.63KB unique)
+    ├── process/0.11.10/* (15.5KB - 15.47KB unique)
+    ├── require-from-string/2.0.2/* (3.76KB - 3.75KB unique)
+    ├── safe-buffer/5.2.1/* (31.79KB - 31.78KB unique)
+    ├── sax/1.4.1/* (54.99KB - 54.97KB unique)
+    ├── semver/7.7.1/* (97.24KB - 96.06KB unique)
+    ├── string_decoder/1.3.0/* (14.47KB)
+    ├── tr46/0.0.3/* (262.19KB - 262.17KB unique)
+    ├── unicode-name/1.0.4/* (1.59MB - 1.59MB unique)
+    ├── util/0.10.4/* (18.42KB - 18.4KB unique)
+    ├── webidl-conversions/3.0.1/* (12.45KB - 12.44KB unique)
+    ├── whatwg-url/5.0.0/* (49.71KB)
+    ├── xml2js/0.6.2/* (3.28MB - 3.28MB unique)
+    └── xmlbuilder/11.0.1/* (166.48KB - 166.09KB unique)
+
+Files: 68.21MB
+Metadata: 2.59KB
+Remote modules: 2.32MB
+
++ mv bids-validator /usr/bin
+INFO:    Adding environment to container
+INFO:    Adding runscript
+INFO:    Creating SIF file...
+INFO:    Build complete: cubids.sif
