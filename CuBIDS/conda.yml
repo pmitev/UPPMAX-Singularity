@@ -5,6 +5,7 @@ dependencies:
 - conda-forge::python=3.12
 - conda-forge::deno
 - conda-forge::git
+- conda-forge::p7zip
 - pip
 - pip:
   - cubids

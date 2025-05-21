@@ -1,4 +1,4 @@
-Build target 'cubids.sif' already exists and will be deleted during the build process. Do you want to continue? [y/N] INFO:    Starting build...
+INFO:    Starting build...
 INFO:    Fetching OCI image...
 INFO:    Extracting OCI image...
 INFO:    Inserting Singularity configuration...
@@ -19,6 +19,7 @@ Transaction
    - conda-forge::python=3.12
    - conda-forge::deno
    - conda-forge::git
+   - conda-forge::p7zip
    - pip
 
 
@@ -54,6 +55,7 @@ Transaction
   + bzip2                    1.0.8  h4bc722e_7          conda-forge     253kB
   + libuuid                 2.38.1  h0b41bf4_0          conda-forge      34kB
   + libnsl                   2.0.1  hd590300_0          conda-forge      33kB
+  + p7zip                    16.02  h9c3ff4c_1001       conda-forge       2MB
   + perl                    5.32.1  7_hd590300_perl5    conda-forge      13MB
   + pcre2                    10.44  hba22ea6_2          conda-forge     952kB
   + tzdata                   2025b  h78e105d_0          conda-forge     123kB
@@ -71,9 +73,9 @@ Transaction
 
   Summary:
 
-  Install: 41 packages
+  Install: 42 packages
 
-  Total download: 150MB
+  Total download: 153MB
 
 ───────────────────────────────────────────────────────────────────────────────
 
@@ -93,157 +95,157 @@ Or to execute a single command in this environment, use:
 
 
 Installing pip packages: cubids
-Collecting cubids (from -r /scratch/mambafbv6vun7d1j (line 1))
+Collecting cubids (from -r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading cubids-1.2.0-py3-none-any.whl.metadata (5.4 kB)
-Collecting datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5 (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5 (from cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading datalad-1.1.5-py3-none-any.whl.metadata (37 kB)
-Collecting numpy<=2.2.3 (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting numpy<=2.2.3 (from cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading numpy-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
-Collecting pandas<=2.2.3 (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting pandas<=2.2.3 (from cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
-Collecting pybids<=0.18.1 (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting pybids<=0.18.1 (from cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading pybids-0.18.1-py3-none-any.whl.metadata (8.0 kB)
-Collecting pyyaml (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting pyyaml (from cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
-Collecting scikit-learn<=1.6.1 (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting scikit-learn<=1.6.1 (from cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading scikit_learn-1.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
-Collecting tqdm (from cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting tqdm (from cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
-Collecting platformdirs (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting platformdirs (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
-Collecting chardet>=3.0.4 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting chardet>=3.0.4 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading chardet-5.2.0-py3-none-any.whl.metadata (3.4 kB)
-Collecting distro (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting distro (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
-Collecting iso8601 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting iso8601 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading iso8601-2.1.0-py3-none-any.whl.metadata (3.7 kB)
-Collecting humanize (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting humanize (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading humanize-4.12.2-py3-none-any.whl.metadata (7.8 kB)
-Collecting fasteners>=0.14 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting fasteners>=0.14 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading fasteners-0.19-py3-none-any.whl.metadata (4.9 kB)
-Collecting packaging (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting packaging (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
-Collecting patool>=1.7 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting patool>=1.7 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading patool-4.0.0-py2.py3-none-any.whl.metadata (4.5 kB)
-Collecting annexremote (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting annexremote (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading annexremote-1.6.6-py3-none-any.whl.metadata (6.5 kB)
-Collecting looseversion (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting looseversion (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading looseversion-1.3.0-py2.py3-none-any.whl.metadata (4.6 kB)
-Collecting boto3 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting boto3 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading boto3-1.38.1-py3-none-any.whl.metadata (6.6 kB)
-Collecting keyring!=23.9.0,>=20.0 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting keyring!=23.9.0,>=20.0 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading keyring-25.6.0-py3-none-any.whl.metadata (20 kB)
-Collecting keyrings.alt (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting keyrings.alt (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading keyrings.alt-5.0.2-py3-none-any.whl.metadata (3.6 kB)
-Collecting msgpack (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting msgpack (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading msgpack-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.4 kB)
-Collecting requests>=1.2 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting requests>=1.2 (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
-Collecting python-gitlab (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting python-gitlab (from datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading python_gitlab-5.6.0-py3-none-any.whl.metadata (8.5 kB)
-Collecting python-dateutil>=2.8.2 (from pandas<=2.2.3->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting python-dateutil>=2.8.2 (from pandas<=2.2.3->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
-Collecting pytz>=2020.1 (from pandas<=2.2.3->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting pytz>=2020.1 (from pandas<=2.2.3->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
-Collecting tzdata>=2022.7 (from pandas<=2.2.3->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting tzdata>=2022.7 (from pandas<=2.2.3->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
-Collecting scipy>=1.8 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting scipy>=1.8 (from pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading scipy-1.15.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
-Collecting nibabel>=4.0 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting nibabel>=4.0 (from pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading nibabel-5.3.2-py3-none-any.whl.metadata (9.1 kB)
-Collecting formulaic<0.6,>=0.2.4 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting formulaic<0.6,>=0.2.4 (from pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading formulaic-0.5.2-py3-none-any.whl.metadata (5.7 kB)
-Collecting sqlalchemy>=1.3.16 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting sqlalchemy>=1.3.16 (from pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading sqlalchemy-2.0.40-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.6 kB)
-Collecting bids-validator>=1.14.7 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting bids-validator>=1.14.7 (from pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading bids_validator-1.14.7.post0-py3-none-any.whl.metadata (39 kB)
-Collecting num2words>=0.5.5 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting num2words>=0.5.5 (from pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading num2words-0.5.14-py3-none-any.whl.metadata (13 kB)
-Collecting click>=8.0 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting click>=8.0 (from pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
-Collecting universal_pathlib>=0.2.2 (from pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting universal_pathlib>=0.2.2 (from pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading universal_pathlib-0.2.6-py3-none-any.whl.metadata (25 kB)
-Collecting joblib>=1.2.0 (from scikit-learn<=1.6.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting joblib>=1.2.0 (from scikit-learn<=1.6.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading joblib-1.4.2-py3-none-any.whl.metadata (5.4 kB)
-Collecting threadpoolctl>=3.1.0 (from scikit-learn<=1.6.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting threadpoolctl>=3.1.0 (from scikit-learn<=1.6.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
-Collecting bidsschematools>=0.10 (from bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting bidsschematools>=0.10 (from bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading bidsschematools-1.0.5-py3-none-any.whl.metadata (3.6 kB)
-Collecting astor>=0.8 (from formulaic<0.6,>=0.2.4->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting astor>=0.8 (from formulaic<0.6,>=0.2.4->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading astor-0.8.1-py2.py3-none-any.whl.metadata (4.2 kB)
-Collecting interface-meta>=1.2.0 (from formulaic<0.6,>=0.2.4->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting interface-meta>=1.2.0 (from formulaic<0.6,>=0.2.4->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading interface_meta-1.3.0-py3-none-any.whl.metadata (6.7 kB)
-Collecting typing-extensions>=4.2.0 (from formulaic<0.6,>=0.2.4->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting typing-extensions>=4.2.0 (from formulaic<0.6,>=0.2.4->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading typing_extensions-4.13.2-py3-none-any.whl.metadata (3.0 kB)
-Collecting wrapt>=1.0 (from formulaic<0.6,>=0.2.4->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting wrapt>=1.0 (from formulaic<0.6,>=0.2.4->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB)
-Collecting SecretStorage>=3.2 (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting SecretStorage>=3.2 (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading SecretStorage-3.3.3-py3-none-any.whl.metadata (4.0 kB)
-Collecting jeepney>=0.4.2 (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting jeepney>=0.4.2 (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading jeepney-0.9.0-py3-none-any.whl.metadata (1.2 kB)
-Collecting jaraco.classes (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting jaraco.classes (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading jaraco.classes-3.4.0-py3-none-any.whl.metadata (2.6 kB)
-Collecting jaraco.functools (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting jaraco.functools (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading jaraco.functools-4.1.0-py3-none-any.whl.metadata (2.9 kB)
-Collecting jaraco.context (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting jaraco.context (from keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading jaraco.context-6.0.1-py3-none-any.whl.metadata (4.1 kB)
-Collecting docopt>=0.6.2 (from num2words>=0.5.5->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting docopt>=0.6.2 (from num2words>=0.5.5->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading docopt-0.6.2.tar.gz (25 kB)
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status 'done'
-Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas<=2.2.3->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas<=2.2.3->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
-Collecting charset-normalizer<4,>=2 (from requests>=1.2->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting charset-normalizer<4,>=2 (from requests>=1.2->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
-Collecting idna<4,>=2.5 (from requests>=1.2->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting idna<4,>=2.5 (from requests>=1.2->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
-Collecting urllib3<3,>=1.21.1 (from requests>=1.2->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting urllib3<3,>=1.21.1 (from requests>=1.2->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading urllib3-2.4.0-py3-none-any.whl.metadata (6.5 kB)
-Collecting certifi>=2017.4.17 (from requests>=1.2->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting certifi>=2017.4.17 (from requests>=1.2->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
-Collecting greenlet>=1 (from sqlalchemy>=1.3.16->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting greenlet>=1 (from sqlalchemy>=1.3.16->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading greenlet-3.2.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (4.1 kB)
-Collecting fsspec!=2024.3.1,>=2022.1.0 (from universal_pathlib>=0.2.2->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting fsspec!=2024.3.1,>=2022.1.0 (from universal_pathlib>=0.2.2->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading fsspec-2025.3.2-py3-none-any.whl.metadata (11 kB)
-Collecting botocore<1.39.0,>=1.38.1 (from boto3->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting botocore<1.39.0,>=1.38.1 (from boto3->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading botocore-1.38.1-py3-none-any.whl.metadata (5.7 kB)
-Collecting jmespath<2.0.0,>=0.7.1 (from boto3->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading jmespath-1.0.1-py3-none-any.whl.metadata (7.6 kB)
-Collecting s3transfer<0.13.0,>=0.12.0 (from boto3->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting s3transfer<0.13.0,>=0.12.0 (from boto3->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading s3transfer-0.12.0-py3-none-any.whl.metadata (1.7 kB)
-Collecting requests-toolbelt>=1.0.0 (from python-gitlab->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting requests-toolbelt>=1.0.0 (from python-gitlab->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl.metadata (14 kB)
-Collecting jsonschema (from bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting jsonschema (from bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading jsonschema-4.23.0-py3-none-any.whl.metadata (7.9 kB)
-Collecting cryptography>=2.0 (from SecretStorage>=3.2->keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting cryptography>=2.0 (from SecretStorage>=3.2->keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
-Collecting more-itertools (from jaraco.classes->keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting more-itertools (from jaraco.classes->keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading more_itertools-10.7.0-py3-none-any.whl.metadata (37 kB)
-Collecting cffi>=1.12 (from cryptography>=2.0->SecretStorage>=3.2->keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting cffi>=1.12 (from cryptography>=2.0->SecretStorage>=3.2->keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
-Collecting attrs>=22.2.0 (from jsonschema->bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting attrs>=22.2.0 (from jsonschema->bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
-Collecting jsonschema-specifications>=2023.03.6 (from jsonschema->bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema->bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading jsonschema_specifications-2025.4.1-py3-none-any.whl.metadata (2.9 kB)
-Collecting referencing>=0.28.4 (from jsonschema->bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting referencing>=0.28.4 (from jsonschema->bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading referencing-0.36.2-py3-none-any.whl.metadata (2.8 kB)
-Collecting rpds-py>=0.7.1 (from jsonschema->bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting rpds-py>=0.7.1 (from jsonschema->bidsschematools>=0.10->bids-validator>=1.14.7->pybids<=0.18.1->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading rpds_py-0.24.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
-Collecting pycparser (from cffi>=1.12->cryptography>=2.0->SecretStorage>=3.2->keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafbv6vun7d1j (line 1))
+Collecting pycparser (from cffi>=1.12->cryptography>=2.0->SecretStorage>=3.2->keyring!=23.9.0,>=20.0->datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5->cubids->-r /scratch/mambafVGk6HfvPX3 (line 1))
   Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
 Downloading cubids-1.2.0-py3-none-any.whl (177 kB)
 Downloading datalad-1.1.5-py3-none-any.whl (1.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 26.6 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 31.1 MB/s eta 0:00:00
 Downloading numpy-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 87.6 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 87.8 MB/s eta 0:00:00
 Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 92.6 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 89.9 MB/s eta 0:00:00
 Downloading pybids-0.18.1-py3-none-any.whl (212 kB)
 Downloading scikit_learn-1.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 92.1 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 97.4 MB/s eta 0:00:00
 Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
 Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 35.1 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 28.9 MB/s eta 0:00:00
 Downloading bids_validator-1.14.7.post0-py3-none-any.whl (23 kB)
 Downloading chardet-5.2.0-py3-none-any.whl (199 kB)
 Downloading click-8.1.8-py3-none-any.whl (98 kB)
@@ -252,7 +254,7 @@ Downloading formulaic-0.5.2-py3-none-any.whl (77 kB)
 Downloading joblib-1.4.2-py3-none-any.whl (301 kB)
 Downloading keyring-25.6.0-py3-none-any.whl (39 kB)
 Downloading nibabel-5.3.2-py3-none-any.whl (3.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 83.1 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 79.4 MB/s eta 0:00:00
 Downloading num2words-0.5.14-py3-none-any.whl (163 kB)
 Downloading packaging-25.0-py3-none-any.whl (66 kB)
 Downloading patool-4.0.0-py2.py3-none-any.whl (86 kB)
@@ -260,9 +262,9 @@ Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
 Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
 Downloading scipy-1.15.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 100.4 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 100.6 MB/s eta 0:00:00
 Downloading sqlalchemy-2.0.40-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 82.6 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 83.8 MB/s eta 0:00:00
 Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
 Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
 Downloading universal_pathlib-0.2.6-py3-none-any.whl (50 kB)
@@ -279,12 +281,12 @@ Downloading python_gitlab-5.6.0-py3-none-any.whl (148 kB)
 Downloading astor-0.8.1-py2.py3-none-any.whl (27 kB)
 Downloading bidsschematools-1.0.5-py3-none-any.whl (212 kB)
 Downloading botocore-1.38.1-py3-none-any.whl (13.5 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 93.1 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 87.0 MB/s eta 0:00:00
 Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
 Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (145 kB)
 Downloading fsspec-2025.3.2-py3-none-any.whl (194 kB)
 Downloading greenlet-3.2.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (603 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 603.8/603.8 kB 21.6 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 603.8/603.8 kB 23.4 MB/s eta 0:00:00
 Downloading idna-3.10-py3-none-any.whl (70 kB)
 Downloading interface_meta-1.3.0-py3-none-any.whl (14 kB)
 Downloading jeepney-0.9.0-py3-none-any.whl (49 kB)
@@ -300,7 +302,7 @@ Downloading jaraco.classes-3.4.0-py3-none-any.whl (6.8 kB)
 Downloading jaraco.context-6.0.1-py3-none-any.whl (6.8 kB)
 Downloading jaraco.functools-4.1.0-py3-none-any.whl (10 kB)
 Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl (4.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 78.4 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 84.8 MB/s eta 0:00:00
 Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
 Downloading more_itertools-10.7.0-py3-none-any.whl (65 kB)
 Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
@@ -312,7 +314,7 @@ Downloading pycparser-2.22-py3-none-any.whl (117 kB)
 Building wheels for collected packages: docopt
   Building wheel for docopt (setup.py): started
   Building wheel for docopt (setup.py): finished with status 'done'
-  Created wheel for docopt: filename=docopt-0.6.2-py2.py3-none-any.whl size=13780 sha256=50c00ca857ebfc404225a3c502e45f6602d2e62fe497c08d5976e770993bca06
+  Created wheel for docopt: filename=docopt-0.6.2-py2.py3-none-any.whl size=13780 sha256=b153f670cb91c95f0afd28cf2be5045319d4cda4f6aa750d5f37e4930ee63ac9
   Stored in directory: /root/.cache/pip/wheels/1a/bf/a1/4cee4f7678c68c5875ca89eaccf460593539805c3906722228
 Successfully built docopt
 Installing collected packages: pytz, looseversion, docopt, annexremote, wrapt, urllib3, tzdata, typing-extensions, tqdm, threadpoolctl, six, rpds-py, pyyaml, pycparser, platformdirs, patool, packaging, numpy, num2words, msgpack, more-itertools, joblib, jmespath, jeepney, jaraco.context, iso8601, interface-meta, idna, humanize, greenlet, fsspec, fasteners, distro, click, charset-normalizer, chardet, certifi, attrs, astor, universal_pathlib, sqlalchemy, scipy, requests, referencing, python-dateutil, nibabel, jaraco.functools, jaraco.classes, cffi, scikit-learn, requests-toolbelt, pandas, keyrings.alt, jsonschema-specifications, cryptography, botocore, SecretStorage, s3transfer, python-gitlab, jsonschema, formulaic, keyring, boto3, bidsschematools, datalad, bids-validator, pybids, cubids
@@ -406,6 +408,7 @@ https://conda.anaconda.org/conda-forge/linux-64/liblzma-5.8.1-hb9d3cd8_0.conda#0
 https://conda.anaconda.org/conda-forge/linux-64/libnsl-2.0.1-hd590300_0.conda#30fd6e37fe21f86f4bd26d6ee73eeec7
 https://conda.anaconda.org/conda-forge/linux-64/libsqlite-3.49.1-hee588c1_2.conda#962d6ac93c30b1dfc54c9cccafd1003e
 https://conda.anaconda.org/conda-forge/linux-64/libuuid-2.38.1-h0b41bf4_0.conda#40b61aab5c7ba9ff276c41cfffe6b80b
+https://conda.anaconda.org/conda-forge/linux-64/p7zip-16.02-h9c3ff4c_1001.tar.bz2#941066943c0cac69d5aa52189451aa5f
 https://conda.anaconda.org/conda-forge/linux-64/readline-8.2-h8c095d6_2.conda#283b96675859b20a825f8fa30f311446
 https://conda.anaconda.org/conda-forge/linux-64/tk-8.6.13-noxft_h4845f30_101.conda#d453b98d9c83e71da0741bb0ff4d76bc
 https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda#4222072737ccff51314b5ece9c7d6f5a
@@ -456,6 +459,7 @@ Cleaning lock files..
   libzlib-1.3.1-hb9d3cd8_2.conda                  61kB
   ncurses-6.5-h2d0b736_3.conda                   892kB
   openssl-3.5.0-h7b32b05_0.conda                   3MB
+  p7zip-16.02-h9c3ff4c_1001.tar.bz2                2MB
   pcre2-10.44-hba22ea6_2.conda                   952kB
   perl-5.32.1-7_hd590300_perl5.conda              13MB
   pip-25.0.1-pyh8b19718_0.conda                    1MB
@@ -475,7 +479,7 @@ Cleaning lock files..
   
 ────────────────────────────────────────────────────────
 
-  Total size:                                    151MB
+  Total size:                                    153MB
 Cleaning tarballs..
 Cleaning packages..
 + mkdir -p /installs
@@ -799,36 +803,36 @@ Download https://registry.npmjs.org/whatwg-url
 Download https://registry.npmjs.org/inherits
 Download https://registry.npmjs.org/tr46
 Download https://registry.npmjs.org/webidl-conversions
-Download https://registry.npmjs.org/ajv/-/ajv-8.17.1.tgz
-Download https://registry.npmjs.org/ignore/-/ignore-7.0.3.tgz
-Download https://registry.npmjs.org/@bids/nifti-reader-js/-/nifti-reader-js-0.6.9.tgz
 Download https://registry.npmjs.org/hed-validator/-/hed-validator-4.0.1.tgz
-Download https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz
-Download https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz
-Download https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz
-Download https://registry.npmjs.org/fast-uri/-/fast-uri-3.0.6.tgz
-Download https://registry.npmjs.org/fflate/-/fflate-0.8.2.tgz
-Download https://registry.npmjs.org/unicode-name/-/unicode-name-1.0.4.tgz
-Download https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz
+Download https://registry.npmjs.org/@bids/nifti-reader-js/-/nifti-reader-js-0.6.9.tgz
+Download https://registry.npmjs.org/ignore/-/ignore-7.0.3.tgz
+Download https://registry.npmjs.org/ajv/-/ajv-8.17.1.tgz
 Download https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.41.0.tgz
-Download https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz
-Download https://registry.npmjs.org/events/-/events-3.3.0.tgz
 Download https://registry.npmjs.org/cross-fetch/-/cross-fetch-4.1.0.tgz
-Download https://registry.npmjs.org/date-and-time/-/date-and-time-3.6.0.tgz
+Download https://registry.npmjs.org/date-fns/-/date-fns-4.1.0.tgz
 Download https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz
 Download https://registry.npmjs.org/path/-/path-0.12.7.tgz
+Download https://registry.npmjs.org/events/-/events-3.3.0.tgz
 Download https://registry.npmjs.org/semver/-/semver-7.7.1.tgz
-Download https://registry.npmjs.org/date-fns/-/date-fns-4.1.0.tgz
-Download https://registry.npmjs.org/xml2js/-/xml2js-0.6.2.tgz
+Download https://registry.npmjs.org/date-and-time/-/date-and-time-3.6.0.tgz
 Download https://registry.npmjs.org/pluralize/-/pluralize-8.0.0.tgz
+Download https://registry.npmjs.org/unicode-name/-/unicode-name-1.0.4.tgz
+Download https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz
+Download https://registry.npmjs.org/xml2js/-/xml2js-0.6.2.tgz
+Download https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz
+Download https://registry.npmjs.org/fflate/-/fflate-0.8.2.tgz
+Download https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz
+Download https://registry.npmjs.org/fast-uri/-/fast-uri-3.0.6.tgz
+Download https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz
+Download https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz
+Download https://registry.npmjs.org/node-fetch/-/node-fetch-2.7.0.tgz
+Download https://registry.npmjs.org/util/-/util-0.10.4.tgz
+Download https://registry.npmjs.org/process/-/process-0.11.10.tgz
+Download https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz
+Download https://registry.npmjs.org/sax/-/sax-1.4.1.tgz
+Download https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-11.0.1.tgz
 Download https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz
 Download https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz
-Download https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz
-Download https://registry.npmjs.org/node-fetch/-/node-fetch-2.7.0.tgz
-Download https://registry.npmjs.org/process/-/process-0.11.10.tgz
-Download https://registry.npmjs.org/util/-/util-0.10.4.tgz
-Download https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-11.0.1.tgz
-Download https://registry.npmjs.org/sax/-/sax-1.4.1.tgz
 Download https://registry.npmjs.org/whatwg-url/-/whatwg-url-5.0.0.tgz
 Download https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz
 Download https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz
