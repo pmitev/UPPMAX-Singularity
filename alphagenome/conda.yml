@@ -1,0 +1,8 @@
+name: forest
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - git
+  - pip:
+    - git+https://github.com/google-deepmind/alphagenome.git
