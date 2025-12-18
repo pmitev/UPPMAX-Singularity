@@ -1,0 +1,87 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%files
+  mpich2-1.4.1.tar.gz /installs/
+  NONMEM7.4.3.zip     /installs/
+  nonmem.lic          /installs/
+  pass                /installs/
+
+
+%environment
+  export LC_ALL=C.utf8
+  export PYTHONNOUSERSITE=True
+  export PATH=/opt/nm743/run:$PATH
+
+%post
+  export LC_ALL=C.utf8
+  export PYTHONNOUSERSITE=True
+  export DEBIAN_FRONTEND=noninteractive
+  export PATH=/opt/nm743/run:$PATH
+
+  # apt packages cached in /tmp
+  mkdir -p /tmp/apt24 &&  echo "Dir::Cache "/tmp/apt24";" > /etc/apt/apt.conf.d/singularity-cache.conf
+
+  apt-get update && apt-get -y dist-upgrade && \
+  apt-get install -y wget git build-essential ccache cpanminus gfortran-9 \
+                  g++-9 git libcurl4-openssl-dev mc pandoc libpq-dev libcairo2-dev\
+                  libssl-dev libcurl4-openssl-dev libmariadb-dev libgmp-dev libmpfr-dev\
+                  libxml2-dev libudunits2-dev libblas-dev liblapack-dev libmagick++-dev\
+                  python3-pexpect r-base vim
+  
+  update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-9 100
+  update-alternatives --set gfortran /usr/bin/gfortran-9
+  update-alternatives --install /usr/bin/gcc gcc  /usr/bin/gcc-9 100
+  update-alternatives --set gcc /usr/bin/gcc-9
+  update-alternatives --install /usr/bin/g++ g++  /usr/bin/g++-9 100
+  update-alternatives --set g++ /usr/bin/g++-9
+
+  # Install MPICH2     
+  cd /installs/ && tar -xf mpich2-1.4.1.tar.gz
+  cd mpich2-1.4.1      
+  mkdir build && cd build
+  ../configure --with-pm=hydra:gforker:remshell --without-mpe
+  make && make install
+   
+  # Install NONMEM                                                                                      
+  cd /installs && unzip -P $(cat /installs/pass) NONMEM7.4.3.zip && rm /installs/pass
+  mkdir -p /opt/nm743/license && cp /installs/nonmem.lic /opt/nm743/license/nonmem.lic
+  cd /installs/nm743CD && ./SETUP74 /installs/nm743CD /opt/nm743 gfortran y ar same rec q | tee SETUP743.log
+  mkdir -p /opt/nm743/license && cp /installs/nonmem.lic /opt/nm743/license/nonmem.lic
+  chmod u=rw,g=r,o=r /opt/nm743/license/nonmem.lic
+  
+  # Patch libmpich.a
+  cp /installs/mpich2-1.4.1/build/lib/libmpich.a /opt/nm743/mpi/mpi_ling/
+
+  # Test
+  # Test NONMEM parallel
+  cd /installs/nm743CD && mkdir testit && cd testit 
+  cp /opt/nm743/examples/foce_parallel.ctl .
+  cp /opt/nm743/examples/example1b.csv .
+  cp /opt/nm743/run/mpilinux8.pnm .
+  cp /opt/nm743/run/psexec.exe .
+  nmfe74 foce_parallel.ctl foce_parallel.res -parafile=mpilinux8.pnm [nodes]=4
+  
+  update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-11 110
+  update-alternatives --set gfortran /usr/bin/gfortran-11
+  update-alternatives --install /usr/bin/gcc gcc  /usr/bin/gcc-11 110
+  update-alternatives --set gcc /usr/bin/gcc-11
+  update-alternatives --install /usr/bin/g++ g++  /usr/bin/g++-11 110
+  update-alternatives --set g++ /usr/bin/g++-11
+
+#  cpan Math::Random::Free
+#  cpan Math::MatrixReal
+#  cpan Mouse
+#  cpan MouseX::Params::Validate
+#  cpan Archive::Zip
+#  cpan YAML
+#  cpan Capture::Tiny
+#  cpan File::Copy::Recursive
+#  cpan File::HomeDir
+#  cpan Math::SigFigs
+#  cpan Statistics::Distributions
+
+
+  cd / && rm -r /installs
+
+  
